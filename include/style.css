@@ -1,0 +1,70 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/** Start: Global Header */
+/** Style for Logo, Title, nav*/
+#header-Title h1{
+    margin-bottom: 0;
+    display: inline-block;
+}
+#header-Title p{
+    font-weight: normal;
+    margin-top: 0;
+}
+#header-Logo{
+    height: 100%;
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+.header-nav {
+    flex-direction: row;
+    padding-left: 20px;
+}
+/** Style for item in right-hand-side of header */
+.header-Right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    
+}
+#search{
+    margin-bottom: 5px;
+    height: 100%;
+
+}
+#searchbox{
+    /** Note that width should be reduced to 200px when the screen is small */
+    width: 180px;
+    height: 30px;
+    padding: 2px;
+    border: 1px solid black;
+}
+#search button{
+    height: 36px;
+
+}
+#user{
+    float: right;
+    font-weight: normal;
+    font-size: 18px;
+}
+/** Style for the header */
+#header-Bar{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: darkgray;
+    padding: 0 30px 0 30px;
+    justify-content: space-between;
+}
+/** End: Global Header */
+/** Copyright @uncle-jayden, all rights reserved. */

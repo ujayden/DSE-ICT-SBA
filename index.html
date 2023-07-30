@@ -1,1 +1,71 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title, please update it asap-->
+    <title>ICT Master Hub</title>
+    <!-- Load CSS and Script here -->
+    <link rel="stylesheet" href="./include/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id="header-Bar">
+            <div class="header-Left ">
+                <div id="header-Title">
+                    <a href="index.html"><img src="./include/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <h1>ICT Master Hub</h1>
+                    <p>A self learning website for teens.</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html">Home</a>
+                <a href="library/index.html">Resource Library</a>
+                <a href="news.html">News</a>
+            </nav>
+            <div class="header-Right">
+                    <div id="header-Search">
+                        <!-- Search -->
+                        <div id="search">
+                            <form action="search.php" method="get">
+                                <input type="text" name="search" placeholder="Search..." id="searchbox">
+                                <button type="submit" name="submit-search">Search</button>
+                            </form>
+                        </div>
+                        <!-- Decoration. Horizion separator -->
+                        <!-- User -->
+                        <!-- If login, display username here and a logout button-->
+                        <!-- If not login, display a login button -->
+                        <div id="user">
+                            <span>Welcome,</span>
+                            <span id="username"></span>
+                            <a href="/login.html" >Login now</a>
+                            <span id="message-of-the-day"></span>
+                        </div>
+                    </div>
+            </div>
+        </div>Title
+        <!-- Breadcrumns, disable in first page  -->
+        <!-- Use a latest news banner to replace breadcrumbs in first page -->
+        <nav id="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <div id="test">Content</div>
+        <section id="latest-news">
+            
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+</body>
+</html>

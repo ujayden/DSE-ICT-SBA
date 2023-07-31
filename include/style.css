@@ -15,7 +15,7 @@ body{
 }
 #header-Logo{
     height: 100%;
-    width: 80px;
+    width: 60px;
     float: left;
     margin-right: 20px;
     object-fit: contain;
@@ -24,6 +24,10 @@ body{
 .header-nav {
     flex-direction: row;
     padding-left: 20px;
+    font-size: 90%;
+}
+.header-nav a{
+    margin-right: 20px;
 }
 /** Style for item in right-hand-side of header */
 .header-Right {
@@ -51,11 +55,11 @@ body{
 #user{
     float: right;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
 }
 /** Style for the header */
 #header-Bar{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: left;
@@ -68,3 +72,23 @@ body{
 }
 /** End: Global Header */
 /** Copyright @uncle-jayden, all rights reserved. */
+/** Start: Breadcrumb */
+#breadcrumbs li {
+    display: inline-block;
+}
+/** Set the link in breadcrumb with >, i.e. Home > News */
+#breadcrumbs a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 60%;
+    font-weight: bolder;
+    padding: 0 3px;
+}
+#breadcrumbs ul{
+    list-style-type: none;
+}
+/** End: Breadcrumb */
+main{
+    margin:20px;
+}

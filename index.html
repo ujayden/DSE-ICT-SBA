@@ -6,9 +6,9 @@
     <!-- Title, please update it asap-->
     <title>ICT Master Hub</title>
     <!-- Load CSS and Script here -->
-    <link rel="stylesheet" href="./include/style.css">
-    <link rel="stylesheet" href="./include/home.css">
-    <script src="./include/home.js" defer></script>
+    <link rel="stylesheet" href="/include/style.css">
+    <link rel="stylesheet" href="/include/home.css">
+    <script src="/include/home.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -16,15 +16,22 @@
         <div id="header-Bar">
             <div class="header-Left ">
                 <div id="header-Title">
-                    <a href="index.html"><img src="./include/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <a href="/index.html"><img src="/include/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
                     <h1>ICT Master Hub</h1>
                     <p class="slogan">A self learning website for teens.</p>
                 </div>
             </div>
             <nav class="header-nav">
-                <a href="index.html">Home</a>
-                <a href="library/index.html">Resource Library</a>
-                <a href="news.html">News</a>
+                <a href="/courses/index.html">Courses</a>
+                <div id="dropdownMenu_ResLibrary">
+                    <span class="dropdownMenu">Resources Library</span>
+                    <div class="dropdownContent">
+                        <a href="/library/index.html">Learning Materials</a>
+                        <a href="/library/index.html">Interactive Game</a>
+                        <a href="/library/index.html">Interactive Simulator</a>
+                    </div>
+                </div>
+                <a href="/news.html">Latest News</a>
             </nav>
             <div class="header-Right">
                     <div id="header-Search">
@@ -54,7 +61,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <!-- Test Only -->
-                <li><a href="library/index.html">Resource Library</a></li>
+                <li><a href="/library/index.html">Resource Library</a></li>
                 <li><span>Courses</span></li>
             </ul>
         </nav>

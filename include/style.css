@@ -70,6 +70,27 @@ body{
     padding: 0 30px 0 30px;
     justify-content: space-between;
 }
+/** Style for the menu and dropdown menu */
+.header-nav a{
+    color: black;
+    text-decoration: none;
+}
+
+.header-nav .dropdownContent{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdownMenu:hover + .dropdownContent{
+    display: block;
+}
+#dropdownMenu_ResLibrary{
+    margin-right: 20px;
+    display: inline-block;
+}
 /** End: Global Header */
 /** Copyright @uncle-jayden, licensed under CC BY-ND 4.0. */
 /** Start: Breadcrumb */

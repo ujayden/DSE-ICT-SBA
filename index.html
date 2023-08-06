@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>ICT Master Hub</title>
+    <!-- Load CSS and Script here -->
+    <link rel="stylesheet" href="/include/style.css">
+    <link rel="stylesheet" href="/include/home.css">
+    <link rel="stylesheet" href="/include/style_responsive.css">
+    <!-- Defer can increase web loading time. -->
+    <script src="/include/home.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id="header-Bar">
+            <div class="header-Left ">
+                <div id="header-Title">
+                    <a href="/index.html"><img src="/include/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <h1>ICT Master Hub</h1>
+                    <p class="slogan">A self learning website for teens.</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="/courses/index.html">Courses</a>
+                <div id="dropdownMenu_ResLibrary">
+                    <span class="dropdownMenu">Resources Library</span>
+                    <div class="dropdownContent">
+                        <a href="/library/index.html">Learning Materials</a>
+                        <a href="/library/index.html">Interactive Game</a>
+                        <a href="/library/index.html">Interactive Simulator</a>
+                    </div>
+                </div>
+                <a href="/news.html">Latest News</a>
+            </nav>
+            <div class="header-Right">
+                    <div id="header-Search">
+                        <!-- Search -->
+                        <div id="search">
+                            <form action="search.php" method="get">
+                                <input type="text" name="search" placeholder="Search..." id="searchbox">
+                                <button type="submit" name="submit-search">Search</button>
+                            </form>
+                        </div>
+                        <!-- Decoration. Horizion separator -->
+                        <!-- User -->
+                        <!-- If login, display username here and a logout button-->
+                        <!-- If not login, display a login button -->
+                        <div id="user">
+                            <span>Welcome,</span>
+                            <span id="username"></span>
+                            <a href="/login.html" >Login now</a>
+                            <span id="message-of-the-day"></span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Breadcrumns, disable in first page  -->
+        <!-- Use a latest news banner to replace breadcrumbs in first page -->
+        <nav id="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- Test Only -->
+                <li><a href="/library/index.html">Resource Library</a></li>
+                <li><span>Courses</span></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Latest news -->
+    <div id="newsLoop">
+        <h4>Latest News <div id="setNewsLoop"><span id="newsCount">1/3</span><span id="newsLoopBack">&lt;</span><span id="newsLoopNext">&gt;</span><span id="newsLoopPause">Pause</span><span id="newsLoopClose">x</span></div></h4>
+        <div class="newsLoop-Container">
+            <p id="News1">Hello</p>
+            <p id="News2" hidden>World</p>
+            <p id="News3" hidden>!</p>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <main>
+        <div id="test">Text</div>
+        <section id="latest-news">
+            
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+</body>
+</html>

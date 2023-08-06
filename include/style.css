@@ -1,0 +1,128 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/** Start: Global Header */
+/** Style for Logo, Title, nav*/
+#header-Title h1{
+    margin-bottom: 0;
+    display: inline-block;
+}
+#header-Title p{
+    font-weight: normal;
+    margin-top: 0;
+}
+#header-Logo{
+    height: 100%;
+    width: 60px;
+    float: left;
+    margin-right: 20px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+.header-nav {
+    flex-direction: row;
+    padding-left: 20px;
+    font-size: 90%;
+}
+.header-nav a{
+    margin-right: 20px;
+}
+/** Style for item in right-hand-side of header */
+.header-Right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    
+}
+#search{
+    margin-bottom: 5px;
+    height: 100%;
+
+}
+#searchbox{
+    /** Note that width should be reduced to 200px when the screen is small */
+    width: 180px;
+    height: 30px;
+    padding: 2px;
+    border: 1px solid black;
+}
+#search button{
+    height: 36px;
+
+}
+#user{
+    float: right;
+    font-weight: normal;
+    font-size: 16px;
+}
+/** Style for the header */
+#header-Bar{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: darkgray;
+    padding: 0 30px 0 30px;
+    justify-content: space-between;
+}
+/** Style for the menu and dropdown menu */
+.header-nav a{
+    color: black;
+    text-decoration: none;
+}
+
+.header-nav .dropdownContent{
+    display: none;
+    position: absolute;
+    background-color: gainsboro;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /** z-index is used to make sure the dropdown menu is on top of other elements */
+    z-index: 2;
+}
+
+.dropdownMenu:hover + .dropdownContent{
+    display: block;
+}
+.dropdownContent:hover{
+    display: block;
+}
+.dropdownContent a{
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+    width: max-content;
+}
+#dropdownMenu_ResLibrary{
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+}
+/** End: Global Header */
+/** Copyright @uncle-jayden, licensed under CC BY-NC-ND 4.0. */
+/** Start: Breadcrumb */
+#breadcrumbs li {
+    display: inline-block;
+}
+/** Set the link in breadcrumb with >, i.e. Home > News */
+#breadcrumbs a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 60%;
+    font-weight: bolder;
+    padding: 0 3px;
+}
+#breadcrumbs ul{
+    list-style-type: none;
+}
+/** End: Breadcrumb */
+main{
+    margin:20px;
+}

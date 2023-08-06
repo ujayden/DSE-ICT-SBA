@@ -1,0 +1,38 @@
+#newsLoop{
+    width: 90%;
+    background-color: orange;
+    margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 1px;
+    border-radius: 3px;
+}
+#newsLoop h4{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding-top: 2px;
+}
+#newsLoop .newsLoop-Container{
+    background-color: white;
+    position: relative;
+}
+#newsLoop p{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#setNewsLoop{
+    float: right;
+    font-weight: lighter;
+    cursor: pointer;
+    user-select: none;
+}
+#setNewsLoop span{
+    margin-right: 18px;
+}
+#setNewsLoop #newsCount{
+    cursor: default;
+}

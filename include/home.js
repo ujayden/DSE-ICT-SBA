@@ -71,4 +71,4 @@ pauseNews.addEventListener('click', function() {
     pauseNews.style.display = 'none';
 }
 );
-//Copyright @uncle-jayden, licensed under CC BY-ND 4.0
+//Copyright @uncle-jayden, licensed under CC BY-NC-ND 4.0

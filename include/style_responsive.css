@@ -1,0 +1,14 @@
+@media screen and (max-width: 1000px) {
+    #header-Logo{
+        display: none;
+    }
+    #searchbox{
+        width: 160px;
+    }
+    
+}
+@media screen and (max-width: 900px) {
+    .header-Right{
+        display: none;
+    }
+}

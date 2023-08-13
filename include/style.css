@@ -42,7 +42,7 @@ body{
 
 }
 #searchbox{
-    /** Note that width should be reduced to 200px when the screen is small */
+    /** Note that width should be reduced to 100px when the screen is small */
     width: 180px;
     height: 30px;
     padding: 2px;
@@ -104,6 +104,14 @@ body{
     display: inline-block;
     position: relative;
 }
+#dropdownMenu_Courses{
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+}
+.dropdownMenu{
+    cursor: pointer;
+}
 /** End: Global Header */
 /** Copyright @uncle-jayden, licensed under CC BY-NC-ND 4.0. */
 /** Start: Breadcrumb */
@@ -126,3 +134,5 @@ body{
 main{
     margin:20px;
 }
+/** Start: Header drop-down menu */
+/** The dropdown menu will be active when content in header hidden due to screen size  */

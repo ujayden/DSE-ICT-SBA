@@ -5,10 +5,23 @@
     #searchbox{
         width: 160px;
     }
-    
+    .slogan{
+        display: none;
+    }
+    #header-Title h1{
+        margin-top: 0px;
+    }
 }
 @media screen and (max-width: 900px) {
     .header-Right{
+        display: none;
+    }
+    #headerDropDownMenu-Logo{
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 680px) {
+    .header-nav{
         display: none;
     }
 }

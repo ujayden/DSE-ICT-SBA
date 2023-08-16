@@ -47,6 +47,7 @@ body{
     height: 30px;
     padding: 2px;
     border: 1px solid black;
+    border-radius: 2px;
 }
 #search button{
     height: 36px;
@@ -61,12 +62,11 @@ body{
 #header-Bar{
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
     text-align: left;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    background-color: darkgray;
+    flex-direction: row;    
+    background-color: #64c1f9;
     padding: 0 30px 0 30px;
     justify-content: space-between;
 }
@@ -136,3 +136,18 @@ main{
 }
 /** Start: Header drop-down menu */
 /** The dropdown menu will be active when content in header hidden due to screen size  */
+#headerDropDownMenu-Logo{
+    height: 100%;
+    width: 28px;
+    float: left;
+    margin-right: 2px;
+    object-fit: contain;
+    margin-top: 4px;
+    display: none;
+    cursor: pointer;
+}
+#headerDropDownMenu{
+    display: none;
+    background-color: gainsboro;
+    padding: 5px 30px 5px 30px;
+}

@@ -33,3 +33,11 @@ document.addEventListener('click', function(event) {
     }
 }
 );
+//For drop-down menu of header
+let menu_Header = document.getElementById('headerDropDownMenu');
+
+//Add event listener to the #headerDropDownMenu-Logo
+document.getElementById('headerDropDownMenu-Logo').addEventListener('click', function() {
+    toggleDropDownMenu(menu_Header);
+}
+);

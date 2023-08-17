@@ -1,0 +1,55 @@
+@media screen and (max-width: 1000px) {
+    #header-Logo{
+        display: none;
+    }
+    #searchbox{
+        width: 160px;
+    }
+    .slogan{
+        display: none;
+    }
+    #header-Title h1{
+        margin-top: 0px;
+        margin-left: 10px;
+    }
+    #headerDropDownMenu-NoContent{
+        display: block;
+    }
+}
+@media screen and (max-width: 900px) {
+    .header-Right{
+        display: none;
+    }
+    #headerDropDownMenu-Logo{
+        display: inline-block;
+    }
+    #headerDropDownMenu-NoContent{
+        display: none;
+    }
+    #headerDropDownMenu-User{
+        display: flex;
+    }
+    #headerDropDownMenu-Search{
+        display: flex;
+    }
+    #searchbox{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .header-nav{
+        display: none;
+    }
+    #header-Title h1{
+        text-align: center;
+    }
+    #headerDropDownMenu-Link{
+        display: block;
+    }
+    #searchbox{
+        width: 70%;
+    }
+    #search{
+        width: 100%;
+    }
+}

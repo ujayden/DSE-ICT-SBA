@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/include/home.css">
     <link rel="stylesheet" href="/include/style_responsive.css">
     <!-- Defer can increase web loading time. -->
+    <script src="/include/script.js" defer></script>
     <script src="/include/home.js" defer></script>
 </head>
 <body>
@@ -19,18 +20,29 @@
             <div class="header-Left ">
                 <div id="header-Title">
                     <a href="/index.html"><img src="/include/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <span href="/index.html"><img src="/include/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu"></span>
                     <h1>ICT Master Hub</h1>
                     <p class="slogan">A self learning website for teens.</p>
                 </div>
             </div>
             <nav class="header-nav">
-                <a href="/courses/index.html">Courses</a>
+                <div id="dropdownMenu_Courses">
+                    <span class="dropdownMenu">Courses</span>
+                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
+                        <a href="/course/index.html">Networking</a>
+                        <a href="/course/index.html">Office &amp; Database</a>
+                        <a href="/course/index.html">Programming</a>
+                        <a href="/course/index.html">Web Development &amp; Multimedia</a>
+                        <a href="/course/index.html">More...</a>
+                    </div>
+                </div>
                 <div id="dropdownMenu_ResLibrary">
                     <span class="dropdownMenu">Resources Library</span>
-                    <div class="dropdownContent">
+                    <div id="dropdownMenu_ResLibrary-List" class="dropdownContent">
                         <a href="/library/index.html">Learning Materials</a>
                         <a href="/library/index.html">Interactive Game</a>
                         <a href="/library/index.html">Interactive Simulator</a>
+                        <a href="/library/index.html">More...</a>
                     </div>
                 </div>
                 <a href="/news.html">Latest News</a>
@@ -51,10 +63,48 @@
                         <div id="user">
                             <span>Welcome,</span>
                             <span id="username"></span>
-                            <a href="/login.html" >Login now</a>
+                            <a href="/login.html" id="user-Login">Login now</a>
                             <span id="message-of-the-day"></span>
                         </div>
                     </div>
+            </div>
+        </div>
+        <!-- Display drop-dowp menu when the header does not have enough space -->
+        <div id="headerDropDownMenu">
+            <div id="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                    <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
+                        <a href="/course/index.html">Networking</a>
+                        <a href="/course/index.html">Office &amp; Database</a>
+                        <a href="/course/index.html">Programming</a>
+                        <a href="/course/index.html">Web Development &amp; Multimedia</a>
+                        <a href="/course/index.html">More...</a>
+                    </div>
+                <span id="headerDropDownMenu-Link-ResLibrary" class="headerDropDownMenu-Text">Resources Library <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                    <div id="headerDropDownMenu-Link-ResLibrary-List" class="headerDropDownMenu-Link-List">
+                        <a href="/library/index.html">Learning Materials</a>
+                        <a href="/library/index.html">Interactive Game</a>
+                        <a href="/library/index.html">Interactive Simulator</a>
+                        <a href="/library/index.html">More...</a>
+                    </div>
+                <a href="/news.html" class="headerDropDownMenu-Text">Latest News</a>
+            </div>
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
+                <span id="username"></span>
+                <span id="message-of-the-day"></span>
+                <a href="/login.html" id="user-Login">Login now</a>
+            </div>
+            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
+                <div id="search">
+                    <form action="search.php" method="get">
+                        <input type="text" name="search" placeholder="Search..." id="searchbox">
+                        <button type="submit" name="submit-search">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div id="headerDropDownMenu-NoContent" class="headerDropDownMenu-element">
+                <span>Currently, there is no content here.</span>
+                <button id="headerDropDownMenu-Close">Close menu</button>
             </div>
         </div>
         <!-- Breadcrumns, disable in first page  -->
@@ -79,8 +129,8 @@
     </div>
     <!-- Main Content -->
     <main>
-        <div id="test">Text</div>
-        <section id="latest-news">
+        <div id="test">Text test</div>
+        <section id="introduction">
             
         </section>
 

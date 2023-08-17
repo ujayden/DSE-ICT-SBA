@@ -28,7 +28,7 @@
             <nav class="header-nav">
                 <div id="dropdownMenu_Courses">
                     <span class="dropdownMenu">Courses</span>
-                    <div class="dropdownContent">
+                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
                         <a href="/course/index.html">Networking</a>
                         <a href="/course/index.html">Office &amp; Database</a>
                         <a href="/course/index.html">Programming</a>
@@ -38,7 +38,7 @@
                 </div>
                 <div id="dropdownMenu_ResLibrary">
                     <span class="dropdownMenu">Resources Library</span>
-                    <div class="dropdownContent">
+                    <div id="dropdownMenu_ResLibrary-List" class="dropdownContent">
                         <a href="/library/index.html">Learning Materials</a>
                         <a href="/library/index.html">Interactive Game</a>
                         <a href="/library/index.html">Interactive Simulator</a>
@@ -72,35 +72,39 @@
         <!-- Display drop-dowp menu when the header does not have enough space -->
         <div id="headerDropDownMenu">
             <div id="headerDropDownMenu-Link">
-                <span id="headerDropDownMenu-Link-Courses">Courses</span>
-                    <div class="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                    <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
                         <a href="/course/index.html">Networking</a>
                         <a href="/course/index.html">Office &amp; Database</a>
                         <a href="/course/index.html">Programming</a>
                         <a href="/course/index.html">Web Development &amp; Multimedia</a>
                         <a href="/course/index.html">More...</a>
                     </div>
-                <span id="headerDropDownMenu-Link-ResLibrary">Resources Library</span>
-                    <div class="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-ResLibrary" class="headerDropDownMenu-Text">Resources Library <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                    <div id="headerDropDownMenu-Link-ResLibrary-List" class="headerDropDownMenu-Link-List">
                         <a href="/library/index.html">Learning Materials</a>
                         <a href="/library/index.html">Interactive Game</a>
                         <a href="/library/index.html">Interactive Simulator</a>
                         <a href="/library/index.html">More...</a>
                     </div>
-                <a href="/news.html">Latest News</span>
+                <a href="/news.html" class="headerDropDownMenu-Text">Latest News</a>
             </div>
-            <div id="headerDropDownMenu-User">
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
                 <span id="username"></span>
                 <span id="message-of-the-day"></span>
                 <a href="/login.html" id="user-Login">Login now</a>
             </div>
-            <div id="headerDropDownMenu-Search">
+            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
                 <div id="search">
                     <form action="search.php" method="get">
                         <input type="text" name="search" placeholder="Search..." id="searchbox">
                         <button type="submit" name="submit-search">Search</button>
                     </form>
                 </div>
+            </div>
+            <div id="headerDropDownMenu-NoContent" class="headerDropDownMenu-element">
+                <span>Currently, there is no content here.</span>
+                <button id="headerDropDownMenu-Close">Close menu</button>
             </div>
         </div>
         <!-- Breadcrumns, disable in first page  -->

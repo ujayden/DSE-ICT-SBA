@@ -129,6 +129,13 @@ body{
 }
 #breadcrumbs ul{
     list-style-type: none;
+    margin-top: 0px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+}
+#breadcrumbs{
+    background-color: gainsboro;
 }
 /** End: Breadcrumb */
 main{
@@ -149,5 +156,52 @@ main{
 #headerDropDownMenu{
     display: none;
     background-color: gainsboro;
-    padding: 5px 30px 5px 30px;
+    padding: 5px 0px 5px 0px;
+
+}
+#headerDropDownMenu-Link{
+    color: black;
+    font-weight: bold;
+    margin-top: 6px;
+    display: none;
+}
+.headerDropDownMenu-Link-List{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background-color: aliceblue;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+.headerDropDownMenu-Link-List a{
+    text-decoration: none;
+    color: black;
+    padding: 12px 0 12px 32px;
+}
+.headerDropDownMenu-Text{
+    padding-left: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.headerDropDownMenu-element{
+    margin-left: 20px;
+}
+#headerDropDownMenu-User{
+    display: none;
+}
+#headerDropDownMenu-Search{
+    display: none;
+}
+#headerDropDownMenu-Link-Courses{
+    cursor: pointer;
+}
+#headerDropDownMenu-Link-ResLibrary{
+    cursor: pointer;
+}
+.headerDropDownMenu-Link-Status{
+    display: contents;
 }

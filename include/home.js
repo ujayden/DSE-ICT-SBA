@@ -1,7 +1,6 @@
 'use strict';
 //Function for latest news
 //Refresh the news
-//TODO: Add a function to refresh the news
 let news1 = document.getElementById('News1');
 let news2 = document.getElementById('News2');
 let news3 = document.getElementById('News3');

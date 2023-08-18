@@ -29,8 +29,10 @@ menu_Courses_btn.addEventListener('click', function() {
 //The menu will be hidden when clicking outside the menu.
 document.addEventListener('click', function(event) {
     //If the click is not on the menu, hide the menu.
-    if (!(event.target.matches('#dropdownMenu_ResLibrary *') || event.target.matches('#dropdownMenu_Courses *'))) {
+    if (!(event.target.matches('#dropdownMenu_ResLibrary *'))) {
         menu_ResLibrary.removeAttribute('style');
+    }
+    if (!(event.target.matches('#dropdownMenu_Courses *'))){
         meun_Courses.removeAttribute('style');
     }
 }

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     #header-Logo{
         display: none;
     }
@@ -18,8 +18,11 @@
     #search{
         margin-top: 5px;
     }
+    #headerDropDownMenu{
+        display: none;
+    }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 960px ) {
     .header-Right{
         display: none;
     }
@@ -27,7 +30,7 @@
         display: inline-block;
     }
     #headerDropDownMenu-NoContent{
-        display: none;
+        display: block;
     }
     #headerDropDownMenu-User{
         display: flex;
@@ -38,8 +41,11 @@
     #searchbox{
         width: 300px;
     }
+    #headerDropDownMenu{
+        display: none;
+    }
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 760px ) {
     .header-nav{
         display: none;
     }

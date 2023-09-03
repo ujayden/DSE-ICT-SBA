@@ -1,8 +1,8 @@
 body{
     font-family: sans-serif;
     margin: 0;
-}
 
+}
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
 #header-Title h1{
@@ -12,6 +12,7 @@ body{
 #header-Title p{
     font-weight: normal;
     margin-top: 0;
+    font-size: 12px;
 }
 #header-Logo{
     height: 100%;
@@ -26,15 +27,12 @@ body{
     padding-left: 20px;
     font-size: 90%;
 }
-.header-nav a{
-    margin-right: 20px;
-}
+
 /** Style for item in right-hand-side of header */
 .header-Right {
     display: flex;
     align-items: center;
     margin-left: auto;
-    
 }
 #search{
     margin-bottom: 5px;
@@ -74,6 +72,7 @@ body{
 .header-nav a{
     color: black;
     text-decoration: none;
+    margin-right: 20px;
 }
 
 .header-nav .dropdownContent{
@@ -84,8 +83,8 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
     z-index: 2;
+    min-width: 250px;
 }
-
 .dropdownMenu:hover + .dropdownContent{
     display: block;
 }
@@ -105,6 +104,11 @@ body{
     position: relative;
 }
 #dropdownMenu_Courses{
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+}
+#dropdownMenu_Personal{
     margin-right: 20px;
     display: inline-block;
     position: relative;
@@ -186,6 +190,7 @@ main{
     color: black;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .headerDropDownMenu-element{
     margin-left: 20px;
@@ -196,12 +201,20 @@ main{
 #headerDropDownMenu-Search{
     display: none;
 }
-#headerDropDownMenu-Link-Courses{
-    cursor: pointer;
-}
-#headerDropDownMenu-Link-ResLibrary{
-    cursor: pointer;
-}
 .headerDropDownMenu-Link-Status{
     display: contents;
+}
+/** End: Header drop-down menu */
+/** Start: Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*Height of the footer */
+    height: 100px;
+    background-color: #64c1f9;
+    padding: 4px 20px 8px 20px;
+    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    box-sizing: border-box;
+    display: none;
 }

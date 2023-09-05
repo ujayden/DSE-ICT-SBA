@@ -1,31 +1,44 @@
 body{
     font-family: sans-serif;
     margin: 0;
-
+}
+button{
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    border-radius: 2px;
+    background-color: ghostwhite;
 }
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
 #header-Title h1{
     margin-bottom: 0;
     display: inline-block;
+    font-size: 28px;
+    margin-top: 0;
+    
 }
 #header-Title p{
     font-weight: normal;
     margin-top: 0;
     font-size: 12px;
+    display: none;
+}
+#header-Title{
+    vertical-align: middle;
 }
 #header-Logo{
     height: 100%;
-    width: 60px;
+    width: 36px;
     float: left;
-    margin-right: 20px;
+    margin-right: 8px;
     object-fit: contain;
-    margin-top: 20px;
+    margin-top: 0;
 }
 .header-nav {
     flex-direction: row;
     padding-left: 20px;
-    font-size: 90%;
+    font-size: 16px;
 }
 
 /** Style for item in right-hand-side of header */
@@ -42,19 +55,20 @@ body{
 #searchbox{
     /** Note that width should be reduced to 100px when the screen is small */
     width: 180px;
-    height: 30px;
+    height: 22px;
     padding: 2px;
     border: 1px solid black;
     border-radius: 2px;
+    margin-top: 5px;
 }
 #search button{
-    height: 36px;
+    height: 28px;
 
 }
 #user{
     float: right;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
 }
 /** Style for the header */
 #header-Bar{
@@ -63,10 +77,11 @@ body{
     text-align: left;
     display: flex;
     align-items: center;
-    flex-direction: row;    
-    background-color: #64c1f9;
+    flex-direction: row;
+    background-color: #7ca3d6;
     padding: 0 30px 0 30px;
     justify-content: space-between;
+    border-bottom: 1px solid white;
 }
 /** Style for the menu and dropdown menu */
 .header-nav a{
@@ -78,7 +93,7 @@ body{
 .header-nav .dropdownContent{
     display: none;
     position: absolute;
-    background-color: gainsboro;
+    background-color: rgb(230, 230, 230);
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
@@ -137,9 +152,12 @@ body{
     padding-top: 4px;
     padding-bottom: 8px;
     padding-left: 20px;
+    margin-bottom: 0px;
 }
 #breadcrumbs{
-    background-color: gainsboro;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 /** End: Breadcrumb */
 main{
@@ -153,13 +171,13 @@ main{
     float: left;
     margin-right: 2px;
     object-fit: contain;
-    margin-top: 4px;
+    margin-top: 2px;
     display: none;
     cursor: pointer;
 }
 #headerDropDownMenu{
     display: none;
-    background-color: gainsboro;
+    background-color: rgb(230, 230, 230);
     padding: 5px 0px 5px 0px;
 
 }

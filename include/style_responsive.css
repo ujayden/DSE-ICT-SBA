@@ -22,7 +22,7 @@
         display: none;
     }
 }
-@media screen and (max-width: 960px ) {
+@media screen and (max-width: 970px) {
     .header-Right{
         display: none;
     }
@@ -30,7 +30,7 @@
         display: inline-block;
     }
     #headerDropDownMenu-NoContent{
-        display: block;
+        display: none;
     }
     #headerDropDownMenu-User{
         display: flex;
@@ -45,7 +45,7 @@
         display: none;
     }
 }
-@media screen and (max-width: 760px ) {
+@media screen and (max-width: 770px ) {
     .header-nav{
         display: none;
     }

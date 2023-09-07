@@ -1,0 +1,17 @@
+#backToTop_btn{
+    /**
+    display: none;
+    */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(120, 120, 120, 0.5);
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 18px;
+    padding: 6px;
+}

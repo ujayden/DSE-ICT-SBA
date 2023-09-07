@@ -36,3 +36,15 @@
 #setNewsLoop #newsCount{
     cursor: default;
 }
+@media screen and (max-width: 320px) {
+    #newsLoop{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .newsLoopUnimportant{
+        display: none;
+    }
+}
+#newsLoop h4{
+    font-size: 14px;
+}

@@ -1,6 +1,8 @@
 body{
     font-family: sans-serif;
     margin: 0;
+    position: relative;
+    min-height: 100vh;
 }
 button{
     cursor: pointer;
@@ -94,11 +96,10 @@ button{
     display: none;
     position: absolute;
     background-color: rgb(230, 230, 230);
-    min-width: 100px;
+    min-width: 210px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
     z-index: 2;
-    min-width: 250px;
 }
 .dropdownMenu:hover + .dropdownContent{
     display: block;
@@ -161,7 +162,7 @@ button{
 }
 /** End: Breadcrumb */
 main{
-    margin:20px;
+    margin: 20px;
 }
 /** Start: Header drop-down menu */
 /** The dropdown menu will be active when content in header hidden due to screen size  */
@@ -225,14 +226,39 @@ main{
 /** End: Header drop-down menu */
 /** Start: Footer */
 footer {
-    position: absolute;
     bottom: 0;
     width: 100%;
     /*Height of the footer */
-    height: 100px;
-    background-color: #64c1f9;
+    height: max-content;
+    background-color: #58585b;
     padding: 4px 20px 8px 20px;
     /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
     box-sizing: border-box;
-    display: none;
+    color:white;
+    font-size: 12px;
+}
+#footer-Logo{
+    height: 100%;
+    width: 56px;
+    float: left;
+    margin-right: 8px;
+    object-fit: contain;
+    margin-top: 0;
+}
+#footer-slogan{
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.footer-Title h1{
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+.footer-Text{
+    margin: 0 4px 0 4px;
+}
+#footer-Contact a{
+     color: white;
 }

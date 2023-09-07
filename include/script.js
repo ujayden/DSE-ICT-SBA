@@ -11,12 +11,12 @@ function toggleDropDownMenu(callElm, menuElm) {
         //Update: Change to none to make sure the menu can be run on tablet.
         //menuElm.removeAttribute('style');
         menuElm.style.display = 'none';
-        function handleMouseOver() {
+        function DDM_handleMouseOver() {
             menuElm.removeAttribute('style');
-            callElm.removeEventListener('mouseover', handleMouseOver);
+            callElm.removeEventListener('mouseover', DDM_handleMouseOver);
           }
           
-        callElm.addEventListener('mouseover', handleMouseOver);
+        callElm.addEventListener('mouseover', DDM_handleMouseOver);
         }
 }
 

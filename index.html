@@ -6,23 +6,22 @@
     <!-- Title -->
     <title>ICT Master Hub</title>
     <!-- Load CSS and Script here -->
-    <link rel="stylesheet" href="/include/style.css">
-    <link rel="stylesheet" href="/include/home.css">
-    <link rel="stylesheet" href="/include/style_responsive.css">
-    <link rel="stylesheet" href="/include/style_backtoTop.css">
+    <link rel="stylesheet" href="/include/global/style.css">
+    <link rel="stylesheet" href="/include/styles/home.css">
+    <link rel="stylesheet" href="/include/global/style_responsive.css">
+    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
     <!-- Defer can increase web loading time. -->
-    <script src="/include/script.js" defer></script>
-    <script src="/include/home.js" defer></script>
-    <script src="/include/script_backtoTop.js" defer></script>
-</head>
+    <script src="/include/global/script.js" defer></script>
+    <script src="/include/scripts/home.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
 <body>
     <!-- Header -->
     <header id="header">
         <div id="header-Bar">
             <div class="header-Left ">
                 <div id="header-Title">
-                    <a href="/index.html"><img src="/include/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
-                    <span href="/index.html"><img src="/include/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu"></span>
+                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <span href="/index.html"><img src="/include/global/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu"></span>
                     <h1>ICT Master Hub</h1>
                     <p class="slogan">Your self learning website for DSE ICT Networking.</p>
                 </div>
@@ -31,28 +30,28 @@
                 <div id="dropdownMenu_Courses">
                     <span class="dropdownMenu">Courses</span>
                     <div id="dropdownMenu_Courses-List" class="dropdownContent">
-                        <a href="/course/index.html">Networking Devices</a>
-                        <a href="/course/index.html">OSI model</a>
-                        <a href="/course/index.html">Data Transmission steps</a>
-                        <a href="/course/index.html">More...</a>
+                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/learning/beginner/index.html">Beginner</a>
+                        <a href="/learning/basic/index.html">Basic</a>
+                        <a href="/learning/advanced/index.html">Advanced</a>
+                        <a href="/learning/expert/index.html">Expert</a>
                     </div>
                 </div>
                 <div id="dropdownMenu_ResLibrary">
                     <span class="dropdownMenu">Resources Library</span>
                     <div id="dropdownMenu_ResLibrary-List" class="dropdownContent">
-                        <a href="/library/index.html">Learning Materials</a>
-                        <a href="/library/index.html">Interactive Game</a>
-                        <a href="/library/index.html">Interactive Simulator</a>
+                        <a href="/library/index.html">By skill level</a>
+                        <a href="/library/index.html">By learning category</a>
+                        <a href="/library/index.html">By types</a>
                         <a href="/library/index.html">More...</a>
                     </div>
                 </div>
                 <div id="dropdownMenu_Personal">
                     <span class="dropdownMenu">Profile</span>
                     <div id="dropdownMenu_Personal-List" class="dropdownContent">
-                        <a href="/personal/index.html">My Profile</a>
-                        <a href="/personal/index.html">My Report</a>
-                        <a href="/personal/index.html">Settings</a>
-                        <a href="/personal/index.html">More...</a>
+                        <a href="/profile/profile.html">My Profile</a>
+                        <a href="/profile/report.html">My Report</a>
+                        <a href="/profile/settings.html">Settings</a>
                     </div>
                 </div>
                 <a href="/news.html">Latest News</a>
@@ -84,25 +83,24 @@
             <div id="headerDropDownMenu-Link">
                 <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
-                    <a href="/course/index.html">Networking</a>
-                    <a href="/course/index.html">Office &amp; Database</a>
-                    <a href="/course/index.html">Programming</a>
-                    <a href="/course/index.html">Web Development &amp; Multimedia</a>
-                    <a href="/course/index.html">More...</a>
+                    <a href="/learning/index.html">Dashboard</a>
+                    <a href="/learning/beginner/index.html">Beginner</a>
+                    <a href="/learning/basic/index.html">Basic</a>
+                    <a href="/learning/advanced/index.html">Advanced</a>
+                    <a href="/learning/expert/index.html">Expert</a>
                 </div>
                 <span id="headerDropDownMenu-Link-ResLibrary" class="headerDropDownMenu-Text">Resources Library <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-ResLibrary-List" class="headerDropDownMenu-Link-List">
-                    <a href="/library/index.html">Learning Materials</a>
-                    <a href="/library/index.html">Interactive Game</a>
-                    <a href="/library/index.html">Interactive Simulator</a>
+                    <a href="/library/index.html">By skill level</a>
+                    <a href="/library/index.html">By learning category</a>
+                    <a href="/library/index.html">By types</a>
                     <a href="/library/index.html">More...</a>
                 </div>
                 <span id="headerDropDownMenu-Link-Personal" class="headerDropDownMenu-Text">Profile <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-Personal-List" class="headerDropDownMenu-Link-List">
-                    <a href="/personal/index.html">My Profile</a>
-                    <a href="/personal/index.html">My Report</a>
-                    <a href="/personal/index.html">Settings</a>
-                    <a href="/personal/index.html">More...</a>
+                    <a href="/profile/profile.html">My Profile</a>
+                    <a href="/profile/report.html">My Report</a>
+                    <a href="/profile/settings.html">Settings</a>
                 </div>
                 <a href="/news.html" class="headerDropDownMenu-Text">Latest News</a>
             </div>
@@ -155,21 +153,41 @@
 
     <!-- Footer -->
     <footer>
-        <div id="footer-Container">
-            <div id="footer-Left">
-                    <img id="footer-Logo" src="/include/logo.png" alt="Logo of ICT Master">
-                    <div class="footer-Title">
-                        <h1>ICT Master Hub</h1>
-                        <p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
-                    </div>
-
-                <div id="footer-Contact" class="footer-Text">
-                    <h3>Contact Us</h3>
-                    <p class="footer-Text">Email:
-                        <a href="mailto:admin@ictmasterhub.com" id="footer-Email">admin@ictmasterhub.com</a>
-                    </p>
+        <div id="footer-Title">
+            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
+        </div>
+        <div class="footer-Container">
+            <div class="footer-Left_Link">
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title">Courses</span>
+                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
+                    <a class="footer-Link" href="/learning/beginner/index.html">Beginner</a>
+                    <a class="footer-Link" href="/learning/basic/index.html">Basic</a>
+                    <a class="footer-Link" href="/learning/advanced/index.html">Advanced</a>
+                    <a class="footer-Link" href="/learning/expert/index.html">Expert</a>
+                </div>
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title">Profile</span>
+                    <a class="footer-Link" href="/personal/index.html">My Profile</a>
+                    <a class="footer-Link" href="/personal/index.html">My Report</a>
+                    <a class="footer-Link" href="/personal/index.html">Settings</a>
                 </div>
             </div>
+        <div class="footer-Right-Link footer-Link-main">
+            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
+            <a class="footer-Link-Title-Right" href="/news/index.html">Latest News</a>
+            <a class="footer-Link-Title-Right" href="/library.html">Resources Library</a>
+            <a class="footer-Link-Title-Right" href="/chatbot.html">Chatbot</a>
+            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
+        </div>
+
+    </div>
+    <div class="footer-Bottom-Link">
+        <span class="footer-Link"><span id="lang-Switch-Eng" class="lang-switch-btn">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn">中文</span></span>
+        <a class="footer-Link" href="about.html">About Us</a>
+        <a class="footer-Link" href="about.html">Contact Us</a>
+        <span class="footer-Link">@2023 ICT Master Hub</span>
+    </div>
     </footer>
     <button id="backToTop_btn">&#9650;</button>
 </body>

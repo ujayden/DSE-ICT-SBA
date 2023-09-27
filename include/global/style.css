@@ -237,28 +237,23 @@ footer {
     color:white;
     font-size: 12px;
 }
-#footer-Logo{
-    height: 100%;
-    width: 56px;
-    float: left;
-    margin-right: 8px;
-    object-fit: contain;
-    margin-top: 0;
+#footer-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
 }
-#footer-slogan{
-    font-size: 12px;
-    font-weight: normal;
-    margin-top: 0;
-    margin-bottom: 0;
-    display: inline-block;
+#footer-Title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
-.footer-Title h1{
-    font-size: 28px;
-    margin-bottom: 4px;
+#footer-Title h2{
+    margin: 0px;
 }
-.footer-Text{
-    margin: 0 4px 0 4px;
-}
-#footer-Contact a{
-     color: white;
+#footer-Title p{
+    margin: 0px;
+    margin-left: 8px;
 }

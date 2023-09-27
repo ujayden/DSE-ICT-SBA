@@ -81,7 +81,7 @@ button{
     align-items: center;
     flex-direction: row;
     background-color: #7ca3d6;
-    padding: 0 30px 0 30px;
+    padding: 0 30px 0 20px;
     justify-content: space-between;
     border-bottom: 1px solid white;
 }
@@ -230,12 +230,12 @@ footer {
     width: 100%;
     /*Height of the footer */
     height: max-content;
-    background-color: #58585b;
-    padding: 4px 20px 8px 20px;
+    padding: 0px 0px 8px 0px;
     /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
     box-sizing: border-box;
     color:white;
     font-size: 12px;
+    background-color: #989898;
 }
 #footer-Container{
     display: flex;
@@ -247,13 +247,69 @@ footer {
 #footer-Title{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
+    background-color: #58585b;
+    height: 30px;
+    align-items: center;
 }
 #footer-Title h2{
     margin: 0px;
+    margin-left: 20px;
 }
 #footer-Title p{
     margin: 0px;
     margin-left: 8px;
+    padding-left: 20px;
+}
+#footer-Title a{
+    text-decoration: none;
+    color: white;
+}
+/** Start: Footer Container*/
+/** Explanation: The flex, inline-flex are used to make them work */
+.footer-Container{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer-Link-main{
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.footer-Right-Link{
+    margin-left: auto;
+    text-align: right;
+}
+/** End: Footer Container*/
+.footer-Link-Title{
+    color: white;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-Link{
+    color: rgb(240, 240, 240);
+    margin-top: 2px;
+    text-decoration: none;
+}
+.footer-Link:hover{
+    color: rgb(200, 200, 200);
+}
+.footer-Link-Title-Right{
+    color: rgb(240, 240, 240);
+    margin-top: 2px;
+    margin-right: 20px;
+    margin-bottom: auto;
+}
+.footer-Bottom-Link{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.lang-switch-btn{
+    cursor: pointer;
 }

@@ -14,6 +14,7 @@ button{
 #chatbot-container{
     background-color: grey;
     width: 100%;
+    min-height: 100vh;
 }
 #chatbot-Logo{
     height: 100%;
@@ -46,11 +47,13 @@ header h1{
     background-color: white;
     margin-left: 10px;
     margin-right: 10px;
+    resize: vertical;
 }
 .chatbot-input-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 
 }
 #chatbot-input{
@@ -64,5 +67,78 @@ header h1{
 #chatbot-send-btn{
     height: 28px;
     margin: 10px;
-    
+    width: 20%;
+}
+
+/* Start: Chat Bubble */
+.chatbot-chat-message{
+    width: 90%;
+    margin: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+.chatbot-chat-message-text{
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+}
+.chatbot-chat-message-server-comm{
+    background-color: rgb(230, 230, 230);
+}
+.chatbot-chat-message-server-comm::before {
+    /* Reference: https://projects.verou.me/bubbly/ */
+    /* Trigangle */
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+    border: 18px solid transparent;
+	border-right-color: rgb(230, 230, 230);
+	border-left: 0;
+	margin-top: -18px;
+	margin-left: -9px;
+    /*
+        Alert! #7bEq
+        In the reference, the 'px' of border, margin-top and margin-left are same, (*-1 for margin-top).
+        However, this cause some small display problem, sometimes user may see a white line at the right of the triangle.
+        So, only border and margin-top are same, margin-left should be different.
+        And, DO NOT change the order of rule.
+    */
+}
+.chatbot-chat-message-client-comm{
+    background-color: rgb(152, 215, 199);
+    margin-left: auto;
+}
+.chatbot-chat-message-client-comm::after{
+    /* Reference: https://projects.verou.me/bubbly/ */
+    /* Trigangle */
+    content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+    border: 18px solid transparent;
+	border-left-color: rgb(152, 215, 199);
+	border-right: 0;
+	margin-top: -18px;
+	margin-right: -9px;
+    /* Use search to find the note for this rule: #7bEq */
+}
+.chatbot-chat-message-client-comm p{
+    text-align: right;
+}
+#chatbot-chat-suggest p{
+    text-align: right;
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+}
+#chatbot-chat-suggest p{
+    color: rgb(86, 83, 100);
 }

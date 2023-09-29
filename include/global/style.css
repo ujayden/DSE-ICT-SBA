@@ -1,40 +1,53 @@
 body{
     font-family: sans-serif;
     margin: 0;
+    position: relative;
+    min-height: 100vh;
 }
-
+button{
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    border-radius: 2px;
+    background-color: ghostwhite;
+}
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
 #header-Title h1{
     margin-bottom: 0;
     display: inline-block;
+    font-size: 28px;
+    margin-top: 0;
+    
 }
 #header-Title p{
     font-weight: normal;
     margin-top: 0;
+    font-size: 12px;
+    display: none;
+}
+#header-Title{
+    vertical-align: middle;
 }
 #header-Logo{
     height: 100%;
-    width: 60px;
+    width: 36px;
     float: left;
-    margin-right: 20px;
+    margin-right: 8px;
     object-fit: contain;
-    margin-top: 20px;
+    margin-top: 0;
 }
 .header-nav {
     flex-direction: row;
     padding-left: 20px;
-    font-size: 90%;
+    font-size: 16px;
 }
-.header-nav a{
-    margin-right: 20px;
-}
+
 /** Style for item in right-hand-side of header */
 .header-Right {
     display: flex;
     align-items: center;
     margin-left: auto;
-    
 }
 #search{
     margin-bottom: 5px;
@@ -44,19 +57,20 @@ body{
 #searchbox{
     /** Note that width should be reduced to 100px when the screen is small */
     width: 180px;
-    height: 30px;
+    height: 22px;
     padding: 2px;
     border: 1px solid black;
     border-radius: 2px;
+    margin-top: 5px;
 }
 #search button{
-    height: 36px;
+    height: 28px;
 
 }
 #user{
     float: right;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
 }
 /** Style for the header */
 #header-Bar{
@@ -65,27 +79,28 @@ body{
     text-align: left;
     display: flex;
     align-items: center;
-    flex-direction: row;    
-    background-color: #64c1f9;
-    padding: 0 30px 0 30px;
+    flex-direction: row;
+    background-color: #7ca3d6;
+    padding: 0 30px 0 20px;
     justify-content: space-between;
+    border-bottom: 1px solid white;
 }
 /** Style for the menu and dropdown menu */
 .header-nav a{
     color: black;
     text-decoration: none;
+    margin-right: 20px;
 }
 
 .header-nav .dropdownContent{
     display: none;
     position: absolute;
-    background-color: gainsboro;
-    min-width: 100px;
+    background-color: rgb(230, 230, 230);
+    min-width: 210px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
     z-index: 2;
 }
-
 .dropdownMenu:hover + .dropdownContent{
     display: block;
 }
@@ -105,6 +120,11 @@ body{
     position: relative;
 }
 #dropdownMenu_Courses{
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+}
+#dropdownMenu_Personal{
     margin-right: 20px;
     display: inline-block;
     position: relative;
@@ -133,13 +153,16 @@ body{
     padding-top: 4px;
     padding-bottom: 8px;
     padding-left: 20px;
+    margin-bottom: 0px;
 }
 #breadcrumbs{
-    background-color: gainsboro;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 /** End: Breadcrumb */
 main{
-    margin:20px;
+    margin: 20px;
 }
 /** Start: Header drop-down menu */
 /** The dropdown menu will be active when content in header hidden due to screen size  */
@@ -149,13 +172,13 @@ main{
     float: left;
     margin-right: 2px;
     object-fit: contain;
-    margin-top: 4px;
+    margin-top: 2px;
     display: none;
     cursor: pointer;
 }
 #headerDropDownMenu{
     display: none;
-    background-color: gainsboro;
+    background-color: rgb(230, 230, 230);
     padding: 5px 0px 5px 0px;
 
 }
@@ -186,6 +209,7 @@ main{
     color: black;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .headerDropDownMenu-element{
     margin-left: 20px;
@@ -196,12 +220,96 @@ main{
 #headerDropDownMenu-Search{
     display: none;
 }
-#headerDropDownMenu-Link-Courses{
-    cursor: pointer;
-}
-#headerDropDownMenu-Link-ResLibrary{
-    cursor: pointer;
-}
 .headerDropDownMenu-Link-Status{
     display: contents;
+}
+/** End: Header drop-down menu */
+/** Start: Footer */
+footer {
+    bottom: 0;
+    width: 100%;
+    /*Height of the footer */
+    height: max-content;
+    padding: 0px 0px 8px 0px;
+    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    box-sizing: border-box;
+    color:white;
+    font-size: 12px;
+    background-color: #989898;
+}
+#footer-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+#footer-Title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #58585b;
+    height: 30px;
+    align-items: center;
+}
+#footer-Title h2{
+    margin: 0px;
+    margin-left: 20px;
+}
+#footer-Title p{
+    margin: 0px;
+    margin-left: 8px;
+    padding-left: 20px;
+}
+#footer-Title a{
+    text-decoration: none;
+    color: white;
+}
+/** Start: Footer Container*/
+/** Explanation: The flex, inline-flex are used to make them work */
+.footer-Container{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer-Link-main{
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.footer-Right-Link{
+    margin-left: auto;
+    text-align: right;
+}
+/** End: Footer Container*/
+.footer-Link-Title{
+    color: white;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-Link{
+    color: rgb(240, 240, 240);
+    margin-top: 2px;
+    text-decoration: none;
+}
+.footer-Link:hover{
+    color: rgb(200, 200, 200);
+}
+.footer-Link-Title-Right{
+    color: rgb(240, 240, 240);
+    margin-top: 2px;
+    margin-right: 20px;
+    margin-bottom: auto;
+}
+.footer-Bottom-Link{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.lang-switch-btn{
+    cursor: pointer;
 }

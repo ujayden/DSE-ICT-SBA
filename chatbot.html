@@ -8,7 +8,7 @@
     <!-- Load CSS and Script here -->
     <link rel="stylesheet" href="/include/styles/chatbot.css">
     <!-- Defer can reduce web loading time. -->
-    <script defer src="/include/scripts/chatbot.js"></script>
+    <script defer src="/include/scripts/chatbot.js" defer></script>
 </head>
 <body>
     <div id="chatbot-container">
@@ -21,22 +21,16 @@
             <div id="chatbot-chat-container">
                 <!-- Reference of Chatbot Bubble can be check in Chatbot CSS-->
                 <div id="chatbot-real-chat">
-                    <div id="chatbot-chat-message-helloworld" class="chatbot-chat-message-server-comm chatbot-chat-message">
+                    <div id="chatbot-chat-message-0" class="chatbot-chat-message-server-comm chatbot-chat-message">
                         <p class="chatbot-chat-message-text">Hello! I can give you hints and solving steps if you stuck on a question, or guide you travel on different page!</p>
-                    </div>
-                    <div id="chatbot-chat-message" class="chatbot-chat-message-client-comm chatbot-chat-message">
-                        <p class="chatbot-chat-message-text">This is message from client. Lorem ipsum dolor sit amet, brute praesent ex quo, sea malis commune periculis ei. Ne veri atqui mel. Saepe timeam pro te, movet primis splendide nec eu. Mei consul periculis definiebas cu, mea ad aeque nonumy veritus. Te nam facilis recusabo inimicus, legere voluptatum inciderint vis cu, te dictas omittantur his. Eos ei partem putant facilisis, vix possim ponderum ex, cu alia inimicus explicari usu. Est eu repudiare temporibus definitiones. Id est rebum moderatius reprimique, eu feugait accumsan tractatos sea. Te virtute voluptaria disputando has. Ius quod placerat incorrupte ex, sint oblique vim eu.</p>
-                    </div>
-                    <div id="chatbot-chat-message" class="chatbot-chat-message-server-comm chatbot-chat-message">
-                        <p class="chatbot-chat-message-text">This is message from server. Lorem ipsum dolor sit amet, brute praesent ex quo, sea malis commune periculis ei. Ne veri atqui mel. Saepe timeam pro te, movet primis splendide nec eu. Mei consul periculis definiebas cu, mea ad aeque nonumy veritus. Te nam facilis recusabo inimicus, legere voluptatum inciderint vis cu, te dictas omittantur his. Eos ei partem putant facilisis, vix possim ponderum ex, cu alia inimicus explicari usu. Est eu repudiare temporibus definitiones. Id est rebum moderatius reprimique, eu feugait accumsan tractatos sea. Te virtute voluptaria disputando has. Ius quod placerat incorrupte ex, sint oblique vim eu.</p>
                     </div>
                 </div>
                 <div id="chatbot-chat-wait" class="chatbot-chat-message-server-comm chatbot-chat-message">
                     <p class="chatbot-chat-message-text">Please wait...</p>
                 </div>
                 <div id="chatbot-chat-suggest" class="chatbot-chat-message-client-comm chatbot-chat-message">
-                    <p class="chatbot-chat-message-text">Get help for question</p>
-                    <p class="chatbot-chat-message-text">Get help for finding page</p>
+                    <p class="chatbot-chat-message-text"><span id="suggest1">Get help for question</span></p>
+                    <p class="chatbot-chat-message-text"><span id="suggest2">Get help for finding page</span></p>
                 </div>
             </div>
             <div class="chatbot-input-container">

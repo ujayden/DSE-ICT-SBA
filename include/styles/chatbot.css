@@ -12,9 +12,12 @@ button{
     background-color: ghostwhite;
 }
 #chatbot-container{
-    background-color: grey;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #7ca3d6;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 #chatbot-Logo{
     height: 100%;
@@ -41,20 +44,20 @@ header h1{
     text-align: right;
 }
 #chatbot-chat-container{
-    height: 400px;
+    height: auto;
     overflow-y: scroll;
     padding: 10px;
     background-color: white;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 4px;
     resize: vertical;
+    background-color: #49607e;
 }
 .chatbot-input-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-
+    align-self: baseline;
 }
 #chatbot-input{
     height: 24px;
@@ -86,7 +89,7 @@ header h1{
     text-align: left;
 }
 .chatbot-chat-message-server-comm{
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(216,218,221);
 }
 .chatbot-chat-message-server-comm::before {
     /* Reference: https://projects.verou.me/bubbly/ */
@@ -98,7 +101,7 @@ header h1{
 	width: 0;
 	height: 0;
     border: 18px solid transparent;
-	border-right-color: rgb(230, 230, 230);
+	border-right-color: rgb(216,218,221);
 	border-left: 0;
 	margin-top: -18px;
 	margin-left: -9px;
@@ -141,4 +144,7 @@ header h1{
 }
 #chatbot-chat-suggest p{
     color: rgb(86, 83, 100);
+}
+#chatbot-chat-wait{
+    display: none;
 }

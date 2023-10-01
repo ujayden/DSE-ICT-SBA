@@ -4,6 +4,9 @@ body{
     position: relative;
     min-height: 100vh;
 }
+html, body{
+    scroll-behavior: smooth !important;
+}
 button{
     cursor: pointer;
     border: 1px solid black;

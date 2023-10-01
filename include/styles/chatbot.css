@@ -15,6 +15,9 @@ button{
     background-color: #7ca3d6;
     width: 100%;
 }
+#chatbot-real-chat{
+    height: max-content;
+}
 #chatbot-Logo{
     height: 100%;
     width: 36px;

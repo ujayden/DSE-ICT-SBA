@@ -115,14 +115,6 @@ let chatSendButton = document.getElementById("chatbot-send-btn");
 console.log(chatSendButton);
 chatSendButton.addEventListener("click", clickSendButton);
 chatInput.addEventListener("keydown", pressKeyBoard);
-updateChat("1", "client")
-updateChat("2", "server")
-updateChat("3", "client")
-updateChat("4", "server")
-updateChat("5", "client")
-updateChat("6", "server")
-updateChat("7", "client")
-updateChat("8", "server")
 
 let chatbotCloseButton = document.getElementById("chatbot-close-btn");
 function closeChatbot() {

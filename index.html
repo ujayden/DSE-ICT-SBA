@@ -21,15 +21,15 @@
         <div id="header-Bar">
             <div class="header-Left ">
                 <div id="header-Title">
+                    <span><img src="/include/global/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
                     <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
-                    <span href="/index.html"><img src="/include/global/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu"></span>
-                    <h1>ICT Master Hub</h1>
+                    <h1 tabindex="0">ICT Master Hub</h1>
                     <p class="slogan">Your self learning website for DSE ICT Networking.</p>
                 </div>
             </div>
             <nav class="header-nav">
                 <div id="dropdownMenu_Courses">
-                    <span class="dropdownMenu">Courses</span>
+                    <span class="dropdownMenu" tabindex="0">Courses</span>
                     <div id="dropdownMenu_Courses-List" class="dropdownContent">
                         <a href="/learning/index.html">Dashboard</a>
                         <a href="/learning/beginner/index.html">Beginner</a>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div id="dropdownMenu_ResLibrary">
-                    <span class="dropdownMenu">Resources Library</span>
+                    <span class="dropdownMenu" tabindex="0">Resources Library</span>
                     <div id="dropdownMenu_ResLibrary-List" class="dropdownContent">
                         <a href="/library/index.html">By skill level</a>
                         <a href="/library/index.html">By learning category</a>
@@ -47,7 +47,7 @@
                         <a href="/library/index.html">More...</a>
                     </div>
                 </div>
-                <div id="dropdownMenu_Personal">
+                <div id="dropdownMenu_Personal" tabindex="0">
                     <span class="dropdownMenu">Profile</span>
                     <div id="dropdownMenu_Personal-List" class="dropdownContent">
                         <a href="/profile/profile.html">My Profile</a>
@@ -61,66 +61,53 @@
                     <div id="header-Search">
                         <!-- Search -->
                         <div id="search">
-                            <form action="search.php" method="get">
+                            <form action="search.php" method="get" id="searchForm">
                                 <input type="text" name="search" placeholder="Search..." id="searchbox">
-                                <button type="submit" name="submit-search">Search</button>
                             </form>
-                        </div>
-                        <!-- Decoration. Horizion separator -->
-                        <!-- User -->
-                        <!-- If login, display username here and a logout button-->
-                        <!-- If not login, display a login button -->
-                        <div id="user">
-                            <span>Welcome,</span>
-                            <span id="username"></span>
-                            <a href="/login.html" id="user-Login">Login now</a>
-                            <span id="message-of-the-day"></span>
                         </div>
                     </div>
             </div>
         </div>
         <!-- Display drop-dowp menu when the header does not have enough space -->
-        <div id="headerDropDownMenu">
+        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
+        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
+        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
             <div id="headerDropDownMenu-Link">
-                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text" tabindex="-1">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
-                    <a href="/learning/index.html">Dashboard</a>
-                    <a href="/learning/beginner/index.html">Beginner</a>
-                    <a href="/learning/basic/index.html">Basic</a>
-                    <a href="/learning/advanced/index.html">Advanced</a>
-                    <a href="/learning/expert/index.html">Expert</a>
+                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
+                    <a href="/learning/beginner/index.html" tabindex="-1">Beginner</a>
+                    <a href="/learning/basic/index.html" tabindex="-1">Basic</a>
+                    <a href="/learning/advanced/index.html" tabindex="-1">Advanced</a>
+                    <a href="/learning/expert/index.html" tabindex="-1">Expert</a>
                 </div>
-                <span id="headerDropDownMenu-Link-ResLibrary" class="headerDropDownMenu-Text">Resources Library <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-ResLibrary" class="headerDropDownMenu-Text" tabindex="-1">Resources Library <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-ResLibrary-List" class="headerDropDownMenu-Link-List">
-                    <a href="/library/index.html">By skill level</a>
-                    <a href="/library/index.html">By learning category</a>
-                    <a href="/library/index.html">By types</a>
-                    <a href="/library/index.html">More...</a>
+                    <a href="/library/index.html" tabindex="-1">By skill level</a>
+                    <a href="/library/index.html" tabindex="-1">By learning category</a>
+                    <a href="/library/index.html" tabindex="-1">By types</a>
+                    <a href="/library/index.html" tabindex="-1">More...</a>
                 </div>
-                <span id="headerDropDownMenu-Link-Personal" class="headerDropDownMenu-Text">Profile <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-Personal" class="headerDropDownMenu-Text" tabindex="-1">Profile <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-Personal-List" class="headerDropDownMenu-Link-List">
-                    <a href="/profile/profile.html">My Profile</a>
-                    <a href="/profile/report.html">My Report</a>
-                    <a href="/profile/settings.html">Settings</a>
+                    <a href="/profile/profile.html" tabindex="-1">My Profile</a>
+                    <a href="/profile/report.html" tabindex="-1">My Report</a>
+                    <a href="/profile/settings.html" tabindex="-1">Settings</a>
                 </div>
-                <a href="/news.html" class="headerDropDownMenu-Text">Latest News</a>
-            </div>
-            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
-                <span id="username"></span>
-                <span id="message-of-the-day"></span>
-                <a href="/login.html" id="user-Login">Login now</a>
+                <a href="/news.html" class="headerDropDownMenu-Text" tabindex="-1">Latest News</a>
             </div>
             <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
                 <div id="search">
-                    <form action="search.php" method="get">
-                        <input type="text" name="search" placeholder="Search Something" id="searchbox">
-                        <button type="submit" name="submit-search">Search</button>
+                    <form action="search.php" method="get" id="searchForm">
+                        <input type="text" name="search" placeholder="Search Something" id="searchbox" tabindex="-1">
                     </form>
                 </div>
             </div>
-            <div id="headerDropDownMenu-NoContent" class="headerDropDownMenu-element">
-                <span>Currently, there is no content here.</span>
-                <button id="headerDropDownMenu-Close">Close menu</button>
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
+                <span>Welcome! </span>
+                <span id="username"></span>
+                <span id="message-of-the-day"></span>
+                <a href="/login.html" id="user-Login" tabindex="-1">Login now</a>
             </div>
         </div>
         <!-- Breadcrumns, disable in first page  -->
@@ -130,17 +117,17 @@
                 <li><a href="index.html">Home</a></li>
                 <!-- Test Only -->
                 <li><a href="/library/index.html">Resource Library</a></li>
-                <li><span>Courses</span></li>
+                <li><span tabindex="0" id="breadcrumbs-Cureent-Page">Courses</span></li>
             </ul>
         </nav>
     </header>
     <!-- Latest news -->
     <div id="newsLoop">
-        <h4>Latest News <div id="setNewsLoop"><span id="newsCount" class="newsLoopUnimportant">1/3</span><span id="newsLoopBack" class="newsLoopUnimportant">&lt;</span><span id="newsLoopNext" class="newsLoopUnimportant">&gt;</span><span id="newsLoopPause" class="newsLoopUnimportant">Pause</span><span id="newsLoopClose">x</span></div></h4>
+        <h4><span tabindex="0">Latest News</span><div id="setNewsLoop"><span id="newsCount" class="newsLoopUnimportant">1/3</span><span id="newsLoopBack" class="newsLoopUnimportant" aria-label="Back to previous News button" tabindex="0">&lt;</span><span id="newsLoopNext" class="newsLoopUnimportant" tabindex="0" aria-label="Go to next news button">&gt;</span><span id="newsLoopPause" class="newsLoopUnimportant" tabindex="0" aria-label="Stop refresh news">Pause</span><span id="newsLoopClose" tabindex="0" aria-label="Close Latest News Banner">x</span></div></h4>
         <div class="newsLoop-Container">
-            <p id="News1">Hello</p>
-            <p id="News2" hidden>World</p>
-            <p id="News3" hidden>!</p>
+            <p id="News1" tabindex="0">Hello</p>
+            <p id="News2" hidden tabindex="0">World</p>
+            <p id="News3" hidden tabindex="0">!</p>
         </div>
     </div>
     <!-- Main Content -->
@@ -154,13 +141,13 @@
 
     <!-- Footer -->
     <footer>
-        <div id="footer-Title">
+        <div id="footer-Title"  tabindex="0">
             <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
         </div>
         <div class="footer-Container">
             <div class="footer-Left_Link">
                 <div class="footer-Link-main">
-                    <span class="footer-Link-Title">Courses</span>
+                    <span class="footer-Link-Title" tabindex="0">Courses</span>
                     <a class="footer-Link" href="/learning/index.html">Dashboard</a>
                     <a class="footer-Link" href="/learning/beginner/index.html">Beginner</a>
                     <a class="footer-Link" href="/learning/basic/index.html">Basic</a>
@@ -168,13 +155,13 @@
                     <a class="footer-Link" href="/learning/expert/index.html">Expert</a>
                 </div>
                 <div class="footer-Link-main">
-                    <span class="footer-Link-Title">Profile</span>
+                    <span class="footer-Link-Title" tabindex="0">Profile</span>
                     <a class="footer-Link" href="/personal/index.html">My Profile</a>
                     <a class="footer-Link" href="/personal/index.html">My Report</a>
                     <a class="footer-Link" href="/personal/index.html">Settings</a>
                 </div>
             </div>
-        <div class="footer-Right-Link footer-Link-main">
+        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
             <a class="footer-Link-Title-Right" href="/index.html">Home</a>
             <a class="footer-Link-Title-Right" href="/news/index.html">Latest News</a>
             <a class="footer-Link-Title-Right" href="/library.html">Resources Library</a>
@@ -184,12 +171,12 @@
 
     </div>
     <div class="footer-Bottom-Link">
-        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link">中文</span></span>
+        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
         <a class="footer-Link" href="about.html">About Us</a>
         <a class="footer-Link" href="about.html">Contact Us</a>
-        <span class="footer-Link">@2023 ICT Master Hub</span>
+        <span class="footer-Link" tabindex="0">@2023 ICT Master Hub</span>
     </div>
     </footer>
-    <button id="backToTop_btn">&#9650;</button>
+    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
 </body>
 </html>

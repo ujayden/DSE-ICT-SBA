@@ -53,7 +53,7 @@ function updateChat(chatmessage, chatfrom) {
         behavior: "smooth"
     });}
 
-/* The feature is abandoned, because there is not enough time to implement it.
+/* The feature is abandoned, because there is not enough time to write it.
 function updateClientSuggestAction(action, n, command) {
 
 }

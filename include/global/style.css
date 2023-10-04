@@ -21,7 +21,6 @@ button{
     display: inline-block;
     font-size: 28px;
     margin-top: 0;
-    
 }
 #header-Title p{
     font-weight: normal;
@@ -64,11 +63,11 @@ button{
     padding: 2px;
     border: 1px solid black;
     border-radius: 2px;
-    margin-top: 5px;
+    background: rgb(244, 244, 244) url(/include/global/search.svg) no-repeat  5px 5px;
+    padding: 2px 4px 2px 40px;
 }
 #search button{
-    height: 28px;
-
+    height: 26px;
 }
 #user{
     float: right;
@@ -92,7 +91,6 @@ button{
 .header-nav a{
     color: black;
     text-decoration: none;
-    margin-right: 20px;
 }
 
 .header-nav .dropdownContent{
@@ -135,6 +133,24 @@ button{
 .dropdownMenu{
     cursor: pointer;
 }
+#searchForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 5px;
+}
+.search-btn-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+#searchForm button[type="submit"]{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
 /** End: Global Header */
 /** Copyright @uncle-jayden, licensed under CC BY-NC-ND 4.0. */
 /** Start: Breadcrumb */
@@ -176,14 +192,21 @@ main{
     margin-right: 2px;
     object-fit: contain;
     margin-top: 2px;
-    display: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
-#headerDropDownMenu{
-    display: none;
+#headerDropDownMenu{    
+    width: 100%;
+    z-index: 1;
     background-color: rgb(230, 230, 230);
-    padding: 5px 0px 5px 0px;
-
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.headerDDM-open-vertical {
+    max-height: 1000px;
+}
+.headerDDM-close-vertical {
+    max-height: 0;
 }
 #headerDropDownMenu-Link{
     color: black;
@@ -207,18 +230,20 @@ main{
 }
 .headerDropDownMenu-Text{
     padding-left: 20px;
-    margin-bottom: 20px;
     text-decoration: none;
     color: black;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .headerDropDownMenu-element{
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 #headerDropDownMenu-User{
-    display: none;
+    display: flow-root;
 }
 #headerDropDownMenu-Search{
     display: none;
@@ -227,6 +252,13 @@ main{
     display: contents;
 }
 /** End: Header drop-down menu */
+/** Start: Animation-Global */
+.anim-close-horizontal {
+    width: 0;
+}
+
+/** End: Animation-Global */
+
 /** Start: Footer */
 footer {
     bottom: 0;

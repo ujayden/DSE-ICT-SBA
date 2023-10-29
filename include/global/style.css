@@ -17,10 +17,11 @@ button{
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
 #header-Title h1{
-    margin-bottom: 0;
-    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    margin-bottom: auto;
     font-size: 28px;
-    margin-top: 0;
+    margin-top: auto;
+    font-weight: 500;
 }
 #header-Title p{
     font-weight: normal;
@@ -29,6 +30,9 @@ button{
     display: none;
 }
 #header-Title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     vertical-align: middle;
 }
 #header-Logo{
@@ -40,6 +44,8 @@ button{
     margin-top: 0;
 }
 .header-nav {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
     flex-direction: row;
     padding-left: 20px;
     font-size: 16px;
@@ -82,10 +88,12 @@ button{
     display: flex;
     align-items: center;
     flex-direction: row;
-    background-color: #7ca3d6;
+    background-color: white;
     padding: 0 30px 0 20px;
     justify-content: space-between;
     border-bottom: 1px solid white;
+    height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 /** Style for the menu and dropdown menu */
 .header-nav a{
@@ -96,42 +104,70 @@ button{
 .header-nav .dropdownContent{
     display: none;
     position: absolute;
-    background-color: rgb(230, 230, 230);
-    min-width: 210px;
+    background-color: white;
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
     z-index: 2;
+    font-size: 16px;
 }
 .dropdownMenu:hover + .dropdownContent{
     display: block;
 }
+.dropdownMenu:hover{
+    color: #2455E6;
+}
 .dropdownContent:hover{
     display: block;
+    color: #2455E6;
 }
 .dropdownContent a{
     display: block;
     padding: 12px 16px;
     text-decoration: none;
     color: black;
-    width: max-content;
+    position: relative;
+    white-space: nowrap;
 }
-#dropdownMenu_ResLibrary{
+.dropdownContent a:hover {
+    color: white;
+    transition: all 0.6s ease-out 0s;
+}
+.dropdownContent a:hover::before {
+    width: 100%;
+}
+.dropdownContent a::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    right: auto;
+    left: 0;
+    width: 0;
+    background: #2455E6;
+    color: #fff;
+    z-index: -1;
+    transition: all 0.8s ease-out 0s;
+}
+#dropdownMenu_Explore{
     margin-right: 20px;
-    display: inline-block;
     position: relative;
 }
 #dropdownMenu_Courses{
     margin-right: 20px;
-    display: inline-block;
     position: relative;
 }
-#dropdownMenu_Personal{
+#dropdownMenu_About{
     margin-right: 20px;
-    display: inline-block;
     position: relative;
 }
 .dropdownMenu{
+    font-weight: 500;
+    font-size: 15px;
     cursor: pointer;
+}
+#dropdownMenu_About-List{
+    right: 0px;
 }
 #searchForm{
     display: flex;
@@ -175,7 +211,7 @@ button{
     margin-bottom: 0px;
 }
 #breadcrumbs{
-    background-color: rgb(230, 230, 230);
+    background-color: white;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -198,7 +234,7 @@ main{
 #headerDropDownMenu{    
     width: 100%;
     z-index: 1;
-    background-color: rgb(230, 230, 230);
+    background-color: white;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
 }

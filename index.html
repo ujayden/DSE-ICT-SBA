@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
     <title>ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
     <!-- Load CSS and Script here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="/include/global/style.css">
     <link rel="stylesheet" href="/include/styles/home.css">
     <link rel="stylesheet" href="/include/global/style_responsive.css">
@@ -14,6 +17,8 @@
     <script src="/include/global/script.js" defer></script>
     <script src="/include/scripts/home.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
+    <!-- Load Bootstrap of sth else here-->
+
 </head>
 <body>
     <!-- Header -->
@@ -29,33 +34,33 @@
             </div>
             <nav class="header-nav">
                 <div id="dropdownMenu_Courses">
-                    <span class="dropdownMenu" tabindex="0">Courses</span>
+                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
                     <div id="dropdownMenu_Courses-List" class="dropdownContent">
                         <a href="/learning/index.html">Dashboard</a>
-                        <a href="/learning/beginner/index.html">Beginner</a>
-                        <a href="/learning/basic/index.html">Basic</a>
-                        <a href="/learning/advanced/index.html">Advanced</a>
-                        <a href="/learning/expert/index.html">Expert</a>
-                    </div>
-                </div>
-                <div id="dropdownMenu_ResLibrary">
-                    <span class="dropdownMenu" tabindex="0">Resources Library</span>
-                    <div id="dropdownMenu_ResLibrary-List" class="dropdownContent">
-                        <a href="/library/index.html">By skill level</a>
-                        <a href="/library/index.html">By learning category</a>
-                        <a href="/library/index.html">By types</a>
-                        <a href="/library/index.html">More...</a>
-                    </div>
-                </div>
-                <div id="dropdownMenu_Personal" tabindex="0">
-                    <span class="dropdownMenu">Profile</span>
-                    <div id="dropdownMenu_Personal-List" class="dropdownContent">
-                        <a href="/profile/profile.html">My Profile</a>
+                        <a href="/library/index.html">Resource Library</a>
+                        <a href="/profile/index.html">My Profile</a>
                         <a href="/profile/report.html">My Report</a>
-                        <a href="/profile/settings.html">Settings</a>
                     </div>
                 </div>
-                <a href="/news.html">Latest News</a>
+                <div id="dropdownMenu_Explore">
+                    <span class="dropdownMenu" tabindex="0">Explore</span>
+                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
+                        <a href="/reason.html">Why using this website</a>
+                        <a href="/courses/index.html">Learning Catalog</a>
+                        <a href="/news/index.html">Latest News</a>
+                        <a href="/chatbot.html">Chatbot</a>
+                        <a href="/help.html">Q&A</a>
+                        <a href="/setting.html">Setting</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_About" tabindex="0">
+                    <span class="dropdownMenu">More about us</span>
+                    <div id="dropdownMenu_About-List" class="dropdownContent">
+                        <a href="/about.html">About Us</a>
+                        <a href="/contact.html">Contact Us</a>
+                        <a href="/credit.html">Acknowledgement</a>
+                    </div>
+                </div>
             </nav>
             <div class="header-Right">
                     <div id="header-Search">
@@ -76,25 +81,25 @@
                 <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text" tabindex="-1">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
                 <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
                     <a href="/learning/index.html" tabindex="-1">Dashboard</a>
-                    <a href="/learning/beginner/index.html" tabindex="-1">Beginner</a>
-                    <a href="/learning/basic/index.html" tabindex="-1">Basic</a>
-                    <a href="/learning/advanced/index.html" tabindex="-1">Advanced</a>
-                    <a href="/learning/expert/index.html" tabindex="-1">Expert</a>
-                </div>
-                <span id="headerDropDownMenu-Link-ResLibrary" class="headerDropDownMenu-Text" tabindex="-1">Resources Library <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
-                <div id="headerDropDownMenu-Link-ResLibrary-List" class="headerDropDownMenu-Link-List">
-                    <a href="/library/index.html" tabindex="-1">By skill level</a>
-                    <a href="/library/index.html" tabindex="-1">By learning category</a>
-                    <a href="/library/index.html" tabindex="-1">By types</a>
-                    <a href="/library/index.html" tabindex="-1">More...</a>
-                </div>
-                <span id="headerDropDownMenu-Link-Personal" class="headerDropDownMenu-Text" tabindex="-1">Profile <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
-                <div id="headerDropDownMenu-Link-Personal-List" class="headerDropDownMenu-Link-List">
-                    <a href="/profile/profile.html" tabindex="-1">My Profile</a>
+                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
+                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
                     <a href="/profile/report.html" tabindex="-1">My Report</a>
-                    <a href="/profile/settings.html" tabindex="-1">Settings</a>
                 </div>
-                <a href="/news.html" class="headerDropDownMenu-Text" tabindex="-1">Latest News</a>
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text" tabindex="-1">Explore <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
+                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
+                    <a href="/news/index.html" tabindex="-1">Latest News</a>
+                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
+                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/setting.html" tabindex="-1">Setting</a>
+                </div>
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text" tabindex="-1">More about us <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
+                    <a href="/about.html" tabindex="-1">About Us</a>
+                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
+                </div>
             </div>
             <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
                 <div id="search">
@@ -147,26 +152,25 @@
         <div class="footer-Container">
             <div class="footer-Left_Link">
                 <div class="footer-Link-main">
-                    <span class="footer-Link-Title" tabindex="0">Courses</span>
+                    <span class="footer-Link-Title" tabindex="0">Learning</span>
                     <a class="footer-Link" href="/learning/index.html">Dashboard</a>
-                    <a class="footer-Link" href="/learning/beginner/index.html">Beginner</a>
-                    <a class="footer-Link" href="/learning/basic/index.html">Basic</a>
-                    <a class="footer-Link" href="/learning/advanced/index.html">Advanced</a>
-                    <a class="footer-Link" href="/learning/expert/index.html">Expert</a>
+                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
+                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
+                    <a class="footer-Link" href="/profile/report.html">My Report</a>
                 </div>
                 <div class="footer-Link-main">
-                    <span class="footer-Link-Title" tabindex="0">Profile</span>
-                    <a class="footer-Link" href="/personal/index.html">My Profile</a>
-                    <a class="footer-Link" href="/personal/index.html">My Report</a>
-                    <a class="footer-Link" href="/personal/index.html">Settings</a>
+                    <span class="footer-Link-Title" tabindex="0">Explore</span>
+                    <a class="footer-Link" href="/reason.html">Reason to use this website</a>
+                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
+                    <a class="footer-Link" href="/news/index.html">Latest News</a>
+                    <a class="footer-Link" href="/help.html">Q&A</a>
                 </div>
             </div>
         <div class="footer-Right-Link footer-Link-main"  tabindex="0">
             <a class="footer-Link-Title-Right" href="/index.html">Home</a>
-            <a class="footer-Link-Title-Right" href="/news/index.html">Latest News</a>
-            <a class="footer-Link-Title-Right" href="/library.html">Resources Library</a>
             <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
             <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
+
         </div>
 
     </div>

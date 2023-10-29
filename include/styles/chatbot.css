@@ -48,7 +48,6 @@ header h1{
     height: calc(100vh - 40px - 50px);
     overflow-y: scroll;
     background-color: white;
-    background-color: #49607e;
     width: 100%;
 }
 .chatbot-input-container{
@@ -58,7 +57,7 @@ header h1{
     width: 100%;
     align-self: baseline;
     bottom: 0;
-    background-color: #7ca3d6;
+    background-color: #35b8be;
     height: 50px;
 }
 #chatbot-input{

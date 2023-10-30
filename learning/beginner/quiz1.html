@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/include/styles/quiz.css">
+    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/scripts/quiz.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Quiz 1 - Basic</h1>
+        <div id="header-Right">
+            <button id="quiz-Away" class="header-Right-Element">Away</button>
+            <button id="quiz-Exit" class="header-Right-Element">X Cancel</button>
+            <div id="quiz-Timer" class="header-Right-Element">
+                <p><span id="timer-allowed_Time">Time allowed: 10</span></p>
+                <p><span id="timer-remaining_Time">--:--</span><span> Left</span></p>
+            </div>
+        </div>
+    </header>
+    <hr>
+        <main id="main-Quiz" data-Quiz-ID="01" data-answer-url="quiz1-answer.json" data-config-url="quiz1-config.json">
+            <div id="quizArea">
+                <noscript>
+                    <p>Sorry, please enable JavaScript to use this page.</p>
+                </noscript>
+                <div id="quiz-Header">
+                    <span>Part A: There are 10 questions in this mock test. Choose the most suitable answers.</span>
+                    <div id="quiz-Right">
+                        <button id="quiz-Call-Chatbot">Ask for Chatbot</button>
+                        <button id="quiz-Call-Hint">Hint</button>
+                    </div>
+                </div>
+                <form id="quiz-mc">
+                    <p>Q1: What is this device&rsquo;s name?</p>
+                    <image src="/include/images/quiz/quiz1/quiz1-q1.jpg" alt="This device has many ethernet port that can plug some cables">
+                    <br>
+                    <input type="radio" name="mc-1-Ans" value="A" >A.	Wireless Router<br>
+                    <input type="radio" name="mc-1-Ans" value="B">B.	Switch<br>
+                    <input type="radio" name="mc-1-Ans" value="C">C.	Modem<br>
+                    <input type="radio" name="mc-1-Ans" value="D">D.	Access Point<br>
+                    <br>
+
+                    <p>Q2: What is the NOT the correct reason for optical fiber cable use widely?</p>
+                    <input type="radio" name="mc-2-Ans" value="A">A.	It is low cost.<br>
+                    <input type="radio" name="mc-2-Ans" value="B">B.	It is thinner, small size than UTP.<br>
+                    <input type="radio" name="mc-2-Ans" value="C">C.	It has better security.<br>
+                    <input type="radio" name="mc-2-Ans" value="D">D.	It can protect against electromagnetic interference.<br>
+                    <br>
+
+                    <p>Q3: Which type of cable is commonly used for wired home network and supports data transfer rates up to 1 Gbps?</p>
+                    <input type="radio" name="mc-3-Ans" value="A">A. STP cable<br>
+                    <input type="radio" name="mc-3-Ans" value="B">B. UTP cable<br>
+                    <input type="radio" name="mc-3-Ans" value="C">C. Coaxial cable<br>
+                    <input type="radio" name="mc-3-Ans" value="D">D. Fiber optic cable<br>
+                    <br>
+                    
+                    <p>Q4: Which type of connector is commonly used for wired Ethernet connections?</p>
+                    <input type="radio" name="mc-4-Ans" value="A">A. RJ-11<br>
+                    <input type="radio" name="mc-4-Ans" value="B">B. RJ-45<br>
+                    <input type="radio" name="mc-4-Ans" value="C">C. USB<br>
+                    <input type="radio" name="mc-4-Ans" value="D">D. HDMI<br>
+                    <br>
+                    
+                    <p>Q5: Which should be involved when deploying a large office network?</p>
+                    <input type="radio" name="mc-5-Ans" value="A">A. Peer-to-Peer Network<br>
+                    <input type="radio" name="mc-5-Ans" value="B">B. Client/Server Network<br>
+                    <input type="radio" name="mc-5-Ans" value="C">C. Bluetooth<br>
+                    <input type="radio" name="mc-5-Ans" value="D">D. Bridge<br>
+                    <br>
+                    
+                    <p>Q6: Which technology should be used when connecting a home network to WAN (the Internet) with a high-speed connection?</p>
+                    <input type="radio" name="mc-6-Ans" value="A">A. Broadband<br>
+                    <input type="radio" name="mc-6-Ans" value="B">B. ADSL<br>
+                    <input type="radio" name="mc-6-Ans" value="C">C. Dial-up<br>
+                    <input type="radio" name="mc-6-Ans" value="D">D. Satellite<br>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+        </main>
+
+    </header>
+    <!-- Back to top button -->
+    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+</body>

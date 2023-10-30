@@ -1,0 +1,176 @@
+{
+    "success": true,
+    "mcQuiz": [
+        {
+            "id": 1,
+            "question": "Q1: What is this device&rsquo;s name?",
+            "image": "/include/images/quiz/quiz1/quiz1-q1.jpg",
+            "imageAltText": "This device has many ethernet ports that can plug some cables",
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "Wireless Router"
+                },
+                {
+                    "id": "B",
+                    "text": "Switch"
+                },
+                {
+                    "id": "C",
+                    "text": "Modem"
+                },
+                {
+                    "id": "D",
+                    "text": "Access Point"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "A wireless router is a device that performs the functions of a router and also includes the functions of a wireless access point. It is commonly used to allow access to the Internet or a computer network without the need for a cabled connection."
+        },
+        {
+            "id": 2,
+            "question": "What is NOT the correct reason for optical fiber cable use widely?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "It is low cost."
+                },
+                {
+                    "id": "B",
+                    "text": "It is thinner, small size than UTP."
+                },
+                {
+                    "id": "C",
+                    "text": "It has better security."
+                },
+                {
+                    "id": "D",
+                    "text": "It can protect against electromagnetic interference."
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "Optical fiber cable is more expensive than UTP cable."
+        },
+        {
+            "id": 3,
+            "question": "Which type of cable is commonly used for wired home network and supports data transfer rates up to 1 Gbps?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "STP cable"
+                },
+                {
+                    "id": "B",
+                    "text": "UTP cable"
+                },
+                {
+                    "id": "C",
+                    "text": "Coaxial cable"
+                },
+                {
+                    "id": "D",
+                    "text": "Fiber optic cable"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "UTP cable is commonly used for wired home network and supports data transfer rates up to 1 Gbps. STP cable is commonly used for wired office network and supports data transfer rates up to 10 Gbps."
+        },
+        {
+            "id": 4,
+            "question": "Which type of connector is commonly used for wired Ethernet connections?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "RJ-11"
+                },
+                {
+                    "id": "B",
+                    "text": "RJ-45"
+                },
+                {
+                    "id": "C",
+                    "text": "USB"
+                },
+                {
+                    "id": "D",
+                    "text": "HDMI"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "RJ-45 is commonly used for wired Ethernet connections. RJ-11 is commonly used for telephone connections."
+        },
+        {
+            "id": 5,
+            "question": "Which should be involved when deploying a large office network?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "Peer-to-Peer Network"
+                },
+                {
+                    "id": "B",
+                    "text": "Client/Server Network"
+                },
+                {
+                    "id": "C",
+                    "text": "Bluetooth"
+                },
+                {
+                    "id": "D",
+                    "text": "Bridge"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "A peer-to-peer network is suitable for a small office network with less than 10 computers. A client/server network is suitable for a large office network with more than 10 computers."
+        },
+        {
+            "id": 6,
+            "question": "Which technology should be used when connecting a home network to WAN (the Internet) with a high-speed connection?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "Broadband"
+                },
+                {
+                    "id": "B",
+                    "text": "ADSL"
+                },
+                {
+                    "id": "C",
+                    "text": "Dial-up"
+                },
+                {
+                    "id": "D",
+                    "text": "Satellite"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "Broadband is a high-speed Internet connection that is always on."
+        }
+    ],
+    "LongQuiz": [
+        null
+    ]
+}

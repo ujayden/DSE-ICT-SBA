@@ -73,7 +73,20 @@ document.addEventListener('click', function(event) {
     }
 }
 );
-
+//Grey out the menu when it is not focus.
+let focusOnHeaderDropDownMenuElem = document.getElementById('unfocus');
+function toggleGrayOut(grayStatus){
+    if (grayStatus == true) {
+        focusOnHeaderDropDownMenuElem.style.visibility = 'visible';
+    }else{
+        focusOnHeaderDropDownMenuElem.style.visibility = 'hidden';
+        console.log('hidden');
+    }
+}
+focusOnHeaderDropDownMenuElem.addEventListener('click', function() {
+    toggleHeaderDropDownMenu(menu_Header);
+}
+);
 //For drop-down menu of header
 let headerDropDownMenu_Logo = document.getElementById('headerDropDownMenu-Logo');
 let menu_Header = document.getElementById('headerDropDownMenu');
@@ -82,6 +95,7 @@ function toggleHeaderDropDownMenu(menuElm) {
     if (menuElm.classList.contains('headerDDM-close-vertical')) {
         menuElm.classList.add('headerDDM-open-vertical');
         menuElm.classList.remove('headerDDM-close-vertical');
+        toggleGrayOut(true);
         headerDropDownMenu_Logo.setAttribute('alt', 'Close the menu');
         //Accessiblity: Make sure the menu can be access by tab when menu is opening.
         menuElm.querySelectorAll('*').forEach(function(elm) {
@@ -89,10 +103,13 @@ function toggleHeaderDropDownMenu(menuElm) {
                 elm.setAttribute('tabindex', '0');
             }
         }
-        );
+        );  
     }else{
         menuElm.classList.remove('headerDDM-open-vertical');
         menuElm.classList.add('headerDDM-close-vertical');
+        setTimeout(function() {
+            toggleGrayOut(false);
+        }, 300);
         headerDropDownMenu_Logo.setAttribute('alt', 'Open the menu');
         //Accessiblity: Make sure the menu can not be access by tab right now.
         menuElm.querySelectorAll('*').forEach(function(elm) {
@@ -103,10 +120,10 @@ function toggleHeaderDropDownMenu(menuElm) {
         );
     }
     //Toggle the image of the logo for 0 to 90 degree.
-    if (headerDropDownMenu_Logo.style.transform == 'rotate(90deg)') {
+    if (headerDropDownMenu_Logo.style.transform == 'rotate(-90deg)') {
         headerDropDownMenu_Logo.style.transform = 'rotate(0deg)';
     }else{
-        headerDropDownMenu_Logo.style.transform = 'rotate(90deg)';
+        headerDropDownMenu_Logo.style.transform = 'rotate(-90deg)';
     }
     
 }

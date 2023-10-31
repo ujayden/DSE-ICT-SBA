@@ -80,9 +80,9 @@ function toggleGrayOut(grayStatus){
         focusOnHeaderDropDownMenuElem.style.visibility = 'visible';
     }else{
         focusOnHeaderDropDownMenuElem.style.visibility = 'hidden';
-        console.log('hidden');
     }
 }
+
 focusOnHeaderDropDownMenuElem.addEventListener('click', function() {
     toggleHeaderDropDownMenu(menu_Header);
 }

@@ -3,9 +3,9 @@
     "mcQuiz": [
         {
             "id": 1,
-            "question": "Q1: What is this device&rsquo;s name?",
+            "question": "What is this device&rsquo;s name?",
             "image": "/include/images/quiz/quiz1/quiz1-q1.jpg",
-            "imageAltText": "This device has many ethernet ports that can plug some cables",
+            "imageAltText": "This device has some antennas",
             "description": null,
             "shuffleable": true,
             "options": [
@@ -27,7 +27,7 @@
                 }
             ],
             "correctAnswerID": "A",
-            "hint": "A wireless router is a device that performs the functions of a router and also includes the functions of a wireless access point. It is commonly used to allow access to the Internet or a computer network without the need for a cabled connection."
+            "hint": "This device has some antennas"
         },
         {
             "id": 2,
@@ -55,7 +55,7 @@
                 }
             ],
             "correctAnswerID": "A",
-            "hint": "Optical fiber cable is more expensive than UTP cable."
+            "hint": "Optical fiber cable is faster, means......"
         },
         {
             "id": 3,
@@ -82,8 +82,8 @@
                     "text": "Fiber optic cable"
                 }
             ],
-            "correctAnswerID": "A",
-            "hint": "UTP cable is commonly used for wired home network and supports data transfer rates up to 1 Gbps. STP cable is commonly used for wired office network and supports data transfer rates up to 10 Gbps."
+            "correctAnswerID": "B",
+            "hint": "Usually, we use it at home."
         },
         {
             "id": 4,
@@ -110,8 +110,8 @@
                     "text": "HDMI"
                 }
             ],
-            "correctAnswerID": "A",
-            "hint": "RJ-45 is commonly used for wired Ethernet connections. RJ-11 is commonly used for telephone connections."
+            "correctAnswerID": "B",
+            "hint": "Check your home router!"
         },
         {
             "id": 5,
@@ -138,8 +138,8 @@
                     "text": "Bridge"
                 }
             ],
-            "correctAnswerID": "A",
-            "hint": "A peer-to-peer network is suitable for a small office network with less than 10 computers. A client/server network is suitable for a large office network with more than 10 computers."
+            "correctAnswerID": "B",
+            "hint": "You use P2P network at home."
         },
         {
             "id": 6,
@@ -167,7 +167,7 @@
                 }
             ],
             "correctAnswerID": "A",
-            "hint": "Broadband is a high-speed Internet connection that is always on."
+            "hint": "Have you heard a ISP (Internet Server Provider) in Hong Kong called HKBN? What are they providing?"
         }
     ],
     "LongQuiz": [

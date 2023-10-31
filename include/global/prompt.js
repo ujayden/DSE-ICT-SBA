@@ -11,7 +11,6 @@ function toggleGrayOut(grayStatus){
         focusOnHeaderDropDownMenuElem.style.visibility = 'visible';
     }else{
         focusOnHeaderDropDownMenuElem.style.visibility = 'hidden';
-        console.log('hidden');
     }
 }
 let promptContainer = document.getElementById('prompt');
@@ -26,7 +25,10 @@ function openPrompt(){
 }
 function toggleButton (buttonElem, allowButton, buttonFunc, buttonValue) {
     if (allowButton == true) {
-        buttonElem.style.visibility = 'visible';
+        buttonElem.style.display = 'block';
+        if (buttonFunc == null || buttonFunc == undefined) {
+            buttonFunc = closePrompt();
+        }
         buttonElem.addEventListener('click', buttonFunc);
         if (buttonValue != null || buttonValue != undefined || buttonValue != '') {
             buttonElem.innerHTML = buttonValue;
@@ -34,13 +36,15 @@ function toggleButton (buttonElem, allowButton, buttonFunc, buttonValue) {
             buttonElem.innerHTML = 'OK';
         }
     } else {
-        buttonElem.style.visibility = 'hidden';
+        buttonElem.style.display = 'none';
     }
 }
+promptCloseButtonElem.addEventListener('click', closePrompt);
+promptCancelButtonElem.addEventListener('click', closePrompt);
 function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue){
     promptTitleElem.innerHTML = pTitle;
     promptContentElem.innerHTML = pContent;
-    toggleButton(promptCloseButtonElem, allowClose, closeFunc, null);
+    toggleButton(promptCloseButtonElem, allowClose, closeFunc, "&times;");
     toggleButton(promptCancelButtonElem, allowCancel, cancelFunc, cancelBTNValue);
     toggleButton(promptConfirmButtonElem, allowConfirm, confirmFunc, confirmBTNValue);
 

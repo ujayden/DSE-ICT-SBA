@@ -97,8 +97,7 @@ $.ajax({
 });
 //Unhide the quiz
 
-let counterArea_AllowedTime = document.getElementById("timer-allowed_Time");
-let counterArea_RemainingTime = document.getElementById("timer-remaining_Time");
+let counterArea_AllowedTime = document.getElementById("quiz-cdTime");
 let quizFeatAway = document.getElementById("quiz-Away");
 let mcIntro = document.getElementById("mcIntro");
 let mcConunt = document.getElementById("mcCount");
@@ -111,7 +110,7 @@ let loadQuizSuccess = false;
 let countMC = 0;
 function shuffle(array) {
     //Credit: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-    let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length, randomIndex;
   
     // While there remain elements to shuffle.
     while (currentIndex > 0) {
@@ -263,12 +262,50 @@ function toggleChatbotIframe(){
         chatbotIframe.style.visibility = "hidden";
     }
 }
+//Making hint Prompt only generate once only.
+let hintPrompt = (function () {
+    if (!(quizAttributes.AllowHints)){
+        return false;
+    }
+    let MChintRelation = [
 
+    ]
+    let LQhintRelation = [
+    ]
+    //Get the hint relation
+    for (let i = 0; i < MCquizQuestions.length; i++) {
+        let hint = MCquizQuestions[i].hint;
+        if (hint != undefined || hint != null || hint != "") {
+            MChintRelation[i] = {
+                "id": i+1,
+                "hint": hint
+            }
+        }
+    }
+    //Skip for LQ
+    //Create the hint prompt
+    let hintPromptString;
+    if (MChintRelation.length > 0) {
+        hintPromptString = "<h2>MC Questions</h2>";
+        MChintRelation.forEach(function (hint) {
+            hintPromptString += "<h3>Q" + hint.id + ":<h3>";
+            hintPromptString += "<p>" + hint.hint + "</p>";
+        }
+        );
+        hintPromptString = "<div class='hintPromptContainer'>" + hintPromptString + "</div>";
+        hintPromptString += "<br>";
+    }
+    return hintPromptString;
+})();
+function toggleHintPrompt(){
+    //setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue)
+    setupPrompt("Hint", hintPrompt, true, closePrompt(), false, undefined, undefined, true, closePrompt(), "Okay");
+}
 let quizArea = document.getElementById("quizArea");
 const quizName = document.getElementById("quizName");
 function loadQuiz() {
     //Load the Time Limit first
-    counterArea_AllowedTime.innerHTML = "Time allowed:" + quizAttributes.TimeLimit/60 + " minutes";
+    counterArea_AllowedTime.innerHTML = quizAttributes.TimeLimit/60 + " minutes";
     //Check if away is allowed
     if (!(quizAttributes.AllowAway)) {
         quizFeatAway.style.display = "none";
@@ -284,6 +321,10 @@ function loadQuiz() {
     }
     if (!(quizAttributes.AllowHints)) {
         askHint.style.display = "none";  
+    }else{
+        askHint.addEventListener("click", function () {
+            toggleHintPrompt();
+        });
     }
     //Call the function to load the quiz
     //Prompt the user to start the quiz
@@ -348,7 +389,7 @@ function gradeQuiz(){
     totalScore = mcTotalScore + lqTotalScore;
 }
 function closeWindow(){
-    //window.close();
+    window.close();
 }
 //Post-quiz
 function returnResult(){
@@ -450,4 +491,31 @@ document.getElementById("submitQuiz").addEventListener("click", function () {
         closeWindow();
     }, "Close");
 
-//Timer, Hint prompt, away prompt, image viewer are WIP.
+document.getElementById("quiz-GoDown").addEventListener("click", function () {
+    window.scrollTo(0, document.body.scrollHeight);
+}
+);
+document.getElementById("quiz-Exit").addEventListener("click", function () {
+    setupPrompt("Exit Quiz", "Are you sure you want to exit the quiz? Your progress will not be saved.", true, closePrompt(), true, closePrompt(), "No", true, function(){
+        closeWindow();
+    }, "Yes");
+}
+);
+let quizInfoContainer = document.getElementById("quiz-Info-Container");
+function toggleQuizInfoOnTop(){
+    if (!(quizInfoContainer.classList.contains("forced-OnTop"))) {
+        quizInfoContainer.classList.add("forced-OnTop");
+        toggleGrayOut(true);
+        document.getElementById('checkQuizInfo').classList.add('cqi-active');
+        
+    }else{
+        quizInfoContainer.classList.remove("forced-OnTop");
+        toggleGrayOut(false);
+        document.getElementById('checkQuizInfo').classList.remove('cqi-active');
+    }
+}
+document.getElementById("checkQuizInfo").addEventListener("click", function () {
+    toggleQuizInfoOnTop();
+}
+);
+//Image viewer, Countdown, quiz status and pause are WIP. Est time to complete: 2 hours

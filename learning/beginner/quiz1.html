@@ -18,20 +18,48 @@
     <script src="/include/global/script_backtoTop.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1 id="quizName">Quiz 1 - Basic</h1>
-        <div id="header-Right">
-            <button id="quiz-Away" class="header-Right-Element">Away</button>
-            <button id="quiz-Exit" class="header-Right-Element">X Cancel</button>
-            <div id="quiz-Timer" class="header-Right-Element">
-                <p><span id="timer-allowed_Time">Time allowed: 10</span></p>
-                <p><span id="timer-remaining_Time">--:--</span><span> Left</span></p>
+<header>
+    <h1 id="quizName">Quiz 1 - Basic</h1>
+    <div id="header-Right">
+
+    </div>
+</header>
+    <div id="quiz-Info-Container">
+        <div id="quiz-Info">
+            <div id="quiz-Countdown">
+                <h2>Countdown</h2>
+                <p id="quiz-cdInfo">You have <span id="quiz-cdTime">?</span> minutes for this quiz.</p>
+                <span id="quiz-cdReamining">--:--</span><span class="quiz-cdReamining-additional-text">Left</span>
+            </div>
+            <div id="quiz-Progress">
+                <h2>Progress</h2>
+                <div id="quiz-Progress-Content">
+                    <div id="quiz-Progress-Content-Body">
+                        <div id="quiz-Progress-Content-Body-Question">
+                            <span id="quiz-Progress-Content-Body-Question-Number">?</span>
+                            <span id="quiz-Progress-Content-Body-Question-Status">Not Answered</span>
+                        </div>
+                    </div>
+                    <div id="remaining-Questions">
+                        <span id="remaining1" class="remaining-box">1</span>
+                        <span id="remaining2" class="remaining-box">2</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
-    <hr>
-        <main id="main-Quiz" data-Quiz-ID="01" data-answer-url="quiz1-answer.json" data-config-url="quiz1-config.json">
-            <div id="quizArea">
+        <div id="quiz-Info-Feat">
+            <div id="quiz-Info-Feat-Left">
+                <button id="quiz-Away" class="header-Right-Element">Pause</button>
+                <button id="quiz-Exit" class="header-Right-Element">X Cancel</button>
+            </div>
+            <div id="quiz-Info-Feat-Right">
+                <button id="submitQuiz" class="header-Right-Element">Submit</button>
+                <button id="quiz-GoDown" class="header-Right-Element"></button>
+            </div>
+        </div>
+    </div>
+    <main id="main-Quiz" data-Quiz-ID="01" data-answer-url="quiz1-answer.json" data-config-url="quiz1-config.json">
+        <div id="quizArea">
                 <noscript>
                     <p>Sorry, please enable JavaScript to use this page.</p>
                 </noscript>
@@ -67,7 +95,8 @@
     </header>
     <!-- Back to top button -->
     <div id="unfocus"></div>
-    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+    <button id="backToTop_btn" aria-label="Back To Top Button" tabindex="-1">&#9650;</button>
+    <button id="checkQuizInfo" aria-label="Check current quiz progress" tabindex="-1"></button>
     <div id="chatbot-iFrame">
     </div>
 </body>

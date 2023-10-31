@@ -20,7 +20,6 @@
     flex-shrink: 0;
 }
 #prompt-Close{
-    background-color: transparent;
     color: black;
     border: 0;
     padding-left: 16px;
@@ -30,6 +29,7 @@
     font-size: 48px;
     font-weight: bold;
     margin: 0;
+    cursor: pointer;
 }
 #prompt-Title{
     font-size: 48px;
@@ -58,4 +58,7 @@
     font-size: 20px;
     margin-left: 4px;
     margin-right: 4px;
+}
+#prompt-Footer button:hover{
+    background-color: #e6e6e6;
 }

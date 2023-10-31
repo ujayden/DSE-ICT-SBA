@@ -1,12 +1,25 @@
 'use strict';
-let windowURL = new URL(window.location.origin);
-if (!(typeof $ === "function" && typeof jQuery === "function")) {
-    throw new Error("jQuery is not loaded, please check the path of the script.");
+let windowURL;
+let xhr;
+try{
+    windowURL = new URL(window.location.origin);
+}catch(e){
+    console.warn(e);
+    windowURL.origin = "https://ictmasterhub.com";
 }
-
-
-
-
+try{
+    xhr = new XMLHttpRequest();
+}catch(e){
+    console.warn(e);
+    console.warn("The browser does not support XMLHttpRequest, is it IE?");
+    if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }else{
+        console.error("The browser does not support both XMLHttpRequest and ActiveXObject??");
+        xhr = false;
+        window.alert("Something went wrong, but the chatbot will not work, please use another browsers.");
+    }
+}
 
 let chatInput = document.getElementById("chatbot-input");
 let chatRealContainer = document.getElementById('chatbot-real-chat');
@@ -51,16 +64,27 @@ function callServer(msg){
     waitMessage.style.display = "block";
     //Send a POST to the server backend on /api/chatbot
     //Reference: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send, book: <<Java script第一次學就上手>>, https://stackoverflow.com/a/50066247
-    $.ajax({
-        url: windowURL.origin + "/api/chatbot",
-        type: "POST",
-        data: {
-            message: msg
-        },
-        
+    xhr.open("POST", windowURL.origin + "/api/chatbot", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({ message: msg }));
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        let response = JSON.parse(xhr.responseText);
+        let chatmessage = response.message;
+        let chatfrom = "server";
+        updateChat(chatmessage, chatfrom);
+        //Check if the response has suggested actions - This feature is abandoned.
+        let suggestedActions = false;
+        if (suggestedActions) {
+        }else{
+            suggestedActions_container.style.display = "none";
+        }
+    } else if (xhr.readyState == 4 && xhr.status != 200) {
+        console.error("Error: " + xhr.status + " " + xhr.statusText);
+        updateChat("Something went wrong, please try again?", "server");
+        suggestedActions_container.style.display = "none";
+        }
     }
-
-    )
     waitMessage.style.display = "none";
 }
 function sendMessage(msg) {

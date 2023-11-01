@@ -22,6 +22,8 @@ function closePrompt(){
 function openPrompt(){
     toggleGrayOut(true);
     promptContainer.style.display = 'flex';
+    //Focus on the prompt
+    promptContainer.focus();
 }
 function toggleButton (buttonElem, allowButton, buttonFunc, buttonValue) {
     if (allowButton == true) {

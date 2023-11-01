@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>ICT Master Hub</title>
+    <title>ICT Master Hub - Quiz1</title>
     <!--Load libray here.-->
     <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
     <!-- Load CSS and Script here -->
@@ -19,7 +19,7 @@
 </head>
 <body>
 <header>
-    <h1 id="quizName">Quiz 1 - Basic</h1>
+    <h1 id="quizName" tabindex="0" aria-label="Quiz Title: Quiz-1 / Basic">Quiz 1 - Basic</h1>
     <div id="header-Right">
 
     </div>
@@ -28,33 +28,32 @@
         <div id="quiz-Info">
             <div id="quiz-Countdown">
                 <h2>Countdown</h2>
-                <p id="quiz-cdInfo">You have <span id="quiz-cdTime">?</span> minutes for this quiz.</p>
-                <span id="quiz-cdReamining">--:--</span><span class="quiz-cdReamining-additional-text">Left</span>
+                <p id="quiz-cdInfo" tabindex="0">You have <span id="quiz-cdTime">?</span> minutes for this quiz.</p>
+                <span id="quiz-cdReamining" tabindex="0" aria-label="Unknown Minutes Remaining">--:--</span><span class="quiz-cdReamining-additional-text" tabindex="-1">Left</span>
             </div>
             <div id="quiz-Progress">
                 <h2>Progress</h2>
                 <div id="quiz-Progress-Content">
                     <div id="quiz-Progress-Content-Body">
-                        <div id="quiz-Progress-Content-Body-Question">
+                        <div id="quiz-Progress-Content-Body-Question" tabindex="0">
                             <span id="quiz-Progress-Content-Body-Question-Number">?</span>
-                            <span id="quiz-Progress-Content-Body-Question-Status">Not Answered</span>
+                            <span id="quiz-Progress-Content-Body-Question-Status" >Not Answered</span>
                         </div>
                     </div>
                     <div id="remaining-Questions">
-                        <span id="remaining1" class="remaining-box">1</span>
-                        <span id="remaining2" class="remaining-box">2</span>
+
                     </div>
                 </div>
             </div>
         </div>
         <div id="quiz-Info-Feat">
             <div id="quiz-Info-Feat-Left">
-                <button id="quiz-Away" class="header-Right-Element">Pause</button>
-                <button id="quiz-Exit" class="header-Right-Element">X Cancel</button>
+                <button id="quiz-Away" class="header-Right-Element" aria-label="Pause the quiz">Pause</button>
+                <button id="quiz-Exit" class="header-Right-Element" aria-label="Cancel and Exit the quiz">X Cancel</button>
             </div>
             <div id="quiz-Info-Feat-Right">
-                <button id="submitQuiz" class="header-Right-Element">Submit</button>
-                <button id="quiz-GoDown" class="header-Right-Element"></button>
+                <button id="submitQuizIntro" class="header-Right-Element" class="submitQuiz" aria-label="Submit the Form">Submit</button>
+                <button id="quiz-GoDown" class="header-Right-Element" aria-label="Go to to bottom" tabindex="-1"></button>
             </div>
         </div>
     </div>
@@ -64,9 +63,9 @@
                     <p>Sorry, please enable JavaScript to use this page.</p>
                 </noscript>
                 <div id="quiz-Header">
-                    <span id="mcIntro">Part A: There are <span id="mcCount">?</span> questions in this mock test. Choose the most suitable answers.</span>
+                    <span id="mcIntro" tabindex="0">Part A: There are <span id="mcCount">?</span> questions in this mock test. Choose the most suitable answers.</span>
                     <div id="quiz-Right">
-                        <button id="quiz-Call-Chatbot">Ask for Chatbot</button>
+                        <button id="quiz-Call-Chatbot" tabindex="-1">Ask for Chatbot</button>
                         <button id="quiz-Call-Hint">Hint</button>
                     </div>
                 </div>
@@ -74,16 +73,16 @@
                 </form>
                 <form id="quiz-lq">
                 </form>
-                <input type="submit" value="Submit" id="submitQuiz">
+                <button id="submitQuiz" class="submitQuiz">Submit</button>
             </div>
-        </main>
+    </main>
         <div id="prompt">
             <div id="prompt-Content">
                 <div id="prompt-Header">
-                    <span id="prompt-Title">Title</span>
-                    <span id="prompt-Close" tabindex="0">&times;</span>
+                    <span id="prompt-Title" tabindex="0">Title</span>
+                    <span id="prompt-Close" tabindex="0" >&times;</span>
                 </div>
-                <div id="prompt-Body">
+                <div id="prompt-Body" tabindex="0">
                     <p>Content</p>
                 </div>
                 <div id="prompt-Footer">
@@ -92,11 +91,20 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    <div id="music-player-container">
+        <h2>Music Player</h2>
+        <link rel="stylesheet" href="/include/styles/musicplayer.css">
+        <script src="/include/scripts/musicplayer.js" defer></script>
+        <audio id="music-player" src="/include/audio/quizMusic.mp3" loop></audio>
+        <button id="music-player-btn" aria-label="Music Player Button" tabindex="-1">Play</button>
+        <input type="range" id="music-player-slider" min="0" max="100" value="100" step="1" aria-label="Music Player Slider" tabindex="-1">
+        <span>You may disable this feature in setting panel.</span>
+    </div>
     <!-- Back to top button -->
     <div id="unfocus"></div>
     <button id="backToTop_btn" aria-label="Back To Top Button" tabindex="-1">&#9650;</button>
     <button id="checkQuizInfo" aria-label="Check current quiz progress" tabindex="-1"></button>
-    <div id="chatbot-iFrame">
-    </div>
+    <div id="chatbot-iFrame"></div>
 </body>
+</html>

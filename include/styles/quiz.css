@@ -213,7 +213,7 @@ input[type=submit]{
     display: flex;
     text-align: center;
     justify-content: center;
-
+    cursor: pointer;
 }
 .remaining-box::after{
     position: absolute;
@@ -224,6 +224,12 @@ input[type=submit]{
     content: "";
     background-color: #ff7d7d;
     width: 100%;
+}
+.remaining-box-answered{
+    border: 2px solid #168416;
+}
+.remaining-box-answered::after{
+    background-color: #168416;
 }
 #quiz-GoDown::after{
     content: "";
@@ -300,4 +306,56 @@ input[type=submit]{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.quiz-image-container-fullscreen{
+    overflow: auto;
+    height: 100%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#post-Review{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    padding: 20px;
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+.correct{
+    background-color: #b3ffb3;
+}
+.incorrect{
+    background-color: #ff9999;
+    
+}
+.resultContainer{
+    width: 100%;
+    color: black;
+    padding: 2px;
+    border: 2px solid gray;
+}
+.resultContainer p{
+    margin: 0;
+    padding: 0;
+}
+#music-player-container{
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    padding: 8px;
+}
+#music-player-container h2{
+    margin: 0;
+    padding: 0;
 }

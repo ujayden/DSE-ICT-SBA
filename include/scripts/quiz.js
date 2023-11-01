@@ -125,21 +125,43 @@ function shuffle(array) {
     }
     return array;
   }
-function addAccessiblityButton(sendTo, buttonID, buttonValue) {
+function accessibilityImage(imageURL, imageAlt, callElm) {
+    //Check the button to do what
+    if (callElm.getAttribute("data-Accessibility-Opt") == "img-FullScreen-View") {
+        //Open in prompt
+        let tempImg = document.createElement("img");
+        tempImg.setAttribute("src", imageURL);
+        tempImg.setAttribute("alt", imageAlt);
+        tempImg.setAttribute("class", "quiz-image-container-fullscreen");
+        tempImg.setAttribute("tabindex", "0");
+        setupPrompt("Image", tempImg.outerHTML, true, closePrompt(), false, undefined, undefined, true, closePrompt(), "Close");
+    }else if (callElm.getAttribute("data-Accessibility-Opt") == "img-NewPage-View") {
+        window.open(imageURL, "_blank", "fullscreen=yes");
+    }
+}
+function addAccessiblityButton(sendTo, buttonID, buttonValue, QuizID) {
     let button = document.createElement("button");
+    button.setAttribute("data-Accessibility-Opt", buttonID);
+    buttonID = buttonID + "-" + QuizID;
     button.setAttribute("id", buttonID);
     button.innerHTML = buttonValue;
     sendTo.appendChild(button);
-    document.getElementById(buttonID).addEventListener("click", function () {
-        console.warn("This feature is not supported yet.");
+    document.getElementById(buttonID).addEventListener("click", function (event) {
+        event.preventDefault();
+        let image = this.parentElement.parentElement.querySelector("img");
+        let imageURL = image.getAttribute("src");
+        let imageAlt = image.getAttribute("alt");
+        let callElm = this;
+        accessibilityImage(imageURL, imageAlt, callElm);
     }
     );
 }
-function renderImage(sendTo, imageURL, imageAltText) {
+function renderImage(sendTo, imageURL, imageAltText, QuizID) {
     let container = document.createElement("div");
     container.setAttribute("class", "quiz-image-container");
     let image = document.createElement("img");
     image.setAttribute("src", imageURL);
+    image.setAttribute("tabindex", "0");
     try{
         image.setAttribute("alt", imageAltText);
     }catch(e){
@@ -151,17 +173,44 @@ function renderImage(sendTo, imageURL, imageAltText) {
     containerRHS.setAttribute("class", "quiz-image-container-RHS");
     container.appendChild(containerRHS);
     sendTo.appendChild(container);
-    addAccessiblityButton(containerRHS, "img-FullScreen-View", "Open in full screen");
-    addAccessiblityButton(containerRHS, "img-NewPage-View", "Open in new page");
+    addAccessiblityButton(containerRHS, "img-FullScreen-View", "Open in full screen", QuizID);
+    addAccessiblityButton(containerRHS, "img-NewPage-View", "Open in new page", QuizID);
+}
+//Add remain question card count
+let remainingQuestionsArea = document.getElementById("remaining-Questions");
+function remainingQuestionsAdd(questionType, questionID) {
+    //<span id="remaining1" class="remaining-box">1</span>
+    if (questionType == "mc") {
+        let remaining = document.createElement("span");
+        remaining.setAttribute("id", "remaining" + questionID);
+        remaining.setAttribute("class", "remaining-box");
+        remaining.setAttribute("data-Question-Type", "mc");
+        remaining.setAttribute("aria-label", "Question " + questionID + " is not answered. Click or press Enter to go to question " + questionID + ".");
+        remaining.setAttribute("tabindex", "0");
+        remaining.innerHTML = questionID;
+        remainingQuestionsArea.appendChild(remaining);
+        //Add event listener
+        remaining.addEventListener("click", function () {
+            let targetQuestionID = remaining.innerHTML;
+            if (this.attributes.getNamedItem("data-Question-Type").value == "mc") {
+                targetQuestionID = "mc-" + targetQuestionID;
+            }
+            let targetQuestion = document.getElementById(targetQuestionID);
+            targetQuestion.scrollIntoView();
+        });
+
+    }
 }
 
 function renderMCQuiz(QuizID, QuizName, QuizQuestions, QuizDescription, QuizImage, QuizImageAltText , QuizAnswers, isShuffleable) {
     let mcQuestion = document.createElement("p");
     mcQuestion.innerHTML = "Q" + QuizID + ": "  + QuizName;
+    mcQuestion.setAttribute("id", "mc-" + QuizID);
+    mcQuestion.setAttribute("tabindex", "0");
     mcForm.appendChild(mcQuestion);
     //Create the image
     if (QuizImage != undefined && QuizImage != null && QuizImage != "") {
-        renderImage(mcForm, QuizImage, QuizImageAltText);
+        renderImage(mcForm, QuizImage, QuizImageAltText, QuizID);
     }
     //Create the description
     if (QuizDescription != undefined && QuizDescription != null && QuizDescription != "") {
@@ -216,7 +265,11 @@ function renderMCQuiz(QuizID, QuizName, QuizQuestions, QuizDescription, QuizImag
         counter++;
     }
     );
+    loadedQuizCount++;
+    remainingQuestionsAdd("mc", loadedQuizCount);
 }
+
+let loadedQuizCount = 0;
 function loadMCQuiz() {
     //Count the number of questions
     countMC = MCquizQuestions.length;
@@ -234,15 +287,81 @@ function loadMCQuiz() {
     }
     );
 }
+//Countdown timer
+let remainingTime = undefined;
+let counterDisplay = document.getElementById("quiz-cdReamining");
+let timeLimit = undefined;
+let timerRunning = false;
+function updateCDTimer(){
+    let cdMin = Math.floor(remainingTime/60);
+    let cdSec = remainingTime - cdMin * 60;
+    if (cdSec < 10) {
+        cdSec = "0" + cdSec;
+    }
+    if (cdMin < 10) {
+        cdMin = "0" + cdMin;
+    }
+    //Update the display
+    counterDisplay.innerHTML = cdMin + ":" + cdSec;
+    if (timerRunning == true) {
+        remainingTime--;
+    }else{
+        return false;
+    }
+    counterDisplay.setAttribute("aria-label", "Time remaining: " + cdMin + " minutes " + cdSec + " seconds");
+    //Check if the time is up
+    if (remainingTime <= 20) {
+        if (remainingTime <= 0) {
+            clearInterval(cdTimerInterval);
+            setupPrompt("Time is up!", "Your time is up.");
+            toggleGrayOut(true);
+            gradeQuiz();
+            postQuiz();
+        }
+    if (remainingTime.Math.floor(remainingTime/2) == 0) {
+        counterDisplay.style.color = "red";
+    }else{
+        counterDisplay.style.color = "black";
+    }
+    //Update quiz-cdReamining - aria-label for screen reader
+}
+}
+function countDownTimer(timeLimit){
+    timeLimit = parseInt(quizAttributes.TimeLimit);
+    remainingTime = timeLimit;
+    //Update time before the timer starts
+    let cdMin = Math.floor(remainingTime/60);
+    let cdSec = remainingTime - cdMin * 60;
+    if (cdSec < 10) {
+        cdSec = "0" + cdSec;
+    }
+    if (cdMin < 10) {
+        cdMin = "0" + cdMin;
+    }
+    counterDisplay.innerHTML = cdMin + ":" + cdSec;
+}
+
 let countLQ = 0;
 let lqIntro = document.getElementById("lqIntro");
+let timeIntervalRunning = false;
+let cdTimerInterval;
 function startQuiz() {
     //Hide the prompt
     closePrompt();
     //Show the quiz
     quizArea.style.visibility = "visible";
     //Start the timer
-    //WIP
+    timerRunning = true;
+    cdTimerInterval = setInterval(updateCDTimer, 1000);
+}
+function resumeQuiz() {
+    timeLimit--;
+    //Hide the prompt
+    closePrompt();
+    //Show the quiz
+    quizArea.style.visibility = "visible";
+    //Start the timer
+    timerRunning = true;
 }
 function loadLQQuiz() {
     countLQ = LQquizQuestions.length;
@@ -258,8 +377,10 @@ let chatbotIframe = document.getElementById("chatbot-iFrame");
 function toggleChatbotIframe(){
     if (chatbotIframe.style.visibility != "visible") {
         chatbotIframe.style.visibility = "visible";
+        askChatbot.innerHTML = "Hide Chatbot";
     }else{
         chatbotIframe.style.visibility = "hidden";
+        askChatbot.innerHTML = "Ask Chatbot";
     }
 }
 //Making hint Prompt only generate once only.
@@ -298,14 +419,14 @@ let hintPrompt = (function () {
     return hintPromptString;
 })();
 function toggleHintPrompt(){
-    //setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue)
     setupPrompt("Hint", hintPrompt, true, closePrompt(), false, undefined, undefined, true, closePrompt(), "Okay");
 }
 let quizArea = document.getElementById("quizArea");
 const quizName = document.getElementById("quizName");
 function loadQuiz() {
     //Load the Time Limit first
-    counterArea_AllowedTime.innerHTML = quizAttributes.TimeLimit/60 + " minutes";
+    counterArea_AllowedTime.innerHTML = quizAttributes.TimeLimit/60;
+    countDownTimer();
     //Check if away is allowed
     if (!(quizAttributes.AllowAway)) {
         quizFeatAway.style.display = "none";
@@ -328,7 +449,6 @@ function loadQuiz() {
     }
     //Call the function to load the quiz
     //Prompt the user to start the quiz
-    //function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue)
     setupPrompt("Loading Quiz", "Please wait. The quiz is loading...", false, undefined, false, undefined, undefined, false, undefined, undefined);
     //Hide the quiz first
     quizArea.style.visibility = "hidden";
@@ -359,6 +479,15 @@ let userMCAnswer = [
 let userLQAnswer = {
 
 }
+let MCresultDisplay = [
+]
+/**
+ * {
+ *  "id": 1,
+ *  "isCorrect": true
+ *  "correctAnswerInWord": "Wireless Router",
+ * }
+ */
 function gradeQuiz(){
     //Load the user answer with JQuery
     //MC Questions
@@ -383,6 +512,13 @@ function gradeQuiz(){
         if (userMCAnswer[i] != undefined && userMCAnswer[i] == correctMCAnswer[i]) {
             mcTotalScore++;
         }
+        //Send to MCresultDisplay for later use
+        MCresultDisplay[i] = {
+            "id": i+1,
+            "isCorrect": (userMCAnswer[i] == correctMCAnswer[i]),
+            "correctAnswerInWord": MCquizQuestions[i].options.find(option => option.id === correctMCAnswer[i]).text
+        }
+
     }
     //Skip for LQ
     //Calculate the total score
@@ -391,25 +527,65 @@ function gradeQuiz(){
 function closeWindow(){
     window.close();
 }
+let userData = undefined;
 //Post-quiz
+function constructResult(){
+    //TODO: Construct a div with diff color for every question to show user correct or wrong.
+    //MC Questions
+    MCquizQuestions.forEach(function (question) {
+        let setItem = $('#mc-'+ question.id).get(0);
+        let resultContainer = document.createElement("div");
+        resultContainer.setAttribute("class", "resultContainer");
+        let result = document.createElement("p");
+        result.setAttribute("class", "result");
+        //Check if the user answer is correct
+        if (MCresultDisplay[question.id-1].isCorrect) {
+            result.innerHTML = "✅ Correct";
+            resultContainer.classList.add("correct");
+        }else{
+            result.innerHTML = "❌ Wrong";
+            resultContainer.classList.add("incorrect");
+            //Show the correct answer
+            result.innerHTML += "<br> Correct answer: " + MCresultDisplay[question.id-1].correctAnswerInWord;
+        }
+        resultContainer.appendChild(result);
+        setItem.appendChild(resultContainer);
+    }
+    );
+}
+    //Skip for LQ
 function returnResult(){
+    //Allow the user to close the window
+    window.onbeforeunload = null;
+    constructResult();
     if (sendSuccess == false) {
-        setupPrompt ("Error", "Sorry, something went wrong. Please try again later.", false, undefined, false, undefined, undefined, false, undefined, undefined);
+        setupPrompt ("Error", "Your result is not uploaded. Please try again.", true, closePrompt(), true, closePrompt(), "Back to see result", true, function(){
+            closeWindow();
+        }
+        , "Exit");
         clearInterval(updateQuizPrompt);
         return false;
     }
     if (sendSuccess == true) {
-        setupPrompt ("Congratulation!", "Your result is uploaded. <br> Your score is " + totalScore + " out of " + countMC + ". <br> You may check your performance in detail on Progress Tracking Report. <Br> Click the button below to return to the course.", false, undefined, false, undefined, undefined, true, function(){
+        //function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue){
+        setupPrompt ("Congratulation!", "Your result is uploaded. <br> Your score is " + totalScore + " out of " + countMC + ". <br> You may check your performance in detail on Progress Tracking Report. <Br> Click the button below to return to the course.", true, closePrompt(), true, closePrompt(), "Back to see result", true, function(){
             closeWindow();
         }
-        , "Close the window and return to dashboard");
+        , "Exit");
         clearInterval(updateQuizPrompt);
     return true;
     }
 }
 let sendSuccess = undefined;
+let updateQuizPrompt = undefined;
 function postQuiz(){
-    let updateQuizPrompt = setInterval(returnResult, 1000);
+    updateQuizPrompt = setInterval(returnResult, 1000);
+    //Lock all the text input and radio button
+    let allInput = document.querySelectorAll("input");
+    allInput.forEach(function (input) {
+        input.disabled = true;
+    }
+    );
     //Tell user the result is uploading, do not close the window
     setupPrompt ("Don't close the window", "Your result is uploading to the server. Please wait.", false, undefined, false, undefined, undefined, false, undefined, undefined);
     //Block browser from closing the window
@@ -456,10 +632,11 @@ function postQuiz(){
             "mcScore": mcTotalScore,
             "lqQuiz": userLQAnswerInWord,
             "lqScore": lqTotalScore,
-            "totalScore": totalScore
-            //TODO: Add the time used - WIP
+            "totalScore": totalScore,
+            "remainTime": remainingTime
         }
         console.log(data);
+        userData = data;
         data = JSON.stringify(data);
         //Send the data to the server
         let url = currentURL.origin + "/api/quizResult.php";
@@ -471,6 +648,7 @@ function postQuiz(){
                 sendSuccess = true;
             },
             error: function (xhr, status, error) {
+                //sendSuccess = false;
                 sendSuccess = false;
                 console.log("Error: " + error.message);
             }   
@@ -478,18 +656,40 @@ function postQuiz(){
 }
 
 //Grade the quiz after the user submit the quiz
-document.getElementById("submitQuiz").addEventListener("click", function () {
+const submitQuiz = document.querySelectorAll(".submitQuiz");
+submitQuiz.forEach(function (button) {
+    button.addEventListener("click", function () {
+        //Check if the quiz is loaded
+        if (!loadQuizSuccess) {
+            window.alert("Quiz is not loaded yet. Please try again.");
+            return false;
+        }
+        clearInterval(cdTimerInterval);
+        gradeQuiz();
+        //Post the result to the server
+        postQuiz();
+        //Tell the user the result is uploaded + show the result
+        closeWindow();
+    },);
+}
+);
+document.getElementById("submitQuizIntro").addEventListener("click", function () {
     //Check if the quiz is loaded
     if (!loadQuizSuccess) {
         window.alert("Quiz is not loaded yet. Please try again.");
         return false;
     }
+    clearInterval(cdTimerInterval);
     gradeQuiz();
     //Post the result to the server
     postQuiz();
     //Tell the user the result is uploaded + show the result
-        closeWindow();
-    }, "Close");
+    closeWindow();
+}
+);
+
+        
+    
 
 document.getElementById("quiz-GoDown").addEventListener("click", function () {
     window.scrollTo(0, document.body.scrollHeight);
@@ -518,4 +718,58 @@ document.getElementById("checkQuizInfo").addEventListener("click", function () {
     toggleQuizInfoOnTop();
 }
 );
-//Image viewer, Countdown, quiz status and pause are WIP. Est time to complete: 2 hours
+function pauseQuiz(){
+    //Pause the timer
+    timerRunning = false;
+    //Hide the quiz
+    quizArea.style.visibility = "hidden";
+    //Pause the quiz
+    clearInterval(cdTimerInterval);
+    setupPrompt("Quiz Paused", "Your quiz is paused. Click the button below to resume the quiz.", false, undefined, false, undefined, undefined, true, function(){
+        resumeQuiz();
+    }, "Resume");
+
+    toggleGrayOut(true);
+}
+document.getElementById("quiz-Away").addEventListener("click", function () {
+    pauseQuiz();
+}
+);
+//Change the number of not answered questions
+let dispalyCounterNAQ = document.getElementById("quiz-Progress-Content-Body-Question-Number");
+let totalQuestion = loadedQuizCount;
+let counterNAQ = 0;
+let counterAQ = 0;
+let userAnswered = [
+]
+function updateNAQ(){
+    //Get the number of answered questions
+    //Update userAnswered with their id if they are answered
+    for (let i = 0; i < countMC; i++) {
+        let userAnswer = $("input[name='mc-" + MCquizQuestions[i].id + "-Ans']:checked").val();
+        if (userAnswer != undefined) {
+            userAnswered[i] = MCquizQuestions[i].id;
+        }
+    }
+    //Make remainingX to be green if the question is answered
+    let allRemaining = document.querySelectorAll(".remaining-box");
+    allRemaining.forEach(function (remaining) {
+        if (userAnswered.includes(parseInt(remaining.innerHTML))) {
+            remaining.classList.add("remaining-box-answered");
+        }else{
+            remaining.classList.remove("remaining-box-answered");
+        }
+    }
+    );
+    //Update the counter
+    dispalyCounterNAQ.innerHTML = totalQuestion - userAnswered.filter(function(answer) {return answer !== '' && answer !== null && answer !== undefined;}).length;
+}
+updateNAQ();
+//Check when there is an update on the user answer status for every user input
+let allInput = document.querySelectorAll("input");
+allInput.forEach(function (input) {
+    input.addEventListener("change", function () {
+        updateNAQ();
+    });
+}
+);

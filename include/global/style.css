@@ -205,7 +205,7 @@ button{
 /** Set the link in breadcrumb with >, i.e. Home > News */
 #breadcrumbs a::after {
     display: inline-block;
-    color: #000;
+    color: white;
     content: '>';
     font-size: 60%;
     font-weight: bolder;
@@ -218,15 +218,24 @@ button{
     padding-bottom: 8px;
     padding-left: 20px;
     margin-bottom: 0px;
+    color: white;
 }
 #breadcrumbs{
-    background-color: white;
-    margin-bottom: 20px;
+    background-color: #2455E6;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+#breadcrumbs *{
+    color: white;
+    text-decoration: none;
+
+}
 /** End: Breadcrumb */
-main{
-    margin: 20px;
+#posterIntro img{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 /** Start: Header drop-down menu */
 /** The dropdown menu will be active when content in header hidden due to screen size  */
@@ -322,8 +331,7 @@ footer {
     width: 100%;
     /*Height of the footer */
     height: max-content;
-    padding: 0px 0px 8px 0px;
-    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    q    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
     box-sizing: border-box;
     color:white;
     font-size: 12px;
@@ -340,7 +348,7 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #58585b;
+    background-color: #2455E6;
     height: 30px;
     align-items: center;
 }
@@ -395,11 +403,15 @@ footer {
     margin-bottom: auto;
 }
 .footer-Bottom-Link{
+    background-color: #2455;
     display: flex;
     justify-content: space-between;
     color: white;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
 }
 .lang-switch-btn{
     cursor: pointer;

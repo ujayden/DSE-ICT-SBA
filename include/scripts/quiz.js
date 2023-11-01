@@ -688,9 +688,6 @@ document.getElementById("submitQuizIntro").addEventListener("click", function ()
 }
 );
 
-        
-    
-
 document.getElementById("quiz-GoDown").addEventListener("click", function () {
     window.scrollTo(0, document.body.scrollHeight);
 }

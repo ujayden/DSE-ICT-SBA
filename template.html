@@ -10,15 +10,11 @@
     <!-- Load CSS and Script here -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="/include/global/style.css">
-    <link rel="stylesheet" href="/include/styles/home.css">
     <link rel="stylesheet" href="/include/global/style_responsive.css">
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
-    <link rel="stylesheet" href="/include/styles/photo_gallery.css">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
-    <script src="/include/scripts/home.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
-    <script src="/include/scripts/photo_gallery.js" defer></script>
     <!-- Load Bootstrap of sth else here-->
 
 </head>
@@ -131,154 +127,10 @@
             </ul>
         </nav>
     </header>
-    <!-- Latest news -->
-    <div id="newsLoop">
-        <h4><span tabindex="0">Latest News</span><div id="setNewsLoop"><span id="newsCount" class="newsLoopUnimportant">1/3</span><span id="newsLoopBack" class="newsLoopUnimportant" aria-label="Back to previous News button" tabindex="0">&lt;</span><span id="newsLoopNext" class="newsLoopUnimportant" tabindex="0" aria-label="Go to next news button">&gt;</span><span id="newsLoopPause" class="newsLoopUnimportant" tabindex="0" aria-label="Stop refresh news">Pause</span><span id="newsLoopClose" tabindex="0" aria-label="Close Latest News Banner">x</span></div></h4>
-        <div class="newsLoop-Container">
-            <p id="News1" tabindex="0">Hello</p>
-            <p id="News2" hidden tabindex="0">World</p>
-            <p id="News3" hidden tabindex="0">!</p>
-        </div>
-    </div>
     <!-- Main Content -->
-    <div id="photo-gallery">
-        <div id="photo-container-1" class="photo-container photo-container-active fade">
-            <img src="/include/images/gallery/gallery1.jpg">
-        </div>
-        <div id="photo-container-2" class="photo-container fade">
-            <img src="/include/images/gallery/gallery2.jpg">
-        </div>
-        <div class="prev" id="prev"></div>
-        <div class="next" id="next"></div>
-        <div id="photo-gallery-Text">
-            <h2 tabindex="0">ICT Master Hub</h2>
-            <p tabindex="0">It is time to learn.</p>
-        </div>
-    </div>
-    <div id="status-Box">
-        <div class="status-Box-row">
-            <div id="status-box-info-1" class="status-box-info">
-                <span class="icon">
-
-                </span>
-                <div class="status-box-info-text">
-                    <h3 tabindex="-1">10+</h3>
-                    <p tabindex="-1">User using</p>
-                </div>
-            </div>
-            <div id="status-box-info-2" class="status-box-info">
-                <span class="icon">
-
-                </span>
-                <div class="status-box-info-text">
-                    <h3 tabindex="-1">1</h3>
-                    <p tabindex="-1">Course available</p>
-                </div>
-            </div>
-            <div id="status-box-info-3" class="status-box-info">
-                <span class="icon">
-
-                </span>
-                <div class="status-box-info-text">
-                    <h3 tabindex="-1">20+</h3>
-                    <p tabindex="-1">Resource available</p>
-                </div>
-            </div>
-            <div id="status-box-info-4" class="status-box-info">
-                <span class="icon">
- 
-                </span>
-                <div class="status-box-info-text">
-                    <h3 tabindex="-1">2</h3>
-                    <p tabindex="-1">People</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="air-200px"></div>
     <main>
-        <section id="posterIntro">
-            <img src="/include/images/home/universe.jpg" alt="Universe Landscape">
-            <div>
-                <div>
-                    <h1>Your self Learning website for DSE ICT Networking.</h1>
-                    <p>Your knowledge has no boundaries, like the space. </p>
-                </div>
-                <button id="posterIntro-btn" tabindex="0">Start Learning</button>
-            </div>
-        </section>
-        <section id="posterBenefit">
-            <h2>Studying on your own is not easy, but we can help.</h2>
-            <div id="posterBenefitDetailContainer" class="left">
-                <h3><span class="posterBenefit-Bold">Fully design</span> for ICT students.</h3>
-                <p>This website&rsquo;s learning path has fully design only for practicing HKDSE ICT Student. </p>
-            </div>
-            <div id="posterBenefitDetailContainer" class="right">
-                <h3><span class="posterBenefit-Bold">Easy to use</span> and <span class="posterBenefit-Bold">free</span>.</h3>
-                <p>Our website is easy to use and free. You can learn anytime and anywhere.</p>
-            </div>
-            <!--Keep writing with these "Feature desp"-->
-            <div id="posterBenefitDetailContainer" class="left">
-                <h3>Enjoy learning with <span class="posterBenefit-Bold">Dynamic Learning Path</span> for you.</h3>
-                <p>4 level of difficulties is available - Learn for everybody!
-                </p>
-            </div>
-            <div id="posterBenefitDetailContainer" class="right">
-                <h3><span class="posterBenefit-Bold">Progress Tracking</span> is that simple.</h3>
-                <p>Track your progress easily with just a few click.</p>
-            </div>
-            <div id="posterBenefitDetailContainer" class="left">
-                <h3>Learning more <span class="posterBenefit-Bold">efficiency</span> with learning materials <span class="posterBenefit-Bold">free</span> for cost.</h3>
-                <p>Challenge your self with free text notes, videos, quiz, interactive element and even free mock paper online.</p>
-            </div>
-            <div id="posterBenefitDetailContainer" class="right">
-                <h3><span class="posterBenefit-Bold">Ask</span> other ICT students is easily too.</h3>
-                <p>No need to find a discussion forum for DSE ICT, just discuss here!</p>
-            </div>
-        </section>
-        <section id="posterHearWeAre">
-            <div class="left">
-                <span>Here is</span>
-                <h2>ICT Master Hub</h2>
-                <p></p>
-            </div>
-            <div class="right">
-            </div>
-        </section>
-        <section id="posterCouseAvailable">
-            <h2>Course Available</h2>
-            <div class="posterCourseAvailableContainer">
-                <div>
-                    <img>
-                    <h3>Composory Part</h3>
-                    <p>Learn the basic of ICT.</p>
-                    <a href="/learning/introduction/composory.html">Learn More</a>
-                </div>
-                <div>
-                    <img>
-                    <h3>Extended Part &lpar;Elective Part&rpar;</h3>
-                    <p>Learn the extended part of ICT.</p>
-                    <a href="/learning/introduction/extended.html">Learn More</a>
-                </div>
-            </div>
-        </section>
-        <section id="posterComment">
-            <h3>Still Struggling?</h3>
-            <p>Let&rsquo;s see what other people say about us.</p>
-            <div id="posterCommentContainer" class="posterCommentContainer"> 
-                <div id="posterComment">
-                    <h4>Title</h4>
-                    <p>Comment</p>
-                </div>
-                <div id="posterCommentNext"></div>
-            </div>
-        </section>
-        <section id="posterFinal">
-            <div>
-                <h4>It is time to get a try.</h4>
-                <p>No Cost - That&rsquo;s mean you shold try it now.</p>
-            </div>
-            <button id="posterFinal-btn">Start Learning</button>
+        <section id="introduction">
+            
         </section>
     </main>
 

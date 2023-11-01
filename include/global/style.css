@@ -331,7 +331,7 @@ footer {
     width: 100%;
     /*Height of the footer */
     height: max-content;
-    q    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
     box-sizing: border-box;
     color:white;
     font-size: 12px;

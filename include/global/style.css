@@ -75,6 +75,7 @@ button{
     border-radius: 2px;
     background: rgb(244, 244, 244) url(/include/global/search.svg) no-repeat  5px 5px;
     padding: 2px 4px 2px 40px;
+    box-sizing: content-box;
 }
 #search button{
     height: 26px;
@@ -98,6 +99,7 @@ button{
     border-bottom: 1px solid white;
     height: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    line-height: 1;
     z-index: 999;
 }
 /** Style for the menu and dropdown menu */
@@ -105,7 +107,9 @@ button{
     color: black;
     text-decoration: none;
 }
-
+.header-nav a:hover{
+    text-decoration: none;
+}
 .header-nav .dropdownContent{
     display: none;
     position: absolute;
@@ -113,7 +117,7 @@ button{
     min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
-    z-index: 2;
+    z-index: 99;
     font-size: 16px;
 }
 .dropdownMenu:hover + .dropdownContent{
@@ -193,6 +197,8 @@ button{
     margin-left: 5px;
 }
 .headerDropDownMenu-HR{
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -215,7 +221,7 @@ button{
     list-style-type: none;
     margin-top: 0px;
     padding-top: 4px;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     padding-left: 20px;
     margin-bottom: 0px;
     color: white;
@@ -252,7 +258,7 @@ button{
 #headerDropDownMenu{    
     position: absolute;
     width: 100%;
-    z-index: 999;
+    z-index: 9;
     background-color: white;
     overflow: hidden;
     transition: all 0.4s ease-in-out;
@@ -299,7 +305,8 @@ button{
     text-decoration: none;
     color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -351,6 +358,7 @@ footer {
     background-color: #2455E6;
     height: 30px;
     align-items: center;
+    line-height: 1 !important;
 }
 #footer-Title h2{
     margin: 0px;
@@ -415,4 +423,20 @@ footer {
 }
 .lang-switch-btn{
     cursor: pointer;
+}
+.headerDropDownMenu-Title:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid black;
+    margin-left: 10px;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    top: 2px;
+}
+.headerDropDownMenu-Title.active:after {
+    transform: rotate(90deg);
 }

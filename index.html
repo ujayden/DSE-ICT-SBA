@@ -14,15 +14,16 @@
     <link rel="stylesheet" href="/include/global/style_responsive.css">
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
     <link rel="stylesheet" href="/include/styles/photo_gallery.css">
+    <link rel="stylesheet" href="/include/global/icon.css">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
     <script src="/include/scripts/home.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
-    <script src="/include/scripts/photo_gallery.js" defer></script>
-    <!-- Load Bootstrap of sth else here-->
-
+    <!--Load bootstrap-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
 </head>
-<body>
+    <body>
     <!-- Header -->
     <header id="header">
         <div id="header-Bar">
@@ -80,7 +81,7 @@
         <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
         <div id="headerDropDownMenu" class="headerDDM-close-vertical">
             <div id="headerDropDownMenu-Link">
-                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text" tabindex="-1">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
                 <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
                     <a href="/learning/index.html" tabindex="-1">Dashboard</a>
                     <a href="/library/index.html" tabindex="-1">Resource Library</a>
@@ -88,7 +89,7 @@
                     <a href="/profile/report.html" tabindex="-1">My Report</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text" tabindex="-1">Explore <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
                 <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
                     <a href="/reason.html" tabindex="-1">Why using this website</a>
                     <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
@@ -98,7 +99,7 @@
                     <a href="/setting.html" tabindex="-1">Setting</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text" tabindex="-1">More about us <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
                 <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
                     <a href="/about.html" tabindex="-1">About Us</a>
                     <a href="/contact.html" tabindex="-1">Contact Us</a>
@@ -135,21 +136,33 @@
     <div id="newsLoop">
         <h4><span tabindex="0">Latest News</span><div id="setNewsLoop"><span id="newsCount" class="newsLoopUnimportant">1/3</span><span id="newsLoopBack" class="newsLoopUnimportant" aria-label="Back to previous News button" tabindex="0">&lt;</span><span id="newsLoopNext" class="newsLoopUnimportant" tabindex="0" aria-label="Go to next news button">&gt;</span><span id="newsLoopPause" class="newsLoopUnimportant" tabindex="0" aria-label="Stop refresh news">Pause</span><span id="newsLoopClose" tabindex="0" aria-label="Close Latest News Banner">x</span></div></h4>
         <div class="newsLoop-Container">
-            <p id="News1" tabindex="0">Hello</p>
-            <p id="News2" hidden tabindex="0">World</p>
-            <p id="News3" hidden tabindex="0">!</p>
+            <p id="News" tabindex="0">Latest News</p>
         </div>
     </div>
     <!-- Main Content -->
     <div id="photo-gallery">
-        <div id="photo-container-1" class="photo-container photo-container-active fade">
-            <img src="/include/images/gallery/gallery1.jpg">
-        </div>
-        <div id="photo-container-2" class="photo-container fade">
-            <img src="/include/images/gallery/gallery2.jpg">
-        </div>
-        <div class="prev" id="prev"></div>
-        <div class="next" id="next"></div>
+        <!-- BS Carousel-->
+        <div id="photo-gallery-container" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/include/images/gallery/gallery1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/include/images/gallery/gallery2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/include/images/quiz/quiz1/quiz1-q1.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#photo-gallery-container" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#photo-gallery-container" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         <div id="photo-gallery-Text">
             <h2 tabindex="0">ICT Master Hub</h2>
             <p tabindex="0">It is time to learn.</p>
@@ -166,6 +179,7 @@
                     <p tabindex="-1">User using</p>
                 </div>
             </div>
+            <div class="divider"></div>
             <div id="status-box-info-2" class="status-box-info">
                 <span class="icon">
 
@@ -175,6 +189,7 @@
                     <p tabindex="-1">Course available</p>
                 </div>
             </div>
+            <div class="divider"></div>
             <div id="status-box-info-3" class="status-box-info">
                 <span class="icon">
 
@@ -184,6 +199,7 @@
                     <p tabindex="-1">Resource available</p>
                 </div>
             </div>
+            <div class="divider"></div>
             <div id="status-box-info-4" class="status-box-info">
                 <span class="icon">
  

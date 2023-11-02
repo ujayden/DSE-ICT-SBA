@@ -2,7 +2,6 @@
 //This script will load globally
 /** Display drop down list when clicking, to make sure the menu can be run on tablet.  */
 function toggleDropDownMenu(callElm, menuElm) {
-    console.log(menuElm);
     //The menuElm should be the element it self, not the id of the element.
     if (!(menuElm.style.display == 'block')) {
         menuElm.style.display = 'block';
@@ -147,12 +146,15 @@ function toggleDropDownMenuFlex_headerDDMenu(menuElm, callElm) {
     if (!(menuElm.style.display == 'flex')) {
         menuElm.style.display = 'flex';
         //Change the Status from "Close" to "Open"
-        callElm.querySelector('.headerDropDownMenu-Link-Status').innerHTML = '&#9660;';
+        //.headerDropDownMenu-Title:after rotate 90 degree
+        callElm.classList.add('active');
+
     }else{
         //Use removeAttribute to remove the style attribute => Make sure css of hover menu can be run.
         menuElm.removeAttribute('style');
         //Change the Status from "Open" to "Close"
-        callElm.querySelector('.headerDropDownMenu-Link-Status').innerHTML = '&#9654;';
+        //.headerDropDownMenu-Title:after rotate 0 degree
+        callElm.classList.remove('active');
     }
 }
 

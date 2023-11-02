@@ -4,20 +4,20 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    height: 300px;
 }
-.photo-container img{
+.carousel-item img{
     z-index: 0;
     width: 100%;
     height: 300px;
     object-fit: cover;
     object-position: center;
-    transition: opacity 0.5s ease-in-out;
     overflow: hidden;
+    vertical-align: middle;
     filter: brightness(40%);
 }
-.photo-container-active img{
-    display: block;
-    opacity: 1;
+.carousel{
+    position: static !important;
 }
 .prev, .next {
     cursor: pointer;
@@ -45,14 +45,6 @@
 .prev{
     rotate: 270deg;
 }
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
 #photo-gallery-Text{
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 100 !important;
@@ -74,6 +66,7 @@
     font-weight: 100 !important;
     margin-top: 0px;
 }
+
 /** Status Bar **/
 #status-Box{
     position: absolute;
@@ -96,9 +89,10 @@
 .icon{
     display: flex;
     content: "";
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     background-color: #2455E6;
+    margin-bottom: 4px;
 }
 .status-box-info{
     font-family: "Montserrat", sans-serif;
@@ -113,5 +107,10 @@
 }
 .air-200px{
     width: 100%;
-    height: 80px;
+    height: 100px;
+}
+.divider{
+    width: 1px;
+    background-color: rgb(200, 200, 200);
+    margin: 0 8px;
 }

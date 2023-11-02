@@ -15,8 +15,9 @@
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
-    <!-- Load Bootstrap of sth else here-->
-
+    <!--Load bootstrap-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -76,7 +77,7 @@
         <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
         <div id="headerDropDownMenu" class="headerDDM-close-vertical">
             <div id="headerDropDownMenu-Link">
-                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text" tabindex="-1">Courses <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
                 <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
                     <a href="/learning/index.html" tabindex="-1">Dashboard</a>
                     <a href="/library/index.html" tabindex="-1">Resource Library</a>
@@ -84,7 +85,7 @@
                     <a href="/profile/report.html" tabindex="-1">My Report</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text" tabindex="-1">Explore <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
                 <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
                     <a href="/reason.html" tabindex="-1">Why using this website</a>
                     <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
@@ -94,7 +95,7 @@
                     <a href="/setting.html" tabindex="-1">Setting</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text" tabindex="-1">More about us <span class="headerDropDownMenu-Link-Status">&#9654;</span></span>
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
                 <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
                     <a href="/about.html" tabindex="-1">About Us</a>
                     <a href="/contact.html" tabindex="-1">Contact Us</a>

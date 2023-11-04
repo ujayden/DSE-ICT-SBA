@@ -1,0 +1,176 @@
+{
+    "success": true,
+    "mcQuiz": [
+        {
+            "id": 1,
+            "question": "What is this device&rsquo;s name?",
+            "image": "/include/images/quiz/quiz1/quiz1-q1.jpg",
+            "imageAltText": "This device has some antennas",
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "Wireless Router"
+                },
+                {
+                    "id": "B",
+                    "text": "Switch"
+                },
+                {
+                    "id": "C",
+                    "text": "Modem"
+                },
+                {
+                    "id": "D",
+                    "text": "Access Point"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "This device has some antennas"
+        },
+        {
+            "id": 2,
+            "question": "What is NOT the correct reason for optical fiber cable use widely?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "It is low cost."
+                },
+                {
+                    "id": "B",
+                    "text": "It is thinner, small size than UTP."
+                },
+                {
+                    "id": "C",
+                    "text": "It has better security."
+                },
+                {
+                    "id": "D",
+                    "text": "It can protect against electromagnetic interference."
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "Optical fiber cable is faster, means......"
+        },
+        {
+            "id": 3,
+            "question": "Which type of cable is commonly used for wired home network and supports data transfer rates up to 1 Gbps?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "STP cable"
+                },
+                {
+                    "id": "B",
+                    "text": "UTP cable"
+                },
+                {
+                    "id": "C",
+                    "text": "Coaxial cable"
+                },
+                {
+                    "id": "D",
+                    "text": "Fiber optic cable"
+                }
+            ],
+            "correctAnswerID": "B",
+            "hint": "Usually, we use it at home."
+        },
+        {
+            "id": 4,
+            "question": "Which type of connector is commonly used for wired Ethernet connections?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "RJ-11"
+                },
+                {
+                    "id": "B",
+                    "text": "RJ-45"
+                },
+                {
+                    "id": "C",
+                    "text": "USB"
+                },
+                {
+                    "id": "D",
+                    "text": "HDMI"
+                }
+            ],
+            "correctAnswerID": "B",
+            "hint": "Check your home router!"
+        },
+        {
+            "id": 5,
+            "question": "Which should be involved when deploying a large office network?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "Peer-to-Peer Network"
+                },
+                {
+                    "id": "B",
+                    "text": "Client/Server Network"
+                },
+                {
+                    "id": "C",
+                    "text": "Bluetooth"
+                },
+                {
+                    "id": "D",
+                    "text": "Bridge"
+                }
+            ],
+            "correctAnswerID": "B",
+            "hint": "You use P2P network at home."
+        },
+        {
+            "id": 6,
+            "question": "Which technology should be used when connecting a home network to WAN (the Internet) with a high-speed connection?",
+            "image": null,
+            "imageAltText": null,
+            "description": null,
+            "shuffleable": true,
+            "options": [
+                {
+                    "id": "A",
+                    "text": "Broadband"
+                },
+                {
+                    "id": "B",
+                    "text": "ADSL"
+                },
+                {
+                    "id": "C",
+                    "text": "Dial-up"
+                },
+                {
+                    "id": "D",
+                    "text": "Satellite"
+                }
+            ],
+            "correctAnswerID": "A",
+            "hint": "Have you heard a ISP (Internet Server Provider) in Hong Kong called HKBN? What are they providing?"
+        }
+    ],
+    "LongQuiz": [
+        null
+    ]
+}

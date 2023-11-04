@@ -1,51 +1,19 @@
-@media screen and (max-width: 1050px) {
-    #header-Logo{
-        display: none;
-    }
-    #searchbox{
-        width: 160px;
-    }
-    .slogan{
-        display: none;
-    }
-    #header-Title h1{
-        margin-top: 0px;
-        margin-left: 10px;
-    }
-    #headerDropDownMenu-NoContent{
-        display: block;
-    }
-    #search{
-        margin-top: 5px;
-    }
-    #headerDropDownMenu{
-        display: none;
-    }
-}
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1100px) {
     .header-Right{
         display: none;
     }
     #headerDropDownMenu-Logo{
         display: inline-block;
     }
-    #headerDropDownMenu-NoContent{
-        display: none;
-    }
-    #headerDropDownMenu-User{
-        display: flex;
-    }
+
     #headerDropDownMenu-Search{
         display: flex;
     }
     #searchbox{
         width: 300px;
     }
-    #headerDropDownMenu{
-        display: none;
-    }
 }
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
     .header-nav{
         display: none;
     }

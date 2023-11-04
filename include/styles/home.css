@@ -1,11 +1,9 @@
 #newsLoop{
-    width: 90%;
     background-color: orange;
     margin: 0 auto;
     padding-left: 14px;
     padding-right: 14px;
     padding-bottom: 1px;
-    border-radius: 3px;
 }
 #newsLoop h4{
     text-align: center;

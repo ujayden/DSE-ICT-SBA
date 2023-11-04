@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "quizID": "01",
+    "verifyQuizID": true,
+    "config": {
+        "shuffleQuestions": true,
+        "allowAway": true,
+        "quizName": "Quiz 1",
+        "quizDescription": null,
+        "timeLimit": 480,
+        "allowSupport": true,
+        "allowHints": true
+    }
+}

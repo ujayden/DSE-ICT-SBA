@@ -1,0 +1,150 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+}
+button{
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    border-radius: 2px;
+    background-color: ghostwhite;
+}
+#chatbot-container{
+    background-color: #7ca3d6;
+    width: 100%;
+}
+#chatbot-real-chat{
+    height: max-content;
+}
+#chatbot-Logo{
+    height: 100%;
+    width: 36px;
+    margin-right: 8px;
+    object-fit: contain;
+    margin-top: 0;
+}
+header{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 8px 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    background-color: #7ca3d6;
+    z-index: 1;
+}
+header h1{
+    margin: 0;
+}
+#chatbot-close-btn{
+    margin-left: auto;
+    text-align: right;
+}
+#chatbot-chat-container{
+    height: calc(100vh - 40px - 50px);
+    overflow-y: scroll;
+    background-color: white;
+    width: 100%;
+}
+.chatbot-input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-self: baseline;
+    bottom: 0;
+    background-color: #35b8be;
+    height: 50px;
+}
+#chatbot-input{
+    height: 24px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 2px;
+    margin: 10px 20px 10px 10px;
+    width: 80%;
+}
+#chatbot-send-btn{
+    height: 28px;
+    margin: 10px;
+    width: 20%;
+}
+/* Start: Chat Bubble */
+.chatbot-chat-message{
+    width: 80%;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+.chatbot-chat-message-text{
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+}
+.chatbot-chat-message-server-comm{
+    background-color: rgb(216,218,221);
+}
+.chatbot-chat-message-server-comm::before {
+    /* Reference: https://projects.verou.me/bubbly/ */
+    /* Trigangle */
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+    border: 18px solid transparent;
+	border-right-color: rgb(216,218,221);
+	border-left: 0;
+	margin-top: -18px;
+	margin-left: -9px;
+    /*
+        Alert! #7bEq
+        In the reference, the 'px' of border, margin-top and margin-left are same, (*-1 for margin-top).
+        However, this cause some small display problem, sometimes user may see a white line at the right of the triangle.
+        So, only border and margin-top are same, margin-left should be different.
+        And, DO NOT change the order of rule.
+    */
+}
+.chatbot-chat-message-client-comm{
+    background-color: rgb(152, 215, 199);
+    margin-left: auto;
+}
+.chatbot-chat-message-client-comm::after{
+    /* Reference: https://projects.verou.me/bubbly/ */
+    /* Trigangle */
+    content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+    border: 18px solid transparent;
+	border-left-color: rgb(152, 215, 199);
+	border-right: 0;
+	margin-top: -18px;
+	margin-right: -9px;
+    /* Use search to find the note for this rule: #7bEq */
+}
+.chatbot-chat-message-client-comm p{
+    text-align: right;
+}
+#chatbot-chat-suggest p{
+    text-align: right;
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+}
+#chatbot-chat-suggest p{
+    color: rgb(86, 83, 100);
+}
+#chatbot-chat-wait{
+    display: none;
+}

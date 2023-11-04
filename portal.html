@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Login Now! - ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link rel="stylesheet" href="/include/styles/portal.css">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/scripts/portal.js" defer></script>
+    <!-- Load Bootstrap of sth else here-->
+</head>
+<body>
+<div class="background"></div>
+<main>
+<div id="portal-container">
+    <div id="portalLHS">
+        <span id="portal-Breadcrumb">
+            <a href="/">ICT Master Hub</a> > Login
+        </span>
+        <h2>Login</h2>
+        <p>Access you profile</p>
+        <form action="" method="post" id="login">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username...">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password...">
+            <label for="otp" id="otp-label">One Time Password</label>
+            <input type="text" name="otp" id="otp" placeholder="Enter your OTP...">
+            <div class="checkboxRow">
+                <span class="checkboxOpt">
+                    <input type="checkbox" name="otp" id="otp-checkbox">
+                    <label for="otp-checkbox">I don't have OTP</label>
+                </span>
+                <span class="checkboxOpt">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember me</label>
+                </span>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div id="portalDivider"></div>
+    <div id="portalRHS">
+        <img src="/include/misc/securephone.png" alt="Phone with more security">
+        <h2>More secure with your mobile phone</h2>
+        <p>Protect your account with your OTP code. It is free.</p>
+        <button id="portal-LearnMore">Learn More</button>
+    </div>
+</div>
+<span id="portal-notice">Not registered yet? <a href="">Register now.</a></span>
+</main>
+</body>
+</html>

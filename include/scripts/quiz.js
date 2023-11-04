@@ -134,7 +134,7 @@ function accessibilityImage(imageURL, imageAlt, callElm) {
         tempImg.setAttribute("alt", imageAlt);
         tempImg.setAttribute("class", "quiz-image-container-fullscreen");
         tempImg.setAttribute("tabindex", "0");
-        setupPrompt("Image", tempImg.outerHTML, true, closePrompt(), false, undefined, undefined, true, closePrompt(), "Close");
+        setupPrompt("Image", tempImg.outerHTML, true, closePrompt, false, closePrompt, undefined, true, closePrompt, "Close");
     }else if (callElm.getAttribute("data-Accessibility-Opt") == "img-NewPage-View") {
         window.open(imageURL, "_blank", "fullscreen=yes");
     }
@@ -292,7 +292,11 @@ let remainingTime = undefined;
 let counterDisplay = document.getElementById("quiz-cdReamining");
 let timeLimit = undefined;
 let timerRunning = false;
+let allowCountDown = false;
 function updateCDTimer(){
+    if (allowCountDown == false) {
+        return false;
+    }
     let cdMin = Math.floor(remainingTime/60);
     let cdSec = remainingTime - cdMin * 60;
     if (cdSec < 10) {
@@ -305,25 +309,24 @@ function updateCDTimer(){
     counterDisplay.innerHTML = cdMin + ":" + cdSec;
     if (timerRunning == true) {
         remainingTime--;
-    }else{
-        return false;
     }
     counterDisplay.setAttribute("aria-label", "Time remaining: " + cdMin + " minutes " + cdSec + " seconds");
     //Check if the time is up
     if (remainingTime <= 20) {
-        if (remainingTime <= 0) {
+        if (remainingTime < 0) {
             clearInterval(cdTimerInterval);
+            allowCountDown = false;
             setupPrompt("Time is up!", "Your time is up.");
             toggleGrayOut(true);
             gradeQuiz();
             postQuiz();
         }
-    if (remainingTime.Math.floor(remainingTime/2) == 0) {
-        counterDisplay.style.color = "red";
-    }else{
-        counterDisplay.style.color = "black";
-    }
-    //Update quiz-cdReamining - aria-label for screen reader
+        console.log(remainingTime);
+        if (remainingTime % 2 == 0) {
+            counterDisplay.style.color = "red";
+        }else{
+            counterDisplay.style.color = "black";
+        }
 }
 }
 function countDownTimer(timeLimit){
@@ -352,6 +355,8 @@ function startQuiz() {
     quizArea.style.visibility = "visible";
     //Start the timer
     timerRunning = true;
+    allowCountDown = true;
+    //Start the countdown timer
     cdTimerInterval = setInterval(updateCDTimer, 1000);
 }
 function resumeQuiz() {
@@ -423,20 +428,26 @@ function toggleHintPrompt(){
 }
 let quizArea = document.getElementById("quizArea");
 const quizName = document.getElementById("quizName");
+let currentStageAllowPause = undefined;
+let chatbotIframeBtn = document.getElementById("chatbot-iFrame-close");
 function loadQuiz() {
     //Load the Time Limit first
     counterArea_AllowedTime.innerHTML = quizAttributes.TimeLimit/60;
     countDownTimer();
     //Check if away is allowed
     if (!(quizAttributes.AllowAway)) {
+        currentStageAllowPause = false;
         quizFeatAway.style.display = "none";
     }
     //Check if the support and hint are allowed
     if (!(quizAttributes.AllowChatbot)) {
         askChatbot.style.display = "none";
     }else{
-        chatbotIframe.appendChild(document.createElement("iframe")).setAttribute("src", "/chatbot.html")   ;
+        chatbotIframe.appendChild(document.createElement("iframe")).setAttribute("src", "/chatbot.html");
         askChatbot.addEventListener("click", function () {
+            toggleChatbotIframe();
+        });
+        chatbotIframeBtn.addEventListener("click", function () {
             toggleChatbotIframe();
         });
     }
@@ -664,6 +675,9 @@ submitQuiz.forEach(function (button) {
             window.alert("Quiz is not loaded yet. Please try again.");
             return false;
         }
+        allowCountDown = false;
+        currentStageAllowPause = false;
+        console.log(currentStageAllowPause)
         clearInterval(cdTimerInterval);
         gradeQuiz();
         //Post the result to the server
@@ -679,6 +693,8 @@ document.getElementById("submitQuizIntro").addEventListener("click", function ()
         window.alert("Quiz is not loaded yet. Please try again.");
         return false;
     }
+    allowCountDown = false;
+    currentStageAllowPause = false;
     clearInterval(cdTimerInterval);
     gradeQuiz();
     //Post the result to the server
@@ -716,6 +732,9 @@ document.getElementById("checkQuizInfo").addEventListener("click", function () {
 }
 );
 function pauseQuiz(){
+    if (currentStageAllowPause == false) {
+        return false;
+    }
     //Pause the timer
     timerRunning = false;
     //Hide the quiz

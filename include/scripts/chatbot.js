@@ -134,5 +134,7 @@ try{
 }finally{
     if (inIframe) {
         chatbotCloseButton.style.display = "none";
+        document.querySelector('header').style.display = "none";
+        document.getElementById('chatbot-chat-container').style.height = "calc(100vh - 54px)";
     }
 }

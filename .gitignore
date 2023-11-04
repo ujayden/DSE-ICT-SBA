@@ -2,3 +2,4 @@ Report-Private/
 debug/
 serverConfig/
 api/update.php
+api/config.php

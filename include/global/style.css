@@ -53,6 +53,8 @@ button{
     flex-direction: row;
     padding-left: 20px;
     font-size: 16px;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
 }
 
 /** Style for item in right-hand-side of header */
@@ -212,9 +214,7 @@ button{
 #breadcrumbs a::after {
     display: inline-block;
     color: white;
-    content: '>';
-    font-size: 60%;
-    font-weight: bolder;
+    content: '/';
     padding: 0 3px;
 }
 #breadcrumbs ul{
@@ -363,6 +363,7 @@ footer {
 #footer-Title h2{
     margin: 0px;
     margin-left: 20px;
+    font-size: 24px;
 }
 #footer-Title p{
     margin: 0px;
@@ -439,4 +440,34 @@ footer {
 }
 .headerDropDownMenu-Title.active:after {
     transform: rotate(90deg);
+}
+.header-tryit-btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: #2455E6;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #2455E6;
+    display: inline-block;
+}
+.header-tryit-btn:hover{
+    background-color: white;
+    color: #2455E6;
+}
+#header-tryit-btn-nav{
+    display: none;
+    margin-left: 0;
+}
+#breadcrumbs-Cureent-Page{
+    font-weight: bold;
+}
+#breadcrumbs li{
+    font-weight: normal;
 }

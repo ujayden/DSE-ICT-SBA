@@ -1,6 +1,6 @@
 body{
     background-color: rgb(216, 216, 216);
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     position: relative;
     min-height: 100vh;
@@ -16,6 +16,7 @@ button{
     padding-top: 8px;
     padding-bottom: 8px;
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
 }
 
 button:hover{
@@ -53,6 +54,15 @@ header h1{
     padding-right: 24px;
     padding-top: 4px;
     padding-bottom: 4px;
+    border: 2px solid #2455E6;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+    font-family: inherit;
+}
+#quiz-Away:hover{
+    background-color: white;
+    color: #2455E6;
 }
 #quiz-Exit{
     color:white;
@@ -63,6 +73,15 @@ header h1{
     padding-right: 24px;
     padding-top: 4px;
     padding-bottom: 4px;
+    border: 2px solid #ff7d7d;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+    font-family: inherit;
+}
+#quiz-Exit:hover{
+    background-color: white;
+    color: #ff7d7d;
 }
 main{
     background-color: white;
@@ -181,6 +200,7 @@ input[type=submit]{
     font-size: 48px;
     font-weight: bold;
     color: black;
+    transition: all 0.2s ease-in-out;
 }
 .quiz-cdReamining-additional-text{
     margin-left: 20px;
@@ -268,19 +288,50 @@ input[type=submit]{
     transform: rotate(-45deg);
 }
 #chatbot-iFrame{
+    background-color: white;
+    border: 2px solid black;
     visibility: hidden;
     position: fixed;
     bottom: 14vh;
     right: 20px;
     height: 40vh;
-    width: 40vh;
+    width: 30vh;
     z-index: 9;
     margin: 2px;
 }
+.chatbot-iFrame-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;    
+    background-color: #2455E6;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.chatbot-iFrame-header h2{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.chatbot-iFrame-header button{
+    background-color: #f4f3f3;
+    border: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 16px;
+    vertical-align: middle;
+}
+
 #chatbot-iFrame iframe{
-    height: 100%;
+    height: calc(100% - 22px);
     width: 100%;
     border: 0;
+
 }
 .hintPromptContainer{
     max-height: 60vh;

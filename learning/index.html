@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/include/global/style.css">
+    <link rel="stylesheet" href="/include/global/style_responsive.css">
+    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/global/script.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
+    <!--Load bootstrap-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div id="header-Bar">
+            <div class="header-Left ">
+                <div id="header-Title">
+                    <span><img src="/include/global/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <h1 tabindex="0">ICT Master Hub</h1>
+                    <p class="slogan">Your self learning website for DSE ICT Networking.</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div id="dropdownMenu_Courses">
+                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
+                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
+                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/library/index.html">Resource Library</a>
+                        <a href="/profile/index.html">My Profile</a>
+                        <a href="/profile/report.html">My Report</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_Explore">
+                    <span class="dropdownMenu" tabindex="0">Explore</span>
+                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
+                        <a href="/reason.html">Why using this website</a>
+                        <a href="/courses/index.html">Learning Catalog</a>
+                        <a href="/news/index.html">Latest News</a>
+                        <a href="/chatbot.html">Chatbot</a>
+                        <a href="/help.html">Q&A</a>
+                        <a href="/setting.html">Setting</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_About" tabindex="0">
+                    <span class="dropdownMenu">More about us</span>
+                    <div id="dropdownMenu_About-List" class="dropdownContent">
+                        <a href="/about.html">About Us</a>
+                        <a href="/contact.html">Contact Us</a>
+                        <a href="/credit.html">Acknowledgement</a>
+                    </div>
+                </div>                
+                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
+            </nav>
+            <div class="header-Right">
+                    <div id="header-Search">
+                        <!-- Search -->
+                        <div id="search">
+                            <form action="search.html" method="get" id="searchForm">
+                                <input type="text" name="search" placeholder="Search..." id="searchbox">
+                            </form>
+                        </div>
+                    </div>
+                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
+            </div>
+        </div>
+        <!-- Display drop-dowp menu when the header does not have enough space -->
+        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
+        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
+        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
+            <div id="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
+                <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
+                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
+                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
+                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
+                    <a href="/profile/report.html" tabindex="-1">My Report</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
+                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
+                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
+                    <a href="/news/index.html" tabindex="-1">Latest News</a>
+                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
+                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/setting.html" tabindex="-1">Setting</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
+                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
+                    <a href="/about.html" tabindex="-1">About Us</a>
+                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+            </div>
+            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
+                <div id="search">
+                    <form action="search.php" method="get" id="searchForm">
+                        <input type="text" name="search" placeholder="Search Something" id="searchbox" tabindex="-1">
+                    </form>
+                </div>
+            </div>
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
+                <span>Welcome! </span>
+                <span id="username"></span>
+                <span id="message-of-the-day"></span>
+                <a href="/login.html" id="user-Login" tabindex="-1">Login now</a>
+            </div>
+        </div>
+        <!-- Breadcrumns, disable in first page  -->
+        <!-- Use a latest news banner to replace breadcrumbs in first page -->
+        <nav id="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- Test Only -->
+                <li><a href="/library/index.html">Resource Library</a></li>
+                <li><span tabindex="0" id="breadcrumbs-Cureent-Page">Courses</span></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <section id="introduction">
+            
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer-Title"  tabindex="0">
+            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
+        </div>
+        <div class="footer-Container">
+            <div class="footer-Left_Link">
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Learning</span>
+                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
+                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
+                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
+                    <a class="footer-Link" href="/profile/report.html">My Report</a>
+                </div>
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Explore</span>
+                    <a class="footer-Link" href="/reason.html">Reason to use this website</a>
+                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
+                    <a class="footer-Link" href="/news/index.html">Latest News</a>
+                    <a class="footer-Link" href="/help.html">Q&A</a>
+                </div>
+            </div>
+        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
+            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
+            <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
+            <a class="footer-Link-Title-Right" href="/privacy.html">Privacy Policy</a>
+            <a class="footer-Link-Title-Right" href="/tos.html">Terms of Service</a>
+            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
+        </div>
+    </div>
+    <div class="footer-Bottom-Link">
+        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
+        <a class="footer-Link" href="about.html">About Us</a>
+        <a class="footer-Link" href="about.html">Contact Us</a>
+        <a class="footer-Link" href="faq.html">FAQ</a>
+        <a class="footer-Link" href="about.html">Setting</a>
+        <span tabindex="0">@2023 ICT Master Hub</span>
+    </div>
+    </footer>
+    <div id="unfocus"></div>
+    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+</body>
+</html>

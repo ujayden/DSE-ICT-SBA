@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="/include/styles/quiz.css">
     <link rel="stylesheet" href="/include/global/prompt.css">
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/prompt.js" defer></script>
     <script src="/include/scripts/quiz.js" defer></script>
@@ -105,6 +109,11 @@
     <div id="unfocus"></div>
     <button id="backToTop_btn" aria-label="Back To Top Button" tabindex="-1">&#9650;</button>
     <button id="checkQuizInfo" aria-label="Check current quiz progress" tabindex="-1"></button>
-    <div id="chatbot-iFrame"></div>
+    <div id="chatbot-iFrame">
+        <div class="chatbot-iFrame-header">
+            <h2>Chatbot</h2>
+            <button id="chatbot-iFrame-close" aria-label="Close Chatbot" tabindex="-1">&times;</button>
+        </div>
+    </div>
 </body>
 </html>

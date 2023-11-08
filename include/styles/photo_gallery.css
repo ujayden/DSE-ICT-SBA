@@ -16,9 +16,6 @@
     vertical-align: middle;
     filter: brightness(40%);
 }
-.carousel{
-    position: static !important;
-}
 .prev, .next {
     cursor: pointer;
     position: absolute;

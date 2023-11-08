@@ -46,3 +46,6 @@
 #newsLoop h4{
     font-size: 14px;
 }
+#breadcrumbs{
+    display: none;
+}

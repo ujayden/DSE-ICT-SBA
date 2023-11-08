@@ -1,5 +1,5 @@
 body{
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     position: relative;
     min-height: 100vh;
@@ -34,8 +34,10 @@ header{
     flex-direction: row;
     align-items: center;
     height: 40px;
-    background-color: #7ca3d6;
+    background-color: #2455E6;
+    color: white;
     z-index: 1;
+    border-bottom: 1px solid black;
 }
 header h1{
     margin: 0;
@@ -45,7 +47,7 @@ header h1{
     text-align: right;
 }
 #chatbot-chat-container{
-    height: calc(100vh - 40px - 50px);
+    height: calc(100vh - 40px - 50px - 1px);
     overflow-y: scroll;
     background-color: white;
     width: 100%;
@@ -57,21 +59,31 @@ header h1{
     width: 100%;
     align-self: baseline;
     bottom: 0;
-    background-color: #35b8be;
+    background-color: rgb(242, 242, 242);
     height: 50px;
 }
 #chatbot-input{
     height: 24px;
-    border: 1px solid black;
+    border: 1px solid rgb(222, 226, 230);
     border-radius: 2px;
     padding: 2px;
     margin: 10px 20px 10px 10px;
     width: 80%;
 }
 #chatbot-send-btn{
+    border: 2px solid #2455E6;
+    border-radius: 2px;
+    background-color: #2455E6;
+    color: white;
+    font-weight: bold;
     height: 28px;
     margin: 10px;
     width: 20%;
+    transition: all 0.2s ease-in-out;
+}
+#chatbot-send-btn:hover{
+    color: #2455E6;
+    background-color: white;
 }
 /* Start: Chat Bubble */
 .chatbot-chat-message{
@@ -114,7 +126,8 @@ header h1{
     */
 }
 .chatbot-chat-message-client-comm{
-    background-color: rgb(152, 215, 199);
+    background-color: #2455E6;
+    color: white;
     margin-left: auto;
 }
 .chatbot-chat-message-client-comm::after{
@@ -127,7 +140,7 @@ header h1{
 	width: 0;
 	height: 0;
     border: 18px solid transparent;
-	border-left-color: rgb(152, 215, 199);
+	border-left-color: #2455E6;
 	border-right: 0;
 	margin-top: -18px;
 	margin-right: -9px;
@@ -135,16 +148,34 @@ header h1{
 }
 .chatbot-chat-message-client-comm p{
     text-align: right;
+    color: white;
 }
-#chatbot-chat-suggest p{
+#chatbot-chat-suggest span{
+    border-radius: 4px;
+    padding: 4px;
     text-align: right;
-    text-decoration: underline;
+    font-weight: bold;
     font-style: italic;
     cursor: pointer;
+    color: white;
 }
 #chatbot-chat-suggest p{
     color: rgb(86, 83, 100);
 }
 #chatbot-chat-wait{
     display: none;
+}
+.chatbot-chat-container-iFrame{
+    height:  calc(100vh - 50px - 1px);
+}
+@media screen and (max-width: 250px){
+    #chatbot-send-btn{
+        width: 30%;
+        margin-left: 1px;
+    }
+    #chatbot-input{
+        margin-right: 1px;
+        width: 70%;
+    }
+    
 }

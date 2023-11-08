@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
     <link rel="stylesheet" href="/include/styles/photo_gallery.css">
     <link rel="stylesheet" href="/include/global/icon.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
     <script src="/include/scripts/home.js" defer></script>
@@ -64,21 +65,20 @@
                         <a href="/credit.html">Acknowledgement</a>
                     </div>
                 </div>
+                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
             </nav>
             <div class="header-Right">
                     <div id="header-Search">
                         <!-- Search -->
                         <div id="search">
-                            <form action="search.php" method="get" id="searchForm">
+                            <form action="search.html" method="get" id="searchForm">
                                 <input type="text" name="search" placeholder="Search..." id="searchbox">
                             </form>
                         </div>
                     </div>
+                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
             </div>
         </div>
-        <!-- Display drop-dowp menu when the header does not have enough space -->
-        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
-        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
         <div id="headerDropDownMenu" class="headerDDM-close-vertical">
             <div id="headerDropDownMenu-Link">
                 <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
@@ -121,14 +121,9 @@
                 <a href="/login.html" id="user-Login" tabindex="-1">Login now</a>
             </div>
         </div>
-        <!-- Breadcrumns, disable in first page  -->
-        <!-- Use a latest news banner to replace breadcrumbs in first page -->
         <nav id="breadcrumbs">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <!-- Test Only -->
-                <li><a href="/library/index.html">Resource Library</a></li>
-                <li><span tabindex="0" id="breadcrumbs-Cureent-Page">Courses</span></li>
+                <li><span>Home</span></li>
             </ul>
         </nav>
     </header>
@@ -163,6 +158,7 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          
         <div id="photo-gallery-Text">
             <h2 tabindex="0">ICT Master Hub</h2>
             <p tabindex="0">It is time to learn.</p>
@@ -334,7 +330,7 @@
         <a class="footer-Link" href="about.html">Contact Us</a>
         <a class="footer-Link" href="about.html">FAQ</a>
         <a class="footer-Link" href="about.html">Setting</a>
-        <span class="footer-Link" tabindex="0">@2023 ICT Master Hub</span>
+        <span tabindex="0">@2023 ICT Master Hub</span>
     </div>
     </footer>
     <div id="unfocus"></div>

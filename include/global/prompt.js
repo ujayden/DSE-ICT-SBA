@@ -27,11 +27,17 @@ function openPrompt(){
 }
 function toggleButton (buttonElem, allowButton, buttonFunc, buttonValue) {
     if (allowButton == true) {
+        console.log(buttonElem);
+        console.log(buttonFunc);
+        console.log(allowButton);
         buttonElem.style.display = 'block';
         if (buttonFunc == null || buttonFunc == undefined) {
             buttonFunc = closePrompt();
         }
-        buttonElem.addEventListener('click', buttonFunc);
+        //Remove all existing event listeners
+        $(buttonElem).off('click');
+        //Add the new event listener with jQuery
+        $(buttonElem).on('click', buttonFunc)
         if (buttonValue != null || buttonValue != undefined || buttonValue != '') {
             buttonElem.innerHTML = buttonValue;
         }else {
@@ -41,6 +47,7 @@ function toggleButton (buttonElem, allowButton, buttonFunc, buttonValue) {
         buttonElem.style.display = 'none';
     }
 }
+
 promptCloseButtonElem.addEventListener('click', closePrompt);
 promptCancelButtonElem.addEventListener('click', closePrompt);
 function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue){
@@ -49,6 +56,5 @@ function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, canc
     toggleButton(promptCloseButtonElem, allowClose, closeFunc, "&times;");
     toggleButton(promptCancelButtonElem, allowCancel, cancelFunc, cancelBTNValue);
     toggleButton(promptConfirmButtonElem, allowConfirm, confirmFunc, confirmBTNValue);
-
     openPrompt();
 }

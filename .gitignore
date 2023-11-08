@@ -3,3 +3,4 @@ debug/
 serverConfig/
 api/update.php
 api/config.php
+usbWebServer/*

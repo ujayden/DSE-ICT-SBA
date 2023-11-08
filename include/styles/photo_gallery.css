@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;1,100&display=swap');
+#photo-gallery{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+.carousel-item img{
+    z-index: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    vertical-align: middle;
+    filter: brightness(40%);
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    user-select: none;
+    transform: rotate(180deg); 
+}
+
+.prev::after, .next::after {
+    content: "";
+    z-index: 2;
+    border: solid white;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(45deg); 
+}
+.next{
+    right: 0;
+    rotate: 90deg;
+}
+.prev{
+    rotate: 270deg;
+}
+#photo-gallery-Text{
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 100 !important;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    width: 100%;
+}
+#photo-gallery-Text h2{
+    font-size: 32px;
+    font-weight: 100 !important;
+    margin-bottom: 0px;
+}
+#photo-gallery-Text p{
+    font-size: 14px;
+    font-weight: 100 !important;
+    margin-top: 0px;
+}
+
+/** Status Bar **/
+#status-Box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 66.6%;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    padding: 8px;
+    margin-top: -100px;
+}
+.status-Box-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.icon{
+    display: flex;
+    content: "";
+    height: 50px;
+    width: 50px;
+    background-color: #2455E6;
+    margin-bottom: 4px;
+}
+.status-box-info{
+    font-family: "Montserrat", sans-serif;
+    align-items: flex-start;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    align-items: center;
+    text-align: center;
+    flex: 1 auto;
+}
+.air-200px{
+    width: 100%;
+    height: 120px;
+}
+.divider{
+    width: 1px;
+    background-color: rgb(200, 200, 200);
+    margin: 0 8px;
+}
+.posterIntroText{
+    text-align: right;
+    font-weight: 100 !important;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+}
+#posterIntro {
+    position: relative;
+}
+#posterIntro h1{
+    margin-bottom: 120px;
+}
+#posterIntro p{
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+}
+#posterIntro button{
+    padding: 8px 60px;
+    margin-top: 20px;
+}

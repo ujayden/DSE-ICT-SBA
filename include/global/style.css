@@ -4,6 +4,9 @@ body{
     position: relative;
     min-height: 100vh;
 }
+html, body{
+    scroll-behavior: smooth !important;
+}
 button{
     cursor: pointer;
     border: 1px solid black;
@@ -13,12 +16,16 @@ button{
 }
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
+#header{
+    position: relative;
+    z-index: 999;
+}
 #header-Title h1{
-    margin-bottom: 0;
-    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    margin-bottom: auto;
     font-size: 28px;
-    margin-top: 0;
-    
+    margin-top: auto;
+    font-weight: 500;
 }
 #header-Title p{
     font-weight: normal;
@@ -27,6 +34,9 @@ button{
     display: none;
 }
 #header-Title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     vertical-align: middle;
 }
 #header-Logo{
@@ -38,9 +48,13 @@ button{
     margin-top: 0;
 }
 .header-nav {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
     flex-direction: row;
     padding-left: 20px;
     font-size: 16px;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
 }
 
 /** Style for item in right-hand-side of header */
@@ -61,11 +75,12 @@ button{
     padding: 2px;
     border: 1px solid black;
     border-radius: 2px;
-    margin-top: 5px;
+    background: rgb(244, 244, 244) url(/include/global/search.svg) no-repeat  5px 5px;
+    padding: 2px 4px 2px 40px;
+    box-sizing: content-box;
 }
 #search button{
-    height: 28px;
-
+    height: 26px;
 }
 #user{
     float: right;
@@ -80,57 +95,114 @@ button{
     display: flex;
     align-items: center;
     flex-direction: row;
-    background-color: #7ca3d6;
+    background-color: #FFFFFF;
     padding: 0 30px 0 20px;
     justify-content: space-between;
     border-bottom: 1px solid white;
+    height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    z-index: 999;
 }
 /** Style for the menu and dropdown menu */
 .header-nav a{
     color: black;
     text-decoration: none;
-    margin-right: 20px;
 }
-
+.header-nav a:hover{
+    text-decoration: none;
+}
 .header-nav .dropdownContent{
     display: none;
     position: absolute;
-    background-color: rgb(230, 230, 230);
-    min-width: 210px;
+    background-color: white;
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /** z-index is used to make sure the dropdown menu is on top of other elements */
-    z-index: 2;
+    z-index: 99;
+    font-size: 16px;
 }
 .dropdownMenu:hover + .dropdownContent{
     display: block;
 }
+.dropdownMenu:hover{
+    color: #2455E6;
+}
 .dropdownContent:hover{
     display: block;
+    color: #2455E6;
 }
 .dropdownContent a{
     display: block;
     padding: 12px 16px;
     text-decoration: none;
     color: black;
-    width: max-content;
+    position: relative;
+    white-space: nowrap;
 }
-#dropdownMenu_ResLibrary{
+.dropdownContent a:hover {
+    color: white;
+    transition: all 0.6s ease-out 0s;
+}
+.dropdownContent a:hover::before {
+    width: 100%;
+}
+.dropdownContent a::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    right: auto;
+    left: 0;
+    width: 2%;
+    background: #2455E6;
+    color: #fff;
+    z-index: -1;
+    transition: all 0.8s ease-out 0s;
+}
+#dropdownMenu_Explore{
     margin-right: 20px;
-    display: inline-block;
     position: relative;
 }
 #dropdownMenu_Courses{
     margin-right: 20px;
-    display: inline-block;
     position: relative;
 }
-#dropdownMenu_Personal{
+#dropdownMenu_About{
     margin-right: 20px;
-    display: inline-block;
     position: relative;
 }
 .dropdownMenu{
+    font-weight: 500;
+    font-size: 15px;
     cursor: pointer;
+}
+#dropdownMenu_About-List{
+    right: 0px;
+}
+#searchForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 5px;
+}
+.search-btn-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+#searchForm button[type="submit"]{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.headerDropDownMenu-HR{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 /** End: Global Header */
 /** Copyright @uncle-jayden, licensed under CC BY-NC-ND 4.0. */
@@ -141,29 +213,29 @@ button{
 /** Set the link in breadcrumb with >, i.e. Home > News */
 #breadcrumbs a::after {
     display: inline-block;
-    color: #000;
-    content: '>';
-    font-size: 60%;
-    font-weight: bolder;
+    color: white;
+    content: '/';
     padding: 0 3px;
 }
 #breadcrumbs ul{
     list-style-type: none;
     margin-top: 0px;
     padding-top: 4px;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     padding-left: 20px;
     margin-bottom: 0px;
+    color: white;
 }
 #breadcrumbs{
-    background-color: rgb(230, 230, 230);
-    margin-bottom: 20px;
+    background-color: #2455E6;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-/** End: Breadcrumb */
-main{
-    margin: 20px;
+#breadcrumbs *{
+    color: white;
+    text-decoration: none;
+
 }
+/** End: Breadcrumb */
 /** Start: Header drop-down menu */
 /** The dropdown menu will be active when content in header hidden due to screen size  */
 #headerDropDownMenu-Logo{
@@ -173,14 +245,33 @@ main{
     margin-right: 2px;
     object-fit: contain;
     margin-top: 2px;
-    display: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
-#headerDropDownMenu{
-    display: none;
-    background-color: rgb(230, 230, 230);
-    padding: 5px 0px 5px 0px;
-
+#headerDropDownMenu{    
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    background-color: white;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+#unfocus{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    visibility: hidden;
+}
+.headerDDM-open-vertical {
+    max-height: 1000px;
+}
+.headerDDM-close-vertical {
+    max-height: 0;
 }
 #headerDropDownMenu-Link{
     color: black;
@@ -192,7 +283,7 @@ main{
     width: 100%;
     display: none;
     flex-direction: column;
-    background-color: aliceblue;
+    background-color: white;
     margin-top: 12px;
     margin-bottom: 12px;
 
@@ -204,18 +295,21 @@ main{
 }
 .headerDropDownMenu-Text{
     padding-left: 20px;
-    margin-bottom: 20px;
     text-decoration: none;
     color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .headerDropDownMenu-element{
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 #headerDropDownMenu-User{
-    display: none;
+    display: flow-root;
 }
 #headerDropDownMenu-Search{
     display: none;
@@ -224,13 +318,19 @@ main{
     display: contents;
 }
 /** End: Header drop-down menu */
+/** Start: Animation-Global */
+.anim-close-horizontal {
+    width: 0;
+}
+
+/** End: Animation-Global */
+
 /** Start: Footer */
 footer {
     bottom: 0;
     width: 100%;
     /*Height of the footer */
     height: max-content;
-    padding: 0px 0px 8px 0px;
     /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
     box-sizing: border-box;
     color:white;
@@ -248,13 +348,15 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #58585b;
+    background-color: #2455E6;
     height: 30px;
     align-items: center;
+    line-height: 1 !important;
 }
 #footer-Title h2{
     margin: 0px;
     margin-left: 20px;
+    font-size: 24px;
 }
 #footer-Title p{
     margin: 0px;
@@ -299,17 +401,66 @@ footer {
 }
 .footer-Link-Title-Right{
     color: rgb(240, 240, 240);
-    margin-top: 2px;
     margin-right: 20px;
     margin-bottom: auto;
 }
 .footer-Bottom-Link{
+    background-color: #2455;
     display: flex;
     justify-content: space-between;
     color: white;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
 }
 .lang-switch-btn{
     cursor: pointer;
+}
+.headerDropDownMenu-Title:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid black;
+    margin-left: 10px;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    top: 2px;
+}
+.headerDropDownMenu-Title.active:after {
+    transform: rotate(90deg);
+}
+.header-tryit-btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: #2455E6;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #2455E6;
+    display: inline-block;
+}
+.header-tryit-btn:hover{
+    background-color: white;
+    color: #2455E6;
+}
+#header-tryit-btn-nav{
+    display: none;
+    margin-left: 0;
+}
+#breadcrumbs-Cureent-Page{
+    font-weight: bold;
+}
+#breadcrumbs li{
+    font-weight: normal;
 }

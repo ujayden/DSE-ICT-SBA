@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Login Now! - ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link rel="stylesheet" href="/include/styles/portal.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/scripts/portal.js" defer></script>
+    <!-- Load Bootstrap of sth else here-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div id="form-container">
+        <div id="login-form">
+        <form id="loginForm">
+            <span id="portal-Breadcrumb">
+                <a href="/">ICT Master Hub</a> > Login
+            </span>
+            <h3 id="form-Title">Login</h3>
+            <p id="form-subheading">Access your Profile</p>
+
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter your username" id="username">
+
+            <label for="password">Password</label>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="password" placeholder="Enter your password" id="password">
+                    </tr>
+                    <tr>
+                        <button id="show_password" class="btn btn-outline-secondary" type="button" onclick="showPassword()">Show</button>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="checkbox" id="remember-me" class="checkbox">
+                    </tr>
+                    <tr>
+                        <label for="remember-me">Remember me</label>
+                    </tr>
+                </table>
+            </div>
+            <button id="login">Log In</button>
+            <div class="social">
+            <div class="go">Google</div>
+            <div class="fb">Facebook</div>
+            </div>
+            <span id="portal-notice">Not registered yet? <a href="">Register now.</a></span>
+        </form>
+        
+        </div>
+        <div id="form-poster">
+            <div id="form-poster-decoration"></div>
+            <div id="form-poster-detail">
+                <img src="/include/images/portal/poster-securedphone.png" alt="Phone with more security">
+                <h2>More secure with your mobile phone</h2>
+                <p>Protect your account with your OTP code. It is free.</p>
+                <button id="portal-LearnMore">Learn More</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

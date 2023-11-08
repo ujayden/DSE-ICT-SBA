@@ -1,11 +1,8 @@
 #backToTop_btn{
-    /**
-    display: none;
-    */
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 99;
+    z-index: 30;
     border: none;
     outline: none;
     background-color: rgba(120, 120, 120, 0.5);
@@ -14,4 +11,8 @@
     border-radius: 2px;
     font-size: 18px;
     padding: 6px;
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    line-height: 1 !important;
 }

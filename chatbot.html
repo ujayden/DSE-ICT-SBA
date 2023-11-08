@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Chatbot - ICT Master Hub</title>
+    <!-- Load CSS and Script here -->
+    <link rel="stylesheet" href="/include/styles/chatbot.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <script defer src="/include/scripts/chatbot.js" defer></script>
+</head>
+<body>
+    <div id="chatbot-container">
+        <main>
+            <header>
+                <img id="chatbot-Logo" src="/include/global/logo.png" alt="Chatbot Logo">
+                <h1>Chatbot</h1>
+                <button id="chatbot-close-btn">X</button>
+            </header>
+            <div id="chatbot-chat-container">
+                <!-- Reference of Chatbot Bubble can be check in Chatbot CSS-->
+                <div id="chatbot-real-chat">
+                    <div id="chatbot-chat-message-0" class="chatbot-chat-message-server-comm chatbot-chat-message">
+                        <p class="chatbot-chat-message-text">Hello! I can give you hints and solving steps if you stuck on a question, or guide you travel on different page!</p>
+                    </div>
+                </div>
+                <div id="chatbot-chat-wait" class="chatbot-chat-message-server-comm chatbot-chat-message">
+                    <p class="chatbot-chat-message-text">Please wait...</p>
+                </div>
+                <div id="chatbot-chat-suggest" class="chatbot-chat-message-client-comm chatbot-chat-message">
+                    <p class="chatbot-chat-message-text"><span id="suggest1">Get help for question</span></p>
+                    <p class="chatbot-chat-message-text"><span id="suggest2">Get help for finding page</span></p>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input id="chatbot-input" type="text" placeholder="Enter your message here...">
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

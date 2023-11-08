@@ -236,13 +236,6 @@ button{
 
 }
 /** End: Breadcrumb */
-#posterIntro img{
-    height: 400px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
-}
 /** Start: Header drop-down menu */
 /** The dropdown menu will be active when content in header hidden due to screen size  */
 #headerDropDownMenu-Logo{

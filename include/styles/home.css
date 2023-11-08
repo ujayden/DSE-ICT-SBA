@@ -49,3 +49,64 @@
 #breadcrumbs{
     display: none;
 }
+#posterIntro img{
+    height: 60vh;
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    filter: brightness(70%);
+}
+.whiteToDarkTransparent{
+    background: linear-gradient(rgb(255,255,255), rgba(120,120,120));
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterBenefit{
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterHearWeAre{
+    background-color: #2455E6;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterCouseAvailable{
+    background-color: #F8F9FA;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterShortAims{
+    background-color: #8a9af1;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterComment{
+    background-color: #F8F9FA;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterFinal{
+    background-color: white;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}

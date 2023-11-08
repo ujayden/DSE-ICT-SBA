@@ -122,7 +122,7 @@
                             echo json_encode([
                                 "success" => false,
                                 "userName" => $row['username'],
-                                "2fa_enabled" => true
+                                "mfa_enabled" => true
                             ]);
                             exit;
                         }else{

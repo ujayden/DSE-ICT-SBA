@@ -367,6 +367,10 @@ function resumeQuiz() {
     quizArea.style.visibility = "visible";
     //Start the timer
     timerRunning = true;
+    allowCountDown = true;
+    //Start the countdown timer
+    updateCDTimer();
+    cdTimerInterval = setInterval(updateCDTimer, 1000);
 }
 function loadLQQuiz() {
     countLQ = LQquizQuestions.length;
@@ -614,7 +618,7 @@ function postQuiz(){
         if (userMCAnswer[i] == undefined) {
             userMCAnswerInWord[i] = {
                 "id": i+1,
-                "text": "No answerd"
+                "text": "Not answered"
             }
         }else{
             //TODO: Extract the answer in readable word from MCquizQuestions
@@ -649,6 +653,7 @@ function postQuiz(){
         console.log(data);
         userData = data;
         data = JSON.stringify(data);
+        console.log(data);
         //Send the data to the server
         let url = currentURL.origin + "/api/quizResult.php";
         $.ajax({

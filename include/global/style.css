@@ -14,6 +14,9 @@ button{
     border-radius: 2px;
     background-color: ghostwhite;
 }
+main h1, main h2, main h3, main h4, main h5, main h6{
+    font-family: 'Montserrat', sans-serif;
+}
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
 #header{
@@ -126,11 +129,11 @@ button{
     display: block;
 }
 .dropdownMenu:hover{
-    color: #2455E6;
+    color: #306EE4;
 }
 .dropdownContent:hover{
     display: block;
-    color: #2455E6;
+    color: #306EE4;
 }
 .dropdownContent a{
     display: block;
@@ -142,7 +145,7 @@ button{
 }
 .dropdownContent a:hover {
     color: white;
-    transition: all 0.6s ease-out 0s;
+    transition: all 0.1s ease-out 0s;
 }
 .dropdownContent a:hover::before {
     width: 100%;
@@ -155,10 +158,10 @@ button{
     right: auto;
     left: 0;
     width: 2%;
-    background: #2455E6;
+    background: #306EE4;
     color: #fff;
     z-index: -1;
-    transition: all 0.8s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
 }
 #dropdownMenu_Explore{
     margin-right: 20px;
@@ -227,7 +230,7 @@ button{
     color: white;
 }
 #breadcrumbs{
-    background-color: #2455E6;
+    background-color: #306EE4;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 #breadcrumbs *{
@@ -348,7 +351,7 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #2455E6;
+    background-color: #306EE4;
     height: 30px;
     align-items: center;
     line-height: 1 !important;
@@ -440,19 +443,19 @@ footer {
     margin-bottom: 10px;
     padding: 6px 14px;
     border-radius: 4px;
-    background-color: #2455E6;
+    background-color: #306EE4;
     color: white;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
     border: none;
     transition: all 0.2s ease-in-out;
-    border: 2px solid #2455E6;
+    border: 2px solid #306EE4;
     display: inline-block;
 }
 .header-tryit-btn:hover{
     background-color: white;
-    color: #2455E6;
+    color: #306EE4;
 }
 #header-tryit-btn-nav{
     display: none;

@@ -50,8 +50,8 @@
     display: none;
 }
 #posterIntro img{
-    height: 60vh;
-    max-height: 600px;
+    height: 80vh;
+    max-height: 900px;
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -72,6 +72,9 @@
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
+}
+#posterBenefit h2{
+    margin-bottom: 40px;
 }
 #posterHearWeAre{
     background-color: #2455E6;
@@ -98,6 +101,12 @@
     width: 100%;
     box-sizing: border-box;
 }
+.posterShort{
+    color: white;
+    margin: 80px;
+    bottom: 0;
+    width: 100%;
+}
 #posterShortAims{
     background-color: #8a9af1;
     color: white;
@@ -105,6 +114,7 @@
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
+    min-height: 600px;
 }
 #posterComment{
     background-color: #F8F9FA;
@@ -128,15 +138,14 @@
     width: 100%;
 }
 .posterBenefitDetailContainer{
-    padding: 115px 48px 50px 48px;
+    padding: 160px 48px 50px 48px;
     border-radius: 10px;
     box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.16);
     width: 100%;
+    min-width: 300px;
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    flex: 1;
 }
 .posterBenefitDetailContainer h5{
     font-weight: bold;
@@ -148,6 +157,7 @@
 
 }
 .posterBenefit-Bold{
+    transition: all 0.1s ease-in-out;
     font-weight: bold;
     color: #2455E6;
     font-size: 36px;
@@ -260,4 +270,112 @@
 #posterFinal-btn:hover{
     background-color: white;
     color: #306EE4;
+}
+.posterBenefitImgContainer{
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: -30px;
+    background-color: #2455E6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 0;
+    border-radius: 6%;
+}
+.posterBenefitImgContainer img{
+    color: white;
+}
+#posterBenefitCarousel .owl-stage-outer{
+    padding-top: 20px;
+}
+.posterBenefitImg{
+    fill: #FFFFFF;
+}
+.posterBenefitDetailLinkIcon{
+    height: 1em;
+    width: 0;
+    vertical-align: middle;
+    margin-left: 4px;
+    fill: #2455E6;
+}
+.posterBenefitDetailContainer a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+.posterBenefitDetailContainer a:hover{
+    font-weight: bold;
+}
+.posterBenefitDetailContainer::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #2455E6;
+    transition: all 0.3s ease-in-out;
+}
+.posterBenefitDetailContainer:hover::before{
+    width: 100%;
+}
+.posterBenefitDetailContainer:hover{
+    .posterBenefit-Bold{
+        font-size: 48px;
+    }
+}
+.posterVisionRow{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+    padding-bottom: 0px;
+}
+.posterVision{
+    position: relative;
+    padding: 20px;
+    width: 45%;
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    background-color: #2455E6;
+    align-items: center;
+    box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.7);
+}
+.posterVision img{
+    height: 40px;
+}
+.posterVisionText{
+    margin-left: 16px;
+}
+.pvLight{
+    background-color: #FFFFFF;
+    color: black;
+}
+#posterShortAims{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#videoPlayCircle{
+    transform: translate(0, -50%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+#videoPlayCircle img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

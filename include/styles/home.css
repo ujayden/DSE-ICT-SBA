@@ -254,7 +254,7 @@
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 6px 64px;
+    padding: 6px 32px;
     border-radius: 4px;
     background-color: #306EE4;
     color: white;
@@ -294,10 +294,10 @@
     fill: #FFFFFF;
 }
 .posterBenefitDetailLinkIcon{
+    width: 1em;
     height: 1em;
-    width: 0;
     vertical-align: middle;
-    margin-left: 4px;
+    margin-left: 1px;
     fill: #2455E6;
 }
 .posterBenefitDetailContainer a{
@@ -305,6 +305,7 @@
     flex-direction: row;
     align-items: center;
     transition: all 0.2s ease-in-out;
+    flex-wrap: nowrap;
 }
 .posterBenefitDetailContainer a:hover{
     font-weight: bold;
@@ -378,4 +379,58 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+.posterCourseAvailableCard{
+    min-width: 300px !important;
+}
+@media screen and (max-width: 800px) {
+    .posterVisionRow{
+        flex-direction: column;
+        align-items: center;
+    }
+    .posterVision{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .posterCourseAvailableContainer{
+        justify-content: center;
+    }
+    .posterCourseAvailableCard{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+@media screen and (max-width: 680px){
+    #posterHearWeAre{
+        flex-direction: column;
+    }
+    .posterHearWeAre-left{
+        width: 100%;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+    .posterHearWeAre-right{
+        width: 100%;
+        padding-left: 0px;
+    }
+    #posterFinal-btn{
+        margin-left: 0px;
+    }
+    #posterFinal{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 380px){
+    .status-Box-row{
+        flex-wrap: wrap;
+    }
+    .divider{
+        display: none;
+    }
+    #posterFinal{
+        flex-direction: column;
+    }
 }

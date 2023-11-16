@@ -23,12 +23,26 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
+    <div id="portal-Accessibility-Toast"  class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Disable extravagant visual effects?</strong>
+            <small>-</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            <span>If you cannot see the content clearly, click the button to disable the effect. You may change the setting in Setting Page.</span>
+            <button id="portal-Accessibility-Toast-Button" class="btn btn-primary">Disable</button>
+            <br>
+            <input type="checkbox" id="portal-Accessibility-Toast-Checkbox"><label for="portal-Accessibility-Toast-Button">Do not show this again.</label>
+
+          </div>
+    </div>
     <div id="form-container">
         <div id="login-form">
-        <form id="loginForm">
             <span id="portal-Breadcrumb">
                 <a href="/">ICT Master Hub</a> > Login
             </span>
+            <form id="portalForm" data-mode="login">
             <h3 id="form-Title">Login</h3>
             <p id="form-subheading">Access your Profile</p>
 
@@ -61,7 +75,7 @@
             <div class="go">Google</div>
             <div class="fb">Facebook</div>
             </div>
-            <span id="portal-notice">Not registered yet? <a href="">Register now.</a></span>
+            <span id="portal-notice">Not registered yet? <a href="/portal.html?mode=register">Register now.</a></span>
         </form>
         
         </div>

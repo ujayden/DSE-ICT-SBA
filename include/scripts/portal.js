@@ -10,6 +10,22 @@ let loginForm_passwordToggle = loginForm.querySelector('#password-toggle');
 loginBtn.addEventListener('click', function (e) {
     e.preventDefault();
 });
+
+//Make a accessibility toast first to ask if the user wants to remove fancy effects
+const accessibilityToast = document.getElementById('portal-Accessibility-Toast');
+//Display after 1 second of DOM loaded.
+document.addEventListener('DOMContentLoaded', function () {
+    let accessibilityToastBootstrap = bootstrap.Toast.getOrCreateInstance(accessibilityToast);
+    setTimeout(function () {
+        //Check if the accessibilityToast has been shown today
+        let accessibilityToastShownToday = sessionStorage.getItem('accessibilityToastShownToday');
+        if (accessibilityToastShownToday === null || accessibilityToastShownToday === false) {
+            accessibilityToastBootstrap.show();
+            sessionStorage.setItem('accessibilityToastShownToday', true);
+        }
+    }, 1000);
+    }
+);
 // For rememberMe checkbox, add an event listener to save the state of the checkbox
 //
 function storeRememberMeState() {

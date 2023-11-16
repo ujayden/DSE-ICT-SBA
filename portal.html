@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- Title -->
     <title>Login Now! - ICT Master Hub</title>
     <!--Load libray here.-->
@@ -18,7 +17,6 @@
     <!-- Load Bootstrap of sth else here-->
     <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
     <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
-
 </head>
 <body>
     <div class="background">
@@ -27,26 +25,50 @@
     </div>
     <div id="form-container">
         <div id="login-form">
-        <form>
-            <h3 id="form-Title">Login Here</h3>
+        <form id="loginForm">
+            <span id="portal-Breadcrumb">
+                <a href="/">ICT Master Hub</a> > Login
+            </span>
+            <h3 id="form-Title">Login</h3>
+            <p id="form-subheading">Access your Profile</p>
 
             <label for="username">Username</label>
             <input type="text" placeholder="Enter your username" id="username">
 
             <label for="password">Password</label>
-            <input type="password" placeholder="Enter your password" id="password">
-
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="password" placeholder="Enter your password" id="password">
+                    </tr>
+                    <tr>
+                        <button id="show_password" class="btn btn-outline-secondary" type="button" onclick="showPassword()">Show</button>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="checkbox" id="remember-me" class="checkbox">
+                    </tr>
+                    <tr>
+                        <label for="remember-me">Remember me</label>
+                    </tr>
+                </table>
+            </div>
             <button id="login">Log In</button>
             <div class="social">
-            <div class="go"><i class="fab fa-google"></i>  Google</div>
-            <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+            <div class="go">Google</div>
+            <div class="fb">Facebook</div>
             </div>
+            <span id="portal-notice">Not registered yet? <a href="">Register now.</a></span>
         </form>
+        
         </div>
         <div id="form-poster">
             <div id="form-poster-decoration"></div>
             <div id="form-poster-detail">
-                <img src="/include/misc/securephone.png" alt="Phone with more security">
+                <img src="/include/images/portal/poster-securedphone.png" alt="Phone with more security">
                 <h2>More secure with your mobile phone</h2>
                 <p>Protect your account with your OTP code. It is free.</p>
                 <button id="portal-LearnMore">Learn More</button>

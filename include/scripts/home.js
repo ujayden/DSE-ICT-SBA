@@ -54,3 +54,4 @@ pauseNews.addEventListener('click', function() {
 }
 );
 changeNews(0);
+

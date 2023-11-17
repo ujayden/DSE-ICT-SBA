@@ -194,3 +194,19 @@ headerDDMenu_About_btn.addEventListener('keydown', function(event) {
     }
 }
 );
+
+const searchBox = document.querySelectorAll('.searchbox');
+
+function redirectSearchPage(searchBoxValue) {
+    window.location.href = 'search.html?q=' + searchBoxValue;
+}
+
+searchBox.forEach(function(targetElement) {
+    targetElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            redirectSearchPage(this.value);
+        }
+    }
+    );
+})

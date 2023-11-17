@@ -8,8 +8,14 @@ let searchPageAttributes = {
 let currentURL = new URL(window.location.href);
 //searchPageAttributes.pageURL = currentURL.origin + currentURL.pathname;
 searchPageAttributes.pageURL = '/debug/search.json';
-searchPageAttributes.searchInput = currentURL.searchParams.get('search');
+searchPageAttributes.searchInput = currentURL.searchParams.get('q');
 if (searchPageAttributes.searchInput === null) {
+    let fallbackSearchInput = currentURL.searchParams.get('search');
+    if (fallbackSearchInput !== null) {
+        debugger;
+        window.location.href = '/search.html?q=' + fallbackSearchInput;
+        console.error('Alert: Use fallback search input as "?search=" instead of "?q=". Please update the link to use "?q=" instead of "?search=".');
+    }
     searchPageAttributes.searchInput = '';
     searchPageAttributes.mode = 'promptInput';
 }
@@ -61,7 +67,7 @@ let searchResultTotalPagesCount = document.getElementById('search-result-page-co
 
 async function setupResult(){
     //TODO: Update the address bar
-    history.pushState(null, null, '?search=' + searchPageAttributes.searchInput + '&page=' + searchPageAttributes.viewPage); 
+    history.pushState(null, null, '?q=' + searchPageAttributes.searchInput + '&page=' + searchPageAttributes.viewPage); 
     searchResult = await fetchResult(searchPageAttributes.searchInput, searchPageAttributes.viewPage);
     if (searchResult.success) {
         //TODO: Display the result
@@ -90,7 +96,7 @@ function renderResult(data){
             resultHashtags.classList.add('hashtagList');
             try {
                 result.hashtags.forEach((hashtag) => {
-                    let hashtagLink = "/search.html?search=" + encodeURIComponent(hashtag);
+                    let hashtagLink = "/search.html?q=" + encodeURIComponent(hashtag);
                     let hashtagItem = document.createElement('li');
                     let hashtagItemLink = document.createElement('a');
                     hashtagItemLink.setAttribute('href', hashtagLink);
@@ -157,7 +163,7 @@ function updateButton(currentPage, totalPages){
         //Remove disabled class from the parent
         backButton.parentElement.classList.remove('disabled');
         //Change the link
-        backButton.setAttribute('href', '?search=' + searchPageAttributes.searchInput + '&page=' + (currentPage - 1));
+        backButton.setAttribute('href', '?q=' + searchPageAttributes.searchInput + '&page=' + (currentPage - 1));
     }
     //Setup the next button
     if (currentPage >= totalPages) {
@@ -167,10 +173,10 @@ function updateButton(currentPage, totalPages){
         //Remove disabled class from the parent
         nextButton.parentElement.classList.remove('disabled');
         //Change the link
-        nextButton.setAttribute('href', '?search=' + searchPageAttributes.searchInput + '&page=' + (currentPage + 1));
+        nextButton.setAttribute('href', '?q=' + searchPageAttributes.searchInput + '&page=' + (currentPage + 1));
     }
     //Setup the home button
-    homeButton.setAttribute('href', '?search=' + searchPageAttributes.searchInput + '&page=1');
+    homeButton.setAttribute('href', '?q=' + searchPageAttributes.searchInput + '&page=1');
     //Setup the rest of the buttons. Like [Previous 1 ... 99 100 101 102 103 ... Next] (Current page is 100, ... is a disabled link)
     //For page 1, [Previous 1 2 3 4 5 ... Next], for page 2, [Previous 1 2 3 4 5 ... Next], for page 4, [Previous 1 ... 3 4 5 6 ... Next], for page 5, [Previous 1 ... 3 4 5 6 ... Next]
     //TODO: Check if the page is does need prev ... or not
@@ -189,7 +195,7 @@ function updateButton(currentPage, totalPages){
         //TODO: Render it self after the ... button
         let newButton = document.createElement('li');
         let newButtonLink = document.createElement('a');
-        newButtonLink.setAttribute('href', '?search=' + searchPageAttributes.searchInput + '&page=' + currentPage);
+        newButtonLink.setAttribute('href', '?q=' + searchPageAttributes.searchInput + '&page=' + currentPage);
         newButtonLink.innerHTML = currentPage;
         newButton.id = 'page' + currentPage;
         newButton.classList.add('page-item');
@@ -206,7 +212,7 @@ function updateButton(currentPage, totalPages){
         if (i > 1) {
             let newButton = document.createElement('li');
             let newButtonLink = document.createElement('a');
-            newButtonLink.setAttribute('href', '?search=' + searchPageAttributes.searchInput + '&page=' + i);
+            newButtonLink.setAttribute('href', '?q=' + searchPageAttributes.searchInput + '&page=' + i);
             newButtonLink.innerHTML = i;
             newButton.id = 'page' + i;
             newButton.classList.add('page-item');
@@ -234,7 +240,7 @@ function updateButton(currentPage, totalPages){
         if (i <= totalPages) {
             let newButton = document.createElement('li');
             let newButtonLink = document.createElement('a');
-            newButtonLink.setAttribute('href', '?search=' + searchPageAttributes.searchInput + '&page=' + i);
+            newButtonLink.setAttribute('href', '?q=' + searchPageAttributes.searchInput + '&page=' + i);
             newButtonLink.innerHTML = i;
             newButton.id = 'page' + i;
             newButton.classList.add('page-item');
@@ -264,7 +270,7 @@ async function fetchResult(searchParams, page){
         }
     }
     try {
-        const response = await fetch(searchPageAttributes.pageURL + '?search=' + searchParams + '&page=' + page);
+        const response = await fetch(searchPageAttributes.pageURL + '?q=' + searchParams + '&page=' + page);
         const data = await response.json();
         result.success = data.success;
         result.data.terms = data.terms;
@@ -282,7 +288,7 @@ async function fetchResult(searchParams, page){
 // Load more button: Next page
 let loadMoreButton = document.getElementById('result-footer-btn');
 loadMoreButton.addEventListener('click', () => {
-    window.location.href = '?search=' + searchPageAttributes.searchInput + '&page=' + (parseInt(searchPageAttributes.viewPage) + 1);
+    window.location.href = '?q=' + searchPageAttributes.searchInput + '&page=' + (parseInt(searchPageAttributes.viewPage) + 1);
 });
 // Use google search with programmable search engine
 let googleSearchButton = document.getElementById('google-enhanced-search-tab');
@@ -294,6 +300,6 @@ googleSearchButton.addEventListener('click', () => {
 let searchAgain = document.getElementById('formSearch2');
 let searchAgainButton = document.getElementById('formSearchBtn2');
 searchAgainButton.addEventListener('click', () => {
-    window.location.href = '/search.html?search=' + searchAgain.value;
+    window.location.href = '/search.html?q=' + searchAgain.value;
 }
 );

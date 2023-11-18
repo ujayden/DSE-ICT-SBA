@@ -12,17 +12,20 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo json_encode($chatbotResponse);
     exit();
 }
+$payload = json_decode(file_get_contents('php://input'), true);
 
 // Get the chat message from the POST request
-if (isset($_POST['chatMsg'])) {
-    $userInput = $_POST['chatMsg'];
+if (isset($payload['chatMsg'])) {
+    $userInput = $payload['chatMsg'];
 } else {
     http_response_code(400);
     $chatbotResponse = array(
         "success" => false,
         "sessionID" => "999",
         "error" => "400 Bad Request",
-        "errorMsg" => "Sorry, chat message is not provided."
+        "errorMsg" => "Sorry, chat message is not provided.",
+        //Current Payload
+        "yourPayload" => $payload
     );
     header('Content-Type: application/json');
     echo json_encode($chatbotResponse);

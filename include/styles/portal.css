@@ -132,6 +132,28 @@ input[type="text"]{
     font-size: 14px;
     font-weight: 300;
 }
+input[type="email"]{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+input[type="password"]{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
 #password{
     height: 50px;
     background-color: rgba(255,255,255,0.2);
@@ -190,10 +212,11 @@ input[type="text"]{
 .social{
   margin-top: 12px;
   display: flex;
+  width: 100%;
 }
 .social div{
   background: red;
-  width: 150px;
+  width: 200px;
   border-radius: 3px;
   padding: 5px 10px 10px 5px;
   background-color: rgba(255,255,255,0.27);
@@ -302,3 +325,136 @@ input[type="text"]{
 #portal-Accessibility-Toast-Button{
     padding: 4px 8px;
 }
+.opacity-0{
+    opacity: 0;
+}
+.opacity-1{
+    opacity: 1;
+}
+#portalForm{
+    transition: all 1s ease-in-out;
+}
+#regForm{
+    display: none;
+}
+#regFormPassword{
+    height: 50px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    box-sizing: border-box;
+    vertical-align: middle;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+#show_passwordRegForm{
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: 1;
+    margin-top: 8px;
+}
+#show_passwordRegForm:hover{
+    --bs-btn-hover-bg: rgba(255,255,255,0.2);
+}
+#regForm-MFA{
+    display: none;
+    padding-left: 20px;
+}
+#regForm-MFA .input-group{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.mfaTip{
+    margin-left: 4px !important
+}
+#regForm-MFA-Verify{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #2455E6;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#register{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #2455E6;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.regForm-MFA-ImageContainer{
+    background-color: white;
+    padding: 4%;
+    width: 200px;
+    height: 200px;
+}
+.regForm-MFA-ImageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.regForm-MFA-Intro{
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 0.5;
+}
+#resetPassword{
+    display: none;
+}
+.nav {
+    margin-top: 20px;
+}
+#tryReset{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #2455E6;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#resetPasswordFormPassword{
+    height: 50px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    box-sizing: border-box;
+    vertical-align: middle;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+#resetPasswordFormEmail{
+    height: 50px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    box-sizing: border-box;
+    vertical-align: middle;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+    

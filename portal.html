@@ -13,10 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!-- Defer can reduce web loading time. -->
+    <!-- Load OTPLib here -->
+    <script src="/include/global/library/otplib/buffer.js" type="module"></script>
+    <script src="/include/global/library/otplib/index.js" type="module"></script>
+    <script src="/include/global/library/qrcode/jquery.qrcode.min.js" type="module"></script>
     <script src="/include/scripts/portal.js" defer></script>
     <!-- Load Bootstrap of sth else here-->
     <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
     <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+
 </head>
 <body>
     <div class="background">
@@ -56,28 +61,121 @@
                         <input type="password" placeholder="Enter your password" id="password">
                     </tr>
                     <tr>
-                        <button id="show_password" class="btn btn-outline-secondary" type="button" onclick="showPassword()">Show</button>
+                        <button id="show_password" class="btn btn-outline-secondary" type="button">Show</button>
                     </tr>
                 </table>
             </div>
             <div class="input-group">
                 <table>
                     <tr>
-                        <input type="checkbox" id="remember-me" class="checkbox">
+                        <input type="checkbox" id="rememberMe" class="checkbox">
                     </tr>
                     <tr>
-                        <label for="remember-me">Remember me</label>
+                        <label for="rememberMe">Remember me</label>
                     </tr>
                 </table>
             </div>
             <button id="login">Log In</button>
             <div class="social">
-            <div class="go">Google</div>
-            <div class="fb">Facebook</div>
+            <div class="go" id="forgetPasswordFormBtn">Forget Password?</div>
+            <div class="fb">Login with...</div>
             </div>
             <span id="portal-notice">Not registered yet? <a href="/portal.html?mode=register">Register now.</a></span>
         </form>
-        
+        <form id="regForm" data-mode="register">
+            <h3 id="form-Title">Register</h3>
+            <p id="form-subheading">Create your own account</p>
+            <label for="regFormUsername">Username</label>
+            <input type="text" placeholder="Enter your username" id="regFormUsername">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter your email" id="email">
+            <label for="regFormPassword">Password</label>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="password" placeholder="Enter your password" id="regFormPassword">
+                    </tr>
+                    <tr>
+                        <button id="show_passwordRegForm" class="btn btn-outline-secondary" type="button">Show</button>
+                    </tr>
+                </table>
+            </div>
+            <label for="regFormPasswordVaildation">Re enter your Password</label>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="password" placeholder="Re-enter your password" id="regFormPasswordVaildation">
+                    </tr>
+                </table>
+            </div>
+            <button id="register">Register Now!</button>
+            <span id="portal-notice">Already have an account? <a href="/portal.html?mode=login">Login now.</a></span>
+        </form>
+        <form id="resetPassword" data-mode="resetPassword">
+            <h3 id="form-Title">Reset Password</h3>
+            <p id="form-subheading">Forget your password? Reset it now!</p>
+            <label for="resetPasswordFormUsername">Username</label>
+            <input type="text" placeholder="Enter your username" id="resetPasswordFormUsername">
+            <div id="resetPasswordModeSwitch">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-bs-target="#resetPasswordModeEmail" data-bs-toggle="tab" href="#">Email</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-target="#resetPasswordModeTOTP" data-bs-toggle="tab" href="#">TOTP</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-target="#resetPasswordModeSecurityQuestion" data-bs-toggle="tab" href="#">Security Question</a>
+                    </li>
+                  </ul>
+            </div>
+            <div id="resetPasswordModeSwitchContainer" class="tab-content" id="pills-tabContent">
+                <div id="resetPasswordModeEmail" class="tab-pane fade show active">
+                    <label for="resetPasswordFormEmail">Email</label>
+                    <div class="input-group">
+                    <table>
+                        <tr>
+                            <input type="text" placeholder="Enter your Email" id="resetPasswordFormEmail">
+                        </tr>
+                        <tr>
+                            <button id="sendVerificationCode" class="btn btn-outline-secondary" type="button">Send!</button>
+                        </tr>
+                    </table>
+                    </div>
+                    <label for="resetPasswordFormEmailCode">Verification Code</label>
+                    <input type="text" placeholder="Enter the code here" id="resetPasswordFormEmailCode">
+                </div>
+                <div id="resetPasswordModeTOTP" class="tab-pane fade">
+                    <label for="resetPasswordFormTOTP">TOTP Code</label>
+                    <input type="text" placeholder="Enter your TOTP code" id="resetPasswordFormTOTP">
+                </div>
+                <div id="resetPasswordModeSecurityQuestion" class="tab-pane fade">
+                    <label for="resetPasswordFormSecurityQuestion">Security Question</label>
+                    <input type="text" placeholder="Enter your answer" id="resetPasswordFormSecurityQuestion">
+                </div>
+            </div>
+            <label for="resetPasswordFormPassword">New Password</label>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="password" placeholder="Enter your password" id="resetPasswordFormPassword">
+                    </tr>
+                    <tr>
+                        <button id="show_passwordresetPasswordForm" class="btn btn-outline-secondary" type="button">Show</button>
+                    </tr>
+                </table>
+            </div>
+            <label for="resetPasswordFormVaildation">Re enter your New Password</label>
+            <div class="input-group">
+                <table>
+                    <tr>
+                        <input type="password" placeholder="Re-enter your password" id="resetPasswordFormVaildation">
+                    </tr>
+                </table>
+            </div>
+            <button id="tryReset">Reset and back to login page!</button>
+            <span id="portal-notice">Remember your password again? <a href="/portal.html?mode=login">Login now.</a></span>
+        </form>
         </div>
         <div id="form-poster">
             <div id="form-poster-decoration"></div>
@@ -86,6 +184,19 @@
                 <h2>More secure with your mobile phone</h2>
                 <p>Protect your account with your OTP code. It is free.</p>
                 <button id="portal-LearnMore">Learn More</button>
+            </div>
+            <div id="regForm-MFA">
+                <h3>Multi-Factor Authentication</h3>
+                <div class="input-group">
+                    <input type="checkbox" id="regForm-MFA-Checkbox">
+                    <label for="regForm-MFA-Checkbox" class="mfaTip">Setup a Time-based OTP with device</label>
+                </div>
+                <span class="regForm-MFA-Intro">After scanned the code with your device's TOTP app, enter the code display on the screen in the below field to finish setup.</span>
+                <div class="regForm-MFA-ImageContainer">
+                    <img src="" alt="QR Code of TOTP" id="regForm-MFA-Image">
+                </div>
+                <input type="text" placeholder="Enter the code here" id="regForm-MFA-Code">
+                <button id="regForm-MFA-Verify">Verify</button>
             </div>
         </div>
     </div>

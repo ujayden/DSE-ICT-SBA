@@ -57,31 +57,35 @@ function updateClientSuggestAction(action, n, command) {
 let suggestedActions_container = document.getElementById("chatbot-chat-suggest");
 function callServer(msg){
     waitMessage.style.display = "block";
-    //Send a POST to the server backend on /api/chatbot
-    //Reference: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send, book:  <<Java script第一次學就上手>>, https://stackoverflow.com/a/50066247
-    xhr.open("POST", windowURL.origin + "/api/chatbot.php", true);
-    //xhr.open("GET", windowURL.origin + "/debug/chatbot_res.json", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({ message: msg }));
-    xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        let response = JSON.parse(xhr.responseText);
-        let chatmessage = response.message;
+
+    $.ajax({
+      type: "POST",
+      url: windowURL.origin + "/api/chatbot.php",
+      //url: windowURL.origin + "/debug/chatbot_res.json",
+      data: JSON.stringify({ chatMsg: msg }),
+      contentType: "application/json",
+      success: function(response) {
+        let chatmessage = response.chatMsg;
         let chatfrom = "server";
         updateChat(chatmessage, chatfrom);
-        //Check if the response has suggested actions - This feature is abandoned.
+      
+        // Check if the response has suggested actions - This feature is abandoned.
         let suggestedActions = false;
         if (suggestedActions) {
-        }else{
-            suggestedActions_container.style.display = "none";
+          // Handle suggested actions
+        } else {
+          suggestedActions_container.style.display = "none";
         }
-    } else if (xhr.readyState == 4 && xhr.status != 200) {
+      },
+      error: function(xhr, status, error) {
         console.error("Error: " + xhr.status + " " + xhr.statusText);
         updateChat("Something went wrong, please try again?", "server");
         suggestedActions_container.style.display = "none";
-        }
-    }
-    waitMessage.style.display = "none";
+      },
+      complete: function() {
+        waitMessage.style.display = "none";
+      }
+    });
 }
 function sendMessage(msg) {
     //The server will return a message and may include a list of suggested actions.

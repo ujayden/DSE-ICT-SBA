@@ -295,7 +295,6 @@ let googleSearchButton = document.getElementById('google-enhanced-search-tab');
 googleSearchButton.addEventListener('click', () => {
     //TODO: Update the address bar
     history.pushState(null, null, '?q=' + searchPageAttributes.searchInput);
-    
 });
 let searchAgain = document.getElementById('formSearch2');
 let searchAgainButton = document.getElementById('formSearchBtn2');

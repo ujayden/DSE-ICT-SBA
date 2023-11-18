@@ -59,7 +59,7 @@ function callServer(msg){
     waitMessage.style.display = "block";
     //Send a POST to the server backend on /api/chatbot
     //Reference: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send, book:  <<Java script第一次學就上手>>, https://stackoverflow.com/a/50066247
-    xhr.open("POST", windowURL.origin + "/api/chatbot", true);
+    xhr.open("POST", windowURL.origin + "/api/chatbot.php", true);
     //xhr.open("GET", windowURL.origin + "/debug/chatbot_res.json", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify({ message: msg }));

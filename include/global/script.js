@@ -210,3 +210,12 @@ searchBox.forEach(function(targetElement) {
     }
     );
 })
+let tryItOutBtn = document.getElementById('header-tryit-btn-nav');
+console.log(tryItOutBtn);
+tryItOutBtn.addEventListener('click', function() {
+    redirectPortalPage();
+}
+);
+function redirectPortalPage() {
+    window.location.href = window.location.origin + '/portal.html?mode=register';
+}

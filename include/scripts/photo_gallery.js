@@ -1,4 +1,22 @@
 'use strict';
+$('#photo-gallery-container').on('slide.bs.carousel', function () {
+    loadPhotoGalleryText(getCurrentSlideIndex());
+})
+function getCurrentSlideIndex(){
+    return $('#photo-gallery-container .carousel-item.active').index();
+}
+let photoGalleryText  = document.querySelectorAll('.pgtc');
+function loadPhotoGalleryText(CurrentSlideIndex){
+    //Shift slide index to match array index
+    CurrentSlideIndex++;
+    if (CurrentSlideIndex >= photoGalleryText.length){
+        CurrentSlideIndex = 0;
+    }
+    photoGalleryText.forEach(function(element){
+        element.classList.add('pgtc-hidden');
+    });
+    document.querySelector('#pgtc-'+CurrentSlideIndex).classList.remove('pgtc-hidden');
+}
 let scrollCooldown = false;
 $(document).ready(function(){
     $("#posterBenefitCarousel").owlCarousel({

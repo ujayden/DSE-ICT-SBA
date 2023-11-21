@@ -8,11 +8,13 @@ let loginForm_rememberMe = loginForm.querySelector('#rememberMe');
 let loginForm_passwordToggle = loginForm.querySelector('#password-toggle');
 let loginForm_formPoster = loginForm.querySelector('#form-poster');
 let regForm = document.getElementById('regForm');
+let regFormBtn = document.getElementById('register');
 let regForm_username = regForm.querySelector('#regFormUsername');
 let regForm_password = regForm.querySelector('#regFormPassword');
 let regForm_passwordVerify = regForm.querySelector('#regFormPasswordVaildation');
-let regFormTOTPVerify = regForm.querySelector('#regForm-MFA-Code');
+let regFormTOTPVerify = document.getElementById('regForm-MFA-Code');
 let regFormQRCode = document.getElementById('regForm-MFA-Image');
+let regFormTOTPToggle = document.getElementById('regForm-MFA-Checkbox');
 let formContainer = document.getElementById('form-container'); 
 let formPosterLogin = document.getElementById('form-poster-detail');
 let regFormMFA = document.getElementById('regForm-MFA');
@@ -21,15 +23,24 @@ let toggleShowPasswordReg = document.getElementById('show_passwordRegForm');
 let forgetPasswordBtn = document.getElementById('forgetPasswordFormBtn');
 let formBreadcrumb = document.getElementById('portal-Breadcrumb');
 let resetPasswordForm = document.getElementById('resetPassword');
-let resetPasswordForm_username = resetPasswordForm.querySelector('#resetPasswordUsername');
-let resetPasswordForm_password = resetPasswordForm.querySelector('#resetPasswordPassword');
+let resetPasswordForm_username = resetPasswordForm.querySelector('#resetPasswordFormUsername');
+let resetPasswordForm_password = resetPasswordForm.querySelector('#resetPasswordFormPassword');
+let resetPasswordForm_passwordVerify = resetPasswordForm.querySelector('#resetPasswordFormVaildation');
+let resetPasswordForm_passwordToggle = resetPasswordForm.querySelector('#show_passwordresetPasswordForm');
+let totpPassedVerification = false;
+let regFormMFAVerifyBtn = document.getElementById('regForm-MFA-Verify');
 
 loginBtn.addEventListener('click', function (e) {
     e.preventDefault();
+    submitLoginInfo();
 });
 forgetPasswordBtn.addEventListener('click', function (e) {
     e.preventDefault();
     displayForgotPasswordForm();
+});
+regFormBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    submitRegisterInfo();
 });
 //Make a accessibility toast first to ask if the user wants to remove fancy effects
 const accessibilityToast = document.getElementById('portal-Accessibility-Toast');
@@ -57,19 +68,75 @@ loginForm_rememberMe.addEventListener('change', function (e) {
 function success(inMode){
     if(inMode === 'login'){
         window.location.href = '/learning/dashboard.html';
+    }else{
+        warningPrompt("Success!", "Now you can login with your new account.");
+        setTimeout(function(){
+            displayLoginForm();
+        }, 3000);
     }
 }
-function warningPrompt(promptHeader, message){
 
+
+let warningPromptContainer = document.getElementById('loginFormWarningContainer');
+let warningPromptText = document.getElementById('loginFormWarning');
+let warningPromptContainerHiddenTimeout;
+
+/**
+ * @param {string} promptHeader //Title of the prompt, not required, but null or undefined will required to be passed in
+ * @param {string} message //Message of the prompt, do not ask user to enter anything!
+ * @returns {boolean} //Useless
+ */
+function warningPrompt(promptHeader, message){
+    //Force revert to original state
+    clearTimeout(warningPromptContainerHiddenTimeout);    
+    //Set the prompt message
+    let promptMessage;
+    if (promptHeader === null || promptHeader === undefined) {
+        promptMessage = message;
+    }else{
+        promptMessage = "<strong>" + promptHeader + "</strong>  " + message;
+    }
+    warningPromptText.innerHTML = promptMessage;
+    //Show the warning prompt with animation
+    //First, set visibility to visible
+    warningPromptContainer.style.visibility = 'visible';
+    //Trigger reflow/repaint
+    void warningPromptContainer.offsetTop;
+    //Add the animation class
+    warningPromptContainer.classList.add('loginFormWarningContainer-animation');
+    //Wait for the animation to end, then remove the animation class
+    setTimeout(function(){
+        warningPromptContainer.classList.remove('loginFormWarningContainer-animation');
+    }, 500);
+    //Set the visibility to hidden after 3 seconds
+    warningPromptContainerHiddenTimeout = setTimeout(function(){
+        warningPromptContainer.style.visibility = 'hidden';
+    }, 3000);
 }
+//Check the mode of the form
+let currentURL = new URL(window.location.href);
 function switchForm(inMode) {
     switch (inMode) {
         case 'login':
+            displayLoginForm();
             break;
         case 'mfa':
+            displayMFAPrompt();
             break;
+        case 'register':
+            displayRegisterForm();
+            break;
+        case 'forgotPassword':
+            displayForgotPasswordForm();
+            break;
+        default:
+            mode = 'login';
+            displayLoginForm();
     }
 }
+let mode = currentURL.searchParams.get('mode');
+switchForm(mode);
+
 function displayRegisterForm() {
     //Set display to none for all forms
     //Container: login-form
@@ -86,6 +153,9 @@ function displayRegisterForm() {
     regFormMFA.style.display = 'block';
     //Update breadcrumb
     formBreadcrumb.innerHTML = '<a href="/">ICT Master Hub</a> > Register';
+    replayLoadAnimation()
+    //Change history bar
+    window.history.replaceState(null, null, '?mode=register');
 }
 function displayLoginForm() {
     //Set display to none for all forms
@@ -103,6 +173,9 @@ function displayLoginForm() {
     regFormMFA.style.display = 'none';
     //Update breadcrumb
     formBreadcrumb.innerHTML = '<a href="/">ICT Master Hub</a> > Login';
+    replayLoadAnimation()
+    //Change history bar
+    window.history.replaceState(null, null, '?mode=login');
 }
 function displayForgotPasswordForm() {
     //Set display to none for all forms
@@ -120,17 +193,35 @@ function displayForgotPasswordForm() {
     regFormMFA.style.display = 'none';
     //Update breadcrumb
     formBreadcrumb.innerHTML = '<a href="/">ICT Master Hub</a> > Forgot Password';
+    replayLoadAnimation()
+    //Change history bar
+    window.history.replaceState(null, null, '?mode=forgotPassword');
 }
+
+let loginMFACodeValue = document.getElementById('loginMFACode').value;
 
 function submitLoginInfo() {
     let username = loginForm_username.value;
     let password = loginForm_password.value;
+    let recaptchaToken = null;
+    //Check if any of the fields are empty
+    if (username === '' || password === '') {
+        warningPrompt("There are empty fields", "Please fill out all fields.");
+        return false;
+    }
     let loginInfo = {
         mode: 'login',
         username: username,
         password: password,
-        recaptchaToken: null
+        recaptchaToken: recaptchaToken,
+        mfaCode: null
     };
+    //If mfaCode is not null, set the mfaCode
+    if (loginMFACodeValue !== '') {
+        loginInfo.mfaCode = loginMFACodeValue;
+    }
+    
+    loginInfo = JSON.stringify(loginInfo);
     $.ajax({
         url: '/api/user.php',
         method: 'POST',
@@ -144,23 +235,149 @@ function submitLoginInfo() {
             }
         },
         error: function (data) {
-            let response = JSON.parse(data);
-            console.error("Error logging in: " + response.error + " (" + errorMsg + ")");
-            warningPrompt("Sorry, there was an error logging in.", "Please try again later." + errorMsg + ".");
+            warningPrompt("Sorry, there was an error logging in.", "Please try again later.");
+            console.error("Error logging in");
+
         }
     });
 }
 
+function submitRegisterInfo() {
+    let username = regForm_username.value;
+    let password = regForm_password.value;
+    let passwordVerify = regForm_passwordVerify.value;
+    let recaptchaToken = null;
+    if (password !== passwordVerify) {
+        warningPrompt("Passwords do not match", "Please check your passwords and try again.");
+        return false;
+    }
+    //Check if any of the fields are empty
+    if (username === '' || password === '' || passwordVerify === '') {
+        warningPrompt("There are empty fields", "Please fill out all fields.");
+        return false;
+    }
+    let regInfo = {
+        mode: 'register',
+        username: username,
+        password: password,
+        useTOTP: false,
+        totpSecret: null,
+        recaptchaToken: recaptchaToken
+    };
+    //Check if the user has enabled TOTP
+    if (regFormTOTPToggle.checked === true) {
+        regInfo.useTOTP = true;
+        //Check if the user has entered the TOTP code
+        if (regFormTOTPVerify.value !== '') {
+            //Check if the TOTP code passed the verification
+            if (totpPassedVerification){
+                //Continue
+            }else{
+                warningPrompt("The TOTP code is incorrect", "Please click the verify button to verify the TOTP code.");
+                return false;
+            }
+        } else {
+            warningPrompt("Please enter the TOTP code to verify", "Please try again.");
+            return false;
+        }
+    }
+    regInfo = JSON.stringify(regInfo);
+    $.ajax({
+        url: '/api/user.php',
+        method: 'POST',
+        data: regInfo,
+        success: function (data) {
+            let response = JSON.parse(data);
+            if (response.success === true) {
+                success(regInfo.mode);
+            } else if (response.mfa_enabled === true) {
+                switchForm('mfa');
+            }
+        },
+        error: function (data) {
+            warningPrompt("Sorry, there was an error while registering.", "Please try again later.");
+            console.error("Error while registering.");
 
-//Check the mode of the form
-let currentURL = new URL(window.location.href);
-let mode = currentURL.searchParams.get('mode');
-if (mode === null) {
-    mode = 'login';
-}else if(mode === 'register'){
-    displayRegisterForm();
-}else if(mode === 'forgotPassword'){
-    displayForgotPasswordForm();
+        }
+    });
+}
+regFormTOTPToggle.addEventListener('change', function (e) {
+    if (e.target.checked === true) {
+        //Ungrey the QR code
+    } else {
+        //Grey out the QR code
+    }
+});
+let resetPasswordFormEmailVerificationCode = document.getElementById('resetPasswordFormEmailCode');
+let resetPasswordFormTOTPVerificationCode = document.getElementById('resetPasswordFormTOTP');
+let resetPasswordFormSecurityQuestionVerificationCode = document.getElementById('resetPasswordFormSecurityQuestion');
+function submitForgotPasswordInfo() {
+    debugger
+    let username = resetPasswordForm_username.value;
+    let password = resetPasswordForm_password.value;
+    let recaptchaToken = null;
+    let verifyCode = null;
+    //Get the verify code based on the mode
+    let currentSelectElementID = new bootstrap.Tab(document.querySelector('.nav-link.active'));
+    currentSelectElementID =  currentSelectElementID._config.target;
+    switch (currentSelectElementID) {
+        case '#resetPasswordModeEmail':
+            verifyCode = resetPasswordFormEmailVerificationCode.value;
+            break;
+        case '#resetPasswordModeTOTP':
+            verifyCode = resetPasswordFormTOTPVerificationCode.value;
+            break;
+        case '#resetPasswordModeSecurityQuestion':
+            verifyCode = resetPasswordFormSecurityQuestionVerificationCode.value;
+            break;
+        default:
+            throw new Error('Unknown verifyMode');
+    }
+    //Check if the user has entered all the fields
+    if (username === '' || password === '' || verifyCode === '' || resetPasswordForm_passwordVerify.value === '') {
+        warningPrompt("There are empty fields", "Please fill out all fields.");
+        return false;
+    }
+    //Check if the passwords match
+    console.log(resetPasswordForm_password.value);
+    if (password !== resetPasswordForm_passwordVerify.value) {
+        warningPrompt("Passwords do not match", "Please check your passwords and try again.");
+        return false;
+    }
+    let forgotPasswordInfo = {
+        mode: 'forgotPassword',
+        username: username,
+        password: password,
+        recaptchaToken: recaptchaToken,
+        verifyMode: 'email',
+        verifyCode: null
+    };
+    //Check verifyMode
+    console.log(currentSelectElementID);
+    if (currentSelectElementID === '#resetPasswordModeEmail') {
+        forgotPasswordInfo.verifyMode = 'email';
+    } else if (currentSelectElementID === '#resetPasswordModeTOTP') {
+        forgotPasswordInfo.verifyMode = 'totp';
+    } else if (currentSelectElementID === '#resetPasswordModeSecurityQuestion') {
+        forgotPasswordInfo.verifyMode = 'securityQuestion';
+    } else {
+        throw new Error('Unknown verifyMode');
+    }
+    forgotPasswordInfo.verifyCode = verifyCode;
+    forgotPasswordInfo = JSON.stringify(forgotPasswordInfo);
+    $.ajax({
+        url: '/api/user.php',
+        method: 'POST',
+        data: forgotPasswordInfo,
+        success: function (data) {
+            let response = JSON.parse(data);
+            success(forgotPasswordInfo.mode);
+        },
+        error: function (data) {
+            warningPrompt("Sorry, there was an error while resetting your password.", "Please try again later.");
+            console.error("Error resetting password.");
+        }
+    });
 }
 
 
@@ -179,6 +396,94 @@ toggleShowPasswordReg.addEventListener('click', function (e) {
         regForm_password.type = 'password';
     }
 });
+resetPasswordForm_passwordToggle.addEventListener('click', function (e) {
+    if (resetPasswordForm_password.type === 'password') {
+        resetPasswordForm_password.type = 'text';
+    } else {
+        resetPasswordForm_password.type = 'password';
+    }
+});
+
+//Check email validity
+/**
+ * 
+ * @param {string} email //Email to be validated
+ * @returns {boolean} //True if valid, false if not valid
+ */
+function validateEmail(email){
+    console.log(email);
+        let regex = new RegExp('(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*|"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\])');
+        let result = regex.test(email);
+        console.log(result);
+        return result;
+    }
+
+//Reset password form with email
+let resetPasswordFormEmailVerificationCodeBtn = document.getElementById('sendVerificationCode');
+let resetPasswordFormEmail = document.getElementById('resetPasswordFormEmail');
+function sendEmailVerificationCode(){
+    let email = resetPasswordFormEmail.value;
+    let username = resetPasswordForm_username.value;
+    if(!validateEmail(email)){
+        warningPrompt("Please enter a valid email address", "Check your email address and try again.");
+        return false;
+    }
+    let resetPasswordInfo = {
+        mode: 'forgotPasswordSendEmailGetCode',
+        username: username,
+        email: email,
+        recaptchaToken: null
+    };
+    resetPasswordInfo = JSON.stringify(resetPasswordInfo);
+    $.ajax({
+        url: '/api/user.php',
+        method: 'POST',
+        data: resetPasswordInfo,
+        success: function (data) {
+            let response = JSON.parse(data);
+            if (response.success === true) {
+                //Prompt success, and ask user to check email
+                warningPrompt("Email sent", "Please check your email for the verification code.");
+            }else {
+                warningPrompt("An error occured", "Please try again later.");
+            }
+        },
+        error: function (data) {
+            warningPrompt("Sorry, there was an error while resetting your password.", "Please try again later.");
+            console.error("Error while resetting password.");
+        }
+    });
+}
+resetPasswordFormEmailVerificationCodeBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    sendEmailVerificationCode();
+});
+
+function replayLoadAnimation(){
+    //.form-containerAmination{animation: floatDown 0.5s ease;}
+    formContainer.classList.remove('form-containerAmination');
+    // Trigger reflow/repaint
+    void formContainer.offsetTop;
+    formContainer.classList.add('form-containerAmination');
+}
+
+//Prevent link redirection
+let loginNowLink = document.getElementById('loginNowLink');
+loginNowLink.addEventListener('click', function(e){
+    e.preventDefault();
+    displayLoginForm();
+});
+let registerNowLink = document.getElementById('registerNowLink');
+registerNowLink.addEventListener('click', function(e){
+    e.preventDefault();
+    displayRegisterForm();
+});
+let loginNowInForgotPasswordLink = document.getElementById('loginNowForgetPasswordLink');
+loginNowInForgotPasswordLink.addEventListener('click', function(e){
+    e.preventDefault();
+    displayLoginForm();
+});
+
 
 //TOTP time :/
 //For every update of regForm_username, generate a totp qr code with new secret.
@@ -192,9 +497,6 @@ let totpAttributes = {
     period: 30,
     window: 0
 };
-function generateTOTPsecret(){
-
-}
 regForm_username.addEventListener('change', function(e){
     regFormUserNameChange(e.target.value);
 });
@@ -217,5 +519,69 @@ function generateTOTPImg(){
     let dataURL = $(virtualElement).find('canvas')[0].toDataURL();
     //Set the src of the QR code img
     regFormQRCode.src = dataURL;
+    //Reset the totpPassedVerification
+    totpPassedVerification = false;
+    //Reenable to input
+    regFormTOTPVerify.disabled = false;
+    regFormMFAVerifyBtn.disabled = false;
 }
 regFormUserNameChange()
+
+//User click verify button
+regFormMFAVerifyBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    debugger
+    verifyTOTPCode();
+});
+function verifyTOTPCode(){
+    //Check if the user has entered the TOTP code to verify
+    //Check if the user has enabled TOTP
+    if (regFormTOTPToggle.checked === true) {
+        //Check if the user has entered the TOTP code
+        if (regFormTOTPVerify.value !== '') {
+            //Check if the TOTP code passed the verification
+            if (otplib.authenticator.check(regFormTOTPVerify.value, totpAttributes.secret)){
+                //Continue
+                totpPassedVerification = true;
+                warningPrompt("Success!", "The TOTP code is correct.");
+                //Disable the input
+                regFormTOTPVerify.disabled = true;
+                regFormMFAVerifyBtn.disabled = true;
+            }else{
+                warningPrompt("The TOTP code is incorrect", "Please try again.");
+                return false;
+            }
+        } else {
+            warningPrompt("Please enter the TOTP code to verify", "Please try again.");
+            return false;
+        }
+    }
+}
+let resetPasswordTryResetBtn = document.getElementById('tryReset');
+resetPasswordTryResetBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    submitForgotPasswordInfo();
+});
+
+let loginFormMFACodeContainer = new bootstrap.Modal(document.getElementById('loginFormMFAPrompt'));
+function showMfaCodePrompt() {
+    loginFormMFACodeContainer.show();
+}
+let submitLoginWithMFACodeBtn = document.getElementById('submitMfaCodeBtn');
+submitLoginWithMFACodeBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    submitLoginInfo();
+});
+function closeMfaCodePrompt(){
+    loginFormMFACodeContainer.hide();
+}
+let closeMfaCodeContainer = document.getElementById('closeMfaCodeContainer');
+let closeMfaCodeContainer2 = document.getElementById('closeMfaCodeContainer2');
+closeMfaCodeContainer.addEventListener('click', function(e){
+    e.preventDefault();
+    closeMfaCodePrompt();
+});
+closeMfaCodeContainer2.addEventListener('click', function(e){
+    e.preventDefault();
+    closeMfaCodePrompt();
+});

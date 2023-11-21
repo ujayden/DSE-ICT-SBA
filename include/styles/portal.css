@@ -266,14 +266,16 @@ input[type="password"]{
     flex-direction: column;
 }
 #form-poster-detail img{
-    height: 200px;
+    height: 80%;
+    width: 80%;
     margin-bottom: 10px;
-    object-fit: cover;
+
 }
-#portal-LearnMore{
+.portal-LearnMore{
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 20px;
     padding: 6px 14px;
     border-radius: 4px;
     background-color: #23a2f6;
@@ -285,36 +287,56 @@ input[type="password"]{
     transition: all 0.2s ease-in-out;
     border: 2px solid #23a2f6;
     display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 #portal-LearnMore:hover{
     background-color: rgba(255,255,255,0.2);
 }
 /** Make the form pop up from up to down, like discord **/
-#form-container{
-    animation: floatDown 0.2s ease-in-out;
+.form-containerAmination{
+    animation: floatDown 0.5s ease;
 }
 @keyframes floatDown {
     0% {
-        top: 0%;
+        top: -20%;
     }
-    10% {
-        top: 20%;
-    }
-    20% {
-        top: 40%;
-    }
-    30% {
-        top: 50%;
-    }
-    85% {
+    60%{
         top: 60%;
     }
-    95% {
-        top: 54%;
-    }
-    100% {
+    100%{
         top: 50%;
     }
+
+}
+/** Warning animation **/
+.loginFormWarningContainer-animation{
+    animation: floatDownWarning 0.5s ease;
+}
+@keyframes floatDownWarning {
+    0% {
+        top: -200vh;
+    }
+    20%{
+        top: 0px;
+    }
+    60%{
+        top: 30px;
+    }
+    100%{
+        top: 20px;
+    }
+
+}
+#loginFormWarningContainer{
+    /** Same as the form container **/
+    width: 70%;
+    max-width: 1200px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 #portal-Accessibility-Toast{
     /** Right */
@@ -457,4 +479,9 @@ input[type="password"]{
     width: 1%;
     min-width: 0;
 }
-    
+
+.alert-warning-override{
+    background-color: rgba(255,255,255) !important;
+    border: 2px solid rgba(255,255,255,0.1) !important;
+    color: black !important;
+}

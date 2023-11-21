@@ -7,6 +7,10 @@
     <title>Login Now! - ICT Master Hub</title>
     <!--Load libray here.-->
     <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load Bootstrap of sth else here-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+    
     <!-- Load CSS and Script here -->
     <link rel="stylesheet" href="/include/styles/portal.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,9 +22,6 @@
     <script src="/include/global/library/otplib/index.js" type="module"></script>
     <script src="/include/global/library/qrcode/jquery.qrcode.min.js" type="module"></script>
     <script src="/include/scripts/portal.js" defer></script>
-    <!-- Load Bootstrap of sth else here-->
-    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
-    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
 
 </head>
 <body>
@@ -42,7 +43,7 @@
 
           </div>
     </div>
-    <div id="form-container">
+    <div id="form-container" class="form-containerAmination">
         <div id="login-form">
             <span id="portal-Breadcrumb">
                 <a href="/">ICT Master Hub</a> > Login
@@ -80,7 +81,7 @@
             <div class="go" id="forgetPasswordFormBtn">Forget Password?</div>
             <div class="fb">Login with...</div>
             </div>
-            <span id="portal-notice">Not registered yet? <a href="/portal.html?mode=register">Register now.</a></span>
+            <span id="portal-notice">Not registered yet? <a href="/portal.html?mode=register" id="registerNowLink">Register now.</a></span>
         </form>
         <form id="regForm" data-mode="register">
             <h3 id="form-Title">Register</h3>
@@ -109,7 +110,7 @@
                 </table>
             </div>
             <button id="register">Register Now!</button>
-            <span id="portal-notice">Already have an account? <a href="/portal.html?mode=login">Login now.</a></span>
+            <span id="portal-notice">Already have an account? <a href="/portal.html?mode=login" id="loginNowLink">Login now.</a></span>
         </form>
         <form id="resetPassword" data-mode="resetPassword">
             <h3 id="form-Title">Reset Password</h3>
@@ -131,7 +132,7 @@
             </div>
             <div id="resetPasswordModeSwitchContainer" class="tab-content" id="pills-tabContent">
                 <div id="resetPasswordModeEmail" class="tab-pane fade show active">
-                    <label for="resetPasswordFormEmail">Email</label>
+                    <label for="resetPasswordFormEmail">Email - If the email you enter is correct, we will send you a email.</label>
                     <div class="input-group">
                     <table>
                         <tr>
@@ -174,7 +175,7 @@
                 </table>
             </div>
             <button id="tryReset">Reset and back to login page!</button>
-            <span id="portal-notice">Remember your password again? <a href="/portal.html?mode=login">Login now.</a></span>
+            <span id="portal-notice">Remember your password again? <a href="/portal.html?mode=login" id="loginNowForgetPasswordLink">Login now.</a></span>
         </form>
         </div>
         <div id="form-poster">
@@ -183,7 +184,7 @@
                 <img src="/include/images/portal/poster-securedphone.png" alt="Phone with more security">
                 <h2>More secure with your mobile phone</h2>
                 <p>Protect your account with your OTP code. It is free.</p>
-                <button id="portal-LearnMore">Learn More</button>
+                <a class="portal-LearnMore" href="/faq.html#2FA">Learn More</a>
             </div>
             <div id="regForm-MFA">
                 <h3>Multi-Factor Authentication</h3>
@@ -193,6 +194,7 @@
                 </div>
                 <span class="regForm-MFA-Intro">After scanned the code with your device's TOTP app, enter the code display on the screen in the below field to finish setup.</span>
                 <div class="regForm-MFA-ImageContainer">
+                    <div id="regForm-MFA-ImageContainer-Hide"></div> <!-- This is for hide the image. -->
                     <img src="" alt="QR Code of TOTP" id="regForm-MFA-Image">
                 </div>
                 <input type="text" placeholder="Enter the code here" id="regForm-MFA-Code">
@@ -200,5 +202,28 @@
             </div>
         </div>
     </div>
+    <div id="loginFormWarningContainer" class="loginFormWarningContainer-animation" style="visibility: hidden;">
+        <div class="alert alert-warning alert-warning-override alert-dismissible fade show" role="alert" id="loginFormWarning">Please fill out all fields!</div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="loginFormMFAPrompt">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Enter MFA Code</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeMfaCodeContainer">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Please enter the MFA code:</p>
+              <input type="text" class="form-control" id="loginMFACode">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitMfaCodeBtn">Submit</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeMfaCodeContainer2">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>

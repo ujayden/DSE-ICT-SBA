@@ -12,17 +12,20 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo json_encode($chatbotResponse);
     exit();
 }
+$payload = json_decode(file_get_contents('php://input'), true);
 
 // Get the chat message from the POST request
-if (isset($_POST['chatMsg'])) {
-    $userInput = $_POST['chatMsg'];
+if (isset($payload['chatMsg'])) {
+    $userInput = $payload['chatMsg'];
 } else {
     http_response_code(400);
     $chatbotResponse = array(
         "success" => false,
         "sessionID" => "999",
         "error" => "400 Bad Request",
-        "errorMsg" => "Sorry, chat message is not provided."
+        "errorMsg" => "Sorry, chat message is not provided.",
+        //Current Payload
+        "yourPayload" => $payload
     );
     header('Content-Type: application/json');
     echo json_encode($chatbotResponse);
@@ -230,13 +233,16 @@ function askForDefinition($userInput){
         return array('Sorry, I notice that your are looking for a definition, but I cannot find the term in your question. Maybe use format like "What is the definition of HTML?"');
     }}
 }
+$isDebug = true;
+$version = "2023-11-20-9-31-PM-1";
 //TODO: Add more keywords and responses
 if (checkMatchScheme($userInput, array('hello', 'hi'))) {
     $msgArray = array(
         'Hello there! What can I do for you?',
         'Hi there! I am a can give you hints and solving steps if you stuck on a question, or guide you travel on different page!',
         'Hi! Anything I can help?',
-        'Hello! Do you need any help?'
+        'Hello! Do you need any help?',
+        'Why hello there.'
     );
 } elseif (checkMatchScheme($userInput, array('how are you', 'how are you doing'))) {
     $msgArray = array(
@@ -277,6 +283,10 @@ if (checkMatchScheme($userInput, array('hello', 'hi'))) {
     $msgArray = array(
         'What can I help?',
     );
+} elseif ($isDebug && checkMatchScheme($userInput, array('debug'))) {
+    $msgArray = array(
+        'Debug: ' . $userInput . ' ' . date('Y-m-d H:i:s') . ' ' . json_encode($payload) . ' ' . $version
+    );
 } elseif (checkMatchScheme($userInput, array('show me the answer', 'what is the answer', 'can you give me the answer', 'I need the answer', 'tell me the answer', 'reveal the answer'))) {
     //Refuse to give answer if user ask for answer directly - Ask user to ask for hint or search for answer
     $msgArray = array(
@@ -286,8 +296,6 @@ if (checkMatchScheme($userInput, array('hello', 'hi'))) {
         "I apologize, but I'm unable to provide a direct answer. Kindly ask for a hint or try searching for the answer.",
         "Sorry, I'm not able to provide the answer directly. But Feel free to ask for a hint or explore other resources for the answer.",
         "I apologize for the inconvenience, but I can't provide the answer directly. You may want to request a hint or conduct a search for the answer.",
-        //This is just for fun - Ask the with LMGTFY link
-        "Sure, I can Google that from you" + "<a href='/searchGoogle.html?q=" + $userInput + "'>Click here to see the answer</a>"
     );
 } elseif (checkMatchScheme($userInput, array('how to', 'how can', 'how do', 'any hint for'))) {
     //If user also include "go to" in the input, then the chatbot will guide the user to the page - call askForNavigation function
@@ -307,7 +315,7 @@ if (checkMatchScheme($userInput, array('hello', 'hi'))) {
         $msgArray = askForNavigation($userInput);
 } elseif (checkMatchScheme($userInput, array('contact you', 'contact', 'email', 'address', 'find you'))) {
         $msgArray = array(
-            'You can contact us by email: <a href="mailto:admin@ictmasterhub.com">admin@ictmasterhub.com</a>. Or you can visit our <a href="contact.html">contact page</a> to fill out the form and see more details!'
+            'You can contact us by email: <a href="mailto:admin@ictmasterhub.com">admin@ictmasterhub.com</a>. Or you can visit our <a href="about.html#ContactUs">contact page</a> to fill out the form and see more details!'
         );
 } else {
     // If no keyword is matched, then the chatbot will give a random reply

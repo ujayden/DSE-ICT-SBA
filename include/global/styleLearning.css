@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+
+.headerLeft{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 2rem;
+}
+.header_Title{
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+main h1, main h2, main h3, main h4, main h5, main h6{
+    font-family: 'Montserrat', sans-serif;
+}

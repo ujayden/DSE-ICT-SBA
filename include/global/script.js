@@ -194,3 +194,28 @@ headerDDMenu_About_btn.addEventListener('keydown', function(event) {
     }
 }
 );
+
+const searchBox = document.querySelectorAll('.searchbox');
+
+function redirectSearchPage(searchBoxValue) {
+    window.location.href = 'search.html?q=' + searchBoxValue;
+}
+
+searchBox.forEach(function(targetElement) {
+    targetElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            redirectSearchPage(this.value);
+        }
+    }
+    );
+})
+let tryItOutBtn = document.getElementById('header-tryit-btn-nav');
+console.log(tryItOutBtn);
+tryItOutBtn.addEventListener('click', function() {
+    redirectPortalPage();
+}
+);
+function redirectPortalPage() {
+    window.location.href = window.location.origin + '/portal.html?mode=register';
+}

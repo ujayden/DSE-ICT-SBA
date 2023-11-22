@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>ICT Master Hub</title>
+    <title>Privacy Policy - ICT Master Hub</title>
     <!--Load libray here.-->
     <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
     <!-- Load CSS and Script here -->
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/include/global/style_responsive.css">
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
     <link rel="stylesheet" href="/include/styles/privacypolicy.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
@@ -45,11 +46,11 @@
                 <div id="dropdownMenu_Explore">
                     <span class="dropdownMenu" tabindex="0">Explore</span>
                     <div id="dropdownMenu_Explore-List" class="dropdownContent">
-                        <a href="/reason.html">Why using this website</a>
+                        <a href="/about.html#Benefit">Why using this website</a>
                         <a href="/courses/index.html">Learning Catalog</a>
                         <a href="/news/index.html">Latest News</a>
                         <a href="/chatbot.html">Chatbot</a>
-                        <a href="/help.html">Q&A</a>
+                        <a href="/faq.html">Q&A</a>
                         <a href="/setting.html">Setting</a>
                     </div>
                 </div>
@@ -57,7 +58,7 @@
                     <span class="dropdownMenu">More about us</span>
                     <div id="dropdownMenu_About-List" class="dropdownContent">
                         <a href="/about.html">About Us</a>
-                        <a href="/contact.html">Contact Us</a>
+                        <a href="/about.html#ContactUs">Contact Us</a>
                         <a href="/credit.html">Acknowledgement</a>
                     </div>
                 </div>                
@@ -67,8 +68,8 @@
                     <div id="header-Search">
                         <!-- Search -->
                         <div id="search">
-                            <form action="search.html" method="get" id="searchForm">
-                                <input type="text" name="search" placeholder="Search..." id="searchbox">
+                            <form action="search.html" method="get" class="searchForm">
+                                <input type="text" name="q" placeholder="Search..." class="searchbox">
                             </form>
                         </div>
                     </div>
@@ -117,7 +118,7 @@
                 <span>Welcome! </span>
                 <span id="username"></span>
                 <span id="message-of-the-day"></span>
-                <a href="/login.html" id="user-Login" tabindex="-1">Login now</a>
+                <a href="/portal.html" id="user-Login" tabindex="-1">Login now</a>
             </div>
         </div>
         <!-- Breadcrumns, disable in first page  -->
@@ -224,10 +225,10 @@
                 </div>
                 <div class="footer-Link-main">
                     <span class="footer-Link-Title" tabindex="0">Explore</span>
-                    <a class="footer-Link" href="/reason.html">Reason to use this website</a>
+                    <a class="footer-Link" href="/about.html#Benefit">Reason to use this website</a>
                     <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
                     <a class="footer-Link" href="/news/index.html">Latest News</a>
-                    <a class="footer-Link" href="/help.html">Q&A</a>
+                    <a class="footer-Link" href="/faq.html">Q&A</a>
                 </div>
             </div>
         <div class="footer-Right-Link footer-Link-main"  tabindex="0">
@@ -240,10 +241,10 @@
     </div>
     <div class="footer-Bottom-Link">
         <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
-        <a class="footer-Link" href="about.html">About Us</a>
-        <a class="footer-Link" href="about.html">Contact Us</a>
-        <a class="footer-Link" href="about.html">FAQ</a>
-        <a class="footer-Link" href="about.html">Setting</a>
+        <a class="footer-Link" href="/about.html">About Us</a>
+        <a class="footer-Link" href="/about.html#ContactUs">Contact Us</a>
+        <a class="footer-Link" href="/faq.html">FAQ</a>
+        <a class="footer-Link" href="/setting.html">Setting</a>
         <span tabindex="0">@2023 ICT Master Hub</span>
     </div>
     </footer>

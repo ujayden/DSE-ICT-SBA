@@ -30,6 +30,7 @@ a{
 	background-color: var(--white-color);
 	z-index: var(--z-fixed);
 	transition: .5s;
+	border-bottom: 1px solid #cfcfcf;
 }
 #bodyContainer{
 	display: flex;
@@ -108,11 +109,10 @@ a{
 .show{
 	left: 0;
 }
-
-.active{
+.navActive{
 	color: var(--white-color);
 }
-.active::before{
+.navActive::before{
 	content: '';
 	position: absolute;
 	left: 0;
@@ -134,6 +134,12 @@ main{
 	margin-left: 1rem;
 	border: 2px solid var(--first-color-light);
 	border-radius: 5px;
+}
+.nav_list{
+	padding: 0;
+}
+.nav-tabs{
+	border-bottom: 0!important;
 }
 .headerRight{
 	display: flex;
@@ -157,6 +163,12 @@ main{
 }
 .grayBackgroundShow{
 	visibility: visible;
+}
+main{
+	color: black;
+}
+.nav-tabs{
+	border-bottom: 0;
 }
 @media screen and (min-width: 768px){
 	.header_img{

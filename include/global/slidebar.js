@@ -31,8 +31,8 @@ let linkColor = document.querySelectorAll('.nav_link');
   
 function colorLink() {
     if (linkColor) {
-        linkColor.forEach((l) => l.classList.remove('active'));
-        this.classList.add('active');
+        linkColor.forEach((l) => l.classList.remove('navActive'));
+        this.classList.add('navActive');
     }
 }
   

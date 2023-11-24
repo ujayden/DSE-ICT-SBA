@@ -1,0 +1,10 @@
+.paper{
+    margin-top: 40px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 16px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    padding: 20px;
+}

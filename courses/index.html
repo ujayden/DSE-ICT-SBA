@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
     <link rel="stylesheet" href="/include/global/scrollbar.css">
     <link rel="stylesheet" href="/include/styles/courseIntro.css">
+    <link rel="stylesheet" href="/include/styles/procList.css">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
@@ -147,30 +148,74 @@
             <p>We focus on providing the best networking learning experience for you. Right now, we have 2 courses for you to choose. They have different difficulty and content. Stay tuned for more courses that more focus on different area of ICT!</p>
             <p>You can pick for the composory part of course. After reach the "Advanced" level, you can choose the elective part of course.</p>
             <p>Here is a diagram to show the structure of our courses.</p>
-            <div id="courseStructure">
-                <div>Composory Part</div>
-                <div>
-                    <span>Elective Part</span>
-                    <span>Addition Information (Available in the future)</span>
-                    <span>Trending Technology Topic (Available in the future)</span>
-                    <span>...</span>
-                </div>       
+            <div id="proc-coruseStructure">
+                <ol class="process-chart">
+                    <li>
+                        <div>
+                            <h3>Composory Part</h3>
+                            <ul>
+                                <li>Network and Internet Basic</li>
+                                <li>Communication Protocols and Software</li>
+                                <li>Use of Internet</li>
+                                <li><a href="/courses/composory.html">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Extended Part (Elective Part)</h3>
+                            <ul>
+                                <li>Network Topology</li>
+                                <li>Network Security</li>
+                                <li>Network Management</li>
+                                <li><small>Not forced to learn</small></li>
+                                <li><a href="/courses/extended.html">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Networking: Intergated Part</h3>
+                            <ul>
+                                <li>Use of skill in real life</li>
+                                <li>Possibly strange question in HKDSE (i.e. Drone, Chatbot)</li>
+                                <li><strong>Coming Soon</strong></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Last Perparetion</h3>
+                            <ul>
+                                <li>Exam Skill</li>
+                                <li>Exam Tips</li>
+                                <li>Exam Paper</li>
+                                <li><strong>Coming Soon</strong></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </section>
         <section id="courselist">
-            <h2 class="sectionTitle">Course List</h2>
-            <h2>Course Available</h2>
+            <h2 class="text-center">Course Available</h2>
+            <hr>
             <div class="posterCourseAvailableContainer" >
                 <div class="card posterCourseAvailableCard">
-                    <div class="card-body">
-                        <h5 class="card-title">Composory Part</h5>
-                        <p class="card-text">Learn the basics of ICT.</p>
-                    </div>
                     <div class="img-container">
                         <div class="img-wrapper">
                             <img class="card-img-top" src="/include/images/gallery/gallery1.jpg" alt="Card image">
                         </div>
                     </div>
-
+                    <div class="card-body">
+                        <h5 class="card-title">Composory Part</h5>
+                        <p class="card-text">Learn the basics of ICT.</p>
+                    </div>
+                    <div class="d-flex border-top">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>All Students</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>8 Hrs</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>4 Levels</small>
+                    </div>
                 </div>
                 <div class="card posterCourseAvailableCard">
                     <div class="img-container">
@@ -181,13 +226,18 @@
                     <div class="card-body">
                         <h5 class="card-title">Extended Part (Elective Part)</h5>
                         <p class="card-text">Learn the extended part of ICT.</p>
-                        <a href="/learning/introduction/extended.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="d-flex border-top">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>Specific Students</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 Hrs</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>5 Levels</small>
                     </div>
                 </div>
             </div>
         </section>
         <section id="learningPath">
-            <div>
+            <img src="/include/images/courses/path.jpg" alt="Learning Path" class="pathImg">
+            <div class="pathText">
                 <h2 class="sectionTitle">Learning Path</h2>
                 <p>To maximize your effectiveness of learning, we provide a learning path for you to follow. The Dynamic Learning Path will help you to learn the course with the best order.</p>
                 <p>Everyone has their own learning path. The learning path will be generated based on your learning progress and your learning style.</p>
@@ -195,17 +245,59 @@
                 <p>Here is a diagram to show the general structure of our learning path.</p>
             </div>
         </section>
+        <section id="learningPathStructure">
+            <ol class="process-chart">
+                <li>
+                    <div>
+                        <h3>Beginner</h3>
+                        <p><strong>Goal:</strong> Attain to basic performance</p>
+                        <ul>
+                            <li>Learn the basic knowledge and concept</li>
+                            <li>Relax and Interactive learning</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Basic</h3>
+                        <p><strong>Goal:</strong> Attain to average performance</p>
+                        <ul>
+                            <li>Explain the knowledge and concept</li>
+                            <li>Learn difficult concept</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Advanced</h3>
+                        <ul>
+                            <li>Explain the knowledge and concept</li>
+                            <li>Learn abstract and difficult concept</li>
+                            <li>Learn the exam skills</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>Expert</h3>
+                        <ul>
+                            <li>Learn more exam skills</li>
+                            <li>Revise the knowledge</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
         <section id="resLibrary">
             <h2 class="sectionTitle">Resource Library</h2>
-            <p>Resource Library is a place for you to find resources for learning. You can find the resources that you need for learning.</p>
-            <p>When you finish a level of difficulties, you can find the resources for the previous level of difficulties. </p>
-            <p>This allow you to review the knowledge that you have learnt before.</p>
-            <p>Don't forget to check out the resource library for more resources, as additional supplement resource will be added to the resource library!</p>
+            <div class="resLibrayTextContainer">
+                <p>Resource Library is a place for you to find resources for learning. You can find the resources that you need for learning. When you finish a level of difficulties, you can find the resources for the previous level of difficulties.</p>
+                <p>This allow you to review the knowledge that you have learnt before. Don't forget to check out the resource library for more resources, as additional supplement resource will be added to the resource library!</p>
+            </div>
         </section>
         <section id="faq">
             <h2 class="sectionTitle">FAQ</h2>
-            <p>Here are some frequently asked questions. If you have any questions, please visit the <a href="/faq.html">FAQ</a> page.</p>
-            ...
+            <p>Any questions? Check out the <a href="/faq.html">FAQ</a> to see if your question is answered.</p>
         </section>
     </main>
     <!-- Footer -->

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/include/global/style_responsive.css">
     <link rel="stylesheet" href="/include/global/style_backtoTop.css">
     <link rel="stylesheet" href="/include/global/scrollbar.css">
+    <link rel="stylesheet" href="/include/styles/coursedetail.css">
+    <link rel="stylesheet" href="/include/styles/procList.css">
     <!-- Defer can reduce web loading time. -->
     <script src="/include/global/script.js" defer></script>
     <script src="/include/global/script_backtoTop.js" defer></script>
@@ -129,12 +131,379 @@
         </nav>
     </header>
     <!-- Main Content -->
-    <main>
-        <section id="introduction">
-            
+    <main class="themeAquaBlue">
+        <section id="introduction" class="introduction">
+            <div class="introduction-Title">
+                <h1>Networking: Composory Part</h1>
+                <p>The basic knowledge of networking in HKDSE.</p>
+            </div>
+        </section>
+        <section id="information">
+            <span><h5>Check List - <span>Is that suitable for you?</span></span>
+            <div class="information">
+                <h3>Who should learn this?</h3>
+                <ul class="ul-target">
+                    <li>Taking HKDSE ICT.</li>  
+                    <li>Studing at any Elective (A/B/C/D)</li>
+                </ul>
+                <div class="infoTable">
+                    <h3>Summary</h3>
+                    <div class="horizionScoll">
+                        <table>
+                            <tr>
+                                <th>Estimated time</th>
+                                <th>Number of Levels</th>
+                                <th>Difficulty</th>
+                                <th>Adaptive?</th>
+                            </tr>
+                            <tr>
+                                <td>8 hours</td>
+                                <td>4</td>
+                                <td>Easy</td>
+                                <td>Yes</td>
+                            </tr>
+                        </table>   
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="featIncluded">
+            <h2>What is included?</h2>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                                    <h5 class="mb-3">5 Normal Quiz</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                                    <h5 class="mb-3">5 Mock Paper</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                                    <h5 class="mb-3">2 Interactive Element</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                                    <h5 class="mb-3">Access on any device</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="description">
+            <h2>Description</h2>
+            <p>This section is designed for students who are going to take DSE ICT.</p>
+            <p>
+                The ICT Networking Compulsory Part is an essential part of the HKDSE ICT framework. In today's rapidly evolving information society, ICT has become an part of our lives. Network is an important part of that. So, in this course, you will be learn…...
+            </p>
+            <div class="descriptionRow">
+                <div>
+                    <h2>What you will learn</h2>
+                    <ul>
+                        <li>Networking and Internet Basics, such as network device and transmit technology (Wi-Fi)</li>
+                        <li>Use of Internet, such as Email</li>
+                        <li>Protocol, such as HTTP, DNS</li>
+                        <li>Concept of Data Transmission and OSI model</li>
+                        <li>Skills of answering questions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>What you will get</h2>
+                    <ul>
+                        <li>Knowledge of Networking</li>
+                        <li>Knowledge of Internet</li>
+                        <li>Knowledge of Data Transmission</li>
+                        <li>Knowledge of OSI model</li>
+                        <li>Knowledge of Protocol</li>
+                        <li>Exam skills</li>
+                    </ul>
+                </div>
+        </section>
+        <section id="levels">
+            <h2>Levels</h2>
+            <p>This curriculum divided into 4 different level to provide dynamic difficulty. The level will be automatically adjusted according to your performance.</p>
+            <p>To unlock the next level, you need to complete the previous level and pass the quiz.</p>
+            <p>Click on the level to see their details.</p>
+            <!-- Bootstrap tab-->
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-target="#progressList" data-bs-toggle="tab" href="#progressList">Progress List</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="progressList" class="tab-pane fade show active">
+                    <ol class="process-chart">
+                        <li>
+                            <div>
+                                <h3>Beginner</h3>
+                                <p><strong>Goal:</strong> Attain to basic performance</p>
+                                <ul>
+                                    <li>Learn the basic knowledge and concept</li>
+                                    <li>Relax and Interactive learning</li>
+                                    <!--Bootstrap Link to toggle-->
+                                    <li><a class="nav-link" data-bs-target="#Level1" data-bs-toggle="tab" href="#Level1">Learn more</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Basic</h3>
+                                <p><strong>Goal:</strong> Attain to average performance</p>
+                                <ul>
+                                    <li>Explain the knowledge and concept</li>
+                                    <li>Learn difficult concept</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Advanced</h3>
+                                <ul>
+                                    <li><strong>Goal: </strong>Attain to good performance</li>
+                                    <li>Explain the knowledge and concept</li>
+                                    <li>Learn abstract and difficult concept</li>
+                                    <li>Learn the exam skills</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Expert</h3>
+                                <ul>
+                                    <li><strong>Goal:</strong> Prepare for the exam</li>
+                                    <li>Learn more exam skills</li>
+                                    <li>Revise the knowledge</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+        </section>
+        <section id="composoryCourseItemContainer" class="composoryCourseItemContainer">
+            <h2>Level in this Program</h2>
+            <p>14 lectures - 8 hours</p>
+            <!--Bootstrap Span-->
+            <div class="accordion mb-5 ccicAccordion accordion-flush" id="composoryCourseItemAccordionBeginner">
+                <!-- Beginner-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemBeginner" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="introTextContainer">
+                            <p class="subText">Beginner - 1 hour</p>
+                            <h4>Network and Internet Basics</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemBeginner" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#composoryCourseItemAccordionBeginner">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lession 1: What is Network?</h4>
+                                    <h5>Matching Network Device!</h5>
+                                    <p>In this lesson, you will learn the functions of network device.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lession 1: What is Network?</h4>
+                                    <h5>Introduction to Network</h5>
+                                    <p>In this lesson, you will read a short note about network.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lession 1: What is Network?</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion mb-5 ccicAccordion accordion-flush" id="composoryCourseItemAccordionBasic">
+                <!-- Basic-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemBasic" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="introTextContainer">
+                            <p class="subText">Basic - 2 hours</p>
+                            <h4>Use of Internet</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemBasic" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#composoryCourseItemAccordionBasic">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>Everything is Digital</h5>
+                                    <p>In this lesson, you will explore the benefits and drawbacks of key digital aspects, including E-commerce, E-government, E-learning, and Search Engines.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>How they connect?</h5>
+                                    <p>In this lesson, you will learn how the Internet works with Protocols.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>Try it, sense it!</h5>
+                                    <p>In this lesson, you will have a chance to see how the Internet works in simulation.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion mb-5 ccicAccordion accordion-flush" id="composoryCourseItemAccordionAdvanced">
+                <!-- Advanced-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemAdvanced" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="introTextContainer">
+                            <p class="subText">Advanced - 2 hours</p>
+                            <h4>Data Transmission and OSI model</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemAdvanced" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#composoryCourseItemAccordionAdvanced">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 3: Data Transmission and OSI model</h4>
+                                    <h5>What is Data Transmission?</h5>
+                                    <p>In this lesson, you will learn the concept of Data transmission , OSI model and IP.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 3: Data Transmission and OSI model</h4>
+                                    <h5>More about Data Transmission</h5>
+                                    <p>In this lesson, you will learn how streaming work, and more about Data transmission , OSI model and IP.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 3: Data Transmission and OSI model</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 4: Let's try for the exam!</h4>
+                                    <h5>Mock Test</h5>
+                                    <p>In this part, you will have a mock test for the exam.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 4: Let's try for the exam!</h4>
+                                    <h5>All things you need to know</h5>
+                                    <p>In this part, you will have a summary of the knowledge you need to know.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 4: Let's try for the exam!</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion ccicAccordion accordion-flush" id="composoryCourseItemAccordionExpert">
+                <!-- Expert-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemExpert" aria-expanded="false" aria-controls="collapseFour">
+                        <div class="introTextContainer">
+                            <p class="subText">Expert - 3 hours</p>
+                            <h4>Exam Skills</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemExpert" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#composoryCourseItemAccordionExpert">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 5: Before the exam</h4>
+                                    <h5>More things you need to know</h5>
+                                    <p>In this lesson, you will have learn more about Data transmission and OSI model</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 5: Before the exam</h4>
+                                    <h5>Let's data transmission!</h5>
+                                    <p>In this lesson, you will watch an animation about data transmission.</p>
+                                    <p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 6: Time for Mock Test!</h4>
+                                    <h5>Last 1 minute!</h5>
+                                    <p>In this part, you will have a quick notes about all you need to know.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 6: Exam Skills</h4>
+                                    <h5>Mock Test</h5>
+                                    <p>In this lesson, you will have a <strong>looped</strong> mock test for the exam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <section id="enroll">
+            <h1>Are you ready to start?</h1>
+            <p>Click the button below to start your learning journey!</p>
+            <button id="enroll-btn">Start Learning</button>
         </section>
     </main>
-
     <!-- Footer -->
     <footer>
         <div id="footer-Title"  tabindex="0">

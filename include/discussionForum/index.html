@@ -10,8 +10,9 @@
 	<!--Load bootstrap-->
 	<link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">		
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
-    <script src="/include/global/library/bootstrap/popper.min.js" defer></script>
-    <script src="/include/global/library/bootstrap/bootstrap.bundle.min.js" defer></script>
+	<script src="/include/global/library/textProcessBundle/purify.min.js" defer></script>
+	<script src="/include/global/library/textProcessBundle/marked.min.js" defer></script>
+	<script src="/include/global/library/textProcessBundle/he.js" defer></script>
     <!-- Load CSS and Script here -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -30,27 +31,66 @@
           </select>
         <input type="text" name="search" id="search" placeholder="Search" class="form-control" >
     </header>
+	<div class="alert alert-warning alert-dismissible fade" role="alert" id="postAlert">
+		<div id="postAlertContent"></div>
+		<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+	</div>
     <main>
 		<div id="postList">
 			<div class="main-body p-0">
-				<div id="postListContainer" class="inner-main-body p-2 p-sm-3 collapse forum-content show">
-					<div class="card mb-2">
-						<div class="card-body p-2 p-sm-3">
-							<div class="media forum-item">
-								<div class="media-body">
-									<h6>
-										<a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Realtime fetching data</a>
-									</h6>
-									<p class="text-secondary"> lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-									<p class="text-muted">
-										<a href="javascript:void(0)">drewdan</a> replied <span class="text-secondary font-weight-bold">13 minutes ago</span>
-									</p>
+				<div id="postMainContainer" class="inner-main-body p-2 p-sm-3 collapse forum-content show">
+					<div id="postListContainer">
+						<div class="card mb-2">
+							<div class="card-body p-2 p-sm-3">
+								<div class="media forum-item">
+									<div class="media-body">
+										<h6>
+											<a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Realtime fetching data</a>
+										</h6>
+										<p class="text-secondary"> lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
+										<p class="text-muted">
+											<a href="javascript:void(0)">drewdan</a> replied <span class="text-secondary font-weight-bold">13 minutes ago</span>
+										</p>
+									</div>
+									<span>Vote: 5</span><span>Reply: 5</span><span>View: 5</span>
 								</div>
-                                <span>Vote: 5</span><span>Reply: 5</span><span>View: 5</span>
+							</div>
+						</div>
+					</div>
+					<div id="postNew">
+						<div class="card mb-2">
+							<div class="card-body p-2 p-sm-3">
+								<h2>New Post</h2>
+								<span>Have trouble or anything to share? Post it here!</span>
+								<div class="optionRow">
+									<button id="addAttachmentBtn">Add Attachment</button>
+									<button id="previewBtn">Preview</button>
+									<button id="cleanBtn">Reset</button>
+									<button id="guideBtn">Guildline</button>
+								</div>
+								<div id="attachmentContainer">
+
+								</div>
+								<form id="newPostForm">
+									<div class="form-group">
+										<input type="text" class="form-control" id="newPostTitle" name="title" placeholder="Title" required>
+									</div>
+									<label for="category">Category: <span id="currentCategory">General</span></label>
+									
+									<textarea class="form-control summernote" id="newPostContent"></textarea>
+									<span class="addText">Support Markdown, click preview to see the result.</span>
+									<div class="form-group">
+										<input type="text" class="form-control form-control-sm" id="newPostTags" name="tags" placeholder="Tags" value="#">
+									</div>
+
+									<button type="submit">Submit Post</button>
+								</form>
+							
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div class="inner-main-body p-2 p-sm-3 collapse forum-content">
 					<a href="#" class="btn btn-light btn-sm mb-3 has-icon" data-toggle="collapse" data-target=".forum-content">
 						Back
@@ -100,9 +140,28 @@
                                 </div>
                             </div>
                         </div>
+					</div>
+
                 </div>
             </div>
         </div>
+		<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="previewModalLabel">Post Preview</h5>
+						<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<!-- Preview content will be displayed here -->
+						<div id="previewContent">Test</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="modal fade" id="threadModal" tabindex="-1" role="dialog" aria-labelledby="threadModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">

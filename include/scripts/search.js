@@ -6,8 +6,7 @@ let searchPageAttributes = {
     mode: 'resultDisplay'
 }
 let currentURL = new URL(window.location.href);
-//searchPageAttributes.pageURL = currentURL.origin + currentURL.pathname;
-searchPageAttributes.pageURL = '/debug/search.json';
+searchPageAttributes.pageURL = currentURL.origin + '/api/search.php';
 searchPageAttributes.searchInput = currentURL.searchParams.get('q');
 if (searchPageAttributes.searchInput === null) {
     let fallbackSearchInput = currentURL.searchParams.get('search');
@@ -270,7 +269,7 @@ async function fetchResult(searchParams, page){
         }
     }
     try {
-        const response = await fetch(searchPageAttributes.pageURL + '?q=' + searchParams + '&page=' + page);
+        const response = await fetch(searchPageAttributes.pageURL + '?searchTerm=' + searchParams + '&page=' + page);
         const data = await response.json();
         result.success = data.success;
         result.data.terms = data.terms;

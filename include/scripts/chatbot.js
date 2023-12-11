@@ -138,3 +138,17 @@ try{
         document.getElementById('chatbot-chat-container').style.height = "calc(100vh - 54px)";
     }
 }
+
+let suggest1 = document.getElementById("suggest1");
+let suggest2 = document.getElementById("suggest2");
+
+function suggestClick() {
+    try {
+        chatInput.value = this.dataset.command;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+suggest1.addEventListener("click", suggestClick);
+suggest2.addEventListener("click", suggestClick);

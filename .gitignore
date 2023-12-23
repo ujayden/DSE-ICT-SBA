@@ -5,3 +5,4 @@ api/update.php
 api/config.php
 usbWebServer/*
 include/global/library/fontawesome/*
+include/video/comp/beginner/*.mp4

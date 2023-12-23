@@ -1,13 +1,17 @@
 
 :root{
 	--header-height: 3rem;
-	--nav-width: 64px;
-	--first-color: #306EE4;
+	--nav-width: 380px;
+	--first-color: #F7F6FB;
 	--first-color-light: #F7F6FB;
+    --first-color-dark: #656565;
+    --first-color-black: black;
 	--white-color: #F7F6FB;
 	--body-font: 'Nunito', sans-serif;
 	--normal-font-size: 1rem;
 	--z-fixed: 100;
+    --nav-active-bg-color: rgb(173, 185, 245);
+    --nav-active-bg-left-dec-color: #2455E6;
 }
 *,::before,::after{
 	box-sizing: border-box;
@@ -40,7 +44,7 @@ a{
 	min-height: calc(100vh - var(--header-height));
 }
 .header_toggle{
-	color: var(--first-color);
+	color: var(--first-color-dark);
 	cursor: pointer
 }
 .header_img{
@@ -56,12 +60,15 @@ a{
 }
 .l-navbar{
 	top: 0;
-	left: -30%;
+    left: calc(var(--nav-width) * -1);
 	width: var(--nav-width);
 	background-color: var(--first-color);
 	transition: .5s;
 	z-index: var(--z-fixed);
 	overflow: hidden;
+    height: calc(100vh - var(--header-height));
+    overflow-y: scroll;
+    background-color: var(--first-color-white);
 }
 .nav{
 	height: 100%;
@@ -69,6 +76,7 @@ a{
 	flex-direction: column;
 	justify-content: space-between;
 	overflow: hidden;
+    padding: 8px;
 
 }
 .nav_logo, .nav_link{
@@ -88,29 +96,29 @@ a{
 }
 .nav_logo-icon{
 	font-size: 1.25rem;
-	color: var(--white-color);
+	color: var(--first-color-black);
 }
 .nav_logo-name{
-	color: var(--white-color);
+	color: var(--first-color-black);
 	font-weight: 700;
 }
 .nav_link{
 	position: relative;
-	color: var(--first-color-light);
+	color: var(--first-color-black);
 	margin-bottom: 1.5rem;
 	transition: .3s;
 }
 .nav_link:hover{
-	color: var(--white-color);
+	color: var(--first-color-dark);
 }
 .nav_icon{
 	font-size: 1.25rem;
 }
-.nav-show{
+.show{
 	left: 0;
 }
 .navActive{
-	color: var(--white-color);
+	color: var(--first-color-black);
 }
 .navActive::before{
 	content: '';
@@ -124,8 +132,8 @@ main{
 	/** Fill the remaining space **/
 	flex: 1;
 }
-.nav-show{
-	width: calc(var(--nav-width) + 156px)
+.show{
+	width: var(--nav-width);
 }
 .nav_logout{
 	margin-top: 1rem;
@@ -143,9 +151,13 @@ main{
 }
 .headerRight{
 	display: flex;
-	align-items: right;
-	text-align: right;
-	flex-direction: column;
+	flex-direction: row;
+    height: 1.8rem;
+}
+#btnDashboard{
+    margin: 0;
+    padding: 0px;
+    margin-left: 1rem;
 }
 #navCloseSelf{
 	display: none;
@@ -170,7 +182,30 @@ main{
 .nav-tabs{
 	border-bottom: 0;
 }
-@media screen and (min-width: 768px){
+.super-nav{
+    padding: 1rem;
+    height: calc(100vh - var(--header-height));
+}
+.list-group-item.active{
+    color: black;
+    background-color: var(--nav-active-bg-color);
+}
+.list-group-item.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--nav-active-bg-left-dec-color);
+}
+.list-group-item{
+    padding: 0;
+}
+.list-container{
+    padding: 1rem;
+}
+
+@media screen and (min-width: 1398px){
 	.header_img{
 		width: 40px;
 		height: 40px
@@ -180,15 +215,9 @@ main{
 	}
 	.l-navbar{
 		left: 0;
-		padding: 1rem 1rem 0 0
 	}
 }
-@media screen and (min-width: 1400px){
-	.l-navbar{
-		width: calc(var(--nav-width) + 156px);
-	}
-}
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1398px){
 	.l-navbar{
 		position: fixed;
 		height: 100vh;
@@ -198,13 +227,69 @@ main{
 		overflow-y: scroll;
 		flex-wrap: nowrap;
 	}
-	.headerRight{
-		display: none;
-	}
 	#navCloseSelf{
 		display: block;
 	}
 	#greyBackground{
 		display: block;
 	}
+    .super-nav{
+        height: 100%;
+    }
+}
+#courseDiff{
+    padding: 1rem;
+}
+#courseDiff > .card{
+    border-radius: 4px;
+}
+.lv-container{
+    width:3rem;
+    height:3rem;
+    background-color:green;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:24px;
+    font-family:Arial,sans-serif
+}
+  
+.lv-container span {
+    display: block;
+}
+.courseDiff-content{
+    display: flex;
+    flex-direction: column;
+}
+.courseDiff-content > h2{
+    font-size: 1.2rem;
+}
+.courseDiff-content > p{
+    font-size: 0.8rem;
+}
+.courseDiff-content *{
+    margin: 0;
+    padding: 0;
+}
+.cD-card-body{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+}
+.ul-Tick {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ul-Tick li {
+    margin-bottom: 10px;
+}
+
+.ul-Tick li i {
+    margin-right: 8px;
+    color: green;
 }

@@ -44,13 +44,13 @@ function submitContactForm(){
     $.ajax({
         url: '/api/userfeedback.php',
         type: 'POST',
-        data: {
+        data: JSON.stringify({
             mode: 'submitContactForm',
             name: name,
             email: email,
             subject: subject,
             message: message
-        },
+        }),
         success: function(response) {
             setTimeout(() => {
                 contactFormOnCooldown = false;

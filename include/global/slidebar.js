@@ -7,7 +7,7 @@ let toggle = document.getElementById('header-toggle'),
 let grayBackground = document.getElementById('greyBackground');
 
 function toggleNavBar() {
-    nav.classList.toggle('show');
+    nav.classList.toggle('nav-show');
     toggle.classList.toggle('bx-x');
     bodypd.classList.toggle('body-pd');
     headerpd.classList.toggle('body-pd');

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/include/global/scriptHandleUserData.js" defer></script>
 </head>
 <body>
     <header>
@@ -63,10 +64,10 @@
 								<h2>New Post</h2>
 								<span>Have trouble or anything to share? Post it here!</span>
 								<div class="optionRow">
-									<button id="addAttachmentBtn">Add Attachment</button>
+									<button id="addAttachmentBtn" hidden>Add Attachment</button>
 									<button id="previewBtn">Preview</button>
 									<button id="cleanBtn">Reset</button>
-									<button id="guideBtn">Guildline</button>
+									<button id="guideBtn" hidden>Guildline</button>
 								</div>
 								<div id="attachmentContainer">
 
@@ -178,7 +179,7 @@
 								<input type="text" class="form-control" id="threadTitle" placeholder="Enter title" autofocus />
 							</div>
 							<textarea class="form-control summernote" style="display: none;"></textarea>
-							<div class="custom-file form-control-sm mt-3" style="max-width: 300px;">
+							<div class="custom-file form-control-sm mt-3" style="max-width: 300px; display: none;">
 								<input type="file" class="custom-file-input" id="customFile" multiple />
 								<label class="custom-file-label" for="customFile">Attachment</label>
 							</div>

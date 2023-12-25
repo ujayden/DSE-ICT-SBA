@@ -4,9 +4,13 @@
 let scriptHandleUserData = true;
 
 let successRunFlag = false;
-let currentURL = new URL(window.location.href);
 let userInfo = undefined;
 let userAchievements = undefined;
+//Check if currentURL is inatialized by other scripts
+if (typeof currentURL === 'undefined') {
+    let currentURL = new URL(window.location.href);
+    globalThis.currentURL = currentURL; //I don't know why, but this is the only way to make it work, but why dont just use var?
+}
 
 /**
  * 
@@ -29,6 +33,9 @@ function getUserData(userId, sessionToken) {
             success: function (data) {
                 let response = data;
                 console.log(response);
+                //Update sessionToken first
+                localStorage.setItem('sessionToken', response.sessionToken);
+                localStorage.setItem('sessionTokenExpDate', response.sessionTokenExpDate);
 
                 let userInfo = {
                     lastFetchTime: response.featchTime,
@@ -84,5 +91,8 @@ async function checkUserData() {
     localStorage.setItem('sessionTokenExpDate', userInfo.sessionTokenExpDate);
     successRunFlag = true;
 }
+// Run the function
+checkUserData();
+
 //Debug on, force successRunFlag to be true
 successRunFlag = true;

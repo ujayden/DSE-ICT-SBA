@@ -129,7 +129,7 @@ async function updatePost() {
             mediaItem.appendChild(viewSpan);
 
             cardBody.appendChild(mediaItem);
-            postDiv.appendChild(cardBody);
+            postDiv.appendChild(cardBody); 
 
             postListContainer.appendChild(postDiv);
         });
@@ -489,6 +489,7 @@ function handleSubmission(event) {
     uploadFiles(filesTrackerUUID);
 }
 function uploadFiles(filesTrackerUUID) {
+    return false;
     // Create FormData object for file uploads
     var fileFormData = new FormData();
 

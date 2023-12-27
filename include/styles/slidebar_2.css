@@ -69,6 +69,7 @@ a{
     height: calc(100vh - var(--header-height));
     overflow-y: scroll;
     background-color: var(--first-color-white);
+	
 }
 .nav{
 	height: 100%;
@@ -236,6 +237,9 @@ main{
     .super-nav{
         height: 100%;
     }
+	.nav-show{
+		left: 0;
+	}
 }
 #courseDiff{
     padding: 1rem;

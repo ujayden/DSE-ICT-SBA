@@ -96,3 +96,18 @@ checkUserData();
 
 //Debug on, force successRunFlag to be true
 successRunFlag = true;
+
+
+//Use function to fill all userinfo based on class name
+
+/**
+ * 
+ * @param {JSON} UserInfo //Note that accept string and auto convert to JSON, but it is not recommended. If undefined, it will use the local storage
+ * @example fillUserInfo(UserInfo)
+ * @returns {boolean} //Returns true if success, false if failed
+ * @description This function will fill all the user info based on the class name, it will return false if the function failed to run
+ * 
+ */
+function fillUserInfo(UserInfo){
+
+}

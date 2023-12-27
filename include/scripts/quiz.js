@@ -60,6 +60,104 @@ catch (e){
 }finally{
     quizAttributes.AnswerURL = quizAnswerURL;
 }
+
+let focusOnHeaderDropDownMenuElem = document.getElementById('unfocus');
+let promptTitleElem = document.getElementById('prompt-Title');
+let promptContentElem = document.getElementById('prompt-Body');
+let promptCloseButtonElem = document.getElementById('prompt-Close');
+let promptConfirmButtonElem = document.getElementById('prompt-Confirm');
+let promptCancelButtonElem = document.getElementById('prompt-Cancel');
+
+function toggleGrayOut(grayStatus){
+    if (grayStatus == true) {
+        focusOnHeaderDropDownMenuElem.style.visibility = 'visible';
+    }else{
+        focusOnHeaderDropDownMenuElem.style.visibility = 'hidden';
+    }
+}
+let promptContainer = document.getElementById('prompt');
+function closePrompt(){
+    toggleGrayOut(false);
+    promptContainer.style.display = 'none';
+
+}
+function openPrompt(){
+    toggleGrayOut(true);
+    promptContainer.style.display = 'flex';
+    //Focus on the prompt
+    promptContainer.focus();
+}
+/**
+ * Toggles the visibility of a button based on the 'allowButton' parameter.
+ * Optionally, sets the button's function, value, and displays it in a Bootstrap modal.
+ * @param {HTMLElement} buttonElem - The HTML element representing the button.
+ * @param {boolean} allowButton - A boolean indicating whether the button should be displayed or hidden.
+ * @param {Function} buttonFunc - The function to be executed when the button is clicked.
+ * @param {string} buttonValue - The value/text to be displayed on the button.
+ */
+function toggleButton (buttonElem, allowButton, buttonFunc, buttonValue) {
+    if (allowButton == true) {
+        console.log(buttonElem);
+        console.log(buttonFunc);
+        console.log(allowButton);
+        buttonElem.style.display = 'block';
+        if (buttonFunc == null || buttonFunc == undefined) {
+            buttonFunc = closePrompt();
+        }
+        //Remove all existing event listeners
+        $(buttonElem).off('click');
+        //Add the new event listener with jQuery
+        $(buttonElem).on('click', buttonFunc)
+        if (buttonValue != null || buttonValue != undefined || buttonValue != '') {
+            buttonElem.innerHTML = buttonValue;
+        }else {
+            buttonElem.innerHTML = 'OK';
+        }
+    } else {
+        buttonElem.style.display = 'none';
+    }
+}
+
+promptCloseButtonElem.addEventListener('click', closePrompt);
+promptCancelButtonElem.addEventListener('click', closePrompt);
+/**
+ * Sets up and displays a modal prompt with the specified title, content, and buttons.
+ * @param {string} pTitle - The title of the prompt.
+ * @param {string} pContent - The content of the prompt.
+ * @param {boolean} allowClose - Indicates whether the close button should be displayed.
+ * @param {Function} closeFunc - The function to be executed when the close button is clicked.
+ * @param {boolean} allowCancel - Indicates whether the cancel button should be displayed.
+ * @param {Function} cancelFunc - The function to be executed when the cancel button is clicked.
+ * @param {string} cancelBTNValue - The value/text to be displayed on the cancel button.
+ * @param {boolean} allowConfirm - Indicates whether the confirm button should be displayed.
+ * @param {Function} confirmFunc - The function to be executed when the confirm button is clicked.
+ * @param {string} confirmBTNValue - The value/text to be displayed on the confirm button.
+ */
+function setupPrompt(
+    pTitle,
+    pContent,
+    allowClose,
+    closeFunc,
+    allowCancel,
+    cancelFunc,
+    cancelBTNValue,
+    allowConfirm,
+    confirmFunc,
+    confirmBTNValue
+) {
+    // Set prompt title and content
+    promptTitleElem.innerHTML = pTitle;
+    promptContentElem.innerHTML = pContent;
+
+    // Toggle the visibility and functionality of each button
+    toggleButton(promptCloseButtonElem, allowClose, closeFunc, "&times;");
+    toggleButton(promptCancelButtonElem, allowCancel, cancelFunc, cancelBTNValue);
+    toggleButton(promptConfirmButtonElem, allowConfirm, confirmFunc, confirmBTNValue);
+
+    // Display the prompt
+    openPrompt();
+}
+
 //Use jQuery to load these data
 $.ajax({
     url: quizConfigURL,
@@ -108,8 +206,13 @@ let mcForm = document.getElementById("quiz-mc");
 
 let loadQuizSuccess = false;
 let countMC = 0;
+/**
+ * Shuffles the elements of an array in-place using the Fisher-Yates algorithm.
+ * @param {Array} array - The array to be shuffled.
+ * @returns {Array} - The shuffled array.
+ * @see {@link https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array}
+ */
 function shuffle(array) {
-    //Credit: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     let currentIndex = array.length, randomIndex;
   
     // While there remain elements to shuffle.
@@ -124,7 +227,13 @@ function shuffle(array) {
         array[randomIndex], array[currentIndex]];
     }
     return array;
-  }
+}
+/**
+ * Enhances accessibility for images by providing options to view them in full screen or open in a new page.
+ * @param {string} imageURL - The URL of the image.
+ * @param {string} imageAlt - The alternative text for the image.
+ * @param {HTMLElement} callElm - The element triggering the accessibility action.
+ */
 function accessibilityImage(imageURL, imageAlt, callElm) {
     //Check the button to do what
     if (callElm.getAttribute("data-Accessibility-Opt") == "img-FullScreen-View") {
@@ -139,6 +248,13 @@ function accessibilityImage(imageURL, imageAlt, callElm) {
         window.open(imageURL, "_blank", "fullscreen=yes");
     }
 }
+/**
+ * Adds an accessibility button to perform actions on associated images.
+ * @param {HTMLElement} sendTo - The parent element to which the button will be appended.
+ * @param {string} buttonID - The ID and data attribute of the button.
+ * @param {string} buttonValue - The text content of the button.
+ * @param {string} QuizID - The ID of the associated quiz.
+ */
 function addAccessiblityButton(sendTo, buttonID, buttonValue, QuizID) {
     let button = document.createElement("button");
     button.setAttribute("data-Accessibility-Opt", buttonID);
@@ -156,6 +272,13 @@ function addAccessiblityButton(sendTo, buttonID, buttonValue, QuizID) {
     }
     );
 }
+/**
+ * Renders an image with accessibility buttons for full-screen and new page views.
+ * @param {HTMLElement} sendTo - The parent element to which the image container will be appended.
+ * @param {string} imageURL - The URL of the image.
+ * @param {string} imageAltText - The alternative text for the image.
+ * @param {string} QuizID - The ID of the associated quiz.
+ */
 function renderImage(sendTo, imageURL, imageAltText, QuizID) {
     let container = document.createElement("div");
     container.setAttribute("class", "quiz-image-container");
@@ -178,6 +301,11 @@ function renderImage(sendTo, imageURL, imageAltText, QuizID) {
 }
 //Add remain question card count
 let remainingQuestionsArea = document.getElementById("remaining-Questions");
+/**
+ * Adds a remaining question box for a multiple-choice question.
+ * @param {string} questionType - The type of the question (e.g., "mc" for multiple-choice).
+ * @param {string} questionID - The ID of the question.
+ */
 function remainingQuestionsAdd(questionType, questionID) {
     //<span id="remaining1" class="remaining-box">1</span>
     if (questionType == "mc") {
@@ -201,7 +329,17 @@ function remainingQuestionsAdd(questionType, questionID) {
 
     }
 }
-
+/**
+ * Renders a multiple-choice quiz with questions, image, description, and options.
+ * @param {string} QuizID - The ID of the quiz.
+ * @param {string} QuizName - The name of the quiz.
+ * @param {Array} QuizQuestions - An array of question objects.
+ * @param {string} QuizDescription - The description of the quiz.
+ * @param {string} QuizImage - The URL of the quiz image.
+ * @param {string} QuizImageAltText - The alternative text for the quiz image.
+ * @param {Array} QuizAnswers - An array of correct answers.
+ * @param {boolean} isShuffleable - Whether the options should be shuffled.
+ */
 function renderMCQuiz(QuizID, QuizName, QuizQuestions, QuizDescription, QuizImage, QuizImageAltText , QuizAnswers, isShuffleable) {
     let mcQuestion = document.createElement("p");
     mcQuestion.innerHTML = "Q" + QuizID + ": "  + QuizName;
@@ -428,7 +566,7 @@ let hintPrompt = (function () {
     return hintPromptString;
 })();
 function toggleHintPrompt(){
-    setupPrompt("Hint", hintPrompt, true, closePrompt(), false, undefined, undefined, true, closePrompt(), "Okay");
+    setupPrompt("Hint", hintPrompt, true, closePrompt, false, undefined, undefined, true, closePrompt, "Okay");
 }
 let quizArea = document.getElementById("quizArea");
 const quizName = document.getElementById("quizName");
@@ -569,28 +707,51 @@ function constructResult(){
     );
 }
     //Skip for LQ
-function returnResult(){
-    //Allow the user to close the window
-    window.onbeforeunload = null;
-    constructResult();
-    if (sendSuccess == false) {
-        setupPrompt ("Error", "Your result is not uploaded. Please try again.", true, closePrompt(), true, closePrompt(), "Back to see result", true, function(){
-            closeWindow();
+    function returnResult() {
+        // Allow the user to close the window
+        window.onbeforeunload = null;
+        constructResult();
+    
+        if (sendSuccess == false) {
+            setupPrompt(
+                "Error",
+                "Your result is not uploaded. Please try again. But you can still check your result. <br> Your score is " + totalScore + " out of " + countMC + ". ",
+                true,
+                closePrompt,
+                true,
+                closePrompt,
+                "Retry",
+                true,
+                function () {
+                    closeWindow();
+                    postQuiz();
+                },
+                "Exit"
+            );
+            clearInterval(updateQuizPrompt);
+            return false;
         }
-        , "Exit");
-        clearInterval(updateQuizPrompt);
-        return false;
-    }
-    if (sendSuccess == true) {
-        //function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, cancelFunc, cancelBTNValue, allowConfirm, confirmFunc, confirmBTNValue){
-        setupPrompt ("Congratulation!", "Your result is uploaded. <br> Your score is " + totalScore + " out of " + countMC + ". <br> You may check your performance in detail on Progress Tracking Report. <Br> Click the button below to return to the course.", true, closePrompt(), true, closePrompt(), "Back to see result", true, function(){
-            closeWindow();
+    
+        if (sendSuccess == true) {
+            setupPrompt(
+                "Congratulations!",
+                "Your result is uploaded. Your score is " + totalScore + " out of " + countMC + ". You may check your performance in detail on the Progress Tracking Report. Click the button below to return to the course.",
+                true,
+                closePrompt,
+                true,
+                closePrompt,
+                "Back to see result",
+                true,
+                function () {
+                    closeWindow();
+                },
+                "Exit"
+            );
+            clearInterval(updateQuizPrompt);
+            return true;
         }
-        , "Exit");
-        clearInterval(updateQuizPrompt);
-    return true;
     }
-}
+    
 let sendSuccess = undefined;
 let updateQuizPrompt = undefined;
 function postQuiz(){

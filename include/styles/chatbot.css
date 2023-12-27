@@ -87,7 +87,7 @@ header h1{
 }
 /* Start: Chat Bubble */
 .chatbot-chat-message{
-    width: 80%;
+    max-width: 80%;
     margin: 20px;
     border-radius: 10px;
     position: relative;
@@ -99,6 +99,7 @@ header h1{
     font-weight: 400;
     color: black;
     text-align: left;
+    word-break: break-word;
 }
 .chatbot-chat-message-server-comm{
     background-color: rgb(216,218,221);

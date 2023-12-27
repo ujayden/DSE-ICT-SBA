@@ -36,7 +36,7 @@ if (isset($_GET['searchTerm']) && isset($_GET['page'])) {
     $searchTerm = $conn->real_escape_string($searchTerm);
 
     // Count the total number of results
-    $countSql = "SELECT COUNT(*) AS totalResults FROM WebContent WHERE Content LIKE '%$searchTerm%'";
+    $countSql = "SELECT COUNT(*) AS totalResults FROM webcontent WHERE Content LIKE '%$searchTerm%'";
     $countResult = $conn->query($countSql);
     $totalResults = $countResult->fetch_assoc()['totalResults'];
 
@@ -47,7 +47,7 @@ if (isset($_GET['searchTerm']) && isset($_GET['page'])) {
     $offset = ($page - 1) * $resultsPerPage;
 
     // Retrieve the search results for the current page
-    $sql = "SELECT * FROM WebContent WHERE Content LIKE '%$searchTerm%' LIMIT $offset, $resultsPerPage";
+    $sql = "SELECT * FROM webcontent WHERE Content LIKE '%$searchTerm%' LIMIT $offset, $resultsPerPage";
     $result = $conn->query($sql);
 
     $searchResults = [];

@@ -1,0 +1,23 @@
+.paperCardContainer{
+    margin-top: 40px;
+    background-color: white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    padding: 20px;
+}
+@media screen and (max-width: 768px){
+    .paperCardContainer{
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    
+}
+#bodyContainer{
+    height: calc(100vh - var(--header-height));
+}
+main{
+    overflow-y: scroll;
+}

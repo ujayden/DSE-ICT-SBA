@@ -1,10 +1,13 @@
 <?php
-include_once('config.php');
-include_once('library/otphp/src/OTPInterface.php');
-include_once('library/otphp/src/ParameterTrait.php');
-include_once('library/otphp/src/OTP.php');
-include_once('library/otphp/src/TOTPInterface.php');
-include_once('library/otphp/src/TOTP.php');
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+require_once('config.php');
+require_once('library/otphp/src/OTPInterface.php');
+require_once('library/otphp/src/ParameterTrait.php');
+require_once('library/otphp/src/OTP.php');
+require_once('library/otphp/src/TOTPInterface.php');
+require_once('library/otphp/src/TOTP.php');
 use OTPHP\TOTP;
 
 // Check if the request method is POST
@@ -14,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode([
         "success" => false,
         "error" => "Method Not Allowed",
-        "errorMsg" => "Only POST requests are allowed. Please use a valid POST request."
+        "errorMsg" => "Only POST requests are allowed. Please use a valid POST request.",
+        "version" => VERSION
     ]);
     exit;
 }
@@ -94,7 +98,7 @@ function generateSessionToken($userID) {
 function handleLogin($jsonPayload) {
     global $conn;
     // Extract data from the JSON payload
-    $username = $jsonPayload['username'];
+    $userID = $jsonPayload['userID'];
     $password = $jsonPayload['password'];
     $recaptchaToken = $jsonPayload['recaptchaToken'];
     $mfaCode = $jsonPayload['mfaCode'];
@@ -111,8 +115,8 @@ function handleLogin($jsonPayload) {
         exit;
     }
 
-    // Query the user table to check if the username exists
-    $sql = "SELECT * FROM users WHERE username = '$username'";
+    // Query the user table to check if the userID exists
+    $sql = "SELECT * FROM users WHERE userID = '$userID'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -145,7 +149,7 @@ function handleLogin($jsonPayload) {
                     // MFA code is valid, generate session token
                     $sessionToken = generateSessionToken($userID);
                     // Handle successful login with MFA
-                    handleSuccessfulLogin($userID, $row['username'], $sessionToken, $row['level']);
+                    handleSuccessfulLogin($userID, $row['userID'], $sessionToken, $row['level']);
                 } else {
                     // MFA code is invalid
                     http_response_code(200);
@@ -162,7 +166,7 @@ function handleLogin($jsonPayload) {
                 // MFA is not enabled, generate session token
                 $sessionToken = generateSessionToken($userID);
                 // Handle successful login without MFA
-                handleSuccessfulLogin($userID, $row['username'], $sessionToken, $row['level']);
+                handleSuccessfulLogin($userID, $row['userID'], $sessionToken, $row['level']);
             }
         } else {
             // Password is incorrect
@@ -182,7 +186,7 @@ function handleLogin($jsonPayload) {
         echo json_encode([
             "success" => false,
             "error" => "Bad Request",
-            "errorMsg" => "Invalid username."
+            "errorMsg" => "Invalid userID."
         ]);
     }
 }
@@ -213,10 +217,11 @@ function handleRegistration($jsonPayload) {
     global $conn;
 
     // Extract data from the JSON payload
-    $username = $jsonPayload['username'];
+    $userID = $jsonPayload['userID'];
     $password = $jsonPayload['password'];
     $useTOTP = $jsonPayload['useTOTP'];
     $totpSecret = $jsonPayload['totpSecret'];
+    $email = $jsonPayload['email'];
     $recaptchaToken = $jsonPayload['recaptchaToken'];
 
     // Your recaptcha check function, replace it with your actual implementation
@@ -234,18 +239,18 @@ function handleRegistration($jsonPayload) {
     if (!$useTOTP) {
         $totpSecret = 'n/a';
     }
-    // Check if the username already exists
-    $sqlCheckUser = "SELECT * FROM users WHERE username = '$username'";
+    // Check if the userID already exists
+    $sqlCheckUser = "SELECT * FROM users WHERE userID = '$userID'";
     $resultCheckUser = mysqli_query($conn, $sqlCheckUser);
 
     if (mysqli_num_rows($resultCheckUser) > 0) {
-        // Username already exists, return error
+        // userID already exists, return error
         http_response_code(200);
         header('Content-Type: application/json');
         echo json_encode([
             "success" => false,
             "error" => "Bad Request",
-            "errorMsg" => "Username already exists."
+            "errorMsg" => "UserID already exists."
         ]);
         exit;
     }
@@ -254,7 +259,15 @@ function handleRegistration($jsonPayload) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert user data into the users table
-    $sqlInsertUser = "INSERT INTO users (username, password, useOTP, otpSecret, level) VALUES ('$username', '$hashedPassword', " . ($useTOTP ? "'totp', '$totpSecret'" : "'false', NULL") . ", 'Beginner')";
+    // Set default values for optional fields
+    $useOTPValue = $useTOTP ? 'totp' : 'false';
+    $otpSecretValue = $useTOTP ? "'$totpSecret'" : 'n/a';
+
+    
+    // Construct the SQL query
+    $sqlInsertUser = "INSERT INTO users (userID, username, password, email, useOTP, otpSecret, level) 
+                            VALUES ('$userID','$userID', '$hashedPassword', '$email', '$useOTPValue', '$otpSecretValue', 'Beginner')";
+
     $resultInsertUser = mysqli_query($conn, $sqlInsertUser);
 
     if ($resultInsertUser) {
@@ -268,7 +281,7 @@ function handleRegistration($jsonPayload) {
         echo json_encode([
             "success" => true,
             "userID" => $userID,
-            "userName" => $username,
+            "userName" => $userID,
             "sessionToken" => $sessionToken,
             "sessionTokenExpDate" => date('Y-m-d H:i:s', strtotime('+3 months')),
             "level" => 'Beginner'
@@ -290,7 +303,7 @@ function handleForgotPassword($jsonPayload) {
     global $conn;
 
     // Extract data from the JSON payload
-    $username = $jsonPayload['username'];
+    $userID = $jsonPayload['userID'];
     $newPassword = $jsonPayload['password'];
     $recaptchaToken = $jsonPayload['recaptchaToken'];
     $verifyMode = $jsonPayload['verifyMode'];
@@ -312,13 +325,13 @@ function handleForgotPassword($jsonPayload) {
     switch ($verifyMode) {
         case 'email':
             // Verify the email verification code
-            $sqlVerifyEmailCode = "SELECT * FROM resetPasswordEmailCode WHERE username = '$username' AND code = '$verifyCode'";
+            $sqlVerifyEmailCode = "SELECT * FROM resetPasswordEmailCode WHERE userID = '$userID' AND code = '$verifyCode'";
             $resultVerifyEmailCode = mysqli_query($conn, $sqlVerifyEmailCode);
 
             if (mysqli_num_rows($resultVerifyEmailCode) > 0) {
                 // Email verification code is valid, update the user password
                 $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                $sqlUpdatePassword = "UPDATE users SET password = '$hashedNewPassword' WHERE username = '$username'";
+                $sqlUpdatePassword = "UPDATE users SET password = '$hashedNewPassword' WHERE userID = '$userID'";
                 mysqli_query($conn, $sqlUpdatePassword);
 
                 // Return success response
@@ -344,7 +357,7 @@ function handleForgotPassword($jsonPayload) {
         case 'totp':
             // Verify TOTP
             // Extract the user's TOTP secret from the database
-            $sqlTOTPSecret = "SELECT * FROM users WHERE username = '$username'";
+            $sqlTOTPSecret = "SELECT * FROM users WHERE userID = '$userID'";
             $resultTOTPSecret = mysqli_query($conn, $sqlTOTPSecret);
 
             if (mysqli_num_rows($resultTOTPSecret) > 0) {
@@ -355,7 +368,7 @@ function handleForgotPassword($jsonPayload) {
                 if (!empty($verifyCode) && verifyTOTP($userTOTPSecret, $verifyCode)) {
                     // TOTP code is valid, update the user password
                     $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                    $sqlUpdatePasswordTOTP = "UPDATE users SET password = '$hashedNewPassword' WHERE username = '$username'";
+                    $sqlUpdatePasswordTOTP = "UPDATE users SET password = '$hashedNewPassword' WHERE userID = '$userID'";
                     mysqli_query($conn, $sqlUpdatePasswordTOTP);
 
                     // Return success response
@@ -392,7 +405,7 @@ function handleForgotPassword($jsonPayload) {
         case 'securityQuestion':
             // Verify security question
             // Extract the user's security question and answer from the database
-            $sqlSecurityQuestion = "SELECT * FROM users WHERE username = '$username'";
+            $sqlSecurityQuestion = "SELECT * FROM users WHERE userID = '$userID'";
             $resultSecurityQuestion = mysqli_query($conn, $sqlSecurityQuestion);
 
             if (mysqli_num_rows($resultSecurityQuestion) > 0) {
@@ -404,7 +417,7 @@ function handleForgotPassword($jsonPayload) {
                 if (!empty($verifyCode) && $verifyCode === $userSecurityAnswer) {
                     // Security question answer is valid, update the user password
                     $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                    $sqlUpdatePasswordSecurityQuestion = "UPDATE users SET password = '$hashedNewPassword' WHERE username = '$username'";
+                    $sqlUpdatePasswordSecurityQuestion = "UPDATE users SET password = '$hashedNewPassword' WHERE userID = '$userID'";
                     mysqli_query($conn, $sqlUpdatePasswordSecurityQuestion);
 
                     // Return success response
@@ -454,7 +467,7 @@ function handleForgotPasswordSendEmailGetCode($jsonPayload) {
     global $conn;
 
     // Extract data from the JSON payload
-    $username = $jsonPayload['username'];
+    $userID = $jsonPayload['userID'];
     $email = $jsonPayload['email'];
     $recaptchaToken = $jsonPayload['recaptchaToken'];
 
@@ -470,8 +483,8 @@ function handleForgotPasswordSendEmailGetCode($jsonPayload) {
         exit;
     }
 
-    // Check if the provided username and email match
-    $sqlCheckUserEmail = "SELECT * FROM users WHERE username = '$username' AND email = '$email'";
+    // Check if the provided userID and email match
+    $sqlCheckUserEmail = "SELECT * FROM users WHERE userID = '$userID' AND email = '$email'";
     $resultCheckUserEmail = mysqli_query($conn, $sqlCheckUserEmail);
 
     if (mysqli_num_rows($resultCheckUserEmail) > 0) {
@@ -479,7 +492,7 @@ function handleForgotPasswordSendEmailGetCode($jsonPayload) {
         $verificationCode = mt_rand(100000, 999999);
 
         // Save the verification code in the resetPasswordEmailCode table
-        $sqlSaveVerificationCode = "INSERT INTO resetPasswordEmailCode (username, code) VALUES ('$username', '$verificationCode')";
+        $sqlSaveVerificationCode = "INSERT INTO resetPasswordEmailCode (userID, code) VALUES ('$userID', '$verificationCode')";
         mysqli_query($conn, $sqlSaveVerificationCode);
 
         // Send the verification code to the user's email
@@ -509,7 +522,7 @@ function handleChangePassword($jsonPayload) {
     global $conn;
     
     // Extract data from the JSON payload
-    $username = $jsonPayload['username'];
+    $userID = $jsonPayload['userID'];
     $currentPassword = $jsonPayload['currentPassword'];
     $newPassword = $jsonPayload['newPassword'];
     $recaptchaToken = $jsonPayload['recaptchaToken'];
@@ -526,8 +539,8 @@ function handleChangePassword($jsonPayload) {
         exit;
     }
 
-    // Query the user table to check if the username exists
-    $sql = "SELECT * FROM users WHERE username = '$username'";
+    // Query the user table to check if the userID exists
+    $sql = "SELECT * FROM users WHERE userID = '$userID'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -569,7 +582,7 @@ function handleChangePassword($jsonPayload) {
         echo json_encode([
             "success" => false,
             "error" => "Bad Request",
-            "errorMsg" => "Invalid username."
+            "errorMsg" => "Invalid userID."
         ]);
         exit;
     }

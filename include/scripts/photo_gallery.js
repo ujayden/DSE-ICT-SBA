@@ -20,7 +20,7 @@ function loadPhotoGalleryText(CurrentSlideIndex){
 let scrollCooldown = false;
 $(document).ready(function(){
     $("#posterBenefitCarousel").owlCarousel({
-        items: 3, // Number of items shown in each slide
+        items: 4, // Number of items shown in each slide
         loop: true, // Continuously loop the carousel
         margin: 20, // Space between items
         lazyLoad: true,
@@ -39,6 +39,9 @@ $(document).ready(function(){
             },
             992: {
                 items: 3 // Number of items shown in the carousel for large screens
+            },
+            1200: {
+                items: 4 // Number of items shown in the carousel for large screens
             }
         }
     });
@@ -49,7 +52,7 @@ $(document).ready(function(){
         lazyLoad: true,
         center: true, // Center Carousel
         autoplay: true, // Autoplay Carousel
-        autoplayTimeout: 1800, // Autoplay Interval
+        autoplayTimeout: 3000, // Autoplay Interval
         autoplayHoverPause: true, // Pause on hover
         nav: true, // Show navigation buttons
         navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"], // Custom navigation icons

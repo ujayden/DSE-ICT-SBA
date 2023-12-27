@@ -1,231 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title -->
-    <title>ICT Master Hub</title>
-    <!--Load libray here.-->
-    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
-    <!-- Load CSS and Script here -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="/include/global/style.css">
-    <link rel="stylesheet" href="/include/global/style_responsive.css">
-    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
-<link rel="stylesheet" href="/include/global/scrollbar.css">
-    <!-- Defer can reduce web loading time. -->
-    <script src="/include/global/script.js" defer></script>
-    <script src="/include/global/script_backtoTop.js" defer></script>
-    <!--Load bootstrap-->
-    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+	<!-- Currently, thid and slidebar.js and slidebar.css are not under license of this project. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title -->
+	<title>News - ICT Master Hub</title>
+	<!--Load libray here.-->
+	<script src="/include/global/library/jquery-3.7.1.min.js" defer></script>		
+	<!--Load bootstrap-->
+	<link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">		
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
     <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+	<!-- Load CSS and Script here -->
+	<link rel="stylesheet" href="/include/global/styleLearning.css">
+	<link rel="stylesheet" href="/include/global/style_backtoTop.css">
+	<link rel="stylesheet" href="/include/global/scrollbar.css">
+	<link rel="stylesheet" href="/include/global/slidebar.css">
+    <link rel="stylesheet" href="/include/styles/news.css">
+	<script src="/include/global/slidebar.js" defer></script>
+    <script src="/include/scripts/news.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
 </head>
-<body>
-    <!-- Header -->
-    <header id="header">
-        <div id="header-Bar">
-            <div class="header-Left ">
-                <div id="header-Title">
-                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
-                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
-                    <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
-                    <p class="slogan">Your self learning website for DSE ICT Networking.</p>
+<body id="body-pd">
+	<div class="header" id="header">
+		<div class="headerLeft">
+			<div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+			<p class="header_Title">News</p>
+		</div>
+		<div class="headerRight">
+
+		</div>
+	</div>
+	<div id="bodyContainer">
+	<div class="l-navbar" id="nav-bar">
+		<nav class="nav">
+			<div>
+				<div>
+					<a href="/index.html" class="nav_logo">
+						<i class='bx bx-home-alt-2 nav_logo-icon'></i>
+						<span class="nav_logo-name">ICT Master Hub</span>
+					</a>
+					<a href="#" class="nav_link" id="navCloseSelf">
+						<i class='bx bx-x nav_icon'></i>
+						<span class="nav_name">Close this Navbar</span>
+					</a>
+				</div>
+                <div class="nav-tabs nav_list na">
+                    <a href="#SearchNews" class="nav_link active navActive" data-bs-toggle="tab" data-bs-target="#SearchNews">
+                        <i class='bx bx-search-alt nav_icon'></i>
+                        <span class="nav_name">Search News</span>
+                    </a>
+                    <a href="#AllNews" class="nav_link" data-bs-toggle="tab" data-bs-target="#AllNews">
+                        <i class='bx bx-star nav_icon'></i>
+                        <span class="nav_name">All News</span>
+                    </a>
+                    <hr>
+                    <a href="#ICTDSE" class="nav_link" data-bs-toggle="tab" data-bs-target="#ICTDSE">
+                        <i class='bx bx-chip nav_icon'></i>
+                        <span class="nav_name">ICT DSE</span>
+                    </a>
+                    <a href="#WorldITNews" class="nav_link" data-bs-toggle="tab" data-bs-target="#WorldITNews">
+                        <i class='bx bx-globe nav_icon'></i>
+                        <span class="nav_name">World IT News</span>
+                    </a>
+                    <a href="#ThisSite" class="nav_link" data-bs-toggle="tab" data-bs-target="#ThisSite">
+                        <i class='bx bx-info-circle nav_icon'></i>
+                        <span class="nav_name">This Site</span>
+                    </a>
                 </div>
-            </div>
-            <nav class="header-nav">
-                <div id="dropdownMenu_Courses">
-                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
-                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
-                        <a href="/learning/index.html">Dashboard</a>
-                        <a href="/library/index.html">Resource Library</a>
-                        <a href="/profile/index.html">My Profile</a>
-                        <a href="/profile/report.html">My Report</a>
-                    </div>
+                
+			</div>
+			<div class="nav_logout">
+
+			</div>
+	</nav>
+	</div>
+	<!-- Main Content Container with bootstrap tab-content and tab-pane -->
+    <main class="tab-content">
+        <!-- Search News -->
+        <div class="tab-pane fade active show" id="SearchNews" style="text-align: center;">
+            <h3>Search News</h3>
+            <!-- Search Form -->
+            <form id="searchNewsForm" style="max-width: 400px; margin: auto;">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search for news" aria-label="Search for news" aria-describedby="button-search">
+                    <button class="btn btn-primary" type="button" id="button-search" aria-label="Search">
+                        <i class='bx bx-search-alt'></i>
+                    </button>
                 </div>
-                <div id="dropdownMenu_Explore">
-                    <span class="dropdownMenu" tabindex="0">Explore</span>
-                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
-                        <a href="/about.html#Benefit">Why using this website</a>
-                        <a href="/courses/index.html">Learning Catalog</a>
-                        <a href="/news/index.html">Latest News</a>
-                        <a href="/chatbot.html">Chatbot</a>
-                        <a href="/faq.html">Q&A</a>
-                        <a href="/setting.html">Setting</a>
-                    </div>
-                </div>
-                <div id="dropdownMenu_About" tabindex="0">
-                    <span class="dropdownMenu">More about us</span>
-                    <div id="dropdownMenu_About-List" class="dropdownContent">
-                        <a href="/about.html">About Us</a>
-                        <a href="/about.html#ContactUs">Contact Us</a>
-                        <a href="/credit.html">Acknowledgement</a>
-                    </div>
-                </div>                
-                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
-            </nav>
-            <div class="header-Right">
-                    <div id="header-Search">
-                        <!-- Search -->
-                        <div id="search">
-                            <form action="search.html" method="get" class="searchForm">
-                                <input type="text" name="q" placeholder="Search..." class="searchbox">
-                            </form>
+            </form>
+            <p id="searchInProgress" style="display: none;">Feature in development. Please check back later!</p>
+        </div>
+        
+        
+    
+        <!-- All News -->
+        <div class="tab-pane fade" id="AllNews">
+            <div class="newsContainer">
+                <h3>All News</h3>
+                <p>Latest updates and news from around the world.</p>
+                <h3>Sep 2023</h3>
+                <div class="gridNewsContainer">
+                    <div class="card" style="width: 18rem;">
+                        <img src="path_to_your_image.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">TalkGPT 5 has been released</h5>
+                        <p class="card-text">The biggest AI company Alice Corp. has recently announce the new content-generating AI TalkGPT 5 released.</p>
+                        <a href="#" class="btn btn-primary">Share</a>
+                        <a href="#" class="btn btn-secondary">Read More</a>
                         </div>
                     </div>
-                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
+                    <div class="card" style="width: 18rem;">
+                        <img src="path_to_your_image.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">TalkGPT 5 has been released</h5>
+                        <p class="card-text">The biggest AI company Alice Corp. has recently announce the new content-generating AI TalkGPT 5 released.</p>
+                        <a href="#" class="btn btn-primary">Share</a>
+                        <a href="#" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Display drop-dowp menu when the header does not have enough space -->
-        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
-        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
-        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
-            <div id="headerDropDownMenu-Link">
-                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
-                <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
-                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
-                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
-                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
-                    <a href="/profile/report.html" tabindex="-1">My Report</a>
-                </div>
-                <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
-                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
-                    <a href="/reason.html" tabindex="-1">Why using this website</a>
-                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
-                    <a href="/news/index.html" tabindex="-1">Latest News</a>
-                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
-                    <a href="/help.html" tabindex="-1">Q&A</a>
-                    <a href="/setting.html" tabindex="-1">Setting</a>
-                </div>
-                <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
-                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
-                    <a href="/about.html" tabindex="-1">About Us</a>
-                    <a href="/contact.html" tabindex="-1">Contact Us</a>
-                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
-                </div>
-                <hr class="headerDropDownMenu-HR">
-            </div>
-            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
-                <div id="search">
-                    <form action="search.html" method="get" class="searchForm">
-                        <input type="text" name="q" placeholder="Search Something" class="searchbox" tabindex="-1">
-                    </form>
-                </div>
-            </div>
-            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
-                <span>Welcome! </span>
-                <span id="username"></span>
-                <span id="message-of-the-day"></span>
-                <a href="/portal.html" id="user-Login" tabindex="-1">Login now</a>
-            </div>
+    
+        <!-- ICT DSE -->
+        <div class="tab-pane fade" id="ICTDSE">
+            <h3>ICT DSE</h3>
+            <p>Latest trends and updates in the ICT sector of the stock market.</p>
+            <!-- Additional content such as stock market data or analysis goes here -->
         </div>
-        <!-- Breadcrumns, disable in first page  -->
-        <!-- Use a latest news banner to replace breadcrumbs in first page -->
-        <nav id="breadcrumbs">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <!-- Test Only -->
-                <li><span>News</span></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Main Content -->
-    <main>
-        <section id="navBar">
-            <span id="toggleSlideBar"><img src="" alt="Toggle Slide Bar"></span>
-        </section>
-        <div id="navBarContainer" class="d-flex flex-column flex-shrink-0 p-3 bg-light">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                  <span class="fs-4">Sidebar</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page">
-                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link link-dark">
-                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link link-dark">
-                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                      Orders
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link link-dark">
-                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                      Products
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link link-dark">
-                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                      Customers
-                    </a>
-                  </li>
-                </ul>
-                <hr>
-                <div class="dropdown">
-                  <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                  </ul>
-                </div>
+    
+        <!-- World IT News -->
+        <div class="tab-pane fade" id="WorldITNews">
+            <h3>World IT News</h3>
+            <p>Breaking news and in-depth analysis of the global IT industry.</p>
+            <!-- Additional content such as IT news articles or expert opinions goes here -->
+        </div>
+    
+        <!-- This Site -->
+        <div class="tab-pane fade" id="ThisSite">
+            <h3>This Site</h3>
+            <p>Information about this website, its mission, team, and more.</p>
+            <!-- Additional content such as team bios, site history, or FAQs goes here -->
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer>
-        <div id="footer-Title"  tabindex="0">
-            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
-        </div>
-        <div class="footer-Container">
-            <div class="footer-Left_Link">
-                <div class="footer-Link-main">
-                    <span class="footer-Link-Title" tabindex="0">Learning</span>
-                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
-                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
-                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
-                    <a class="footer-Link" href="/profile/report.html">My Report</a>
-                </div>
-                <div class="footer-Link-main">
-                    <span class="footer-Link-Title" tabindex="0">Explore</span>
-                    <a class="footer-Link" href="/about.html#Benefit">Reason to use this website</a>
-                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
-                    <a class="footer-Link" href="/news/index.html">Latest News</a>
-                    <a class="footer-Link" href="/faq.html">Q&A</a>
-                </div>
-            </div>
-        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
-            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
-            <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
-            <a class="footer-Link-Title-Right" href="/privacy.html">Privacy Policy</a>
-            <a class="footer-Link-Title-Right" href="/tos.html">Terms of Service</a>
-            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
-        </div>
-    </div>
-    <div class="footer-Bottom-Link">
-        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
-        <a class="footer-Link" href="/about.html">About Us</a>
-        <a class="footer-Link" href="/about.html#ContactUs">Contact Us</a>
-        <a class="footer-Link" href="/faq.html">FAQ</a>
-        <a class="footer-Link" href="/setting.html">Setting</a>
-        <span tabindex="0">@2023 ICT Master Hub</span>
-    </div>
-    </footer>
-    <div id="unfocus"></div>
+    
+	</div>
+	<div id="greyBackground"></div>
     <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
 </body>
 </html>

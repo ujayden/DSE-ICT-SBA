@@ -1,4 +1,5 @@
 'use strict';
+/**
 let focusOnHeaderDropDownMenuElem = document.getElementById('unfocus');
 let promptTitleElem = document.getElementById('prompt-Title');
 let promptContentElem = document.getElementById('prompt-Body');
@@ -58,3 +59,4 @@ function setupPrompt (pTitle, pContent, allowClose, closeFunc, allowCancel, canc
     toggleButton(promptConfirmButtonElem, allowConfirm, confirmFunc, confirmBTNValue);
     openPrompt();
 }
+*/

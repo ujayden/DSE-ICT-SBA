@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     echo json_encode($chatbotResponse);
     exit();
 }
+require_once('config.php');
 $payload = json_decode(file_get_contents('php://input'), true);
 
 // Get the chat message from the POST request
@@ -201,8 +202,11 @@ function askForNavigation($userInput) {
         include_once('config.php');
         $conn = mysqli_connect(DB_Host, DB_User, DB_Pass, DB_Name);
         if ($conn) {
-            $sql = "SELECT pageURL FROM SiteNavagation WHERE pageName = '$pageName'";
+            $sql = "SELECT pageURL FROM sitenavigation WHERE pageName = '$pageName'";
             $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) == 0) {
+                return array('Sorry, I notice that your are looking for a page, but I cannot find the page name in your question. Maybe you can search for the page on Google?');
+            }
             return array('The page you are looking for is: <a href="' . mysqli_fetch_assoc($result)['pageURL'] . '">' . $pageName . '</a>');
         } else {
             return array('Sorry, I notice that your are looking for a page, but I cannot connect to the database. Please try again later.');
@@ -212,12 +216,14 @@ function askForNavigation($userInput) {
     }
 }
 function askForDefinition($userInput){
+    global $debugValue;
     $pattern = '/\b(?:what is(?: the meaning of)?|definition of)\s+([^,\s]+)\b/i';
     preg_match($pattern, $userInput, $matches);
-    
+    $debugValue = isset($matches[1]);
     if (isset($matches[1])) {
         $term = $matches[1];
         $term = str_replace(' ', '', $term);
+        $debugValue = $term;
         if ($term != null) {
             //Use database to check if the page name is valid
             include_once('config.php');
@@ -225,16 +231,23 @@ function askForDefinition($userInput){
             if ($conn) {
                 $sql = "SELECT definition FROM Glossary WHERE term = '$term'";
                 $result = mysqli_query($conn, $sql);
-                return array('The definition of ' . $term . ' is: ' . mysqli_fetch_assoc($result)['definition']);
+                if (mysqli_num_rows($result) == 0) {
+                    return array('Sorry, I notice that your are looking for a definition, but I cannot find the term in your question. Maybe you can search for the term on Google?');
+                }
+                $defination = mysqli_fetch_assoc($result)['definition'];
+                return array('The definition of ' . $term . ' is: ' . $defination);
             } else {
                 return array('Sorry, I notice that your are looking for a definition, but I cannot connect to the database. Please try again later.');
             }
-    } else {
-        return array('Sorry, I notice that your are looking for a definition, but I cannot find the term in your question. Maybe use format like "What is the definition of HTML?"');
-    }}
+        } else {
+        return array('Sorry, I notice that your are looking for a definition, but I cannot find the term in your question. Maybe use format like "What is HTML?"');
+    }}else{
+        return array('Sorry, I notice that your are looking for a definition, but I cannot find the term in your question. Maybe use format like "What is HTML?"');
+    }
 }
 $isDebug = true;
-$version = "2023-11-20-9-31-PM-1";
+$version = VERSION;
+$debugValue = "<empty>";
 //TODO: Add more keywords and responses
 if (checkMatchScheme($userInput, array('hello', 'hi'))) {
     $msgArray = array(
@@ -326,14 +339,22 @@ if (checkMatchScheme($userInput, array('hello', 'hi'))) {
         "Sorry, I couldn't understant the meaning of your question. Could you please make a short change?"
     );
 }
-$chatMessage = randomReplies($msgArray);
+
+try {
+    $chatMessage = randomReplies($msgArray);
+} catch (Exception $e) {
+    //Error handling for non-array input
+    $chatMessage = "Sorry, I am having trouble to handle your question. Please contact my developer.";
+}
 
 $chatbotResponse = array(
-    "success" => $isSuccess,
+    "success" => true,
     "sessionID" => "0",
     "chatID" => "0",
     "chatFrom" => "server",
-    "chatMsg" => $chatMessage
+    "chatMsg" => $chatMessage,
+    "version" => VERSION,
+    "debugValue" => $debugValue
 );
 header('Content-Type: application/json');
 echo json_encode($chatbotResponse);

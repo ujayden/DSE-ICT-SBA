@@ -2,14 +2,14 @@
 
 let loginBtn = document.getElementById('login');
 let loginForm = document.getElementById('portalForm');
-let loginForm_username = loginForm.querySelector('#username');
+let loginForm_userID = loginForm.querySelector('#userID');
 let loginForm_password = loginForm.querySelector('#password');
 let loginForm_rememberMe = loginForm.querySelector('#rememberMe');
 let loginForm_passwordToggle = loginForm.querySelector('#password-toggle');
 let loginForm_formPoster = loginForm.querySelector('#form-poster');
 let regForm = document.getElementById('regForm');
 let regFormBtn = document.getElementById('register');
-let regForm_username = regForm.querySelector('#regFormUsername');
+let regForm_userID = regForm.querySelector('#regFormUserID');
 let regForm_password = regForm.querySelector('#regFormPassword');
 let regForm_passwordVerify = regForm.querySelector('#regFormPasswordVaildation');
 let regFormTOTPVerify = document.getElementById('regForm-MFA-Code');
@@ -23,7 +23,7 @@ let toggleShowPasswordReg = document.getElementById('show_passwordRegForm');
 let forgetPasswordBtn = document.getElementById('forgetPasswordFormBtn');
 let formBreadcrumb = document.getElementById('portal-Breadcrumb');
 let resetPasswordForm = document.getElementById('resetPassword');
-let resetPasswordForm_username = resetPasswordForm.querySelector('#resetPasswordFormUsername');
+let resetPasswordForm_userID = resetPasswordForm.querySelector('#resetPasswordFormUserID');
 let resetPasswordForm_password = resetPasswordForm.querySelector('#resetPasswordFormPassword');
 let resetPasswordForm_passwordVerify = resetPasswordForm.querySelector('#resetPasswordFormVaildation');
 let resetPasswordForm_passwordToggle = resetPasswordForm.querySelector('#show_passwordresetPasswordForm');
@@ -201,17 +201,17 @@ function displayForgotPasswordForm() {
 let loginMFACodeValue = document.getElementById('loginMFACode').value;
 
 function submitLoginInfo() {
-    let username = loginForm_username.value;
+    let userID = loginForm_userID.value;
     let password = loginForm_password.value;
     let recaptchaToken = null;
     //Check if any of the fields are empty
-    if (username === '' || password === '') {
+    if (userID === '' || password === '') {
         warningPrompt("There are empty fields", "Please fill out all fields.");
         return false;
     }
     let loginInfo = {
         mode: 'login',
-        username: username,
+        userID: userID,
         password: password,
         recaptchaToken: recaptchaToken,
         mfaCode: null
@@ -241,25 +241,27 @@ function submitLoginInfo() {
         }
     });
 }
-
+let regFormEmail = document.getElementById('email');
 function submitRegisterInfo() {
-    let username = regForm_username.value;
+    let userID = regForm_userID.value;
     let password = regForm_password.value;
     let passwordVerify = regForm_passwordVerify.value;
+    let email = regFormEmail.value;
     let recaptchaToken = null;
     if (password !== passwordVerify) {
         warningPrompt("Passwords do not match", "Please check your passwords and try again.");
         return false;
     }
     //Check if any of the fields are empty
-    if (username === '' || password === '' || passwordVerify === '') {
+    if (userID === '' || password === '' || passwordVerify === '') {
         warningPrompt("There are empty fields", "Please fill out all fields.");
         return false;
     }
     let regInfo = {
         mode: 'register',
-        username: username,
+        userID: userID,
         password: password,
+        email: email,
         useTOTP: false,
         totpSecret: null,
         recaptchaToken: recaptchaToken
@@ -313,7 +315,7 @@ let resetPasswordFormTOTPVerificationCode = document.getElementById('resetPasswo
 let resetPasswordFormSecurityQuestionVerificationCode = document.getElementById('resetPasswordFormSecurityQuestion');
 function submitForgotPasswordInfo() {
     debugger
-    let username = resetPasswordForm_username.value;
+    let userID = resetPasswordForm_userID.value;
     let password = resetPasswordForm_password.value;
     let recaptchaToken = null;
     let verifyCode = null;
@@ -334,7 +336,7 @@ function submitForgotPasswordInfo() {
             throw new Error('Unknown verifyMode');
     }
     //Check if the user has entered all the fields
-    if (username === '' || password === '' || verifyCode === '' || resetPasswordForm_passwordVerify.value === '') {
+    if (userID === '' || password === '' || verifyCode === '' || resetPasswordForm_passwordVerify.value === '') {
         warningPrompt("There are empty fields", "Please fill out all fields.");
         return false;
     }
@@ -346,7 +348,7 @@ function submitForgotPasswordInfo() {
     }
     let forgotPasswordInfo = {
         mode: 'forgotPassword',
-        username: username,
+        userID: userID,
         password: password,
         recaptchaToken: recaptchaToken,
         verifyMode: 'email',
@@ -423,14 +425,14 @@ let resetPasswordFormEmailVerificationCodeBtn = document.getElementById('sendVer
 let resetPasswordFormEmail = document.getElementById('resetPasswordFormEmail');
 function sendEmailVerificationCode(){
     let email = resetPasswordFormEmail.value;
-    let username = resetPasswordForm_username.value;
+    let userID = resetPasswordForm_userID.value;
     if(!validateEmail(email)){
         warningPrompt("Please enter a valid email address", "Check your email address and try again.");
         return false;
     }
     let resetPasswordInfo = {
         mode: 'forgotPasswordSendEmailGetCode',
-        username: username,
+        userID: userID,
         email: email,
         recaptchaToken: null
     };
@@ -486,7 +488,7 @@ loginNowInForgotPasswordLink.addEventListener('click', function(e){
 
 
 //TOTP time :/
-//For every update of regForm_username, generate a totp qr code with new secret.
+//For every update of regForm_userID, generate a totp qr code with new secret.
 
 let totpAttributes = {
     secret: '',
@@ -497,13 +499,13 @@ let totpAttributes = {
     period: 30,
     window: 0
 };
-regForm_username.addEventListener('change', function(e){
-    regFormUserNameChange(e.target.value);
+regForm_userID.addEventListener('change', function(e){
+    regFormUserIDChange(e.target.value);
 });
-function regFormUserNameChange(username){
+function regFormUserIDChange(userID){
     totpAttributes.issuer = "ICT Master Hub" + currentURL.hostname;
     totpAttributes.secret = otplib.authenticator.generateSecret();
-    totpAttributes.label = username;
+    totpAttributes.label = userID;
     generateTOTPImg();
 }   
 function generateTOTPImg(){
@@ -525,7 +527,7 @@ function generateTOTPImg(){
     regFormTOTPVerify.disabled = false;
     regFormMFAVerifyBtn.disabled = false;
 }
-regFormUserNameChange()
+regFormUserIDChange()
 
 //User click verify button
 regFormMFAVerifyBtn.addEventListener('click', function(e){

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Currently, thid and slidebar.js and slidebar.css are not under license of this project. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title -->
+	<title>Dasbboard - ICT Master Hub</title>
+	<!--Load libray here.-->
+	<script src="/include/global/library/jquery-3.7.1.min.js" defer></script>		
+	<!--Load bootstrap-->
+	<link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">		
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+	<!-- Load CSS and Script here -->
+	<link rel="stylesheet" href="/include/global/styleLearning.css">
+	<link rel="stylesheet" href="/include/global/style_backtoTop.css">
+	<link rel="stylesheet" href="/include/global/scrollbar.css">
+	<link rel="stylesheet" href="/include/global/slidebar.css">
+	<link rel="stylesheet" href="/include/global/styleUser.css">
+	<script src="/include/global/slidebar.js" defer></script>
+	<script src="/include/global/scriptUser.js" defer></script>
+	<script src="/include/global/scriptHandleUserData.js" async></script>
+
+<body id="body-pd">
+	<div class="header" id="header">
+		<div class="headerLeft">
+			<div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+			<p class="header_Title">My Learning <span>- Composory Part</span></p>
+		</div>
+		<div class="headerRight">
+			<span>Progress: <span id="headerProgress">Beginner</span></span>
+			<span id="headerName">Welcome, <span id="headerName">User</span>!</span>
+		</div>
+	</div>
+	<div id="bodyContainer">
+	<div class="l-navbar" id="nav-bar">
+		<nav class="nav">
+			<div>
+				<div>
+					<a href="/index.html" class="nav_logo">
+						<i class='bx bx-home-alt-2 nav_logo-icon'></i>
+						<span class="nav_logo-name">ICT Master Hub</span>
+					</a>
+					<a href="#" class="nav_link" id="navCloseSelf">
+						<i class='bx bx-x nav_icon'></i>
+						<span class="nav_name">Close this Navbar</span>
+					</a>
+				</div>
+				<div class="nav-tabs nav_list na">
+					<a href="#InProgress" class="nav_link active navActive" data-bs-toggle="tab" data-bs-target="#InProgress">
+						<i class='bx bxs-flag-alt nav_icon'></i>
+						<span class="nav_name">In Progress</span>
+					</a>
+					<a href="#Suggested" class="nav_link" data-bs-toggle="tab" data-bs-target="#Suggested">
+						<i class='bx bx-star nav_icon'></i>
+						<span class="nav_name">Suggested</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Completed">
+						<i class='bx bx-history nav_icon'></i>
+						<span class="nav_name">Completed</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#DiscussionForum">
+						<i class='bx bx-chat nav_icon'></i>
+						<span class="nav_name">Discussion Forum</span>
+					</a>
+					<hr>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Quizzes">
+						<i class='bx bx-file nav_icon'></i>
+						<span class="nav_name">Quizzes</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#MockPaper">
+						<i class='bx bx-file nav_icon'></i>
+						<span class="nav_name">Mock Papers</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Notes">
+						<i class='bx bx-book-bookmark nav_icon'></i>
+						<span class="nav_name">Notes</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Interactive">
+						<i class='bx bx-joystick-alt nav_icon'></i>
+						<span class="nav_name">Interactive Elements</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Videos">
+						<i class='bx bx-video-recording nav_icon'></i>
+						<span class="nav_name">Videos</span>
+					</a>
+					<hr>
+ 					<a href="/profile/report.html" class="nav_link">
+						<i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+						<span class="nav_name">Report</span>
+					</a>
+				</div>
+			</div>
+			<div class="nav_logout">
+				<a href="#" class="nav_link">
+					<i class='bx bx-log-out nav_icon'></i>
+					<span class="nav_name">Log Out</span>
+				</a>
+			</div>
+	</nav>
+	</div>
+	<!-- Main Content Container with bootstrap tab-content and tab-pane -->
+	<main class="tab-content">
+		<div class="tab-pane fade active show contentContainer" id="InProgress">
+			<div class="contentHeader">
+				<div>
+					<h1>In Progress</h1>
+					<h4>Welcome back,</h4>
+					<p>Here are the task and activities you have in progress.</p>
+				</div>
+				<div class="contentHeader-buttonContainer">
+					<button class="btn btn-primary">Check my Report</button>
+					<button class="btn btn-primary">Countinue Learning</button>
+				</div>
+			</div>
+			<div class="card" id="statusCard">
+				<ul class="nav nav-tabs statusCardNavTabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="level-progress-tab" data-bs-toggle="tab" href="#statusProgress" role="tab" aria-controls="level-progress" aria-selected="true">Level Progress</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="course-progress-tab" data-bs-toggle="tab" href="#statusAllProgress" role="tab" aria-controls="course-progress" aria-selected="false">Course Progress</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="overview-tab" data-bs-toggle="tab" href="#statusOverview" role="tab" aria-controls="overview" aria-selected="false">Overview</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="achievements-tab" data-bs-toggle="tab" href="#statusAchievements" role="tab" aria-controls="achievements" aria-selected="false">Achievements</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="motd-tab" data-bs-toggle="tab" href="#statusMOTD" role="tab" aria-controls="motd" aria-selected="false">Message of the Day</a>
+					</li>
+                </ul>
+				<div class="tab-content">
+					<div class="tab-pane fade statusContainer active show" id="statusProgress">
+						<h2>Current Progress in this Level</h2>
+						<p>Here is your current progress in this level.</p>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<p>0% Complete</p>
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusAllProgress">
+						<h2>Current Progress of this Course</h2>
+						<p>Here is your current progress in this course.</p>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<p><span>Beginner</span><spam> - </spam><span>0%</span></p>
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusOverview">
+						2
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusAchievements">
+						<h2>Your Achievements</h2>
+						<p>Earn achievements by completing courses and activities with your performance.</p>
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusMOTD">
+						<p class="quoteSentence">- “Believe you can and you're halfway there.” -Theodore Roosevelt, president</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<h3>Next Task</h3>
+				
+			</div>
+			<div>
+				<!-- Rest of the task -->
+				<h3>More things to do</h3>
+			</div>
+		</div>
+		<div class="tab-pane fade contentContainer" id="Suggested">
+			Suggested
+		</div>
+		<div class="tab-pane fade contentContainer" id="Completed">
+			Completed
+		</div>
+		<div class="tab-pane fade contentContainer" id="DiscussionForum">
+			<iframe src="/include/discussionForum/index.html" frameborder="0"  id="discussionForumIframe" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+		</div>
+		<div class="tab-pane fade contentContainer" id="Quizzes">
+			Quizzes
+		</div>
+		<div class="tab-pane fade contentContainer" id="MockPaper">
+			Mock Paper
+		</div>
+		<div class="tab-pane fade contentContainer" id="Notes">
+			Notes
+		</div>
+		<div class="tab-pane fade contentContainer" id="Interactive">
+			Interactive
+		</div>
+		<div class="tab-pane fade contentContainer" id="Videos">
+			Videos
+		</div>
+	</main>
+	</div>
+	<div id="greyBackground"></div>
+</body>
+</html>

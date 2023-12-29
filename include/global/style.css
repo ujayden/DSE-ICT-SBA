@@ -345,7 +345,7 @@ footer {
     box-sizing: border-box;
     color:white;
     font-size: 12px;
-    background-color: #181d38;
+    background-color: #0C2B4B;
 }
 #footer-Container{
     display: flex;
@@ -358,7 +358,7 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #181d38;
+    background-color: #306EE4;
     height: 30px;
     align-items: center;
     line-height: 1 !important;
@@ -378,7 +378,6 @@ footer {
     color: white;
 }
 /** Start: Footer Container*/
-/** Explanation: The flex, inline-flex are used to make them work */
 .footer-Container{
     width: 100%;
     display: flex;

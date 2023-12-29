@@ -229,6 +229,30 @@
         min-width: 240px;
         margin-top: 30px;
     }
+    .BenefitImgContainer{
+        display: none;
+    }
+    .BenefitTextContainer{
+        margin-left: 0;
+    }
+    #contactForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 20px;
+    }
+    #contactFormRHS{
+        width: 100%;
+    }
+    #contactFormLHS *{
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    #contactFormLHS{
+        width: 100%;
+    }
 }
 #contactFormWarningContainer{
     position: fixed;

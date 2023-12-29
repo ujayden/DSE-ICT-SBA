@@ -106,24 +106,6 @@ function askForHint($userInput) {
             }
         }
         $quizData = json_decode($quizData, true);
-        /**
-         * Structure of quizData
-         * {
-         *"success": true,
-         *"mcQuiz": [
-         *{
-         *   "id": 1,
-         *  ......
-         * "hint": "Hint for question 1"
-         * },
-         * ...
-         * ]
-         * "LongQuiz": [
-         * {
-         * ...
-         * }
-         * ]
-         */
         if ($quizQuestionID != null) {
             //User is asking for hint for a specific question
             $hint = $quizData["mcQuiz"][$quizQuestionID]["hint"];

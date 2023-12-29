@@ -109,5 +109,21 @@ successRunFlag = true;
  * 
  */
 function fillUserInfo(UserInfo){
-
+    if(UserInfo == undefined){
+        UserInfo = JSON.parse(localStorage.getItem('userInfo'));
+    }
+    if(UserInfo == undefined){
+        console.error("Cannot load user info.");
+        return false;
+    }
+    let userName = UserInfo.userName;
+    let userID = UserInfo.userId;
+    let userNameElements = document.getElementsByClassName('fillUserName');
+    let userIDElements = document.getElementsByClassName('fillUserID');
+    for(let i = 0; i < userNameElements.length; i++){
+        userNameElements[i].innerHTML = userName;
+    }
+    for(let i = 0; i < userIDElements.length; i++){
+        userIDElements[i].innerHTML = userID;
+    }
 }

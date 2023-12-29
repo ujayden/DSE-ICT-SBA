@@ -24,9 +24,11 @@ grayBackground.addEventListener('click', () => {
 	toggleNavBar();
 });
 let navSelfClose = document.getElementById('navCloseSelf');
-navSelfClose.addEventListener('click', () => {
-	toggleNavBar();
-});
+if (navSelfClose) {
+    navSelfClose.addEventListener('click', () => {
+        toggleNavBar();
+    });
+}
 let linkColor = document.querySelectorAll('.nav_link');
   
 function colorLink() {

@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="/include/global/library/owl-carousel/owl.theme.default.min.css">
     <script src="/include/global/library/owl-carousel/owl.carousel.min.js" defer></script>
     <script src="/include/scripts/photo_gallery.js" defer></script>
+    <!--Load Icons-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
     <body>
     <!-- Header -->
@@ -35,7 +38,7 @@
         <div id="header-Bar">
             <div class="header-Left ">
                 <div id="header-Title">
-                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <span><img src="/include/global/menuLogo.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
                     <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
                     <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
                     <p class="slogan">Your self learning website for DSE ICT Networking.</p>
@@ -45,7 +48,7 @@
                 <div id="dropdownMenu_Courses">
                     <span class="dropdownMenu" tabindex="0">Start Learning</span>
                     <div id="dropdownMenu_Courses-List" class="dropdownContent">
-                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/learning/index.html">Course Dashboard</a>
                         <a href="/library/index.html">Resource Library</a>
                         <a href="/profile/index.html">My Profile</a>
                         <a href="/profile/report.html">My Report</a>
@@ -96,18 +99,18 @@
                 <hr class="headerDropDownMenu-HR">
                 <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
                 <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
-                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/about.html#Benefit" tabindex="-1">Why using this website</a>
                     <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
                     <a href="/news/index.html" tabindex="-1">Latest News</a>
                     <a href="/chatbot.html" tabindex="-1">Chatbot</a>
-                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/faq.html" tabindex="-1">Q&A</a>
                     <a href="/setting.html" tabindex="-1">Setting</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
                 <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
                 <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
                     <a href="/about.html" tabindex="-1">About Us</a>
-                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/about.html#ContactUs" tabindex="-1">Contact Us</a>
                     <a href="/credit.html" tabindex="-1">Acknowledgement</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
@@ -232,8 +235,8 @@
                         <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                             <div class="mainService text-center pt-3">
                                 <div class="p-4">
-                                    <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                                    <h5 class="mb-3">ICT Learning</h5>
+                                    <i class="bx bxs-graduation bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/courses/index.html">ICT Learning</a></h5>
                                     <p>Learm ICT with us. We will help you to archive your goal.</p>
                                 </div>
                             </div>
@@ -241,8 +244,8 @@
                         <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                             <div class="mainService text-center pt-3">
                                 <div class="p-4">
-                                    <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                                    <h5 class="mb-3">Online Courses</h5>
+                                    <i class="bx bx-globe bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/learning/index.html">Online Learning</a></h5>
                                     <p>We provide online courses for you to learn ICT.</p>
                                 </div>
                             </div>
@@ -250,18 +253,18 @@
                         <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                             <div class="mainService text-center pt-3">
                                 <div class="p-4">
-                                    <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                                    <h5 class="mb-3">Home Learning</h5>
-                                    <p>Learn ICT at home. But you can learn ICT with everyone.</p>
+                                    <i class="bx bx-home bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/portal.html">Login or Sign Up now</a></h5>
+                                    <p>Sign up now to enjoy home learning.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
                             <div class="mainService text-center pt-3">
                                 <div class="p-4">
-                                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                                    <h5 class="mb-3">Resource Library</h5>
-                                    <p>Resource Library is available as well. You can learn ICT with our resource.</p>
+                                    <i class="bx bx-book-open bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/library/index.html">Resource Library</a></h5>
+                                    <p>Resource Library is available. You can learn ICT with our resource.</p>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +292,7 @@
                     </div>
                     <h3><span class="posterBenefit-Bold">Easy to use</span> and <span class="posterBenefit-Bold">free</span>.</h3>
                     <p>Our website is easy to use and free. You can learn anytime and anywhere.</p>
-                    <a href="/about.html#bout-benefit-free">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-free">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
@@ -319,7 +322,7 @@
                     </div>
                     <h3>Learning more <span class="posterBenefit-Bold">efficiency</span> with learning materials <span class="posterBenefit-Bold">free</span> of cost.</h3>
                     <p>Challenge yourself with free text notes, videos, quizzes, interactive elements, and even free mock papers online.</p>
-                    <a href="/help.html#about-benefit-effective">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-effective">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
@@ -366,7 +369,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Composory Part</h5>
                     <p class="card-text">Learn the basics of ICT.</p>
-                    <a href="/learning/introduction/composory.html" class="btn btn-primary">Learn More</a>
+                    <a href="/courses/composory.html" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card posterCourseAvailableCard">
@@ -378,7 +381,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Extended Part (Elective Part)</h5>
                         <p class="card-text">Learn the extended part of ICT.</p>
-                        <a href="/learning/introduction/extended.html" class="btn btn-primary">Learn More</a>
+                        <a href="/courses/elective.html" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card posterCourseAvailableCard">
@@ -390,7 +393,7 @@
                     <div class="card-body">
                         <h5 class="card-title">?</h5>
                         <p class="card-text">More course design for you only will soon available!</p>
-                        <a href="/learning/introduction/extended.html" class="btn btn-primary">Learn More</a>
+                        <a href="/courses/index.html" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -414,9 +417,6 @@
             </div>
         </div>
         <section id="posterShortAims">
-            <div id="videoPlayCircle">
-                <img src="/include/global/library/iconFontAwesome/player/play-solid.svg" alt="Play Video">
-            </div>
             <h2>Sure you want a tool help you.</h2>
         </section>
         <section id="posterComment">
@@ -448,7 +448,7 @@
                         <h3>It make my skill advance.</h3>
                         <p>**Love it, no reason.**</p>
                       </div>
-                    </div>
+                </div>
             </div>
         </section>
         <section id="posterIntro">

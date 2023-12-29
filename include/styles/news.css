@@ -1,0 +1,29 @@
+.gridNewsContainer{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+    justify-content:center;
+    padding:20px
+}
+.card-img-top{
+    width:100%;
+    height:auto
+}
+@media (max-width:768px){
+    .gridNewsContainer{
+        grid-template-columns:repeat(auto-fill,minmax(200px,1fr))
+    }
+}
+.newsContainer{
+    padding:20px
+}
+
+.paperCardContainer{
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 16px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    padding: 20px;
+}

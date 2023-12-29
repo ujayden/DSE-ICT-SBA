@@ -50,13 +50,44 @@
     display: none;
 }
 #posterIntro img{
-    height: 80vh;
     max-height: 900px;
-    width: 100%;
+    width: 20%;
     object-fit: cover;
     object-position: center;
     overflow: hidden;
     filter: brightness(70%);
+}
+#posterIntro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: #0f1f4f;
+}
+.posterIntroText{
+    text-align: right;
+    font-weight: 100 !important;
+    font-size: 15px;
+    padding: 8px 12px;
+    top: 30px;
+    width: 100%;
+    color: white;
+}
+#posterIntro h1{
+    margin-bottom: 120px;
+}
+#posterIntro p{
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+}
+#posterIntro button{
+    padding: 8px 60px;
+    margin-top: 20px;
+    border: 2px solid black;
+    background-color: rgba(255,255,255,0.7);
+    font-weight: bold;
 }
 .whiteToDarkTransparent{
     background: linear-gradient(rgb(255,255,255), rgba(120,120,120));
@@ -117,11 +148,14 @@
     min-height: 600px;
 }
 #posterComment{
-    background-color: #F8F9FA;
     padding: 80px;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
+}
+#posterComment h1{
+    font-weight: bold;
 }
 #posterFinal{
     background-color: white;
@@ -132,20 +166,23 @@
 }
 #posterBenefitCarousel .card{
     width: 100%;
-
+    flex: 1;
 }
 #posterCommentCarousel .card{
+    border-radius: 0;
+    border: 0;
     width: 100%;
 }
+
 .posterBenefitDetailContainer{
     padding: 160px 48px 50px 48px;
     border-radius: 10px;
     box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.16);
     width: 100%;
     min-width: 300px;
-    min-height: 400px;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 .posterBenefitDetailContainer h5{
     font-weight: bold;
@@ -153,15 +190,35 @@
     margin-bottom: 16px;
 }
 .posterCommentDetailContainer{
+    min-height: 200px;
     padding: 20px;
-
+    transition: all 0.2s ease-in-out;
+}
+.center .posterCommentDetailContainer{
+    color: white;
+    background-color: #7c9cfb;
+}
+.posterCommentContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.posterCourseAvailableCard{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.posterCourseAvailableCard img{
+    max-height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 .posterBenefit-Bold{
     transition: all 0.1s ease-in-out;
     font-weight: bold;
     color: #2455E6;
     font-size: 36px;
-
 }
 /** Change the owl-carousel dots as a line, like bootstrap one */
 .owl-theme .owl-dots .owl-dot span{
@@ -172,7 +229,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 .posterCourseAvailableCard{
     background-color: white;
@@ -181,6 +238,7 @@
     margin-right: 10px;
     font-family: "Montserrat", sans-serif;
     box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.16);
+    max-width: 400px;
 }
 .posterCourseAvailableCard h5{
     font-weight: bold;
@@ -201,7 +259,7 @@
 .img-container img{
     position: relative;
     z-index: 2;
-    transition: all 0.1s ease-out 0s;
+    transition: all 0.4s ease-out 0s;
 
 }
 .img-container::before{
@@ -254,7 +312,7 @@
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 6px 64px;
+    padding: 6px 32px;
     border-radius: 4px;
     background-color: #306EE4;
     color: white;
@@ -294,10 +352,10 @@
     fill: #FFFFFF;
 }
 .posterBenefitDetailLinkIcon{
+    width: 1em;
     height: 1em;
-    width: 0;
     vertical-align: middle;
-    margin-left: 4px;
+    margin-left: 1px;
     fill: #2455E6;
 }
 .posterBenefitDetailContainer a{
@@ -305,6 +363,7 @@
     flex-direction: row;
     align-items: center;
     transition: all 0.2s ease-in-out;
+    flex-wrap: nowrap;
 }
 .posterBenefitDetailContainer a:hover{
     font-weight: bold;
@@ -378,4 +437,117 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+.posterCourseAvailableCard{
+    min-width: 300px !important;
+}
+@media screen and (max-width: 800px) {
+    .posterVisionRow{
+        flex-direction: column;
+        align-items: center;
+    }
+    .posterVision{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .posterCourseAvailableContainer{
+        justify-content: center;
+    }
+    .posterCourseAvailableCard{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #welcome{
+        flex-direction: column !important;
+        align-items: center;
+    }
+    #welcome img{
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+    }
+    .welcomeTextContainer{
+        width: 100% !important;
+        padding-left: 0px !important;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 680px){
+    #posterHearWeAre{
+        flex-direction: column;
+    }
+    .posterHearWeAre-left{
+        width: 100%;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+    .posterHearWeAre-right{
+        width: 100%;
+        padding-left: 0px;
+    }
+    #posterFinal-btn{
+        margin-left: 0px;
+    }
+    #posterFinal{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 380px){
+    .status-Box-row{
+        flex-wrap: wrap;
+    }
+    .divider{
+        display: none;
+    }
+    #posterFinal{
+        flex-direction: column;
+    }
+}
+#posterClimb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 600px;
+}
+.posterClimb-left{
+    margin: 80px;
+    width: 60%;
+    padding-right: 20px;
+}
+.posterClimb-right{
+    width: 40%;
+    padding-left: 20px;
+}
+.posterClimb-right img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+#welcome{
+    text-align: right;
+    padding: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.welcomeTextContainer{
+    width: 50%;
+    padding-left: 20px;
+}
+#welcome img{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    max-width: 400px;
+}
+.mainService{
+    color: white;
+    background-color: #95C1C3;
 }

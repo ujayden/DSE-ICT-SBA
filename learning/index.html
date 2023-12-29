@@ -1,182 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title -->
-    <title>ICT Master Hub</title>
-    <!--Load libray here.-->
-    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
-    <!-- Load CSS and Script here -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="/include/global/style.css">
-    <link rel="stylesheet" href="/include/global/style_responsive.css">
-    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
-    <!-- Defer can reduce web loading time. -->
-    <script src="/include/global/script.js" defer></script>
-    <script src="/include/global/script_backtoTop.js" defer></script>
-    <!--Load bootstrap-->
-    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+	<!-- Currently, thid and slidebar.js and slidebar.css are not under license of this project. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title -->
+	<title>Dasbboard - ICT Master Hub</title>
+	<!--Load libray here.-->
+	<script src="/include/global/library/jquery-3.7.1.min.js" defer></script>		
+	<!--Load bootstrap-->
+	<link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">		
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
     <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
-</head>
-<body>
-    <!-- Header -->
-    <header id="header">
-        <div id="header-Bar">
-            <div class="header-Left ">
-                <div id="header-Title">
-                    <span><img src="/include/global/menuLogo.png" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
-                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
-                    <h1 tabindex="0">ICT Master Hub</h1>
-                    <p class="slogan">Your self learning website for DSE ICT Networking.</p>
-                </div>
-            </div>
-            <nav class="header-nav">
-                <div id="dropdownMenu_Courses">
-                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
-                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
-                        <a href="/learning/index.html">Dashboard</a>
-                        <a href="/library/index.html">Resource Library</a>
-                        <a href="/profile/index.html">My Profile</a>
-                        <a href="/profile/report.html">My Report</a>
-                    </div>
-                </div>
-                <div id="dropdownMenu_Explore">
-                    <span class="dropdownMenu" tabindex="0">Explore</span>
-                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
-                        <a href="/reason.html">Why using this website</a>
-                        <a href="/courses/index.html">Learning Catalog</a>
-                        <a href="/news/index.html">Latest News</a>
-                        <a href="/chatbot.html">Chatbot</a>
-                        <a href="/help.html">Q&A</a>
-                        <a href="/setting.html">Setting</a>
-                    </div>
-                </div>
-                <div id="dropdownMenu_About" tabindex="0">
-                    <span class="dropdownMenu">More about us</span>
-                    <div id="dropdownMenu_About-List" class="dropdownContent">
-                        <a href="/about.html">About Us</a>
-                        <a href="/contact.html">Contact Us</a>
-                        <a href="/credit.html">Acknowledgement</a>
-                    </div>
-                </div>                
-                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
-            </nav>
-            <div class="header-Right">
-                    <div id="header-Search">
-                        <!-- Search -->
-                        <div id="search">
-                            <form action="search.html" method="get" id="searchForm">
-                                <input type="text" name="search" placeholder="Search..." id="searchbox">
-                            </form>
-                        </div>
-                    </div>
-                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
-            </div>
-        </div>
-        <!-- Display drop-dowp menu when the header does not have enough space -->
-        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
-        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
-        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
-            <div id="headerDropDownMenu-Link">
-                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
-                <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
-                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
-                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
-                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
-                    <a href="/profile/report.html" tabindex="-1">My Report</a>
-                </div>
-                <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
-                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
-                    <a href="/reason.html" tabindex="-1">Why using this website</a>
-                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
-                    <a href="/news/index.html" tabindex="-1">Latest News</a>
-                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
-                    <a href="/help.html" tabindex="-1">Q&A</a>
-                    <a href="/setting.html" tabindex="-1">Setting</a>
-                </div>
-                <hr class="headerDropDownMenu-HR">
-                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
-                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
-                    <a href="/about.html" tabindex="-1">About Us</a>
-                    <a href="/contact.html" tabindex="-1">Contact Us</a>
-                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
-                </div>
-                <hr class="headerDropDownMenu-HR">
-            </div>
-            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
-                <div id="search">
-                    <form action="search.php" method="get" id="searchForm">
-                        <input type="text" name="search" placeholder="Search Something" id="searchbox" tabindex="-1">
-                    </form>
-                </div>
-            </div>
-            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
-                <span>Welcome! </span>
-                <span id="username"></span>
-                <span id="message-of-the-day"></span>
-                <a href="/login.html" id="user-Login" tabindex="-1">Login now</a>
-            </div>
-        </div>
-        <!-- Breadcrumns, disable in first page  -->
-        <!-- Use a latest news banner to replace breadcrumbs in first page -->
-        <nav id="breadcrumbs">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <!-- Test Only -->
-                <li><a href="/library/index.html">Resource Library</a></li>
-                <li><span tabindex="0" id="breadcrumbs-Cureent-Page">Courses</span></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Main Content -->
-    <main>
-        <section id="introduction">
-            
-        </section>
-    </main>
+	<!-- Load CSS and Script here -->
+	<link rel="stylesheet" href="/include/global/styleLearning.css">
+	<link rel="stylesheet" href="/include/global/style_backtoTop.css">
+	<link rel="stylesheet" href="/include/global/scrollbar.css">
+	<link rel="stylesheet" href="/include/global/slidebar.css">
+	<link rel="stylesheet" href="/include/global/styleUser.css">
+	<script src="/include/global/slidebar.js" defer></script>
+	<script src="/include/global/scriptUser.js" defer></script>
+	<script src="/include/global/scriptHandleUserData.js" async></script>
+	<script src="/include/scripts/scriptDashboard.js" defer></script>
+	<script src="/include/global/script_backtoTop.js" defer></script>
 
-    <!-- Footer -->
-    <footer>
-        <div id="footer-Title"  tabindex="0">
-            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
-        </div>
-        <div class="footer-Container">
-            <div class="footer-Left_Link">
-                <div class="footer-Link-main">
-                    <span class="footer-Link-Title" tabindex="0">Learning</span>
-                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
-                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
-                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
-                    <a class="footer-Link" href="/profile/report.html">My Report</a>
-                </div>
-                <div class="footer-Link-main">
-                    <span class="footer-Link-Title" tabindex="0">Explore</span>
-                    <a class="footer-Link" href="/reason.html">Reason to use this website</a>
-                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
-                    <a class="footer-Link" href="/news/index.html">Latest News</a>
-                    <a class="footer-Link" href="/help.html">Q&A</a>
-                </div>
-            </div>
-        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
-            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
-            <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
-            <a class="footer-Link-Title-Right" href="/privacy.html">Privacy Policy</a>
-            <a class="footer-Link-Title-Right" href="/tos.html">Terms of Service</a>
-            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
-        </div>
-    </div>
-    <div class="footer-Bottom-Link">
-        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
-        <a class="footer-Link" href="about.html">About Us</a>
-        <a class="footer-Link" href="about.html">Contact Us</a>
-        <a class="footer-Link" href="faq.html">FAQ</a>
-        <a class="footer-Link" href="about.html">Setting</a>
-        <span tabindex="0">@2023 ICT Master Hub</span>
-    </div>
-    </footer>
-    <div id="unfocus"></div>
-    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+<body id="body-pd">
+	<div class="header" id="header">
+		<div class="headerLeft">
+			<div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+			<p class="header_Title">My Learning <span>- Composory Part</span></p>
+		</div>
+		<div class="headerRight">
+			<span>Progress: <span id="headerProgress">Beginner</span></span>
+			<span id="headerName">Welcome, <span id="headerName">User</span>!</span>
+		</div>
+	</div>
+	<div id="bodyContainer">
+	<div class="l-navbar" id="nav-bar">
+		<nav class="nav">
+			<div>
+				<div>
+					<a href="/index.html" class="nav_logo">
+						<i class='bx bx-home-alt-2 nav_logo-icon'></i>
+						<span class="nav_logo-name">ICT Master Hub</span>
+					</a>
+					<a href="#" class="nav_link" id="navCloseSelf">
+						<i class='bx bx-x nav_icon'></i>
+						<span class="nav_name">Close this Navbar</span>
+					</a>
+				</div>
+				<div class="nav-tabs nav_list na">
+					<a href="#InProgress" class="nav_link active navActive" data-bs-toggle="tab" data-bs-target="#InProgress">
+						<i class='bx bxs-flag-alt nav_icon'></i>
+						<span class="nav_name">In Progress</span>
+					</a>
+					<a href="#Suggested" class="nav_link" data-bs-toggle="tab" data-bs-target="#Suggested">
+						<i class='bx bx-star nav_icon'></i>
+						<span class="nav_name">Suggested</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Completed">
+						<i class='bx bx-history nav_icon'></i>
+						<span class="nav_name">Completed</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#DiscussionForum">
+						<i class='bx bx-chat nav_icon'></i>
+						<span class="nav_name">Discussion Forum</span>
+					</a>
+					<hr>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Quizzes">
+						<i class='bx bx-file nav_icon'></i>
+						<span class="nav_name">Quizzes</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#MockPaper">
+						<i class='bx bx-file nav_icon'></i>
+						<span class="nav_name">Mock Papers</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Notes">
+						<i class='bx bx-book-bookmark nav_icon'></i>
+						<span class="nav_name">Notes</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Interactive">
+						<i class='bx bx-joystick-alt nav_icon'></i>
+						<span class="nav_name">Interactive Elements</span>
+					</a>
+					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Videos">
+						<i class='bx bx-video-recording nav_icon'></i>
+						<span class="nav_name">Videos</span>
+					</a>
+					<hr>
+ 					<a href="/profile/report.html" class="nav_link">
+						<i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+						<span class="nav_name">Report</span>
+					</a>
+				</div>
+			</div>
+			<div class="nav_logout">
+				<a href="#" class="nav_link">
+					<i class='bx bx-log-out nav_icon'></i>
+					<span class="nav_name">Log Out</span>
+				</a>
+			</div>
+	</nav>
+	</div>
+	<!-- Main Content Container with bootstrap tab-content and tab-pane -->
+	<main class="tab-content">
+		<div class="tab-pane fade active show contentContainer" id="InProgress">
+			<div class="contentHeader">
+				<div>
+					<h1>In Progress</h1>
+					<h4>Welcome back,</h4>
+					<p>Here are the task and activities you have in progress.</p>
+				</div>
+				<div class="contentHeader-buttonContainer">
+					<button class="btn btn-primary">Check my Report</button>
+					<button class="btn btn-primary">Countinue Learning</button>
+				</div>
+			</div>
+			<div class="card" id="statusCard">
+				<ul class="nav nav-tabs statusCardNavTabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="level-progress-tab" data-bs-toggle="tab" href="#statusProgress" role="tab" aria-controls="level-progress" aria-selected="true">Level Progress</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="course-progress-tab" data-bs-toggle="tab" href="#statusAllProgress" role="tab" aria-controls="course-progress" aria-selected="false">Course Progress</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="overview-tab" data-bs-toggle="tab" href="#statusOverview" role="tab" aria-controls="overview" aria-selected="false">Overview</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="achievements-tab" data-bs-toggle="tab" href="#statusAchievements" role="tab" aria-controls="achievements" aria-selected="false">Achievements</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="motd-tab" data-bs-toggle="tab" href="#statusMOTD" role="tab" aria-controls="motd" aria-selected="false">Message of the Day</a>
+					</li>
+                </ul>
+				<div class="tab-content">
+					<div class="tab-pane fade statusContainer active show" id="statusProgress">
+						<h2>Current Progress in this Level</h2>
+						<p>Here is your current progress in this level.</p>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<p>0% Complete</p>
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusAllProgress">
+						<h2>Current Progress of this Course</h2>
+						<p>Here is your current progress in this course.</p>
+						<div class="progress">
+							<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<p><span>Beginner</span><spam> - </spam><span>0%</span></p>
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusOverview">
+						2
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusAchievements">
+						<h2>Your Achievements</h2>
+						<p>Earn achievements by completing courses and activities with your performance.</p>
+					</div>
+					<div class="tab-pane fade statusContainer" id="statusMOTD">
+						<p class="quoteSentence">- “Believe you can and you're halfway there.” -Theodore Roosevelt, president</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<h3>Next Task</h3>
+				<div class="card">
+					<div class="card-header bg-white">
+						<div class="d-flex justify-content-between align-items-center">
+						  <h4 class="mb-0">Compulsory Part - Beginner Section</h4>
+						  <div>
+							<span>Est. Time: 1 hour</span>
+							<span>Score: --/20</span>
+						  </div>
+						</div>
+					</div>
+					<div class="card-body">
+						<p>Welcome to your first course in ICT Master Hub! This course will introduce you to the basic of ICT.</p>
+						<p>You may check the course overview <a href="/courses/composory.html#composoryCourseItemAccordionBeginner">here</a>.</p>
+						<div class="d-flex justify-content-end">
+						<button class="btn btn-primary" id="courseStartBeginner">Start <i class='bx bx-right-arrow-alt'></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<!-- Rest of the task -->
+				<h3>More things to do</h3>
+			</div>
+		</div>
+		<div class="tab-pane fade contentContainer" id="Suggested">
+			Suggested
+		</div>
+		<div class="tab-pane fade contentContainer" id="Completed">
+			Completed
+		</div>
+		<div class="tab-pane fade contentContainer" id="DiscussionForum">
+			<iframe src="/include/discussionForum/index.html" frameborder="0"  id="discussionForumIframe" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+		</div>
+		<div class="tab-pane fade contentContainer" id="Quizzes">
+			Quizzes
+		</div>
+		<div class="tab-pane fade contentContainer" id="MockPaper">
+			Mock Paper
+		</div>
+		<div class="tab-pane fade contentContainer" id="Notes">
+			Notes
+		</div>
+		<div class="tab-pane fade contentContainer" id="Interactive">
+			Interactive
+		</div>
+		<div class="tab-pane fade contentContainer" id="Videos">
+			Videos
+		</div>
+	</main>
+	</div>
+	<div id="greyBackground"></div>
 </body>
 </html>

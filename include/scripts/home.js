@@ -3,9 +3,9 @@
 //Refresh the news
 let news = document.getElementById('News');
 let newsDetail = [
-    "News1",
-    "News2",
-    "News3"
+    "2023-12-29 OpenAI has released GPT-4.5 secretly",
+    "2023-12-28 NVIDIA has released  GeForce RTX 4090 D GPU to the China market",
+    "2023-10-23 HKEAA has released the timetable for 2024 DSE"
 ]
 //Allow user to close the news
 let closeNews = document.getElementById('newsLoopClose');
@@ -18,6 +18,10 @@ closeNews.addEventListener('click', function() {
 let newsCurrentNo = 1;
 let newsCountDisplay = document.getElementById('newsCount');
 
+/**
+ * 
+ * @param {Number} newsDirection //The direction of the news, 1 for next, -1 for back.
+ */
 function changeNews(newsDirection) {
     newsCurrentNo += newsDirection;
     if (newsCurrentNo > newsDetail.length) {

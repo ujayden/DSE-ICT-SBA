@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 body{
-    font-family: sans-serif;
     margin: 0;
     position: relative;
     min-height: 100vh;
+    color: #0C2B4B;
 }
 html, body{
     scroll-behavior: smooth !important;
@@ -15,7 +17,7 @@ button{
     background-color: ghostwhite;
 }
 main h1, main h2, main h3, main h4, main h5, main h6{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
 }
 /** Start: Global Header */
 /** Style for Logo, Title, nav*/
@@ -76,7 +78,7 @@ main h1, main h2, main h3, main h4, main h5, main h6{
     height: 100%;
 
 }
-#searchbox{
+.searchbox{
     /** Note that width should be reduced to 100px when the screen is small */
     width: 180px;
     height: 22px;
@@ -188,7 +190,7 @@ main h1, main h2, main h3, main h4, main h5, main h6{
 #dropdownMenu_About-List{
     right: 0px;
 }
-#searchForm{
+.searchForm{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -343,7 +345,7 @@ footer {
     box-sizing: border-box;
     color:white;
     font-size: 12px;
-    background-color: #989898;
+    background-color: #0C2B4B;
 }
 #footer-Container{
     display: flex;
@@ -376,7 +378,6 @@ footer {
     color: white;
 }
 /** Start: Footer Container*/
-/** Explanation: The flex, inline-flex are used to make them work */
 .footer-Container{
     width: 100%;
     display: flex;

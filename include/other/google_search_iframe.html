@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Google Search -IMH</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                console.log("DOM fully loaded and parsed");
+                let currentURL = new URL(window.location.href);
+                let searchQuery = currentURL.searchParams.get("q");
+                if (searchQuery === null || searchQuery === "" || searchQuery === undefined) {
+                    alertBox("Please enter a search query.");
+                }
+            });
+            function alertBox(message) {
+                alert(message);
+            }
+        </script>
+    </head>
+    <body>
+        <script async src="https://cse.google.com/cse.js?cx=d02bb764907de4b18"></script>
+        <div class="gcse-searchresults-only"></div>
+    </body>
+</html>

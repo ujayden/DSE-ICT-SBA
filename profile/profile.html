@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Currently, thid and slidebar.js and slidebar.css are not under license of this project. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title -->
+	<title>Profile - ICT Master Hub</title>
+	<!--Load libray here.-->
+	<script src="/include/global/library/jquery-3.7.1.min.js" defer></script>		
+	<!--Load bootstrap-->
+	<link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">		
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+	<!-- Load CSS and Script here -->
+	<link rel="stylesheet" href="/include/global/styleLearning.css">
+	<link rel="stylesheet" href="/include/global/style_backtoTop.css">
+	<link rel="stylesheet" href="/include/global/scrollbar.css">
+	<link rel="stylesheet" href="/include/global/slidebar.css">
+	<link rel="stylesheet" href="/include/global/styleUser.css">
+    <link rel="stylesheet" href="/include/styles/profile.css">
+	<script src="/include/global/slidebar.js" defer></script>
+	<script src="/include/global/scriptUser.js" defer></script>
+	<script src="/include/global/scriptHandleUserData.js" async></script>
+
+<body id="body-pd">
+	<div class="header" id="header">
+		<div class="headerLeft">
+			<div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+			<p class="header_Title">Profile</p>
+		</div>
+		<div class="headerRight">
+			<span id="headerName">Welcome, <span id="headerName" class="fillUserName">User</span>!</span>
+		</div>
+	</div>
+	<div id="bodyContainer">
+	<div class="l-navbar" id="nav-bar" >
+		<nav class="nav">
+			<div>
+				<div>
+					<a href="/index.html" class="nav_logo">
+						<i class='bx bx-home-alt-2 nav_logo-icon'></i>
+						<span class="nav_logo-name">ICT Master Hub</span>
+					</a>
+					<a href="#" class="nav_link" id="navCloseSelf">
+						<i class='bx bx-x nav_icon'></i>
+						<span class="nav_name">Close this Navbar</span>
+					</a>
+				</div>
+				<div class="nav-tabs nav_list na">
+					<!--No nav link for profile-->
+                    <a href="report.html" class="nav_link">
+                        <i class='bx bx-bookmark nav_icon'></i>
+                        <span class="nav_name">Report</span>
+                    </a>
+				</div>
+			</div>
+			<div class="nav_logout">
+				<a href="#" class="nav_link">
+					<i class='bx bx-log-out nav_icon'></i>
+					<span class="nav_name">Log Out</span>
+				</a>
+			</div>
+	</nav>
+	</div>
+	<!-- Main Content Container with bootstrap tab-content and tab-pane -->
+	<main class="tab-content">
+		<div class="tab-pane active  contentContainer" id="profile">
+			<div class="contentHeader">
+				<div>
+                    <h4>Welcome <span id="headerName" class="fillUserName">User</span>.</h4>
+                    <h1 class="fillUserName">User</h1>
+                    <h6>UserID: <span id="headerID" class="fillUserID">-1</span></h6>
+                    <button class="btn btn-primary">Change UserName</button>
+				</div>
+			</div>
+            
+
+            <div class="largeInputContainer" id="MyGoal">
+                <h4>My Goal</h4>
+                <textarea class="largeInput" id="MyGoalInput" placeholder="Setup your goal......"></textarea>
+                <button class="btn btn-primary">Save</button>
+            </div>
+            <div class="largeInputContainer" id="AboutMe">
+                <h4>About Me</h4>
+                <textarea class="largeInput" id="AboutMeInput" placeholder="Write something about yourself......"></textarea>
+                <button class="btn btn-primary">Save</button>
+            </div>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <h2 class="mb-3" id="learningAt">Composory - Network</h2>
+                                    <p>Learning at</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <h2 class="mb-3" id="learningAt">Beginner</h2>
+                                    <p>Learner Level</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <h2 class="mb-3" id="learningAt">3</h2>
+                                    <p>Tasks Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <h2 class="mb-3" id="learningAt">40%</h2>
+                                    <p>Quiz Correct Rate</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="statusCard">
+                <div class="statusContainer" id="statusAllProgress">
+                    <h2>Progress</h2>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p><span>Beginner</span><spam> - </spam><span>0%</span></p>
+                </div>
+            </div>
+            <hr>
+            <div class="achievement">
+                
+            </div>
+		</div>
+	</main>
+	</div>
+	<div id="greyBackground"></div>
+</body>
+</html>

@@ -1,6 +1,12 @@
 'use strict';
 //This script will load globally
 /** Display drop down list when clicking, to make sure the menu can be run on tablet.  */
+/**
+ * 
+ * @param {HTMLElement} callElm //The element that call the function.
+ * @param {HTMLElement} menuElm //The element that will be display.
+ * @example toggleDropDownMenu(menu_Courses_btn, meun_Courses);
+ */
 function toggleDropDownMenu(callElm, menuElm) {
     //The menuElm should be the element it self, not the id of the element.
     if (!(menuElm.style.display == 'block')) {
@@ -89,6 +95,10 @@ focusOnHeaderDropDownMenuElem.addEventListener('click', function() {
 //For drop-down menu of header
 let headerDropDownMenu_Logo = document.getElementById('headerDropDownMenu-Logo');
 let menu_Header = document.getElementById('headerDropDownMenu');
+/**
+ * 
+ * @param {HTMLElement} menuElm //The element that will be display.
+ */
 function toggleHeaderDropDownMenu(menuElm) {
     //The menuElm should be the element it self, not the id of the element.
     if (menuElm.classList.contains('headerDDM-close-vertical')) {
@@ -141,6 +151,12 @@ document.getElementById('headerDropDownMenu-Logo').addEventListener('keydown', f
 );
 
 //Only function for menu.
+
+/**
+ * 
+ * @param {HTMLElement} menuElm //The element that will be display.
+ * @param {HTMLElement} callElm //The element that call the function.
+ */
 function toggleDropDownMenuFlex_headerDDMenu(menuElm, callElm) {
     //The menuElm should be the element it self, not the id of the element.
     if (!(menuElm.style.display == 'flex')) {
@@ -194,3 +210,28 @@ headerDDMenu_About_btn.addEventListener('keydown', function(event) {
     }
 }
 );
+
+const searchBox = document.querySelectorAll('.searchbox');
+
+function redirectSearchPage(searchBoxValue) {
+    window.location.href = 'search.html?q=' + searchBoxValue;
+}
+
+searchBox.forEach(function(targetElement) {
+    targetElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            redirectSearchPage(this.value);
+        }
+    }
+    );
+})
+let tryItOutBtn = document.getElementById('header-tryit-btn-nav');
+console.log(tryItOutBtn);
+tryItOutBtn.addEventListener('click', function() {
+    redirectPortalPage();
+}
+);
+function redirectPortalPage() {
+    window.location.href = window.location.origin + '/portal.html?mode=register';
+}

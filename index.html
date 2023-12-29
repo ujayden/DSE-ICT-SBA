@@ -6,7 +6,7 @@
     <!-- Title -->
     <title>ICT Master Hub</title>
     <!--Load libray here.-->
-    <script src="/include/global/library/jquery-3.7.1.min.js"></script>
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
     <!-- Load CSS and Script here -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="/include/global/style.css">
@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="/include/global/library/owl-carousel/owl.theme.default.min.css">
     <script src="/include/global/library/owl-carousel/owl.carousel.min.js" defer></script>
     <script src="/include/scripts/photo_gallery.js" defer></script>
+    <!--Load Icons-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
     <body>
@@ -36,7 +38,7 @@
         <div id="header-Bar">
             <div class="header-Left ">
                 <div id="header-Title">
-                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <span><img src="/include/global/menuLogo.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
                     <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
                     <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
                     <p class="slogan">Your self learning website for DSE ICT Networking.</p>
@@ -46,7 +48,7 @@
                 <div id="dropdownMenu_Courses">
                     <span class="dropdownMenu" tabindex="0">Start Learning</span>
                     <div id="dropdownMenu_Courses-List" class="dropdownContent">
-                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/learning/index.html">Course Dashboard</a>
                         <a href="/library/index.html">Resource Library</a>
                         <a href="/profile/index.html">My Profile</a>
                         <a href="/profile/report.html">My Report</a>
@@ -55,11 +57,11 @@
                 <div id="dropdownMenu_Explore">
                     <span class="dropdownMenu" tabindex="0">Explore</span>
                     <div id="dropdownMenu_Explore-List" class="dropdownContent">
-                        <a href="/reason.html">Why using this website</a>
+                        <a href="/about.html#Benefit">Why using this website</a>
                         <a href="/courses/index.html">Learning Catalog</a>
                         <a href="/news/index.html">Latest News</a>
                         <a href="/chatbot.html">Chatbot</a>
-                        <a href="/help.html">Q&A</a>
+                        <a href="/faq.html">Q&A</a>
                         <a href="/setting.html">Setting</a>
                     </div>
                 </div>
@@ -67,7 +69,7 @@
                     <span class="dropdownMenu">More about us</span>
                     <div id="dropdownMenu_About-List" class="dropdownContent">
                         <a href="/about.html">About Us</a>
-                        <a href="/contact.html">Contact Us</a>
+                        <a href="/about.html#ContactUs">Contact Us</a>
                         <a href="/credit.html">Acknowledgement</a>
                     </div>
                 </div>
@@ -77,8 +79,8 @@
                     <div id="header-Search">
                         <!-- Search -->
                         <div id="search">
-                            <form action="search.html" method="get" id="searchForm">
-                                <input type="text" name="search" placeholder="Search..." id="searchbox">
+                            <form action="search.html" method="get" class="searchForm">
+                                <input type="text" name="q" placeholder="Search..." class="searchbox">
                             </form>
                         </div>
                     </div>
@@ -97,26 +99,26 @@
                 <hr class="headerDropDownMenu-HR">
                 <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
                 <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
-                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/about.html#Benefit" tabindex="-1">Why using this website</a>
                     <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
                     <a href="/news/index.html" tabindex="-1">Latest News</a>
                     <a href="/chatbot.html" tabindex="-1">Chatbot</a>
-                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/faq.html" tabindex="-1">Q&A</a>
                     <a href="/setting.html" tabindex="-1">Setting</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
                 <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
                 <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
                     <a href="/about.html" tabindex="-1">About Us</a>
-                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/about.html#ContactUs" tabindex="-1">Contact Us</a>
                     <a href="/credit.html" tabindex="-1">Acknowledgement</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
             </div>
             <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
                 <div id="search">
-                    <form action="search.php" method="get" id="searchForm">
-                        <input type="text" name="search" placeholder="Search Something" id="searchbox" tabindex="-1">
+                    <form action="search.html" method="get" class="searchForm">
+                        <input type="text" name="q" placeholder="Search Something" class="searchbox" tabindex="-1">
                     </form>
                 </div>
             </div>
@@ -124,7 +126,7 @@
                 <span>Welcome! </span>
                 <span id="username"></span>
                 <span id="message-of-the-day"></span>
-                <a href="/login.html" id="user-Login" tabindex="-1">Login now</a>
+                <a href="/portal.html" id="user-Login" tabindex="-1">Login now</a>
             </div>
         </div>
         <nav id="breadcrumbs">
@@ -166,8 +168,20 @@
           </div>
           
         <div id="photo-gallery-Text">
-            <h2 tabindex="0">ICT Master Hub</h2>
-            <p tabindex="0">It is time to learn.</p>
+            <div id="photo-gallery-Text-Container">
+                <div id="pgtc-0" class="pgtc">
+                    <h2 tabindex="0">ICT Master Hub</h2>
+                    <p tabindex="0">It is time to learn.</p>
+                </div>
+                <div id="pgtc-1"  class="pgtc  pgtc-hidden">
+                    <h2 tabindex="0">Learn <strong>ICT Networking</strong></h2>
+                    <p tabindex="0">with us.</p>
+                </div>
+                <div id="pgtc-2"  class="pgtc pgtc-hidden">
+                    <h2 tabindex="0">We are here to help you</h2>
+                    <p tabindex="0">to face your DSE ICT.</p>
+                </div>
+            </div>
         </div>
     </div>
     <div id="status-Box">
@@ -206,37 +220,89 @@
         <section id="posterShort">
             <h2>We are here to help you to face your DSE ICT.</h2>
         </section>
+        <section id="welcome">
+            <img src="/include/images/home/books.jpg" alt="Books">
+            <div class="welcomeTextContainer">
+                <h1>Welcome to your eLearning website.</h1>
+                <p>Have you ever thought about learning ICT on your own? Now, you can learn ICT with us. We will help you to archive your goal. </p>
+                <p>The population of Internet brings a lot of benefits to us. One of the benefits is self-learning. Self-learning is a learning method that you can learn on your own. It is a good way to learn ICT. You can learn ICT on your own with our website. We will help you to archive your goal.</p>
+            </div>
+        </section>
+        <section id="short-Intro">
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="bx bxs-graduation bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/courses/index.html">ICT Learning</a></h5>
+                                    <p>Learm ICT with us. We will help you to archive your goal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="bx bx-globe bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/learning/index.html">Online Learning</a></h5>
+                                    <p>We provide online courses for you to learn ICT.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="bx bx-home bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/portal.html">Login or Sign Up now</a></h5>
+                                    <p>Sign up now to enjoy home learning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="bx bx-book-open bx-3x mb-4 fs-1"></i>
+                                    <h5 class="mb-3"><a href="/library/index.html">Resource Library</a></h5>
+                                    <p>Resource Library is available. You can learn ICT with our resource.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="posterBenefit">
             <h2>Studying on your own is not easy, but we can help.</h2>
             <div id="posterBenefitCarousel"  class="owl-carousel owl-theme my-3" >
                 <div class="card shadow my-3">
                   <div class="posterBenefitDetailContainer">
                     <div class="posterBenefitImgContainer" style="background-color: #858092;">
-                        <object data="/include/global/library/iconFontAwesome/menu/feat/graduation-cap-solid.svg" type="image/svg+xml" color="white"></object>
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/graduation-cap-solid.svg" alt="Graduation Cap">
                     </div>
                     <h3><span class="posterBenefit-Bold">Fully design</span> for ICT students.</h3>
                     <p>This website&rsquo;s learning path has fully designed only for practicing HKDSE ICT Student.</p>
-                    <a href="/help.html">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-lp">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
                   <div class="posterBenefitDetailContainer">
                     <div class="posterBenefitImgContainer" style="background-color: #877174;">
-                        <object data="/include/global/library/iconFontAwesome/menu/feat/coins-solid.svg" type="image/svg+xml" color="white"></object>
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/coins-solid.svg" alt="Coins">
                     </div>
                     <h3><span class="posterBenefit-Bold">Easy to use</span> and <span class="posterBenefit-Bold">free</span>.</h3>
                     <p>Our website is easy to use and free. You can learn anytime and anywhere.</p>
-                    <a href="/help.html">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-free">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
                   <div class="posterBenefitDetailContainer">
                     <div class="posterBenefitImgContainer" style="background-color: #6c5e8b;">
-                        <object data="/include/global/library/iconFontAwesome/menu/feat/wrench-solid.svg" type="image/svg+xml" color="white"></object>
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/wrench-solid.svg" alt="Wrench">
                     </div>
                     <h3>Enjoy learning with <span class="posterBenefit-Bold">Dynamic Learning Path</span> for you.</h3>
                     <p>4 levels of difficulties are available - Learn for everybody!</p>
-                    <a href="/help.html">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-dlp">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
@@ -246,32 +312,41 @@
                     </div>
                     <h3><span class="posterBenefit-Bold">Progress Tracking</span> is that simple.</h3>
                     <p>Track your progress easily with just a few clicks.</p>
-                    <a href="/help.html">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-ptr">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
                   <div class="posterBenefitDetailContainer">
                     <div class="posterBenefitImgContainer" style="background-color: #877174;">
-                        <object data="/include/global/library/iconFontAwesome/menu/feat/clock-regular.svg" type="image/svg+xml" color="white"></object>
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/clock-regular.svg" alt="Clock"> 
                     </div>
                     <h3>Learning more <span class="posterBenefit-Bold">efficiency</span> with learning materials <span class="posterBenefit-Bold">free</span> of cost.</h3>
                     <p>Challenge yourself with free text notes, videos, quizzes, interactive elements, and even free mock papers online.</p>
-                    <a href="/help.html">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-effective">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
                 <div class="card shadow my-3">
                   <div class="posterBenefitDetailContainer">
                     <div class="posterBenefitImgContainer" style="background-color: #6c5e8b;">
-                        <object data="/include/global/library/iconFontAwesome/menu/feat/comment-alt-regular.svg" type="image/svg+xml" color="white"></object>
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/comment-alt-regular.svg" alt="Comment">
                     </div>
                     <h3><span class="posterBenefit-Bold">Ask</span> other ICT students is easily too.</h3>
                     <p>No need to find a discussion forum for DSE ICT, just discuss here!</p>
-                    <a href="/help.html">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
+                    <a href="/about.html#about-benefit-share">Learn More <span><img class="posterBenefitDetailLinkIcon" src="/include/global/library/iconFontAwesome/menu/feat/arrow-right-solid-menu.svg"></span></a>
                   </div>
                 </div>
               </div>
         </section>
-
+        <section id="posterClimb">
+            <div class="posterClimb-left">
+                <h2>Start your journey with us.</h2>
+                <p>Feel that you are not ready for the HKDSE ICT examination? Don&rsquo;t worry, we are here to help you.</p>
+                <p>Start your journey with us. We will help you to archive your goal.</p>
+            </div>
+            <div class="posterClimb-right">
+                <img src="/include/images/home/climb.jpg" alt="Climb">
+            </div>
+        </section>
         <section id="posterHearWeAre">
             <div class="posterHearWeAre-left">
                 <span>Here is</span>
@@ -284,7 +359,7 @@
         </section>
         <section id="posterCouseAvailable">
             <h2>Course Available</h2>
-            <div class="posterCourseAvailableContainer">
+            <div class="posterCourseAvailableContainer" >
                 <div class="card posterCourseAvailableCard">
                     <div class="img-container">
                         <div class="img-wrapper">
@@ -294,7 +369,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Composory Part</h5>
                     <p class="card-text">Learn the basics of ICT.</p>
-                    <a href="/learning/introduction/composory.html" class="btn btn-primary">Learn More</a>
+                    <a href="/courses/composory.html" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card posterCourseAvailableCard">
@@ -306,7 +381,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Extended Part (Elective Part)</h5>
                         <p class="card-text">Learn the extended part of ICT.</p>
-                        <a href="/learning/introduction/extended.html" class="btn btn-primary">Learn More</a>
+                        <a href="/courses/elective.html" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card posterCourseAvailableCard">
@@ -318,7 +393,7 @@
                     <div class="card-body">
                         <h5 class="card-title">?</h5>
                         <p class="card-text">More course design for you only will soon available!</p>
-                        <a href="/learning/introduction/extended.html" class="btn btn-primary">Learn More</a>
+                        <a href="/courses/index.html" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -342,65 +417,47 @@
             </div>
         </div>
         <section id="posterShortAims">
-            <div id="videoPlayCircle">
-                <img src="/include/global/library/iconFontAwesome/player/play-solid.svg" alt="Play Video">
-            </div>
             <h2>Sure you want a tool help you.</h2>
         </section>
         <section id="posterComment">
             <h3>Still Struggling?</h3>
-            <p>Let&rsquo;s see what other people say about us.</p>
+            <p>Let&rsquo;s see our student&rsquo;s comment.</p>
             <div id="posterCommentContainer" class="posterCommentContainer">
                 <!--Carousel again-->
                 <div id="posterCommentCarousel" class="owl-carousel owl-theme my-3" >
                     <div class="card shadow my-3">
                       <div class="posterCommentDetailContainer">
-                        <h3><span class="posterComment-Bold">Fully design</span> for ICT students.</h3>
-                        <p>This website&rsquo;s learning path has fully designed only for practicing HKDSE ICT Student.</p>
+                        <h3>I think this website really helpful!</h3>
+                        <p>I don't have enough skill, this website give me a 4-level learning course.</p>
                       </div>
                     </div>
                     <div class="card shadow my-3">
                       <div class="posterCommentDetailContainer">
-                        <h3><span class="posterComment-Bold">Easy to use</span> and <span class="posterComment-Bold">free</span>.</h3>
-                        <p>Our website is easy to use and free. You can learn anytime and anywhere.</p>
+                        <h3>his website change my life.</h3>
+                        <p>Now I can handle most question in my school's test and quiz.</p>
                       </div>
                     </div>
                     <div class="card shadow my-3">
                       <div class="posterCommentDetailContainer">
-                        <h3>Enjoy learning with <span class="posterComment-Bold">Dynamic Learning Path</span> for you.</h3>
-                        <p>4 levels of difficulties are available - Learn for everybody!</p>
+                        <h3>It is a good website.</h3>
+                        <p>It is a good website for learning ICT.</p>
                       </div>
                     </div>
                     <div class="card shadow my-3">
                       <div class="posterCommentDetailContainer">
-                        <h3><span class="posterComment-Bold">Progress Tracking</span> is that simple.</h3>
-                        <p>Track your progress easily with just a few clicks.</p>
+                        <h3>It make my skill advance.</h3>
+                        <p>**Love it, no reason.**</p>
                       </div>
-                    </div>
-                    <div class="card shadow my-3">
-                      <div class="posterCommentDetailContainer">
-                        <h3>Learning more <span class="posterComment-Bold">efficiency</span> with learning materials <span class="posterComment-Bold">free</span> of cost.</h3>
-                        <p>Challenge yourself with free text notes, videos, quizzes, interactive elements, and even free mock papers online.</p>
-                      </div>
-                    </div>
-                    <div class="card shadow my-3">
-                      <div class="posterCommentDetailContainer">
-                        <h3><span class="posterComment-Bold">Ask</span> other ICT students is easily too.</h3>
-                        <p>No need to find a discussion forum for DSE ICT, just discuss here!</p>
-                      </div>
-                    </div>
+                </div>
             </div>
         </section>
-        <div class="air-200px whiteToDarkTransparent"></div>
         <section id="posterIntro">
             <img src="/include/images/home/universe.jpg" alt="Universe Landscape">
             <div class="posterIntroText">
                 <h1>Your self Learning website for DSE ICT Networking.</h1>
                 <p>Your knowledge has no boundaries, like the space. </p>
-                <button id="posterIntro-btn" tabindex="0">Start Learning</button>
             </div>
         </section>
-        
         <section id="posterFinal">
             <div>
                 <h4>It is time to get a try.</h4>
@@ -426,10 +483,10 @@
                 </div>
                 <div class="footer-Link-main">
                     <span class="footer-Link-Title" tabindex="0">Explore</span>
-                    <a class="footer-Link" href="/reason.html">Reason to use this website</a>
+                    <a class="footer-Link" href="/about.html#Benefit">Reason to use this website</a>
                     <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
                     <a class="footer-Link" href="/news/index.html">Latest News</a>
-                    <a class="footer-Link" href="/help.html">Q&A</a>
+                    <a class="footer-Link" href="/faq.html">Q&A</a>
                 </div>
             </div>
         <div class="footer-Right-Link footer-Link-main"  tabindex="0">
@@ -442,14 +499,14 @@
     </div>
     <div class="footer-Bottom-Link">
         <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
-        <a class="footer-Link" href="about.html">About Us</a>
-        <a class="footer-Link" href="about.html">Contact Us</a>
-        <a class="footer-Link" href="about.html">FAQ</a>
-        <a class="footer-Link" href="about.html">Setting</a>
+        <a class="footer-Link" href="/about.html">About Us</a>
+        <a class="footer-Link" href="/about.html#ContactUs">Contact Us</a>
+        <a class="footer-Link" href="/faq.html">FAQ</a>
+        <a class="footer-Link" href="/setting.html">Setting</a>
         <span tabindex="0">@2023 ICT Master Hub</span>
     </div>
     </footer>
     <div id="unfocus"></div>
-    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+    <button id="backToTop_btn" aria-label="Back To Top Button"><img src="/include/global/arrow-up-solid.svg"></button>
 </body>
 </html>

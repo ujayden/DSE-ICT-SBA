@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>About Us - ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/include/global/style.css">
+    <link rel="stylesheet" href="/include/global/style_responsive.css">
+    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
+    <link rel="stylesheet" href="/include/styles/about.css">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/global/script.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
+    <script src="/include/scripts/about.js" defer></script>
+    <!--Load bootstrap-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div id="header-Bar">
+            <div class="header-Left ">
+                <div id="header-Title">
+                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
+                    <p class="slogan">Your self learning website for DSE ICT Networking.</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div id="dropdownMenu_Courses">
+                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
+                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
+                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/library/index.html">Resource Library</a>
+                        <a href="/profile/index.html">My Profile</a>
+                        <a href="/profile/report.html">My Report</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_Explore">
+                    <span class="dropdownMenu" tabindex="0">Explore</span>
+                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
+                        <a href="/about.html#Benefit">Why using this website</a>
+                        <a href="/courses/index.html">Learning Catalog</a>
+                        <a href="/news/index.html">Latest News</a>
+                        <a href="/chatbot.html">Chatbot</a>
+                        <a href="/faq.html">Q&A</a>
+                        <a href="/setting.html">Setting</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_About" tabindex="0">
+                    <span class="dropdownMenu">More about us</span>
+                    <div id="dropdownMenu_About-List" class="dropdownContent">
+                        <a href="/about.html">About Us</a>
+                        <a href="/about.html#ContactUs">Contact Us</a>
+                        <a href="/credit.html">Acknowledgement</a>
+                    </div>
+                </div>                
+                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
+            </nav>
+            <div class="header-Right">
+                    <div id="header-Search">
+                        <!-- Search -->
+                        <div id="search">
+                            <form action="search.html" method="get" class="searchForm">
+                                <input type="text" name="q" placeholder="Search..." class="searchbox">
+                            </form>
+                        </div>
+                    </div>
+                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
+            </div>
+        </div>
+        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
+            <div id="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
+                <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
+                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
+                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
+                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
+                    <a href="/profile/report.html" tabindex="-1">My Report</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
+                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
+                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
+                    <a href="/news/index.html" tabindex="-1">Latest News</a>
+                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
+                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/setting.html" tabindex="-1">Setting</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
+                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
+                    <a href="/about.html" tabindex="-1">About Us</a>
+                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+            </div>
+            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
+                <div id="search">
+                    <form action="search.html" method="get" class="searchForm">
+                        <input type="text" name="q" placeholder="Search Something" class="searchbox" tabindex="-1">
+                    </form>
+                </div>
+            </div>
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
+                <span>Welcome! </span>
+                <span id="username"></span>
+                <span id="message-of-the-day"></span>
+                <a href="/portal.html" id="user-Login" tabindex="-1">Login now</a>
+            </div>
+        </div>
+        <!-- Breadcrumns, disable in first page  -->
+        <!-- Use a latest news banner to replace breadcrumbs in first page -->
+        <nav id="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><span>About Us</span></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <section id="poster">
+            <div id="posterImgContainer">
+                <img src="/include/images/about_us/poster_mountain.jpg" alt="Poster Image - A blue mountain" class="posterImg">
+            </div>
+            <div id="posterTextContainer">
+                <h2 class="posterText">
+                    Learn <strong>ICT Networking</strong></strong> with us
+                </h2>
+            </div>
+        </section>
+        <section id="introduction">
+            <h1>Introduction</h1>
+            <p>ICT Master Hub is a self-learning website for DSE ICT Networking. It is a website that provides a platform intergrated all the things you want to help you study on your ICT. You can now learn ICT Networking with not only your text book, but also with interactive, intereasting meterials here. Text-note, educational videos, interactive games, and even a chatbot that can answer your questions. All of these are here to help you learn ICT Networking in a more intereasting way.</p>
+            <p>By converting boaring text and terms into them, you can learn more effective and efficient. Study your ICT Networking with others, and share your knowledge with others. You can also learn from others by reading their notes and hints, all on this website.</p>
+            <p>Wish you can learn ICT Networking with us!</p>
+        </section>
+        <section id="about">
+            <h1>About Us</h1>
+            <h2>Background</h2>
+            <p>Nowadays, there are a lot of self-learning website for learning networking. However, as they are not design for HKDSE ICT concepts, they are not effective for HKDSE ICT Students. This website will be able to provide course suitable for you.</p>
+            <h2>Our Mission and Vision</h2>
+            <p>At our core, we are here to help you learn ICT Networking in a more intereasting way. We are here to help you learn ICT Networking with not only your text book, but also with interactive, intereasting meterials here. Text-note, educational videos, interactive games, and even a chatbot that can answer your questions. </p>
+        </section>
+        <section id="Benefit">
+            <h1>Why using this website?</h1>
+            <div id="benefitContainer">
+                <div class="card shadow my-3">
+                    <div class="BenefitDetailContainer">
+                      <div class="BenefitImgContainer" style="background-color: #858092;">
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/graduation-cap-solid.svg" alt="Graduation Cap">
+                      </div>
+                      <div class="BenefitTextContainer" id="about-benefit-lp">
+                        <h3><span class="posterBenefit-Bold">Fully design</span> for ICT students.</h3>
+                        <p>This website&rsquo;s learning path has fully designed only for practicing HKDSE ICT Student.</p>
+                        <hr>
+                        <p>Unlike other self-learning website, this website is designed for HKDSE ICT students. All the course content are designed for HKDSE ICT students to make sure all the things you learn will be useful for your exam. Additional information is reduced to make sure you can learn the most important things in a short time.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card shadow my-3">
+                    <div class="BenefitDetailContainer">
+                      <div class="BenefitImgContainer" style="background-color: #877174;">
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/coins-solid.svg" alt="Coins">
+                      </div>
+                      <div class="BenefitTextContainer" id="about-benefit-free">
+                        <h3><span class="posterBenefit-Bold">Easy to use</span> and <span class="posterBenefit-Bold">free</span>.</h3>
+                        <p>Our website is easy to use and free. You can learn anytime and anywhere.</p>
+                        <hr>
+                        <p>The website use modern design to provide a easy to use interface. It is free to register an account. You can access the website anytime and anywhere whatever you are using a computer or a mobile phone, or at home, school library, or even on the bus and metro. No need to use your finger to zoom the page, the website will automatically adjust the size of the page to fit your screen.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card shadow my-3">
+                    <div class="BenefitDetailContainer">
+                      <div class="BenefitImgContainer" style="background-color: #6c5e8b;">
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/wrench-solid.svg" alt="Wrench">
+                      </div>
+                      <div class="BenefitTextContainer" id="about-benefit-dlp">
+                        <h3>Enjoy learning with <span class="posterBenefit-Bold">Dynamic Learning Path</span> for you.</h3>
+                        <p>4 levels of difficulties are available.</p>
+                        <hr>
+                        <p>From beginner, basic, advanced, to expert. We will choose the most suitable learning path for you.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card shadow my-3">
+                    <div class="BenefitDetailContainer">
+                      <div class="BenefitImgContainer" style="background-color: #858092;">
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/flag.png" alt="Flag">
+                      </div>
+                      <div class="BenefitTextContainer" id="about-benefit-ptr">
+                        <h3><span class="posterBenefit-Bold">Progress Tracking</span> is that simple.</h3>
+                        <p>Track your progress easily with just a few clicks.</p>
+                        <hr>
+                        <p>You can see your progres in the dashboard and progress tracking report page. Detailed information about your progress is available in the progress tracking report page.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card shadow my-3">
+                    <div class="BenefitDetailContainer">
+                      <div class="BenefitImgContainer" style="background-color: #877174;">
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/clock-regular.svg" alt="Clock"> 
+                      </div>
+                      <div class="BenefitTextContainer" id="about-benefit-effective">
+                        <h3>Learning more <span class="posterBenefit-Bold">efficiency</span> with learning materials <span class="posterBenefit-Bold">free</span> of cost.</h3>
+                        <p>Challenge yourself with free text notes, videos, quizzes, interactive elements, and even free mock papers online.</p>
+                        <hr>
+                        <p>Whatever you are a visual learner, auditory learner, or even a kinesthetic learner, you can learn with your own way. You can learn with text notes, educational videos, interactive games, and even a chatbot that can answer your questions. All of these are here to help you learn ICT Networking in a more intereasting way.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card shadow my-3">
+                    <div class="BenefitDetailContainer">
+                      <div class="BenefitImgContainer" style="background-color: #6c5e8b;">
+                        <img src="/include/global/library/iconFontAwesome/menu/feat/graduation-cap-solid.svg" alt="Graduation Cap">
+                      </div>
+                      <div class="BenefitTextContainer" id="about-benefit-share">
+                        <h3>Learn with <span class="posterBenefit-Bold">others</span> and <span class="posterBenefit-Bold">share</span> your knowledge.</h3>
+                        <p>Learn with others, and share your knowledge with others.</p>
+                        <hr>
+                        <p>Share your knowledge with others by writing notes and hints. You can also learn from others by reading their notes and hints, all on this website.</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <section id="ContactUs">
+            <h1>Contact Us</h1>
+            <p>Have any questions? Feel free to contact us.</p>
+            <p>You may want to contact us via...</p>
+            <div id="contact-card-container">
+                <div class="contactCard card">
+                    <img src="/include/global/library/iconFontAwesome/aboutus/envelope-regular.svg">
+                    <h3>Email</h3>
+                    <hr>
+                    <a href="mailto:admin@ictmasterhub.com">admin@ictmasterhub.com</a>
+                </div>
+                <div class="contactCard card">
+                    <img src="/include/global/library/iconFontAwesome/aboutus/hashtag-solid.svg">
+                    <h3>Social Media</h3>
+                    <hr>
+                    <a href="https://www.instagram.com/ictmasterhub" target="_blank">Instagram @ictmasterhub</a>
+                    <a href="https://www.twitter.com/ictmasterhub" target="_blank">Twitter @ictmasterhub</a>
+                </div>
+                <div class="contactCard card">
+                    <img src="/include/global/library/iconFontAwesome/aboutus/map-marked-alt-solid.svg">
+                    <h3>Office Address</h3>
+                    <hr>
+                    <p>Coming Soon!</p>
+                </div>
+            </div>
+            <br>
+            <p>Or fill the form below to contact us!</p>
+        </section>
+        <section id="contactForm">
+            <div id="contactFormLHS">
+                <h1>Ask your question here!</h1>
+                <p>Leave your question here, we will reply you as soon as possible.</p>
+                <p>Or you can go to see our Frequently Asked Questions.</p>
+                <button id="openFAQ" class="contactFormBtn">Go to see FAQ</button>
+                <p>Or our chatbot can help you?</p>
+                <button id="openChatbot" class="contactFormBtn">Bring me to that chatbot!</button>    
+            </div>
+            <div id="contactFormRHS">
+                <h1>Request for help.</h1>
+                <form id="contactFormContainer">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="contactFormName" name="contactFormName" placeholder="Your name...">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" id="contactFormEmail" name="contactFormEmail" placeholder="Your email...">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="contactFormSubject" name="contactFormSubject" placeholder="Subject...">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" id="contactFormMessage" name="contactFormMessage" placeholder="Your message..." style="height:200px"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="contactFormSubmit" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Ask us now!</button>
+                  </form>
+        </section>
+        <div id="contactFormWarningContainer">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert" id="contactFormWarning">
+                
+              </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div id="footer-Title"  tabindex="0">
+            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
+        </div>
+        <div class="footer-Container">
+            <div class="footer-Left_Link">
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Learning</span>
+                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
+                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
+                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
+                    <a class="footer-Link" href="/profile/report.html">My Report</a>
+                </div>
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Explore</span>
+                    <a class="footer-Link" href="/about.html#Benefit">Reason to use this website</a>
+                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
+                    <a class="footer-Link" href="/news/index.html">Latest News</a>
+                    <a class="footer-Link" href="/faq.html">Q&A</a>
+                </div>
+            </div>
+        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
+            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
+            <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
+            <a class="footer-Link-Title-Right" href="/privacy.html">Privacy Policy</a>
+            <a class="footer-Link-Title-Right" href="/tos.html">Terms of Service</a>
+            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
+        </div>
+    </div>
+    <div class="footer-Bottom-Link">
+        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
+        <a class="footer-Link" href="/about.html">About Us</a>
+        <a class="footer-Link" href="/about.html#ContactUs">Contact Us</a>
+        <a class="footer-Link" href="/faq.html">FAQ</a>
+        <a class="footer-Link" href="/setting.html">Setting</a>
+        <span tabindex="0">@2023 ICT Master Hub</span>
+    </div>
+    </footer>
+    <div id="unfocus"></div>
+    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/include/global/style.css">
+    <link rel="stylesheet" href="/include/global/style_responsive.css">
+    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
+    <link rel="stylesheet" href="/include/styles/coursedetail.css">
+    <link rel="stylesheet" href="/include/styles/procList.css">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/global/script.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
+    <!--Load bootstrap-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div id="header-Bar">
+            <div class="header-Left ">
+                <div id="header-Title">
+                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
+                    <p class="slogan">Your self learning website for DSE ICT Networking.</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div id="dropdownMenu_Courses">
+                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
+                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
+                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/library/index.html">Resource Library</a>
+                        <a href="/profile/index.html">My Profile</a>
+                        <a href="/profile/report.html">My Report</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_Explore">
+                    <span class="dropdownMenu" tabindex="0">Explore</span>
+                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
+                        <a href="/about.html#Benefit">Why using this website</a>
+                        <a href="/courses/index.html">Learning Catalog</a>
+                        <a href="/news/index.html">Latest News</a>
+                        <a href="/chatbot.html">Chatbot</a>
+                        <a href="/faq.html">Q&A</a>
+                        <a href="/setting.html">Setting</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_About" tabindex="0">
+                    <span class="dropdownMenu">More about us</span>
+                    <div id="dropdownMenu_About-List" class="dropdownContent">
+                        <a href="/about.html">About Us</a>
+                        <a href="/about.html#ContactUs">Contact Us</a>
+                        <a href="/credit.html">Acknowledgement</a>
+                    </div>
+                </div>                
+                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
+            </nav>
+            <div class="header-Right">
+                    <div id="header-Search">
+                        <!-- Search -->
+                        <div id="search">
+                            <form action="search.html" method="get" class="searchForm">
+                                <input type="text" name="q" placeholder="Search..." class="searchbox">
+                            </form>
+                        </div>
+                    </div>
+                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
+            </div>
+        </div>
+        <!-- Display drop-dowp menu when the header does not have enough space -->
+        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
+        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
+        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
+            <div id="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
+                <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
+                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
+                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
+                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
+                    <a href="/profile/report.html" tabindex="-1">My Report</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
+                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
+                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
+                    <a href="/news/index.html" tabindex="-1">Latest News</a>
+                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
+                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/setting.html" tabindex="-1">Setting</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
+                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
+                    <a href="/about.html" tabindex="-1">About Us</a>
+                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+            </div>
+            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
+                <div id="search">
+                    <form action="search.html" method="get" class="searchForm">
+                        <input type="text" name="q" placeholder="Search Something" class="searchbox" tabindex="-1">
+                    </form>
+                </div>
+            </div>
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
+                <span>Welcome! </span>
+                <span id="username"></span>
+                <span id="message-of-the-day"></span>
+                <a href="/portal.html" id="user-Login" tabindex="-1">Login now</a>
+            </div>
+        </div>
+        <nav id="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/courses/index.html">Learning Catalog</a></li>
+                <li><span tabindex="0" id="breadcrumbs-Cureent-Page">Composory Part</span></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main class="themeAquaBlue">
+        <section id="introduction" class="introduction">
+            <div class="introduction-Title">
+                <h1>Networking: Composory Part</h1>
+                <p>The basic knowledge of networking in HKDSE.</p>
+            </div>
+        </section>
+        <section id="information">
+            <span><h5>Check List - <span>Is that suitable for you?</span></span>
+            <div class="information">
+                <h3>Who should learn this?</h3>
+                <ul class="ul-target">
+                    <li>Taking HKDSE ICT.</li>  
+                    <li>Studing at any Elective (A/B/C/D)</li>
+                </ul>
+                <div class="infoTable">
+                    <h3>Summary</h3>
+                    <div class="horizionScoll">
+                        <table>
+                            <tr>
+                                <th>Estimated time</th>
+                                <th>Number of Levels</th>
+                                <th>Difficulty</th>
+                                <th>Adaptive?</th>
+                            </tr>
+                            <tr>
+                                <td>8 hours</td>
+                                <td>4</td>
+                                <td>Easy</td>
+                                <td>Yes</td>
+                            </tr>
+                        </table>   
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="featIncluded">
+            <h2>What is included?</h2>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                                    <h5 class="mb-3">5 Normal Quiz</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                                    <h5 class="mb-3">5 Mock Paper</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                                    <h5 class="mb-3">2 Interactive Element</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 wow fadeInUp featCard" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                            <div class="mainService text-center pt-3">
+                                <div class="p-4">
+                                    <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                                    <h5 class="mb-3">Access on any device</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="description">
+            <h2>Description</h2>
+            <p>This section is designed for students who are going to take DSE ICT.</p>
+            <p>
+                The ICT Networking Compulsory Part is an essential part of the HKDSE ICT framework. In today's rapidly evolving information society, ICT has become an part of our lives. Network is an important part of that. So, in this course, you will be learn…...
+            </p>
+            <div class="descriptionRow">
+                <div>
+                    <h2>What you will learn</h2>
+                    <ul>
+                        <li>Networking and Internet Basics, such as network device and transmit technology (Wi-Fi)</li>
+                        <li>Use of Internet, such as Email</li>
+                        <li>Protocol, such as HTTP, DNS</li>
+                        <li>Concept of Data Transmission and OSI model</li>
+                        <li>Skills of answering questions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>What you will get</h2>
+                    <ul>
+                        <li>Knowledge of Networking</li>
+                        <li>Knowledge of Internet</li>
+                        <li>Knowledge of Data Transmission</li>
+                        <li>Knowledge of OSI model</li>
+                        <li>Knowledge of Protocol</li>
+                        <li>Exam skills</li>
+                    </ul>
+                </div>
+        </section>
+        <section id="levels">
+            <h2>Levels</h2>
+            <p>This curriculum divided into 4 different level to provide dynamic difficulty. The level will be automatically adjusted according to your performance.</p>
+            <p>To unlock the next level, you need to complete the previous level and pass the quiz.</p>
+            <p>Click on the level to see their details.</p>
+            <!-- Bootstrap tab-->
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-target="#progressList" data-bs-toggle="tab" href="#progressList">Progress List</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="progressList" class="tab-pane fade show active">
+                    <ol class="process-chart">
+                        <li>
+                            <div>
+                                <h3>Beginner</h3>
+                                <p><strong>Goal:</strong> Attain to basic performance</p>
+                                <ul>
+                                    <li>Learn the basic knowledge and concept</li>
+                                    <li>Relax and Interactive learning</li>
+                                    <!--Bootstrap Link to toggle-->
+                                    <li><a class="nav-link" data-bs-target="#Level1" data-bs-toggle="tab" href="#Level1">Learn more</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Basic</h3>
+                                <p><strong>Goal:</strong> Attain to average performance</p>
+                                <ul>
+                                    <li>Explain the knowledge and concept</li>
+                                    <li>Learn difficult concept</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Advanced</h3>
+                                <ul>
+                                    <li><strong>Goal: </strong>Attain to good performance</li>
+                                    <li>Explain the knowledge and concept</li>
+                                    <li>Learn abstract and difficult concept</li>
+                                    <li>Learn the exam skills</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Expert</h3>
+                                <ul>
+                                    <li><strong>Goal:</strong> Prepare for the exam</li>
+                                    <li>Learn more exam skills</li>
+                                    <li>Revise the knowledge</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+        </section>
+        <section id="composoryCourseItemContainer" class="composoryCourseItemContainer">
+            <h2>Level in this Program</h2>
+            <p>14 lectures - 8 hours</p>
+            <!--Bootstrap Span-->
+            <div class="accordion mb-5 ccicAccordion accordion-flush" id="composoryCourseItemAccordionBeginner">
+                <!-- Beginner-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemBeginner" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="introTextContainer">
+                            <p class="subText">Beginner - 1 hour</p>
+                            <h4>Network and Internet Basics</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemBeginner" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#composoryCourseItemAccordionBeginner">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lession 1: What is Network?</h4>
+                                    <h5>Matching Network Device!</h5>
+                                    <p>In this lesson, you will learn the functions of network device.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lession 1: What is Network?</h4>
+                                    <h5>Introduction to Network</h5>
+                                    <p>In this lesson, you will read a short note about network.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lession 1: What is Network?</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion mb-5 ccicAccordion accordion-flush" id="composoryCourseItemAccordionBasic">
+                <!-- Basic-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemBasic" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="introTextContainer">
+                            <p class="subText">Basic - 2 hours</p>
+                            <h4>Use of Internet</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemBasic" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#composoryCourseItemAccordionBasic">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>Everything is Digital</h5>
+                                    <p>In this lesson, you will explore the benefits and drawbacks of key digital aspects, including E-commerce, E-government, E-learning, and Search Engines.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>How they connect?</h5>
+                                    <p>In this lesson, you will learn how the Internet works with Protocols.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>Try it, sense it!</h5>
+                                    <p>In this lesson, you will have a chance to see how the Internet works in simulation.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 2: Exploring the Digital Landscape</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion mb-5 ccicAccordion accordion-flush" id="composoryCourseItemAccordionAdvanced">
+                <!-- Advanced-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemAdvanced" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="introTextContainer">
+                            <p class="subText">Advanced - 2 hours</p>
+                            <h4>Data Transmission and OSI model</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemAdvanced" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#composoryCourseItemAccordionAdvanced">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 3: Data Transmission and OSI model</h4>
+                                    <h5>What is Data Transmission?</h5>
+                                    <p>In this lesson, you will learn the concept of Data transmission , OSI model and IP.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 3: Data Transmission and OSI model</h4>
+                                    <h5>More about Data Transmission</h5>
+                                    <p>In this lesson, you will learn how streaming work, and more about Data transmission , OSI model and IP.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 3: Data Transmission and OSI model</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 4: Let's try for the exam!</h4>
+                                    <h5>Mock Test</h5>
+                                    <p>In this part, you will have a mock test for the exam.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 4: Let's try for the exam!</h4>
+                                    <h5>All things you need to know</h5>
+                                    <p>In this part, you will have a summary of the knowledge you need to know.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 4: Let's try for the exam!</h4>
+                                    <h5>Final Quiz</h5>
+                                    <p>In this lesson, you will check your understanding of this lesson.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="accordion ccicAccordion accordion-flush" id="composoryCourseItemAccordionExpert">
+                <!-- Expert-->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#composoryCourseItemExpert" aria-expanded="false" aria-controls="collapseFour">
+                        <div class="introTextContainer">
+                            <p class="subText">Expert - 3 hours</p>
+                            <h4>Exam Skills</h4>
+                        </div>
+                    </button>
+                  </h2>
+                  <div id="composoryCourseItemExpert" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#composoryCourseItemAccordionExpert">
+                    <div class="accordion-body">
+                        <div class="courseItemContainer">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 5: Before the exam</h4>
+                                    <h5>More things you need to know</h5>
+                                    <p>In this lesson, you will have learn more about Data transmission and OSI model</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 5: Before the exam</h4>
+                                    <h5>Let's data transmission!</h5>
+                                    <p>In this lesson, you will watch an animation about data transmission.</p>
+                                    <p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 6: Time for Mock Test!</h4>
+                                    <h5>Last 1 minute!</h5>
+                                    <p>In this part, you will have a quick notes about all you need to know.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>Lesson 6: Exam Skills</h4>
+                                    <h5>Mock Test</h5>
+                                    <p>In this lesson, you will have a <strong>looped</strong> mock test for the exam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <section id="enroll">
+            <h1>Are you ready to start?</h1>
+            <p>Click the button below to start your learning journey!</p>
+            <button id="enroll-btn">Start Learning</button>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div id="footer-Title"  tabindex="0">
+            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
+        </div>
+        <div class="footer-Container">
+            <div class="footer-Left_Link">
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Learning</span>
+                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
+                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
+                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
+                    <a class="footer-Link" href="/profile/report.html">My Report</a>
+                </div>
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Explore</span>
+                    <a class="footer-Link" href="/about.html#Benefit">Reason to use this website</a>
+                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
+                    <a class="footer-Link" href="/news/index.html">Latest News</a>
+                    <a class="footer-Link" href="/faq.html">Q&A</a>
+                </div>
+            </div>
+        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
+            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
+            <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
+            <a class="footer-Link-Title-Right" href="/privacy.html">Privacy Policy</a>
+            <a class="footer-Link-Title-Right" href="/tos.html">Terms of Service</a>
+            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
+        </div>
+    </div>
+    <div class="footer-Bottom-Link">
+        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
+        <a class="footer-Link" href="/about.html">About Us</a>
+        <a class="footer-Link" href="/about.html#ContactUs">Contact Us</a>
+        <a class="footer-Link" href="/faq.html">FAQ</a>
+        <a class="footer-Link" href="/setting.html">Setting</a>
+        <span tabindex="0">@2023 ICT Master Hub</span>
+    </div>
+    </footer>
+    <div id="unfocus"></div>
+    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+</body>
+</html>

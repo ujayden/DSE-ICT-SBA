@@ -27,7 +27,7 @@
         <div id="header-Bar">
             <div class="header-Left ">
                 <div id="header-Title">
-                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <span><img src="/include/global/menuLogo.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
                     <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
                     <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
                     <p class="slogan">Your self learning website for DSE ICT Networking.</p>
@@ -37,7 +37,7 @@
                 <div id="dropdownMenu_Courses">
                     <span class="dropdownMenu" tabindex="0">Start Learning</span>
                     <div id="dropdownMenu_Courses-List" class="dropdownContent">
-                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/learning/index.html">Course Dashboard</a>
                         <a href="/library/index.html">Resource Library</a>
                         <a href="/profile/index.html">My Profile</a>
                         <a href="/profile/report.html">My Report</a>
@@ -58,10 +58,10 @@
                     <span class="dropdownMenu">More about us</span>
                     <div id="dropdownMenu_About-List" class="dropdownContent">
                         <a href="/about.html">About Us</a>
-                        <a href="about.html#ContactUs">Contact Us</a>
+                        <a href="/about.html#ContactUs">Contact Us</a>
                         <a href="/credit.html">Acknowledgement</a>
                     </div>
-                </div>                
+                </div>
                 <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
             </nav>
             <div class="header-Right">
@@ -76,14 +76,11 @@
                     <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
             </div>
         </div>
-        <!-- Display drop-dowp menu when the header does not have enough space -->
-        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
-        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
         <div id="headerDropDownMenu" class="headerDDM-close-vertical">
             <div id="headerDropDownMenu-Link">
                 <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
                 <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
-                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
+                    <a href="/learning/index.html" tabindex="-1">Course Dashboard</a>
                     <a href="/library/index.html" tabindex="-1">Resource Library</a>
                     <a href="/profile/index.html" tabindex="-1">My Profile</a>
                     <a href="/profile/report.html" tabindex="-1">My Report</a>
@@ -91,18 +88,18 @@
                 <hr class="headerDropDownMenu-HR">
                 <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
                 <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
-                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/about.html#Benefit" tabindex="-1">Why using this website</a>
                     <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
                     <a href="/news/index.html" tabindex="-1">Latest News</a>
                     <a href="/chatbot.html" tabindex="-1">Chatbot</a>
-                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/faq.html" tabindex="-1">Q&A</a>
                     <a href="/setting.html" tabindex="-1">Setting</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">
                 <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
                 <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
                     <a href="/about.html" tabindex="-1">About Us</a>
-                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/about.html#ContactUs" tabindex="-1">Contact Us</a>
                     <a href="/credit.html" tabindex="-1">Acknowledgement</a>
                 </div>
                 <hr class="headerDropDownMenu-HR">

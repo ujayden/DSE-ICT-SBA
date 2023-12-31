@@ -170,7 +170,7 @@ function handleLogin($jsonPayload) {
             }
         } else {
             // Password is incorrect
-            http_response_code(200);
+            http_response_code(400);
             header('Content-Type: application/json');
             echo json_encode([
                 "success" => false,
@@ -181,7 +181,7 @@ function handleLogin($jsonPayload) {
         }
     } else {
         // User does not exist
-        http_response_code(200);
+        http_response_code(400);
         header('Content-Type: application/json');
         echo json_encode([
             "success" => false,
@@ -245,7 +245,7 @@ function handleRegistration($jsonPayload) {
 
     if (mysqli_num_rows($resultCheckUser) > 0) {
         // userID already exists, return error
-        http_response_code(200);
+        http_response_code(400);
         header('Content-Type: application/json');
         echo json_encode([
             "success" => false,
@@ -272,7 +272,6 @@ function handleRegistration($jsonPayload) {
 
     if ($resultInsertUser) {
         // Registration successful, generate session token
-        $userID = mysqli_insert_id($conn);
         $sessionToken = generateSessionToken($userID);
 
         // Return success response with user information

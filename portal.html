@@ -16,18 +16,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
     <!-- Defer can reduce web loading time. -->
     <!-- Load OTPLib here -->
     <script src="/include/global/library/otplib/buffer.js" type="module"></script>
     <script src="/include/global/library/otplib/index.js" type="module"></script>
     <script src="/include/global/library/qrcode/jquery.qrcode.min.js" type="module"></script>
     <script src="/include/scripts/portal.js" defer></script>
+    <script src="/include/global/scriptHandleUserData.js" defer></script>
 
 </head>
 <body>
     <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+
     </div>
     <div id="portal-Accessibility-Toast"  class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
@@ -79,7 +80,6 @@
             <button id="login">Log In</button>
             <div class="social">
             <div class="go" id="forgetPasswordFormBtn">Forget Password?</div>
-            <div class="fb">Login with...</div>
             </div>
             <span id="portal-notice">Not registered yet? <a href="/portal.html?mode=register" id="registerNowLink">Register now.</a></span>
         </form>

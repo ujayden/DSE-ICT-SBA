@@ -21,10 +21,10 @@ if (typeof currentURL === 'undefined') {
  */
 function getUserData(userId, sessionToken) {
     return new Promise((resolve, reject) => {
-        let urlParams = "?userId=" + userId + "&sessionToken=" + sessionToken;
+        let urlParams = "?userID=" + userId + "&sessionToken=" + sessionToken;
         $.ajax({
             type: 'GET',
-            url: currentURL.origin + "/debug/userinfo.json",
+            url: currentURL.origin + "/api/getuserinfo.php" + urlParams,
             dataType: 'json',
             headers: {
                 'Accept': 'application/json',
@@ -38,8 +38,8 @@ function getUserData(userId, sessionToken) {
                 localStorage.setItem('sessionTokenExpDate', response.sessionTokenExpDate);
 
                 let userInfo = {
-                    lastFetchTime: response.featchTime,
-                    expireTime: new Date(new Date(response.featchTime).getTime() + 24 * 60 * 60 * 1000),
+                    lastFetchTime: response.fetchTime,
+                    expireTime: new Date(new Date(response.fetchTime).getTime() + 24 * 60 * 60 * 1000),
                     sessionToken: response.sessionToken,
                     sessionTokenExpDate: response.sessionTokenExpDate,
                     userId: response.userID,
@@ -66,12 +66,24 @@ function getUserData(userId, sessionToken) {
 }
 
 async function checkUserData() {
-    let userID = localStorage.getItem('userID');
-    let sessionToken = localStorage.getItem('sessionToken');
-    let sessionTokenExpDate = localStorage.getItem('sessionTokenExpDate');
+    if (window.location.href.includes("portal.html")){
+        return true;
+    }
+    let userID
+    let sessionToken
+    let sessionTokenExpDate
+    try{
+        userID = JSON.parse(localStorage.getItem('userInfo')).userId;
+        sessionToken = JSON.parse(localStorage.getItem('userInfo')).sessionToken;
+        sessionTokenExpDate = JSON.parse(localStorage.getItem('userInfo')).sessionTokenExpDate;
+
+    }catch(error){
+        console.error(error);
+    }
 
     if (userID == null || sessionToken == null || new Date(sessionTokenExpDate) < new Date()) {
         console.error("Please log in first!");
+        window.alert("Please log in first!");
         return false;
     }
 
@@ -83,6 +95,7 @@ async function checkUserData() {
             userInfo = await getUserData(userID, sessionToken);
         } catch (error) {
             console.error("Please log in again!");
+            window.alert("Please log in again!");
             return false;
         }
     }

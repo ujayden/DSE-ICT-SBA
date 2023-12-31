@@ -26,7 +26,7 @@ let btnDashboard = document.getElementById('btnDashboard');
 let searchInput = document.getElementById('headerSearch');
 
 btnDashboard.addEventListener('click', () => {
-    window.location.href = currentURL + '/dashboard/index.html';
+    window.location.href = currentURL + '/learning/index.html';
 });
 
 searchInput.addEventListener('keydown', (e) => {
@@ -34,7 +34,7 @@ searchInput.addEventListener('keydown', (e) => {
         window.location.href = currentURL + '/search.html?q=' + searchInput.value;
     }
 });
-(function loadBookMark() {
+function loadBookMark() {
     let hash = window.location.hash;
 
     if (hash) {
@@ -46,7 +46,9 @@ searchInput.addEventListener('keydown', (e) => {
             }
         }
     }
-})();
+}
+loadBookMark();
+
 document.querySelectorAll('.list-group-item').forEach(function(link) {
     link.addEventListener('click', function(event) {
         history.pushState({}, '', link.getAttribute('href'));
@@ -69,7 +71,7 @@ nextPageLinks.forEach((link) => {
 let openBeginnerQuizBtn = document.getElementById('openBeginnerQuiz');
 
 openBeginnerQuizBtn.addEventListener('click', () => {
-    window.location.href = currentURL + '/learning/beginner/quiz1.html';
+    window.open('quiz1.html', '_blank');
 }
 );
 
@@ -91,4 +93,33 @@ helpBtn.forEach((btn) => {
 let chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
 chatbotCloseBtn.addEventListener('click', () => {
     toggleChatbotContainer();
+});
+
+//Small Quiz
+let smallQuizSubmitBtns = $('.smallQuizSubmit');
+smallQuizSubmitBtns.click(function() {
+    let inputType = $(this).siblings('input').attr('type');
+    let correctAnswer = $(this).data('ans');
+    let hint = $(this).data('hint');
+    let redirect = $(this).data('redirect');
+    let radioTarget = $(this).data('radiotarget');
+    let inputValue;
+    console.log(radioTarget)
+    console.log($('input[name="' + radioTarget + '"]:checked'))
+    // Determine the input value based on the input type
+    if (inputType === 'radio') {
+        inputValue = $('input[name="' + radioTarget + '"]:checked').val();
+    } else if (inputType === 'text') {
+        inputValue = $(this).siblings('.form-control').val().trim().toLowerCase();
+    }
+
+    // Validate the answer and display the appropriate alert
+    if (inputValue === correctAnswer) {
+        swal("Good job!", "Correct!", "success").then(() => {
+            window.location.hash = redirect;
+            loadBookMark();
+        });
+    } else {
+        swal("Oops...", "Wrong! " + hint, "error");
+    }
 });

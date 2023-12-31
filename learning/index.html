@@ -58,32 +58,32 @@
 						<i class='bx bx-star nav_icon'></i>
 						<span class="nav_name">Suggested</span>
 					</a>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Completed">
+					<a href="#Completed" class="nav_link" data-bs-toggle="tab" data-bs-target="#Completed">
 						<i class='bx bx-history nav_icon'></i>
 						<span class="nav_name">Completed</span>
 					</a>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#DiscussionForum">
+					<a href="#DiscussionForum" class="nav_link" data-bs-toggle="tab" data-bs-target="#DiscussionForum">
 						<i class='bx bx-chat nav_icon'></i>
 						<span class="nav_name">Discussion Forum</span>
 					</a>
 					<hr>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Quizzes">
+					<a href="#Quizzes" class="nav_link" data-bs-toggle="tab" data-bs-target="#Quizzes">
 						<i class='bx bx-file nav_icon'></i>
 						<span class="nav_name">Quizzes</span>
 					</a>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#MockPaper">
+					<a href="#MockPaper" class="nav_link" data-bs-toggle="tab" data-bs-target="#MockPaper">
 						<i class='bx bx-file nav_icon'></i>
 						<span class="nav_name">Mock Papers</span>
 					</a>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Notes">
+					<a href="#Notes" class="nav_link" data-bs-toggle="tab" data-bs-target="#Notes">
 						<i class='bx bx-book-bookmark nav_icon'></i>
 						<span class="nav_name">Notes</span>
 					</a>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Interactive">
+					<a href="#Interactive" class="nav_link" data-bs-toggle="tab" data-bs-target="#Interactive">
 						<i class='bx bx-joystick-alt nav_icon'></i>
 						<span class="nav_name">Interactive Elements</span>
 					</a>
-					<a href="#" class="nav_link" data-bs-toggle="tab" data-bs-target="#Videos">
+					<a href="#Videos" class="nav_link" data-bs-toggle="tab" data-bs-target="#Videos">
 						<i class='bx bx-video-recording nav_icon'></i>
 						<span class="nav_name">Videos</span>
 					</a>
@@ -113,7 +113,7 @@
 				</div>
 				<div class="contentHeader-buttonContainer">
 					<button class="btn btn-primary">Check my Report</button>
-					<button class="btn btn-primary">Countinue Learning</button>
+					<a class="btn btn-primary" href="/learning/beginner/index.html">Countinue Learning</a>
 				</div>
 			</div>
 			<div class="card" id="statusCard">
@@ -124,7 +124,7 @@
 					<li class="nav-item">
 						<a class="nav-link" id="course-progress-tab" data-bs-toggle="tab" href="#statusAllProgress" role="tab" aria-controls="course-progress" aria-selected="false">Course Progress</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item" hidden>
 						<a class="nav-link" id="overview-tab" data-bs-toggle="tab" href="#statusOverview" role="tab" aria-controls="overview" aria-selected="false">Overview</a>
 					</li>
 					<li class="nav-item">
@@ -152,7 +152,8 @@
 						<p><span>Beginner</span><spam> - </spam><span>0%</span></p>
 					</div>
 					<div class="tab-pane fade statusContainer" id="statusOverview">
-						2
+						<!-- Under development -->
+						<!-- Hide the option -->
 					</div>
 					<div class="tab-pane fade statusContainer" id="statusAchievements">
 						<h2>Your Achievements</h2>
@@ -185,36 +186,119 @@
 				</div>
 			</div>
 			<div>
-				<!-- Rest of the task -->
 				<h3>More things to do</h3>
+				<div class="card">
+					<div class="card-header bg-white">
+						<div class="d-flex justify-content-between align-items-center">
+						  <h4 class="mb-0">Compulsory Part - Basic Section</h4>
+						  <div>
+							<span>Est. Time: 1.2 hours</span>
+							<span>Score: --/20</span>
+						  </div>
+						</div>
+					</div>
+					<div class="card-body">
+						<p>Welcome to your first course in ICT Master Hub! This course will introduce more interesting things about ICT.</p>
+						<p>You may check the course overview <a href="/courses/composory.html#composoryCourseItemAccordionBasic">here</a>.</p>
+						<div class="d-flex justify-content-end"  style="cursor: not-allowed;">
+							<button class="btn btn-primary btn-callStart" id="courseStartBasic" disabled>Start <i class='bx bx-right-arrow-alt'></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-white">
+						<div class="d-flex justify-content-between align-items-center">
+						  <h4 class="mb-0">Compulsory Part - Advanced Section</h4>
+						  <div>
+							<span>Est. Time: 2.5 hours</span>
+							<span>Score: --/40</span>
+						  </div>
+						</div>
+					</div>
+					<div class="card-body">
+						<p>Welcome to your first course in ICT Master Hub! This course will introduce more deeper knowledge of ICT.</p>
+						<p>You may check the course overview <a href="/courses/composory.html#composoryCourseItemAccordionAdvanced">here</a>.</p>
+						<div class="d-flex justify-content-end"  style="cursor: not-allowed;">
+							<button class="btn btn-primary btn-callStart" id="courseStartAdvanced" disabled>Start <i class='bx bx-right-arrow-alt'></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-white">
+						<div class="d-flex justify-content-between align-items-center">
+						  <h4 class="mb-0">Compulsory Part - Expert Section</h4>
+						  <div>
+							<span>Est. Time: 3.3 hours</span>
+							<span>Score: --/60</span>
+						  </div>
+						</div>
+					</div>
+					<div class="card-body">
+						<p>Welcome to your first course in ICT Master Hub! This course will help you prepare for the real exam with the most difficult questions.</p>
+						<p>You may check the course overview <a href="/courses/composory.html#composoryCourseItemAccordionExpert">here</a>.</p>
+						<div class="d-flex justify-content-end" style="cursor: not-allowed;">
+							<button class="btn btn-primary btn-callStart" id="courseStartExpert" disabled>Start <i class='bx bx-right-arrow-alt'></i></button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="tab-pane fade contentContainer" id="Suggested">
-			Suggested
+			<div>
+				<div>
+					<h1>Suggested</h1>
+					<h4>Here are the task and activities you may be need to do or review.</h4>
+					<hr>
+					<p>Feature is under development. We are sorry for the inconvenience.</p>
+				</div>
+			</div>
 		</div>
 		<div class="tab-pane fade contentContainer" id="Completed">
-			Completed
+			<div>
+				<div>
+					<h1>Completed</h1>
+					<h4>Here are the task and activities you have completed.</h4>
+					<hr>
+					<p>Feature is under development. We are sorry for the inconvenience.</p>
+				</div>
+			</div>
 		</div>
 		<div class="tab-pane fade contentContainer" id="DiscussionForum">
 			<iframe src="/include/discussionForum/index.html" frameborder="0"  id="discussionForumIframe" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 		</div>
 		<div class="tab-pane fade contentContainer" id="Quizzes">
-			Quizzes
+
 		</div>
 		<div class="tab-pane fade contentContainer" id="MockPaper">
-			Mock Paper
+			<div>
+				<div>
+					<h1>Mock Paper</h1>
+					<h4>Here are the mock paper you can try.</h4>
+					<hr>
+					<p>No mock paper available. Please check back later when you reach higher level.</p>
+				</div>
+			</div>
 		</div>
 		<div class="tab-pane fade contentContainer" id="Notes">
 			Notes
 		</div>
 		<div class="tab-pane fade contentContainer" id="Interactive">
-			Interactive
+			<div>
+				<div>
+					<h1>Interactive Elements</h1>
+					<h4>Feel reading plain text is boring? Try our interactive elements!</h4>
+					<hr>
+					<p>Feature is under development. We are sorry for the inconvenience.</p>
+				</div>
+			</div>
 		</div>
 		<div class="tab-pane fade contentContainer" id="Videos">
-			Videos
+			
 		</div>
 	</main>
 	</div>
 	<div id="greyBackground"></div>
+	<button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+
 </body>
 </html>

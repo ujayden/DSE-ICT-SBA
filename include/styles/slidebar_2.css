@@ -244,6 +244,12 @@ main{
 		left: 0;
 	}
 }
+@media screen and (max-width: 768px){
+	.header_Title{
+		font-size: 1.2rem;
+	}
+	
+}
 #courseDiff{
     padding: 1rem;
 }

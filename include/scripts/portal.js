@@ -2,7 +2,7 @@
 
 let loginBtn = document.getElementById('login');
 let loginForm = document.getElementById('portalForm');
-let loginForm_userID = loginForm.querySelector('#userID');
+let loginForm_userID = loginForm.querySelector('#UserID');
 let loginForm_password = loginForm.querySelector('#password');
 let loginForm_rememberMe = loginForm.querySelector('#rememberMe');
 let loginForm_passwordToggle = loginForm.querySelector('#password-toggle');
@@ -66,14 +66,8 @@ loginForm_rememberMe.addEventListener('change', function (e) {
     storeRememberMeState();
 });
 function success(inMode){
-    if(inMode === 'login'){
-        window.location.href = '/learning/dashboard.html';
-    }else{
-        warningPrompt("Success!", "Now you can login with your new account.");
-        setTimeout(function(){
-            displayLoginForm();
-        }, 3000);
-    }
+    //Abadoned.
+    return false;
 }
 
 
@@ -227,15 +221,21 @@ function submitLoginInfo() {
         method: 'POST',
         data: loginInfo,
         success: function (data) {
-            let response = JSON.parse(data);
+            let response = data;
             if (response.success === true) {
-                success(loginInfo.mode);
+                getUserData(response.userID, response.sessionToken);
+                //Redirect to dashboard
+                warningPrompt("Success!", "You have successfully logged in. You will be redirected to the dashboard in 3 seconds.");
+                setTimeout(function(){
+                    window.location.href = '/learning/index.html';
+                }, 3000);
             } else if (response.mfa_enabled === true) {
                 switchForm('mfa');
             }
         },
         error: function (data) {
-            warningPrompt("Sorry, there was an error logging in.", "Please try again later.");
+            let errorMessage = JSON.parse(data.responseText).errorMsg;
+            warningPrompt("Sorry, there was an error logging in.", "Please try again. Error message: " + errorMessage);
             console.error("Error logging in");
 
         }
@@ -289,15 +289,33 @@ function submitRegisterInfo() {
         method: 'POST',
         data: regInfo,
         success: function (data) {
-            let response = JSON.parse(data);
-            if (response.success === true) {
-                success(regInfo.mode);
-            } else if (response.mfa_enabled === true) {
-                switchForm('mfa');
+            try{
+                console.log(data);
+                let successResponse = data;
+                //Call external function to save user info
+                if (getUserData(successResponse.userID, successResponse.sessionToken) === false) {
+                    warningPrompt("Error", "Sorry, there was an error while registering.");
+                }else{
+                    warningPrompt("Success!", "You have successfully registered an account with user ID: " + successResponse.userID + ". You will be redirected to the dashboard in 3 seconds.");
+                    setTimeout(function(){
+                        window.location.href = '/learning/index.html';
+                    }, 3000);
+                }
+            }catch(error){
+                console.error(error);
             }
         },
         error: function (data) {
-            warningPrompt("Sorry, there was an error while registering.", "Please try again later.");
+            let response;
+            try{
+                response = JSON.parse(data.responseText);
+            }catch(error){
+            }
+            if (response.errorMsg !== undefined) {
+                warningPrompt("Sorry, there was an error while registering.", response.errorMsg);   
+            }else{
+                warningPrompt("Sorry, there was an error while registering.", "Please try again later.");
+            }
             console.error("Error while registering.");
 
         }
@@ -314,7 +332,6 @@ let resetPasswordFormEmailVerificationCode = document.getElementById('resetPassw
 let resetPasswordFormTOTPVerificationCode = document.getElementById('resetPasswordFormTOTP');
 let resetPasswordFormSecurityQuestionVerificationCode = document.getElementById('resetPasswordFormSecurityQuestion');
 function submitForgotPasswordInfo() {
-    debugger
     let userID = resetPasswordForm_userID.value;
     let password = resetPasswordForm_password.value;
     let recaptchaToken = null;
@@ -532,7 +549,6 @@ regFormUserIDChange()
 //User click verify button
 regFormMFAVerifyBtn.addEventListener('click', function(e){
     e.preventDefault();
-    debugger
     verifyTOTPCode();
 });
 function verifyTOTPCode(){

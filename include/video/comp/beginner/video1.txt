@@ -1,0 +1,29 @@
+Welcome, viewers. Have you ever wondered how your home network works? How does your phone magically connect to the Internet without a physical cable?
+
+Today I'm going to show the inner workings of your home network and show you how it all comes together with my assistant, Jack.
+
+Jack, say hello to them. Hi, I am Jack. Let's start now.
+
+All right, let's introduce this. This is a wireless router. It acts as the central hub of your home network, connecting your devices to the Internet. It's just like a traffic controller for data flowing in and out of your home, is it?
+
+You are right, Jack. But what about this? This is, umm... umm... what? Jack, they are called RJ-45 ports that allow you to connect devices using a wired connection. But we will come back to them later.
+
+But first, let's understand how the router connects to the Internet. Okay.
+
+To connect to the Internet, we need a modem. This device converts the signal from the Internet service provider into a form that allows the router to understand it. It's just like the translator between your home network and the vast Internet. There are different types of modems, such as cable modems and DSL modems. In this case, we have an optical modem which provides high-speed internet with fiber optic cable. It's really fast.
+
+Hey, what is this box with...? ...RJ-45 Port Jayden. They are switches when you have multiple devices in your home network and need more ports. A switch is here to help you. It expands the number of available ports and allows you to connect more devices to your network.
+
+Now let's set up our whole own home network. It is easier than you might think. I know, I know.
+
+First, connect the router to the computer using an Ethernet cable. Great.
+
+Once connected, we will go through a quick setup process. And it is time to go. Next step, Jack, you do it. Let me do it.
+
+On the smartphone, go to the Wi-Fi settings and select your network. Yes.
+
+My phone is now connected to the Internet wirelessly. I can browse the web, stream videos, and stay connected wherever you go within your home.
+
+Look at all these devices connected to our home network. From laptops to smart TVs, gaming consoles to smart home devices, they're all now connected together. It's really powerful. Can't wait to see everything connected to my home network to build a smart home.
+
+And that's how your home network works. You have learned all about how to build a network for your home yourself. Thank you for joining me today and I wish you can use your knowledge for your exam. Bye.

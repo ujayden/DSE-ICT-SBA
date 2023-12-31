@@ -14,6 +14,6 @@ function playMusic(){
 function changeVolume(){
     audio.volume = Math.round(volumeSlider.value) / 100 * 0.5;
 }
-audio.volume = 0.5;
+audio.volume = 0.3;
 playButton.addEventListener('click', playMusic);
 volumeSlider.addEventListener('change', changeVolume);

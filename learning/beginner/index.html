@@ -23,6 +23,7 @@
 	<script src="/include/global/scriptUser.js" defer></script>
 	<script src="/include/global/scriptHandleUserData.js" async></script>
     <script src="/include/global/library/plyr/plyr.js" defer></script>
+    <script src="/include/global/library/sweetalert/sweetalert.min.js" defer></script>
     <script src="/include/scripts/scriptLearningBeginner.js" defer></script>
 <body id="body-pd">
 	<div class="header" id="header">
@@ -32,7 +33,7 @@
 		</div>
 		<div class="headerRight">
             <input type="text" placeholder="Search..." class="searchBox form-control" id="headerSearch">
-            <button class="btn btn-primary" id="btnDashboard">Dashboard</button>
+            <button class="btn btn-primary" id="btnDashboard"><i class='bx bx-log-out'></i></button>
 		</div>
 	</div>
 	<div id="bodyContainer">
@@ -48,7 +49,7 @@
                         <div class="courseDiff-content">
                             <h2>Beginner</h2>
                             <p>ICT Networking - Compulsory</p>
-                            <p>? Tasks</p>
+                            <p>5 Tasks</p>
                         </div>
                     </div>
                 </div>
@@ -61,87 +62,55 @@
                         </div>
                     </div>
                 </a>
-                <a href="#Lession1Task1" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab" aria-current="true">
+                <a href="#Lesson1Task1" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab" aria-current="true">
                     <div class="list-container">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                             <strong class="mb-1">Task 1 Introduction to Networking!</strong>
-                            <small>20mins</small>
+                            <small>8 mins</small>
                         </div>
                     </div>
                 </a>
-                <a href="#Lession1Task2" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab" aria-current="true">
+                <a href="#Lesson1Task2" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab" aria-current="true">
                     <div class="list-container">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                             <strong class="mb-1">Task 2 Matching Network Device!</strong>
-                            <small>20mins</small>
+                            <small>20 mins</small>
                         </div>
                     </div>
                 </a>
-                <a href="#Lession1Task3-page1" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                <a href="#Lesson1Task3-page1" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
                     <div class="list-container">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 1</strong>
+                            <strong class="mb-1">Task 3 Switch and Hub</strong>
+                            <small>6 mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lesson1Task3-page2" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Router, Wireless Router, AP</strong>
+                            <small>6 mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lesson1Task3-page3" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Cables and Connectors</strong>
                             <small>15mins</small>
                         </div>
                     </div>
                 </a>
-                <a href="#Lession1Task3-page2" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                <a href="#Lesson1Task3-page4" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
                     <div class="list-container">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 2</strong>
+                            <strong class="mb-1">Task 3 Connect Method</strong>
                             <small>15mins</small>
                         </div>
                     </div>
                 </a>
-                <a href="#Lession1Task3-page3" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
-                    <div class="list-container">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 3</strong>
-                            <small>15mins</small>
-                        </div>
-                    </div>
-                </a>
-                <a href="#Lession1Task3-page4" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
-                    <div class="list-container">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 4</strong>
-                            <small>15mins</small>
-                        </div>
-                    </div>
-                </a>
-                <a href="#Lession1Task3-page5" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
-                    <div class="list-container">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 5</strong>
-                            <small>15mins</small>
-                        </div>
-                    </div>
-                </a>
-                <a href="#Lession1Task3-page6" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
-                    <div class="list-container">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 6</strong>
-                            <small>15mins</small>
-                        </div>
-                    </div>
-                </a>
-                <a href="#Lession1Task3-page7" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
-                    <div class="list-container">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 7</strong>
-                            <small>15mins</small>
-                        </div>
-                    </div>
-                </a>
-                <a href="#Lession1Task3-page8" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
-                    <div class="list-container">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Task 3 Introduction to Networking - Page 8</strong>
-                            <small>15mins</small>
-                        </div>
-                    </div>
-                </a>
-                <a href="#Lession1Task4" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                <a href="#Lesson1Task4" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
                     <div class="list-container">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                             <strong class="mb-1">Task 4 Lesson Summary</strong>
@@ -149,11 +118,11 @@
                         </div>
                     </div>
                 </a>
-                <a href="#Lession1Task5" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                <a href="#Lesson1Task5" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
                     <div class="list-container">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                             <strong class="mb-1">Task 5 Let's Take a Quiz!</strong>
-                            <small>15mins</small>
+                            <small>10mins</small>
                         </div>
                     </div>
                 </a>
@@ -195,10 +164,10 @@
                   </div>
                 </div>
             </div>
-            <a href="#Lession1Task1">Next Page >></a>
+            <a href="#Lesson1Task1" class="nextPageLink">Next Page >></a>
               
 		</div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task1">
+        <div class="tab-pane fade contentContainer" id="Lesson1Task1">
 			<h3>Task 1 Introduction to Networking!</h3>
             <p>Watch the video and answer the question.</p>
             <div class="card">
@@ -213,6 +182,9 @@
 
                         An error occurred. Please change another browser to view the video.
                     </video>
+                    <div>
+                        <p>Download video transcript <a href="/include/video/comp/beginner/video1.txt" download>here</a>.</p>
+                    </div>
                 </div>
             </div>
             <div class="card">
@@ -222,24 +194,28 @@
                         <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
                         <div>
                             <span>Write down the name of device that is used to connect two or more LAN together.</span>
-                            <input type="text" class="form-control">
-                            <button class="btn btn-primary">Submit</button>
+                            <input type="text" class="form-control smallQuizTextInput">
+                            <button class="btn btn-primary smallQuizSubmit" data-ans="switch" data-hint="Hint: It looks like a box." data-redirect="#Lesson1Task2">Submit</button>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#Lession1Task2" class="nextPageLink">Next Page >></a>
+                        <a href="#Lesson1Task2" class="nextPageLink">Next Page >></a>
                     </div>
                 </div>
             </div>
         </div>
-		<div class="tab-pane fade contentContainer" id="Lession1Task2">
+		<div class="tab-pane fade contentContainer" id="Lesson1Task2">
 			<h3>Task 2 Matching Network Device!</h3>
             <p>Match the network device with its function.</p>
-            
+            <div class="card">
+                <div class="card-body">
+                    <h2>We are working on it!</h2>
+                    <p>Sorry for the inconvenience, we are working on this feature. Please come back later.</p>
+                </div>
+            </div>
             <iframe></iframe>
             <div class="card">
                 <div class="card-body">
@@ -249,240 +225,279 @@
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
+
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#" class="">Next Page >></a>
+                        <a href="#Lesson1Task3-page1" class="nextPageLink">Next Page >></a>
                     </div>
                 </div>
             </div>
 		</div>
-		<div class="tab-pane fade contentContainer" id="Lession1Task3-page1">
+		<div class="tab-pane fade contentContainer" id="Lesson1Task3-page1">
 			<h3>Task 3 Introduction to Networking!</h3>
             <p>What is it?</p>
             <h2>Switch and Hub</h2>
             <div class="card">
                 <div class="card-body">
-                    <div>
-                        <h3>Task Completion</h3>
-                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
-                            <button class="btn btn-primary btn-help">Ask for Help</button>
-                        </div>
-                        <a href="#" class="">Next Page >></a>
-                    </div>
+                    <h2>
+                        Introduction
+                    </h2>
+                    <p>
+                        You might have always heard about a switch, but no, not the one with blue and red controllers that's with fun and games. Instead, we're talking about a device act as essential character in the networking world. What's morem have you also heard about its  brother, hub? We are going to investite the inner thing about them.
+                    </p>
+                    <h2>
+                        What is a switch?
+                    </h2>
+                    <img src="/include/images/comp/beginner/switch.jpg" alt="Switch">
+                    <p>
+                        A switch is a device that connects multiple devices together on a Local Area Network (LAN). It is a multi-port network bridge that uses hardware addresses to process and forward data at the data link layer (layer 2) of the OSI model. Some switches can also process data at the network layer (layer 3) by additionally incorporating routing functionality.
+                        <br>
+                        A swtich provide a central location to connect cables from workstations, printers, and servers. Switches allow you to send data to specific devices on the network rather than broadcasting it to all connected devices.
+                        It provide more physical ports and commonly connect to routers and other devices that allow access to the Internet with physical cables.
+                    </p>
+                    <h2>
+                        What is a hub?
+                    </h2>
+                    <p>
+                        A hub is a device that has same purpose as switch - to connect multiple devices together on a Local Area Network (LAN). 
+                        However, it is a single port device that broadcast data to all connected devices.
+                        It is a multi-port repeater that operates at the physical layer (layer 1) of the OSI model.
+                        It is slower than a switch, because it cannot filter data, and it processes data one bit at a time. That causing traffic jam in the network!
+                    </p>
                 </div>
             </div>
-        </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page2">
-			<h3>Task 3 Introduction to Networking!</h3>
-            <p>What is it?</p>
-            <h2>Router and Wireless Router</h2>
             <div class="card">
                 <div class="card-body">
                     <div>
                         <h3>Task Completion</h3>
                         <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
+                        <div class="flex-row">
                             <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
+                            <br>
+                            <input type="radio" name="switch-function" value="A" id="qt-1-switch"><label for="qt-1-switch">A. To connect two or more LANs together.</label>
+                            <br>
+                            <input type="radio" name="switch-function" value="B" id="qt-1-wifi"><label for="qt-1-wifi">B. Broadcast WiFi signal to the surrounding.</label>
+                            <br>
+                            <input type="radio" name="switch-function" value="C" id="qt-1-decoration"><label for="qt-1-decoration">C. Is a decoration.</label>
+                            <br>
+                            <input type="radio" name="switch-function" value="D" id="qt-1-router"><label for="qt-1-router">D. To connect two or more WANs together.</label>
+                            <br>
+                            <button class="btn btn-primary smallQuizSubmit" data-ans="A" data-hint="Hint: It's used in networking to connect devices." data-redirect="#Lesson1Task3-page2" data-radiotarget="switch-function">Submit</button>
                         </div>
+                        
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
+                            
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#" class="">Next Page >></a>
+                        <a href="#Lesson1Task3-page2" class="nextPageLink">Next Page >></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page3">
+        <div class="tab-pane fade contentContainer" id="Lesson1Task3-page2">
+            <h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Router, Wireless Router, AP</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Introduction</h2>
+                    <p>
+                        If your home has more than one computer, you should have a router to connect them to the Internet. What is a router? What is a wireless router? What is an access point? We are going to introduce you to them.
+                    </p>
+                    <h2>Router / Wireless Router</h2>
+                    <p>
+                        A router is a device that connects multiple networks together. It is a device that connect LAN (your home network) to WAN (the Internet). It can forward data between computer network based on IP. (Switch is based on MAC address)
+                    </p>
+                    <p>
+                        Wireless router is a router with wireless function. It can broadcast WiFi signal to the surrounding. It is commonly use in home network, so we will call it Home Router.
+                    </p>
+                    <p>
+                        But do you know? Home Router also offer special function, not only DHCP, but NAT, Firewall are also included. It making the setup of home network easier.
+                    </p>
+                    <h2>Access Point</h2>
+                    <p>
+                        Access Point (AP) is a device that allow wireless devices to connect to a wired network using WiFi. When there are a lot of area have to be cover, such as your school, AP is used to cover the area.
+                    </p>
+                    <p>
+                        However, it can't connect to the Internet directly. It has to connect to a router to connect to the Internet.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>There is no task requirement for this task before you can proceed to the next task.</p>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary btn-help">Ask for Help</button>
+                        </div>
+                        <a href="#Lesson1Task3-page3" class="nextPageLink">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="tab-pane fade contentContainer" id="Lesson1Task3-page3">
 			<h3>Task 3 Introduction to Networking!</h3>
             <p>What is it?</p>
-            <h2>Switch</h2>
+            <h2>Cables and Connectors</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Introduction</h2>
+                    <p>
+                        Oh, no! You have just bought a new computer, but you don't have a network cable to connect it to the Internet. What should you do? Don't worry, we are going to introduce you to some common network cables and connectors.
+                    </p>
+                
+                    <h2>RJ-45 and RJ-11</h2>
+                    <p>
+                        RJ-45 are commonly use between router - switch - device, such as your computer. It provided very fast speed, from 10Mbps to 1000Mbps, and even 10Gbps! It is also known as Ethernet cable.
+                    </p>
+                    <p>
+                        RJ-11 are commonly use between on the telephone line. It provided very slow speed. In the past, it is used to connect to the Internet as "dial-up" connection. But only 56Kbps, it is very slow. Imagine download an 4MB file using more than 2 mintues!
+                    </p>
+                    <h2>Fun Fact</h2>
+                    <p>
+                        RJ-11 can also be use with DSL, a fast Internet connection. But it is still slower than RJ-45.
+                    </p>
+                    <h2>BNC</h2>
+                    <p>
+                        BNC is a type of connector used for coaxial cable. It is commonly use for TV. But it also can be use in networking. It is used to connect a network adapter to a PC for temporary use.
+                    </p>
+                    <h2>Optical Fiber</h2>
+                    <p>
+                        Optical fiber cables are made with glass or plastic and transmit data using light. They are capable of carrying much more data than copper cables and better in against electromagnetic interference. However, they are more expensive and difficult to install than copper cables. Addition devices are required to convert the data from light to electrical signals and vice versa.
+                    </p>    
+                    <h2>Fun Fact</h2>
+                    <p>Summary of them:</p>
+                    <div class="tableContainer">
+                        <div class="horizionScoll">
+                            <table>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>RJ-45</th>
+                                    <th>RJ-11</th>
+                                    <th>BNC</th>
+                                    <th>Optical</th>
+                                </tr>
+                                <tr>
+                                    <td>Connector Type</td>
+                                    <td>8 Pins / 4 Pins</td>
+                                    <td>4 Pins</td>
+                                    <td aria-label="N/A">-</td>
+                                    <td aria-label="N/A">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Bandwidth</td>
+                                    <td>High (Mbps to Gbps)</td>
+                                    <td>Low (Kbps to low Mbps)</td>
+                                    <td>High, but usually have to share with your neighbours</td>
+                                    <td>Extremly high (Gbps)</td>
+                                </tr>
+                                <tr>
+                                    <td>Distance</td>
+                                    <td>Small</td>
+                                    <td>Wide</td>
+                                    <td>Wide</td>
+                                    <td>Very wide</td>
+                                </tr>
+                                <tr>
+                                    <td>Affect by Interference</td>
+                                    <td>Yes</td>
+                                    <td>Yes</td>
+                                    <td>Small</td>
+                                    <td>No</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h2>UTP and STP</h2>
+                    <p>
+                        Unshielded Twisted Pair (UTP) and Shielded Twisted Pair (STP) are two types of cabling used in network connections. UTP cables are more common in residential networking as it is cheap. STP cables are used in environments where there is a higher risk of electromagnetic interference, such as server room!
+                    </p>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-body">
                     <div>
                         <h3>Task Completion</h3>
                         <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
+                        <div class="flex-row">
+                            <span>MC Question: What port is used to connect a network adapter to a PC for temporary use?</span>
+                            <br>
+                            <input type="radio" name="network-adapter-port" value="A" id="qt-2-bnc"><label for="qt-2-bnc">A. BNC port</label>
+                            <br>
+                            <input type="radio" name="network-adapter-port" value="B" id="qt-2-rj45"><label for="qt-2-rj45">B. RJ-45 port</label>
+                            <br>
+                            <input type="radio" name="network-adapter-port" value="C" id="qt-2-usb"><label for="qt-2-usb">C. USB port</label>
+                            <br>
+                            <input type="radio" name="network-adapter-port" value="D" id="qt-2-pcie"><label for="qt-2-pcie">D. PCIE port</label>
+                            <br>
+                            <button class="btn btn-primary smallQuizSubmit" data-ans="C" data-hint="Hint: It's a universal port used in networking for connecting various peripherals." data-redirect="#Lesson1Task3-page4" data-radiotarget="network-adapter-port">Submit</button>
+                        </div>                        
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
+                            
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#" class="">Next Page >></a>
+                        <a href="#Lesson1Task3-page4" class="nextPageLink">Next Page >></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page4">
+        <div class="tab-pane fade contentContainer" id="Lesson1Task3-page4">
 			<h3>Task 3 Introduction to Networking!</h3>
             <p>What is it?</p>
-            <h2>Switch</h2>
+            <h2>Connect Method</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Introduction</h2>
+                    <p>
+                        There are two types of connection method in networking, wired and wireless. Wired connection is more stable and faster than wireless connection. However, it is not as convenient as wireless connection. Wireless connection is more convenient, but it is slower and less stable than wired connection. But do you know what connection method they have?
+                    </p>
+                    <h2>Wired Connection</h2>
+                    <h3>Quick List</h3>
+                    <ul>
+                        <li>UTP / STP - Home wired connection</li>
+                        <li>Optical Fiber - Long distance wired connection</li>
+                        <li>Coaxial Cable - Wired connection for cable modem</li>
+                    </ul>
+                    <p>Wire connection is more stable and faster than wireless connection, as it is less affected by electromagnetic interference. In addition, it is more secure than wireless connection, as it is harder to intercept the data.</p>
+                    <h2>Wireless Connection</h2>
+                    <h3>Quick List</h3>
+                    <ul>
+                        <li>WiFi - Wireless connection for home</li>
+                        <li>Bluetooth - Wireless connection for short distance</li>
+                        <li>Cellular - Wireless connection for mobile devices</li>
+                        <li>NFC - Wireless connection for short distance - Mobile Payment</li>
+                        <li>RFID - Wireless connection for short distance - Tracking, Inventory for warehouse</li>
+                    </ul>
+                    <p>Wireless connection offer higher flexibility - You don't have to struggle with the cable. However, it is slower and less stable than wired connection.</p>
+                    <h2>Fun Fact</h2>
+                    <p>WiFi has different security option  - WPA2, WPA3 - are commonly used. You can set a password to protect your WiFi from being steal by your neighbours.</p>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-body">
                     <div>
                         <h3>Task Completion</h3>
-                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
+                        <p>There is no task requriement for this task before you can proceed to the next task.</p>
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
+                            
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#" class="">Next Page >></a>
+                        <a href="#Lesson1Task4" class="nextPageLink">Next Page >></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page5">
-			<h3>Task 3 Introduction to Networking!</h3>
-            <p>What is it?</p>
-            <h2>Switch</h2>
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h3>Task Completion</h3>
-                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
-                            <button class="btn btn-primary btn-help">Ask for Help</button>
-                        </div>
-                        <a href="#" class="">Next Page >></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page6">
-			<h3>Task 3 Introduction to Networking!</h3>
-            <p>What is it?</p>
-            <h2>Switch</h2>
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h3>Task Completion</h3>
-                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
-                            <button class="btn btn-primary btn-help">Ask for Help</button>
-                        </div>
-                        <a href="#" class="">Next Page >></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page7">
-			<h3>Task 3 Introduction to Networking!</h3>
-            <p>What is it?</p>
-            <h2>Switch</h2>
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h3>Task Completion</h3>
-                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
-                            <button class="btn btn-primary btn-help">Ask for Help</button>
-                        </div>
-                        <a href="#" class="">Next Page >></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task3-page8">
-			<h3>Task 3 Introduction to Networking!</h3>
-            <p>What is it?</p>
-            <h2>Switch</h2>
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h3>Task Completion</h3>
-                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
-                        <div>
-                            <span>MC Question: What is the function of a switch?</span>
-                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
-                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
-                            <input type="radio" name="switch" value="C">C. Is a decoration.
-                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
-                            <button class="btn btn-primary btn-help">Ask for Help</button>
-                        </div>
-                        <a href="#" class="">Next Page >></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task4">
-			<h3>Task 2 Matching Network Device!</h3>
+        <div class="tab-pane fade contentContainer" id="Lesson1Task4">
+			<h3>Task 4 Lesson Summary</h3>
             <p>Summary of the lesson.</p>
             
             <iframe></iframe>
@@ -494,15 +509,15 @@
                     </div>
                     <div>
                         <div>
-                            <button class="btn btn-primary">Mark as Complete</button>
+                            
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#" class="">Next Page >></a>
+                        <a href="#Lesson1Task5" class="nextPageLink">Next Page >></a>
                     </div>
                 </div>
             </div>
 		</div>
-        <div class="tab-pane fade contentContainer" id="Lession1Task5">
+        <div class="tab-pane fade contentContainer" id="Lesson1Task5">
 			<h3>Task 5 Let's take a quiz!</h3>
             <p>Check your understanding of the lesson.</p>
             
@@ -517,7 +532,7 @@
                         <div>
                             <button class="btn btn-primary btn-help">Ask for Help</button>
                         </div>
-                        <a href="#" class="">Next Page >></a>
+                        <a href="/learning/index.html" aria-label="Back to Dasbboard">Back to Dasbboard >></a>
                     </div>
                 </div>
             </div>

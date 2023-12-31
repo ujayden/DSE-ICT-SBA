@@ -496,6 +496,12 @@ function startQuiz() {
     allowCountDown = true;
     //Start the countdown timer
     cdTimerInterval = setInterval(updateCDTimer, 1000);
+    //Start the music
+    try{
+        playMusic()
+    }catch(e){
+    }
+
 }
 function resumeQuiz() {
     timeLimit--;
@@ -678,11 +684,18 @@ function gradeQuiz(){
     totalScore = mcTotalScore + lqTotalScore;
 }
 function closeWindow(){
+    console.log("Close window");
     window.close();
 }
 let userData = undefined;
 //Post-quiz
+let constructedResult = false;
 function constructResult(){
+    if (constructedResult == true) {
+        return false;
+    }else{
+        constructedResult = true;
+    }
     //TODO: Construct a div with diff color for every question to show user correct or wrong.
     //MC Questions
     MCquizQuestions.forEach(function (question) {
@@ -723,8 +736,7 @@ function constructResult(){
                 "Retry",
                 true,
                 function () {
-                    closeWindow();
-                    postQuiz();
+                        postQuiz();
                 },
                 "Exit"
             );
@@ -793,12 +805,8 @@ function postQuiz(){
         //Upload the result to the server
         //Get the user ID from local storage
         let userID = undefined;
-        try{
-            userID = localStorage.getItem("userID");
-        }catch(e){
-            console.Error("User ID is not found. Send to server as anonymous.");
-            userID = "anonymous";
-        }
+        console.log(localStorage.getItem("userInfo"));
+        userID = JSON.parse(localStorage.getItem("userInfo")).userId;
         //Reminder: The quiz ID is already loaded in the beginning - quizAttributes.ID
         //Setup the data to send
         let data = {
@@ -816,7 +824,7 @@ function postQuiz(){
         data = JSON.stringify(data);
         console.log(data);
         //Send the data to the server
-        let url = currentURL.origin + "/api/quizResult.php";
+        let url = currentURL.origin + "/api/quizResult-1.php";
         $.ajax({
             type: "POST",
             url: url,
@@ -849,7 +857,6 @@ submitQuiz.forEach(function (button) {
         //Post the result to the server
         postQuiz();
         //Tell the user the result is uploaded + show the result
-        closeWindow();
     },);
 }
 );
@@ -866,7 +873,6 @@ document.getElementById("submitQuizIntro").addEventListener("click", function ()
     //Post the result to the server
     postQuiz();
     //Tell the user the result is uploaded + show the result
-    closeWindow();
 }
 );
 

@@ -16,4 +16,4 @@ The following third-party libraries are used in this project:
 ### [Font Awesome Free](https://fontawesome.com/)
 - License: [CC BY 4.0 License](https://fontawesome.com/license/free)
 
-
+More information about third-party libraries and resource can be found in the /credit.html file.

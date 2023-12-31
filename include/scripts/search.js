@@ -82,6 +82,7 @@ async function setupResult(){
     }
 }
 function renderResult(data){
+    console.log(data);
     searchResultTermsContainer.innerHTML = data.terms;
     searchResultTermsCount.innerHTML = data.totalResults;
     searchResultTotalPagesCount.innerHTML = data.totalPages;
@@ -93,20 +94,8 @@ function renderResult(data){
             //Use appendChild instead of innerHTML to prevent XSS
             let resultHashtags = document.createElement('ul');
             resultHashtags.classList.add('hashtagList');
-            try {
-                result.hashtags.forEach((hashtag) => {
-                    let hashtagLink = "/search.html?q=" + encodeURIComponent(hashtag);
-                    let hashtagItem = document.createElement('li');
-                    let hashtagItemLink = document.createElement('a');
-                    hashtagItemLink.setAttribute('href', hashtagLink);
-                    hashtagItemLink.innerHTML = hashtag;
-                    hashtagItem.appendChild(hashtagItemLink);
-                    resultHashtags.appendChild(hashtagItem);
-                }); 
-            }catch (e) {
-                let hashtagItem = document.createElement('li');
-                resultHashtags.appendChild(hashtagItem);
-            }
+            console.log(result.hashtag);
+            resultHashtags.innerHTML = result.hashtag;
             //Use appendChild instead of innerHTML to prevent XSS
             let resultItemTitle = document.createElement('a');
             resultItemTitle.classList.add('result-item-title');

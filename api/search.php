@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     echo json_encode([
         "success" => false,
         "error" => "Method Not Allowed",
-        "errorMsg" => "Only GET requests are allowed. Please use a valid GET request."
+        "errorMsg" => "Only GET requests are allowed. Please send a valid GET request."
     ]);
     exit;
 }

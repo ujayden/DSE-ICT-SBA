@@ -47,11 +47,11 @@
 					</a>
 				</div>
                 <div class="nav-tabs nav_list na">
-                    <a href="#SearchNews" class="nav_link active navActive" data-bs-toggle="tab" data-bs-target="#SearchNews">
+                    <a href="#SearchNews" class="nav_link" data-bs-toggle="tab" data-bs-target="#SearchNews">
                         <i class='bx bx-search-alt nav_icon'></i>
                         <span class="nav_name">Search News</span>
                     </a>
-                    <a href="#AllNews" class="nav_link" data-bs-toggle="tab" data-bs-target="#AllNews">
+                    <a href="#AllNews" class="nav_link active navActive" data-bs-toggle="tab" data-bs-target="#AllNews">
                         <i class='bx bx-star nav_icon'></i>
                         <span class="nav_name">All News</span>
                     </a>
@@ -79,7 +79,7 @@
 	<!-- Main Content Container with bootstrap tab-content and tab-pane -->
     <main class="tab-content">
         <!-- Search News -->
-        <div class="tab-pane fade active show" id="SearchNews" style="text-align: center;">
+        <div class="tab-pane fade" id="SearchNews" style="text-align: center;">
             <h3>Search News</h3>
             <!-- Search Form -->
             <form id="searchNewsForm" style="max-width: 400px; margin: auto;">
@@ -90,34 +90,46 @@
                     </button>
                 </div>
             </form>
-            <p id="searchInProgress" style="display: none;">Feature in development. Please check back later!</p>
+            <p id="searchInProgress" style="display: none;">Feature in development. You may see some unexpected results. As Filttering will soon be available in search results.<br>You will redirect soon!</p>
         </div>
         
         
     
         <!-- All News -->
-        <div class="tab-pane fade" id="AllNews">
+        <div class="tab-pane fade active show" id="AllNews">
             <div class="newsContainer">
                 <h3>All News</h3>
                 <p>Latest updates and news from around the world.</p>
-                <h3>Sep 2023</h3>
+                <hr>
+                <h3>Dec 2023</h3>
                 <div class="gridNewsContainer">
                     <div class="card" style="width: 18rem;">
-                        <img src="path_to_your_image.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">TalkGPT 5 has been released</h5>
-                        <p class="card-text">The biggest AI company Alice Corp. has recently announce the new content-generating AI TalkGPT 5 released.</p>
-                        <a href="#" class="btn btn-primary">Share</a>
-                        <a href="#" class="btn btn-secondary">Read More</a>
+                        <h5 class="card-title">NVIDIA has released GeForce RTX 4090 D GPU to the China market</h5>
+                        <p class="card-text">RTX 4090 D is an adjustment of RTX 4090, which is designed for the China market. It is designed to be more slower to escape the ban of the US government.</p>
+                        <button class="btn btn-primary btn-primary-override newsShare">Share</button>
+                        <a href="/news/technology/4090D_for_CN-2023-12-29.html" class="btn btn-primary btn-primary-override">Read More</a>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
-                        <img src="path_to_your_image.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">TalkGPT 5 has been released</h5>
-                        <p class="card-text">The biggest AI company Alice Corp. has recently announce the new content-generating AI TalkGPT 5 released.</p>
-                        <a href="#" class="btn btn-primary">Share</a>
-                        <a href="#" class="btn btn-secondary">Read More</a>
+                            <h5 class="card-title">Intel release a new AI chip to compete with NVIDIA</h5>
+                            <p class="card-text">Intel has recently released a new AI chip, Gaudi3, for AI computing.</p>
+                            <p class="card-text">
+                            <button class="btn btn-primary btn-primary-override newsShare">Share</button>
+                            <a href="/news/technology/Intel_new_chip-2023-12-14.html" class="btn btn-primary btn-primary-override" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3>Oct 2023</h3>
+                <div class="gridNewsContainer">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Latest Timetable of HKDSE 2024</h5>
+                            <p class="card-text">The HKEAA has recently announced the latest timetable of HKDSE 2024. The exam will be held in April 2024.</p>
+                            <button class="btn btn-primary btn-primary-override newsShare">Share</button>
+                            <a href="/news/dseict/latest_timetable_dse2024-2023-10-23.html" class="btn btn-primary btn-primary-override" target="_blank">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -126,23 +138,64 @@
     
         <!-- ICT DSE -->
         <div class="tab-pane fade" id="ICTDSE">
-            <h3>ICT DSE</h3>
-            <p>Latest trends and updates in the ICT sector of the stock market.</p>
-            <!-- Additional content such as stock market data or analysis goes here -->
+            <div class="newsContainer">
+                <h3>ICT DSE</h3>
+                <p>Latest news about the HKDSE andICT exam.</p>
+                <hr>
+                <h3>Oct 2023</h3>
+                <div class="gridNewsContainer">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Latest Timetable of HKDSE 2024</h5>
+                            <p class="card-text">The HKEAA has recently announced the latest timetable of HKDSE 2024. The exam will be held in April 2024.</p>
+                            <button class="btn btn-primary btn-primary-override newsShare">Share</button>
+                            <a href="/news/dseict/latest_timetable_dse2024-2023-10-23.html" class="btn btn-primary btn-primary-override" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     
         <!-- World IT News -->
         <div class="tab-pane fade" id="WorldITNews">
-            <h3>World IT News</h3>
-            <p>Breaking news and in-depth analysis of the global IT industry.</p>
-            <!-- Additional content such as IT news articles or expert opinions goes here -->
+            <div class="newsContainer">
+                <h3>World IT News</h3>
+                <p>Make yourself up-to-date with the latest IT news around the world.</p>
+                <hr>
+                <h3>Oct 2023</h3>
+                <div class="gridNewsContainer">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                        <h5 class="card-title">NVIDIA has released GeForce RTX 4090 D GPU to the China market</h5>
+                        <p class="card-text">RTX 4090 D is an adjustment of RTX 4090, which is designed for the China market. It is designed to be more slower to escape the ban of the US government.</p>
+                        <button class="btn btn-primary btn-primary-override newsShare">Share</button>
+                        <a href="/news/technology/4090D_for_CN-2023-12-29.html" class="btn btn-primary btn-primary-override" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Intel release a new AI chip to compete with NVIDIA</h5>
+                            <p class="card-text">Intel has recently released a new AI chip, Gaudi3, for AI computing.</p>
+                            <p class="card-text">
+                            <button class="btn btn-primary btn-primary-override newsShare">Share</button>
+                            <a href="/news/technology/Intel_new_chip-2023-12-14.html" class="btn btn-primary btn-primary-override" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     
         <!-- This Site -->
         <div class="tab-pane fade" id="ThisSite">
-            <h3>This Site</h3>
-            <p>Information about this website, its mission, team, and more.</p>
-            <!-- Additional content such as team bios, site history, or FAQs goes here -->
+            <div class="newsContainer">
+                <h3>This Site</h3>
+                <p>Check maintanence and updates notice and informaton about this site.</p>
+                <hr>
+                <div>
+                    <h3>No News!</h3>
+                    <p>There is no news about this site. When there is news, such as maintanence, updates, etc., or latest features, they will be posted here.</p>
+                </div>
+            </div>
         </div>
     </main>
     

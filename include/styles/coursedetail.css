@@ -93,7 +93,7 @@
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    border: 3px solid #FFFF00;
+    border: 3px solid #fff000;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     font-weight: bold;
 }
@@ -194,5 +194,4 @@ th{
     .courseItemContainer{
         grid-template-columns: repeat(1, 1fr);
     }
-    
 }

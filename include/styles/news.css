@@ -27,3 +27,17 @@
     box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
     padding: 20px;
 }
+.btn-primary-override{
+    background-color: #2455E6;
+    color: white;
+    border: 3px solid #2455E6;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.btn-primary-override:hover{
+    background-color: white;
+    color: #2455E6;
+}

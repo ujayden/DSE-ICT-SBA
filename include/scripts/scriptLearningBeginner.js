@@ -72,3 +72,23 @@ openBeginnerQuizBtn.addEventListener('click', () => {
     window.location.href = currentURL + '/learning/beginner/quiz1.html';
 }
 );
+
+let helpBtn = document.querySelectorAll('.btn-help');
+let chatBotContainer = document.getElementById('chatbotContainer');
+function toggleChatbotContainer() {
+    if (chatBotContainer.style.display === 'none') {
+        chatBotContainer.style.display = 'block';
+    } else {
+        chatBotContainer.style.display = 'none';
+    }
+}
+
+helpBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        toggleChatbotContainer();
+    });
+});
+let chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
+chatbotCloseBtn.addEventListener('click', () => {
+    toggleChatbotContainer();
+});

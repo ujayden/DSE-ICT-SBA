@@ -1,0 +1,10 @@
+@font-face {
+    font-family:"Open Sans";
+    src: url("/include/global/font/OpenSans-Regular.ttf")
+    format("truetype")
+}
+@font-face {
+    font-family: "Jost";
+    src: url("/include/global/font/Jost-Bold.ttf")
+    format("truetype")
+}

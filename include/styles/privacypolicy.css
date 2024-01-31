@@ -1,0 +1,63 @@
+main{
+    margin: 40px;
+}
+#introduction{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+    padding-bottom: 0px;
+}
+.posterInfoContainer{
+    position: relative;
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: #2455E6;
+    box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.7);
+}
+.posterInfoContainer h1{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.light{
+    width: 35%;
+    background-color: #FFFFFF;
+    color: black;
+}
+#PrivacyPolicy{
+    margin-top: 40px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 16px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    padding: 20px;
+}
+@media screen and (max-width: 768px){
+    #introduction{
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        padding-bottom: 8px;
+    }
+    .posterInfoContainer{
+        width: 100%;
+    }
+    .light{
+        width: 100%;
+    }
+    #PrivacyPolicy{
+        margin: 0px;
+    }
+    main{
+        margin: 8px;
+    }
+    
+}

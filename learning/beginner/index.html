@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Currently, thid and slidebar.js and slidebar.css are not under license of this project. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title -->
+	<title>Learning! - ICT Master Hub</title>
+	<!--Load libray here.-->
+	<script src="/include/global/library/jquery-3.7.1.min.js" defer></script>		
+	<!--Load bootstrap-->
+	<link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">		
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+	<!-- Load CSS and Script here -->
+	<link rel="stylesheet" href="/include/global/styleLearning.css">
+	<link rel="stylesheet" href="/include/global/style_backtoTop.css">
+	<link rel="stylesheet" href="/include/global/scrollbar.css">
+	<link rel="stylesheet" href="/include/styles/slidebar_2.css">
+	<link rel="stylesheet" href="/include/global/styleUser.css">
+    <link rel="stylesheet" href="/include/global/library/plyr/plyr.css">
+	<script src="/include/global/slidebar.js" defer></script>
+	<script src="/include/global/scriptUser.js" defer></script>
+	<script src="/include/global/scriptHandleUserData.js" async></script>
+    <script src="/include/global/library/plyr/plyr.js" defer></script>
+    <script src="/include/scripts/scriptLearningBeginner.js" defer></script>
+<body id="body-pd">
+	<div class="header" id="header">
+		<div class="headerLeft">
+			<div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+			<p class="header_Title">Learning Networking!</p>
+		</div>
+		<div class="headerRight">
+            <input type="text" placeholder="Search..." class="searchBox form-control" id="headerSearch">
+            <button class="btn btn-primary" id="btnDashboard">Dashboard</button>
+		</div>
+	</div>
+	<div id="bodyContainer">
+	<div class="l-navbar" id="nav-bar">
+        <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white super-nav" style="width: 380px;background-color: white;">
+            <div id="courseDiff">
+                <div class="card">
+                    <div class="card-body cD-card-body">
+                        <!-- Course Icon and Diff-->
+                        <div class="lv-container">
+                            <span>1</span>
+                        </div>
+                        <div class="courseDiff-content">
+                            <h2>Beginner</h2>
+                            <p>ICT Networking - Compulsory</p>
+                            <p>? Tasks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-group list-group-flush border-bottom scrollarea">
+                <a href="#Welcome" class="list-group-item list-group-item-action active lh-tight" data-bs-toggle="tab" aria-current="true">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Welcome Page</strong>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task1" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab" aria-current="true">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 1 Introduction to Networking!</strong>
+                            <small>20mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task2" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab" aria-current="true">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 2 Matching Network Device!</strong>
+                            <small>20mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page1" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 1</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page2" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 2</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page3" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 3</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page4" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 4</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page5" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 5</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page6" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 6</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page7" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 7</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task3-page8" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 3 Introduction to Networking - Page 8</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task4" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 4 Lesson Summary</strong>
+                            <small>10mins</small>
+                        </div>
+                    </div>
+                </a>
+                <a href="#Lession1Task5" class="list-group-item list-group-item-action lh-tight" data-bs-toggle="tab">
+                    <div class="list-container">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Task 5 Let's Take a Quiz!</strong>
+                            <small>15mins</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+          </div>        
+	</div>
+	<!-- Main Content Container with bootstrap tab-content and tab-pane -->
+	<main class="tab-content">
+		<div class="tab-pane fade active show contentContainer" id="Welcome">
+            <div class="contentHeader">
+                <div>
+                    <h1>Welcome to ICT Networking!</h1>
+                    <p>Beginner - 1h 0m</p>
+                    <h2>Network and Internet Basics - Lesson 1</h2>
+                    <h5>Description</h5>
+                    <p>When people talk about the Internet, they often talk about connecting with others, sharing information, and exploring different websites. But have you ever wondered how all of this works? How do computers send messages across the world? This lesson will introduce you how they connect and communicate with each other with some hardware.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="container mt-4">
+                <!-- Lesson Breakdown -->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h3 class="card-title">Lesson Breakdown</h3>
+                    <p class="card-text">Introduction to Networking: Understand the basics of what networks are and how they enable connectivity.</p>
+                    <p class="card-text">Matching Network Devices: Learn about various network devices and their functions in a network.</p>
+                    <p class="card-text">Final Quiz: Test your understanding of networking basics with a final quiz.</p>
+                  </div>
+                </div>
+              
+                <!-- What You Will Learn -->
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title">What You Will Learn</h3>
+                    <ul class="ul-Tick">
+                        <li><i class='bx bx-check'></i> The definition and importance of a network.</li>
+                        <li><i class='bx bx-check'></i> How to identify and understand the functions of critical network devices.</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            <a href="#Lession1Task1">Next Page >></a>
+              
+		</div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task1">
+			<h3>Task 1 Introduction to Networking!</h3>
+            <p>Watch the video and answer the question.</p>
+            <div class="card">
+                <div class="card-body">
+                    <video id="player" playsinline controls data-plyr-config='{ "title": "Introduction to Networking"}'>
+                        <source src="/include/video/comp/beginner/video1.mp4" type="video/mp4" size="1080" data-quality="fullhd">
+                        <source src="/include/video/comp/beginner/video1-720p.mp4" type="video/mp4" size="720" data-quality="hd">
+                        <source src="/include/video/comp/beginner/video1-480p.mp4" type="video/mp4" size="480" data-quality="sd">
+                        <track kind="captions" label="English" src="/include/video/comp/beginner/video1_EN.vtt" srclang="en" default />
+                        <track kind="captions" label="Traditional Chinese" src="/include/video/comp/beginner/video1_TC.vtt" srclang="zh-HK" />
+                        <track kind="captions" label="Simplified Chinese" src="/include/video/comp/beginner/video1_SC.vtt" srclang="zh-Hans" />
+
+                        An error occurred. Please change another browser to view the video.
+                    </video>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>Write down the name of device that is used to connect two or more LAN together.</span>
+                            <input type="text" class="form-control">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#Lession1Task2" class="nextPageLink">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="tab-pane fade contentContainer" id="Lession1Task2">
+			<h3>Task 2 Matching Network Device!</h3>
+            <p>Match the network device with its function.</p>
+            
+            <iframe></iframe>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>There is no task requriement for this task before you can proceed to the next task.</p>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="tab-pane fade contentContainer" id="Lession1Task3-page1">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch and Hub</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page2">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Router and Wireless Router</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page3">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page4">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page5">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page6">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page7">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task3-page8">
+			<h3>Task 3 Introduction to Networking!</h3>
+            <p>What is it?</p>
+            <h2>Switch</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the checkpoint quiz before you can proceed to the next task.</p>
+                        <div>
+                            <span>MC Question: What is the function of a switch?</span>
+                            <input type="radio" name="switch" value="A"><label>A. To connect two or more LAN together.</label>
+                            <input type="radio" name="switch" value="B">B. Broadcast WiFi signal to the surrounding.
+                            <input type="radio" name="switch" value="C">C. Is a decoration.
+                            <input type="radio" name="switch" value="D">D. To connect two or more WAN together.
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task4">
+			<h3>Task 2 Matching Network Device!</h3>
+            <p>Summary of the lesson.</p>
+            
+            <iframe></iframe>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>There is no task requriement for this task before you can proceed to the next task.</p>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Mark as Complete</button>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <div class="tab-pane fade contentContainer" id="Lession1Task5">
+			<h3>Task 5 Let's take a quiz!</h3>
+            <p>Check your understanding of the lesson.</p>
+            
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3>Task Completion</h3>
+                        <p>Complete the quiz before you can proceed to the next lesson.</p>
+                        <button class="btn btn-primary" id="openBeginnerQuiz">Start Quiz</button>
+                    </div>
+                    <div>
+                        <div>
+                            <button class="btn btn-primary">Ask for Help</button>
+                        </div>
+                        <a href="#" class="">Next Page >></a>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</main>
+	</div>
+	<div id="greyBackground"></div>
+</body>
+</html>

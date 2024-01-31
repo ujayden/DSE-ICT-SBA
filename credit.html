@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Acknowledgement - ICT Master Hub</title>
+    <!--Load libray here.-->
+    <script src="/include/global/library/jquery-3.7.1.min.js" defer></script>
+    <!-- Load CSS and Script here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/include/global/style.css">
+    <link rel="stylesheet" href="/include/global/style_responsive.css">
+    <link rel="stylesheet" href="/include/global/style_backtoTop.css">
+    <link rel="stylesheet" href="/include/styles/credit.css">
+    <link rel="stylesheet" href="/include/global/scrollbar.css">
+    <!-- Defer can reduce web loading time. -->
+    <script src="/include/global/script.js" defer></script>
+    <script src="/include/global/script_backtoTop.js" defer></script>
+    <!--Load bootstrap-->
+    <link rel="stylesheet" href="/include/global/library/bootstrap/bootstrap.min.css">
+    <script src="/include/global/library/bootstrap/bootstrap.min.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div id="header-Bar">
+            <div class="header-Left ">
+                <div id="header-Title">
+                    <span><img src="/include/global/library/iconFontAwesome/menu/bars-solid.svg" id="headerDropDownMenu-Logo" alt="Toggle drop-down Menu" tabindex="0"></span>
+                    <a href="/index.html"><img src="/include/global/logo.png" id="header-Logo" alt="Logo of ICT Master"></a>
+                    <h1 tabindex="0"><a class="header-Title-link" href="/index.html">ICT Master Hub</a></h1>
+                    <p class="slogan">Your self learning website for DSE ICT Networking.</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div id="dropdownMenu_Courses">
+                    <span class="dropdownMenu" tabindex="0">Start Learning</span>
+                    <div id="dropdownMenu_Courses-List" class="dropdownContent">
+                        <a href="/learning/index.html">Dashboard</a>
+                        <a href="/library/index.html">Resource Library</a>
+                        <a href="/profile/index.html">My Profile</a>
+                        <a href="/profile/report.html">My Report</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_Explore">
+                    <span class="dropdownMenu" tabindex="0">Explore</span>
+                    <div id="dropdownMenu_Explore-List" class="dropdownContent">
+                        <a href="/about.html#Benefit">Why using this website</a>
+                        <a href="/courses/index.html">Learning Catalog</a>
+                        <a href="/news/index.html">Latest News</a>
+                        <a href="/chatbot.html">Chatbot</a>
+                        <a href="/faq.html">Q&A</a>
+                        <a href="/setting.html">Setting</a>
+                    </div>
+                </div>
+                <div id="dropdownMenu_About" tabindex="0">
+                    <span class="dropdownMenu">More about us</span>
+                    <div id="dropdownMenu_About-List" class="dropdownContent">
+                        <a href="/about.html">About Us</a>
+                        <a href="about.html#ContactUs">Contact Us</a>
+                        <a href="/credit.html">Acknowledgement</a>
+                    </div>
+                </div>                
+                <button id="header-tryit-btn-nav" class="header-tryit-btn">Try it now</button>
+            </nav>
+            <div class="header-Right">
+                    <div id="header-Search">
+                        <!-- Search -->
+                        <div id="search">
+                            <form action="search.html" method="get" class="searchForm">
+                                <input type="text" name="q" placeholder="Search..." class="searchbox">
+                            </form>
+                        </div>
+                    </div>
+                    <button id="header-tryit-btn" class="header-tryit-btn">Try it now</button>
+            </div>
+        </div>
+        <!-- Display drop-dowp menu when the header does not have enough space -->
+        <!-- Amination Ref: https://codepen.io/nilbog/pen/gONmOr-->
+        <!-- Attribute - Tabindex must be add for accessibility issue - See script.js for more info-->
+        <div id="headerDropDownMenu" class="headerDDM-close-vertical">
+            <div id="headerDropDownMenu-Link">
+                <span id="headerDropDownMenu-Link-Courses" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Courses</span>
+                <div id="headerDropDownMenu-Link-Courses-List" class="headerDropDownMenu-Link-List">
+                    <a href="/learning/index.html" tabindex="-1">Dashboard</a>
+                    <a href="/library/index.html" tabindex="-1">Resource Library</a>
+                    <a href="/profile/index.html" tabindex="-1">My Profile</a>
+                    <a href="/profile/report.html" tabindex="-1">My Report</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-Explore" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">Explore</span>                
+                <div id="headerDropDownMenu-Link-Explore-List" class="headerDropDownMenu-Link-List">
+                    <a href="/reason.html" tabindex="-1">Why using this website</a>
+                    <a href="/courses/index.html" tabindex="-1">Learning Catalog</a>
+                    <a href="/news/index.html" tabindex="-1">Latest News</a>
+                    <a href="/chatbot.html" tabindex="-1">Chatbot</a>
+                    <a href="/help.html" tabindex="-1">Q&A</a>
+                    <a href="/setting.html" tabindex="-1">Setting</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+                <span id="headerDropDownMenu-Link-About" class="headerDropDownMenu-Text headerDropDownMenu-Title" tabindex="-1">More about us</span>
+                <div id="headerDropDownMenu-Link-About-List" class="headerDropDownMenu-Link-List">
+                    <a href="/about.html" tabindex="-1">About Us</a>
+                    <a href="/contact.html" tabindex="-1">Contact Us</a>
+                    <a href="/credit.html" tabindex="-1">Acknowledgement</a>
+                </div>
+                <hr class="headerDropDownMenu-HR">
+            </div>
+            <div id="headerDropDownMenu-Search" class="headerDropDownMenu-element">
+                <div id="search">
+                    <form action="search.html" method="get" class="searchForm">
+                        <input type="text" name="q" placeholder="Search Something" class="searchbox" tabindex="-1">
+                    </form>
+                </div>
+            </div>
+            <div id="headerDropDownMenu-User" class="headerDropDownMenu-Text">
+                <span>Welcome! </span>
+                <span id="username"></span>
+                <span id="message-of-the-day"></span>
+                <a href="/portal.html" id="user-Login" tabindex="-1">Login now</a>
+            </div>
+        </div>
+        <!-- Breadcrumns, disable in first page  -->
+        <!-- Use a latest news banner to replace breadcrumbs in first page -->
+        <nav id="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><span tabindex="0" id="breadcrumbs-Cureent-Page">Acknowledgement</span></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <section id="main">
+            <h1>Acknowledgement</h1>
+            <p>Thanks for the following resources and libraries provided by the open source community / Public Domain / Creative Commons.</p>
+            <div class="card">
+                <div class="card-header">Catagory: Icons</div>
+                <div class="card-body">
+                  <h5 class="card-title">FontAwesome</h5>
+                  <p class="card-text">Offical Website: <a href="https://fontawesome.com/">https://fontawesome.com/</a></p>
+                  <p class="card-text">License: [CC BY 4.0 License] (<a href="https://fontawesome.com/license/free">https://fontawesome.com/license/free</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Catagory: CSS Framework</div>
+                <div class="card-body">
+                  <h5 class="card-title">Bootstrap</h5>
+                  <p class="card-text">Offical Website: <a href="https://getbootstrap.com/">https://getbootstrap.com/</a></p>
+                    <p class="card-text">License: [MIT License] (<a href="https://jquery.org/license/">https://jquery.org/license/</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Catagory: JavaScript Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">jQuery</h5>
+                  <p class="card-text">Offical Website: <a href="https://jquery.com/">https://jquery.com/</a></p>
+                  <p class="card-text">License: [MIT License] (<a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Category: HTML/CSS</div>
+                <div class="card-body">
+                    <h5 class="card-title">Simple and Responsive Process Chart (HTML5 and CSS3 only)</h5>
+                    <p class="card-text">Code Source: <a href="https://codepen.io/erinesullivan/pen/MvOdOE">https://codepen.io/erinesullivan/pen/MvOdOE</a></p>
+                    <p class="card-text">Description: This is a simple and responsive process chart implemented using HTML5 and CSS3 only.</p>
+                    <p class="card-text">License: [Special] "Copyright (c) 2023 by Erin E. Sullivan (https://codepen.io/erinesullivan/pen/MvOdOE) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: JavaScript Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">jquery.qrcode.min</h5>
+                    <p class="card-text">Official Website: <a href="http://jeromeetienne.github.io/jquery-qrcode/">http://jeromeetienne.github.io/jquery-qrcode/</a></p>
+                    <p class="card-text">License: MIT License (<a href="https://github.com/jeromeetienne/jquery-qrcode/blob/master/MIT-LICENSE.txt">https://github.com/jeromeetienne/jquery-qrcode/blob/master/MIT-LICENSE.txt</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: JavaScript Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">DOMPurify</h5>
+                    <p class="card-text">Official Website: [Information Not Directly Available]</p>
+                    <p class="card-text">License: Apache License 2.0 OR Mozilla Public License 2.0 (<a href="https://github.com/cure53/DOMPurify/blob/main/LICENSE">https://github.com/cure53/DOMPurify/blob/main/LICENSE</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: JavaScript Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Plyr</h5>
+                    <p class="card-text">Official Website: <a href="https://plyr.io/">https://plyr.io/</a></p>
+                    <p class="card-text">License: MIT License (<a href="https://github.com/sampotts/plyr/blob/master/LICENSE.md">https://github.com/sampotts/plyr/blob/master/LICENSE.md</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: JavaScript Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Owl Carousel</h5>
+                    <p class="card-text">Official Website: <a href="https://owlcarousel2.github.io/OwlCarousel2/">https://owlcarousel2.github.io/OwlCarousel2/</a></p>
+                    <p class="card-text">License: MIT License (<a href="https://cdnjs.com/libraries/OwlCarousel2">https://cdnjs.com/libraries/OwlCarousel2</a>)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: JavaScript Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">otplib</h5>
+                    <p class="card-text">Official Website: <a href="https://otplib.yeojz.dev/">https://otplib.yeojz.dev/</a></p>
+                    <p class="card-text">License: MIT License</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: Icon Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Boxicons</h5>
+                    <p class="card-text">Official Website: <a href="https://boxicons.com/">https://boxicons.com/</a></p>
+                    <p class="card-text">License: MIT License</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Category: PHP Library
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">otphp</h5>
+                    <p class="card-text">Official Website: -</p>
+                    <p class="card-text">License: MIT License</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Category: JavaScript Library
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">marked</h5>
+                        <p class="card-text">Official Website: <a href="https://marked.js.org">https://marked.js.org</a></p>
+                        <p class="card-text">License: MIT License (<a href="https://marked.js.org/license">https://marked.js.org/license</a>)</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Category: JavaScript Library
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">he</h5>
+                        <p class="card-text">Official Website: <a href="http://mths.be/he">http://mths.be/he</a></p>
+                        <p class="card-text">License: MIT License</p>
+                    </div>
+                </div>                                
+            </div>
+             
+
+            <!-- WIP -->
+            <!-- Quiz -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Quiz</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/cbEvoHbJnIE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@nguyendhn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nguyen Dang Hoang Nhu</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/quiz-image.jpg" alt="Quiz Image">
+            </div>
+            <!-- Notes -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Notes</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/vdaJJbls3xE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@stilclassis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marissa Grootes</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/notes-image.jpg" alt="Notes Image">
+            </div>
+            <!-- Router -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Router</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/udc7-Aw6I_o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@comparefibre?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Compare Fibre</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/router-image.jpg" alt="Router Image">
+            </div>
+            <!-- Interactive -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Interactive</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/VdcG6KZN2i8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@dynamicwang?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dynamic Wang</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/interactive-image.jpg" alt="Interactive Image">
+            </div>
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Bg1</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/11-15cYOiQc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@bookblock?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bookblock</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/bg1-image.jpg" alt="Bg1 Image">
+            </div>
+            
+            <!-- Space -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Space</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/0o_GEzyargo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@shotbycerqueira?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shot by Cerqueira</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/space-image.jpg" alt="Space Image">
+            </div>
+            <!-- Textbook -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Textbook</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/eMP4sYPJ9x0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@sharonmccutcheon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexander Grey</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/textbook-image.jpg" alt="Textbook Image">
+            </div>
+            <!-- Books -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Books</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/white-printer-paper-on-brown-wooden-table-9OGNpJPVMZ8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/books-image.jpg" alt="Books Image">
+            </div>
+            <!-- Tech -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Tech</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/a-black-background-with-red-and-blue-lines-D_ivYIn4jWw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@brave4_heart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jigar Panchal</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/tech-image.jpg" alt="Tech Image">
+            </div>
+            <!-- Path -->
+            <div class="card">
+                <div class="card-header">Category: Image</div>
+                <div class="card-body">
+                    <h5 class="card-title">Path</h5>
+                    <p class="card-text">Image Source: <a href="https://unsplash.com/photos/white-and-black-one-way-printed-road-signages-pKeF6Tt3c08?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p class="card-text">Photographer: <a href="https://unsplash.com/@bdchu614?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brendan Church</a></p>
+                    <p class="card-text">License: <a href="https://unsplash.com/license">Unsplash License</a></p>
+                </div>
+                <img class="credit-img-view" src="path/to/path-image.jpg" alt="Path Image">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer-Title"  tabindex="0">
+            <h2>ICT Master Hub</h2><p id="footer-slogan">Your self learning website for DSE ICT Networking.</p>
+        </div>
+        <div class="footer-Container">
+            <div class="footer-Left_Link">
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Learning</span>
+                    <a class="footer-Link" href="/learning/index.html">Dashboard</a>
+                    <a class="footer-Link" href="/library/index.html">Resource Library</a>
+                    <a class="footer-Link" href="/profile/index.html">My Profile</a>
+                    <a class="footer-Link" href="/profile/report.html">My Report</a>
+                </div>
+                <div class="footer-Link-main">
+                    <span class="footer-Link-Title" tabindex="0">Explore</span>
+                    <a class="footer-Link" href="/about.html#">Reason to use this website</a>
+                    <a class="footer-Link" href="/courses/index.html">Learning Catalog</a>
+                    <a class="footer-Link" href="/news/index.html">Latest News</a>
+                    <a class="footer-Link" href="/faq.html">Q&A</a>
+                </div>
+            </div>
+        <div class="footer-Right-Link footer-Link-main"  tabindex="0">
+            <a class="footer-Link-Title-Right" href="/index.html">Home</a>
+            <a class="footer-Link-Title-Right" href="/chatbot.html" target="_blank">Chatbot</a>
+            <a class="footer-Link-Title-Right" href="/privacy.html">Privacy Policy</a>
+            <a class="footer-Link-Title-Right" href="/tos.html">Terms of Service</a>
+            <a class="footer-Link-Title-Right" href="/credit.html">Acknowledgement</a>
+        </div>
+        
+    </div>
+    <div class="footer-Bottom-Link">
+        <span><span id="lang-Switch-Eng" class="lang-switch-btn footer-Link" aria-label="Switch to English" tabindex="0">English</span><span> / </span><span id="lang-Switch-Chi" class="lang-switch-btn footer-Link" aria-label="Switch to Chinese 切换到中文" tabindex="0">中文</span></span>
+        <a class="footer-Link" href="about.html">About Us</a>
+        <a class="footer-Link" href="about.html#ContactUs">Contact Us</a>
+        <a class="footer-Link" href="faq.html">FAQ</a>
+        <a class="footer-Link" href="setting.html">Setting</a>
+        <span tabindex="0">@2023 ICT Master Hub</span>
+    </div>
+    </footer>
+    <div id="unfocus"></div>
+    <button id="backToTop_btn" aria-label="Back To Top Button">&#9650;</button>
+</body>
+</html>

@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+body{
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    color: #0C2B4B;
+}
+html, body{
+    scroll-behavior: smooth !important;
+}
+button{
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    border-radius: 2px;
+    background-color: ghostwhite;
+}
+main h1, main h2, main h3, main h4, main h5, main h6{
+    font-family: 'Work Sans', sans-serif;
+}
+/** Start: Global Header */
+/** Style for Logo, Title, nav*/
+#header{
+    position: relative;
+    z-index: 999;
+}
+#header-Title h1{
+    font-family: 'Jost', sans-serif;
+    margin-bottom: auto;
+    font-size: 28px;
+    margin-top: auto;
+    font-weight: 500;
+}
+#header-Title p{
+    font-weight: normal;
+    margin-top: 0;
+    font-size: 12px;
+    display: none;
+}
+#header-Title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+}
+.header-Title-link{
+    text-decoration: none;
+    color: black;
+}
+#header-Logo{
+    margin-left: 4px;
+    height: 100%;
+    width: 36px;
+    float: left;
+    margin-right: 8px;
+    object-fit: contain;
+    margin-top: 0;
+}
+.header-nav {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    font-size: 16px;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/** Style for item in right-hand-side of header */
+.header-Right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+#search{
+    margin-bottom: 5px;
+    height: 100%;
+
+}
+.searchbox{
+    /** Note that width should be reduced to 100px when the screen is small */
+    width: 180px;
+    height: 22px;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background: rgb(244, 244, 244) url(/include/global/search.svg) no-repeat  5px 5px;
+    padding: 2px 4px 2px 40px;
+    box-sizing: content-box;
+}
+#search button{
+    height: 26px;
+}
+#user{
+    float: right;
+    font-weight: normal;
+    font-size: 14px;
+}
+/** Style for the header */
+#header-Bar{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    padding: 0 30px 0 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    z-index: 999;
+}
+/** Style for the menu and dropdown menu */
+.header-nav a{
+    color: black;
+    text-decoration: none;
+}
+.header-nav a:hover{
+    text-decoration: none;
+}
+.header-nav .dropdownContent{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /** z-index is used to make sure the dropdown menu is on top of other elements */
+    z-index: 99;
+    font-size: 16px;
+}
+.dropdownMenu:hover + .dropdownContent{
+    display: block;
+}
+.dropdownMenu:hover{
+    color: #306EE4;
+}
+.dropdownContent:hover{
+    display: block;
+    color: #306EE4;
+}
+.dropdownContent a{
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    white-space: nowrap;
+}
+.dropdownContent a:hover {
+    color: white;
+    transition: all 0.1s ease-out 0s;
+}
+.dropdownContent a:hover::before {
+    width: 100%;
+}
+.dropdownContent a::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    right: auto;
+    left: 0;
+    width: 2%;
+    background: #306EE4;
+    color: #fff;
+    z-index: -1;
+    transition: all 0.2s ease-out 0s;
+}
+#dropdownMenu_Explore{
+    margin-right: 20px;
+    position: relative;
+}
+#dropdownMenu_Courses{
+    margin-right: 20px;
+    position: relative;
+}
+#dropdownMenu_About{
+    margin-right: 20px;
+    position: relative;
+}
+.dropdownMenu{
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+#dropdownMenu_About-List{
+    right: 0px;
+}
+.searchForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 5px;
+}
+.search-btn-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+#searchForm button[type="submit"]{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.headerDropDownMenu-HR{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/** End: Global Header */
+/** Copyright @uncle-jayden, licensed under CC BY-NC-ND 4.0. */
+/** Start: Breadcrumb */
+#breadcrumbs li {
+    display: inline-block;
+}
+/** Set the link in breadcrumb with >, i.e. Home > News */
+#breadcrumbs a::after {
+    display: inline-block;
+    color: white;
+    content: '/';
+    padding: 0 3px;
+}
+#breadcrumbs ul{
+    list-style-type: none;
+    margin-top: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    margin-bottom: 0px;
+    color: white;
+}
+#breadcrumbs{
+    background-color: #306EE4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+#breadcrumbs *{
+    color: white;
+    text-decoration: none;
+
+}
+/** End: Breadcrumb */
+/** Start: Header drop-down menu */
+/** The dropdown menu will be active when content in header hidden due to screen size  */
+#headerDropDownMenu-Logo{
+    height: 100%;
+    width: 28px;
+    float: left;
+    margin-right: 2px;
+    object-fit: contain;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#headerDropDownMenu{    
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    background-color: white;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+#unfocus{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    visibility: hidden;
+}
+.headerDDM-open-vertical {
+    max-height: 1000px;
+}
+.headerDDM-close-vertical {
+    max-height: 0;
+}
+#headerDropDownMenu-Link{
+    color: black;
+    font-weight: bold;
+    margin-top: 6px;
+    display: none;
+}
+.headerDropDownMenu-Link-List{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+.headerDropDownMenu-Link-List a{
+    text-decoration: none;
+    color: black;
+    padding: 12px 0 12px 32px;
+}
+.headerDropDownMenu-Text{
+    padding-left: 20px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.headerDropDownMenu-element{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+#headerDropDownMenu-User{
+    display: flow-root;
+}
+#headerDropDownMenu-Search{
+    display: none;
+}
+.headerDropDownMenu-Link-Status{
+    display: contents;
+}
+/** End: Header drop-down menu */
+/** Start: Animation-Global */
+.anim-close-horizontal {
+    width: 0;
+}
+
+/** End: Animation-Global */
+
+/** Start: Footer */
+footer {
+    bottom: 0;
+    width: 100%;
+    /*Height of the footer */
+    height: max-content;
+    /** https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    box-sizing: border-box;
+    color:white;
+    font-size: 12px;
+    background-color: #0C2B4B;
+}
+#footer-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+#footer-Title{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #306EE4;
+    height: 30px;
+    align-items: center;
+    line-height: 1 !important;
+}
+#footer-Title h2{
+    margin: 0px;
+    margin-left: 20px;
+    font-size: 24px;
+}
+#footer-Title p{
+    margin: 0px;
+    margin-left: 8px;
+    padding-left: 20px;
+}
+#footer-Title a{
+    text-decoration: none;
+    color: white;
+}
+/** Start: Footer Container*/
+.footer-Container{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer-Link-main{
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.footer-Right-Link{
+    margin-left: auto;
+    text-align: right;
+}
+/** End: Footer Container*/
+.footer-Link-Title{
+    color: white;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-Link{
+    color: rgb(240, 240, 240);
+    margin-top: 2px;
+    text-decoration: none;
+}
+.footer-Link:hover{
+    color: rgb(200, 200, 200);
+}
+.footer-Link-Title-Right{
+    color: rgb(240, 240, 240);
+    margin-right: 20px;
+    margin-bottom: auto;
+}
+.footer-Bottom-Link{
+    background-color: #2455;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+}
+.lang-switch-btn{
+    cursor: pointer;
+}
+.headerDropDownMenu-Title:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid black;
+    margin-left: 10px;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    top: 2px;
+}
+.headerDropDownMenu-Title.active:after {
+    transform: rotate(90deg);
+}
+.header-tryit-btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: #306EE4;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #306EE4;
+    display: inline-block;
+}
+.header-tryit-btn:hover{
+    background-color: white;
+    color: #306EE4;
+}
+#header-tryit-btn-nav{
+    display: none;
+    margin-left: 0;
+}
+#breadcrumbs-Cureent-Page{
+    font-weight: bold;
+}
+#breadcrumbs li{
+    font-weight: normal;
+}

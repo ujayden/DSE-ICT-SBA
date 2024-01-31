@@ -1,0 +1,553 @@
+#newsLoop{
+    background-color: orange;
+    margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 1px;
+}
+#newsLoop h4{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding-top: 2px;
+}
+#newsLoop .newsLoop-Container{
+    background-color: white;
+    position: relative;
+}
+#newsLoop p{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#setNewsLoop{
+    float: right;
+    font-weight: lighter;
+    cursor: pointer;
+    user-select: none;
+}
+#setNewsLoop span{
+    margin-right: 18px;
+}
+#setNewsLoop #newsCount{
+    cursor: default;
+}
+@media screen and (max-width: 320px) {
+    #newsLoop{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .newsLoopUnimportant{
+        display: none;
+    }
+}
+#newsLoop h4{
+    font-size: 14px;
+}
+#breadcrumbs{
+    display: none;
+}
+#posterIntro img{
+    max-height: 900px;
+    width: 20%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    filter: brightness(70%);
+}
+#posterIntro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: #0f1f4f;
+}
+.posterIntroText{
+    text-align: right;
+    font-weight: 100 !important;
+    font-size: 15px;
+    padding: 8px 12px;
+    top: 30px;
+    width: 100%;
+    color: white;
+}
+#posterIntro h1{
+    margin-bottom: 120px;
+}
+#posterIntro p{
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+}
+#posterIntro button{
+    padding: 8px 60px;
+    margin-top: 20px;
+    border: 2px solid black;
+    background-color: rgba(255,255,255,0.7);
+    font-weight: bold;
+}
+.whiteToDarkTransparent{
+    background: linear-gradient(rgb(255,255,255), rgba(120,120,120));
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterBenefit{
+    background-color: rgb(240, 240, 240);
+    padding: 80px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterBenefit h2{
+    margin-bottom: 40px;
+}
+#posterHearWeAre{
+    background-color: #2455E6;
+    color: white;
+    padding: 80px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.posterHearWeAre-left{
+    width: 50%;
+    padding-right: 20px;
+}
+.posterHearWeAre-right{
+    width: 50%;
+    padding-left: 20px;
+}
+#posterCouseAvailable{
+    background-color: #F8F9FA;
+    padding: 80px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.posterShort{
+    color: white;
+    margin: 80px;
+    bottom: 0;
+    width: 100%;
+}
+#posterShortAims{
+    background-color: #8a9af1;
+    color: white;
+    padding: 80px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 600px;
+}
+#posterComment{
+    padding: 80px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+#posterComment h1{
+    font-weight: bold;
+}
+#posterFinal{
+    background-color: white;
+    padding: 80px;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+#posterBenefitCarousel .card{
+    width: 100%;
+    flex: 1;
+}
+#posterCommentCarousel .card{
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+}
+
+.posterBenefitDetailContainer{
+    padding: 160px 48px 50px 48px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.16);
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.posterBenefitDetailContainer h5{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.posterCommentDetailContainer{
+    min-height: 200px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+}
+.center .posterCommentDetailContainer{
+    color: white;
+    background-color: #7c9cfb;
+}
+.posterCommentContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.posterCourseAvailableCard{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.posterCourseAvailableCard img{
+    max-height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.posterBenefit-Bold{
+    transition: all 0.1s ease-in-out;
+    font-weight: bold;
+    color: #2455E6;
+    font-size: 36px;
+}
+/** Change the owl-carousel dots as a line, like bootstrap one */
+.owl-theme .owl-dots .owl-dot span{
+    height: 4px !important;
+    width: 32px !important;
+}
+.posterCourseAvailableContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.posterCourseAvailableCard{
+    background-color: white;
+    border: 0px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.16);
+    max-width: 400px;
+}
+.posterCourseAvailableCard h5{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.posterCourseAvailableCard p{
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.img-container {
+    position: relative;
+}
+.img-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+.img-container img{
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease-out 0s;
+
+}
+.img-container::before{
+    position: absolute;
+    content: "";
+    top: 100%;
+    width: 100%;
+    height: 4px;
+    background-color: #2455E6;
+    z-index: 0;
+    transition: all 0.6s ease-out 0s;
+}
+/** Change the width to 0px when hover on image or button */
+.img-container:hover::before{
+    width: 0;
+}
+/** TODO: Change the width to 0px when hover on image or button + Play animation on the image + Make button bgcolor variable */
+.img-container:hover img{
+    filter: brightness(70%);
+    /** Zoom in the image without changing the size of the container */
+    transform: scale(1.3);
+}
+.img-container:hover .btn{
+    background-color: #2455E6;
+    color: white;
+}
+.posterCourseAvailableCard .btn:hover{
+    background-color: #2455E6;
+    color: white;
+}
+
+.card{
+    margin-top: 10px;
+    width: 30%;
+}
+.card-body .btn{
+    font-weight: bold;
+    background-color: #2455E6;
+    padding: 16px 10px;
+    width: 80%;
+}
+
+#posterFinal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#posterFinal-btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 6px 32px;
+    border-radius: 4px;
+    background-color: #306EE4;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    border: 4px solid #306EE4;
+    display: inline-block;
+    font-size: 28px;
+}
+#posterFinal-btn:hover{
+    background-color: white;
+    color: #306EE4;
+}
+.posterBenefitImgContainer{
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: -30px;
+    background-color: #2455E6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 0;
+    border-radius: 6%;
+}
+.posterBenefitImgContainer img{
+    color: white;
+}
+#posterBenefitCarousel .owl-stage-outer{
+    padding-top: 20px;
+}
+.posterBenefitImg{
+    fill: #FFFFFF;
+}
+.posterBenefitDetailLinkIcon{
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-left: 1px;
+    fill: #2455E6;
+}
+.posterBenefitDetailContainer a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    flex-wrap: nowrap;
+}
+.posterBenefitDetailContainer a:hover{
+    font-weight: bold;
+}
+.posterBenefitDetailContainer::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #2455E6;
+    transition: all 0.3s ease-in-out;
+}
+.posterBenefitDetailContainer:hover::before{
+    width: 100%;
+}
+.posterBenefitDetailContainer:hover{
+    .posterBenefit-Bold{
+        font-size: 48px;
+    }
+}
+.posterVisionRow{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+    padding-bottom: 0px;
+}
+.posterVision{
+    position: relative;
+    padding: 20px;
+    width: 45%;
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    background-color: #2455E6;
+    align-items: center;
+    box-shadow: 0 0 50px 0 rgba(158, 158, 158, 0.7);
+}
+.posterVision img{
+    height: 40px;
+}
+.posterVisionText{
+    margin-left: 16px;
+}
+.pvLight{
+    background-color: #FFFFFF;
+    color: black;
+}
+#posterShortAims{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#videoPlayCircle{
+    transform: translate(0, -50%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+#videoPlayCircle img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.posterCourseAvailableCard{
+    min-width: 300px !important;
+}
+@media screen and (max-width: 800px) {
+    .posterVisionRow{
+        flex-direction: column;
+        align-items: center;
+    }
+    .posterVision{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .posterCourseAvailableContainer{
+        justify-content: center;
+    }
+    .posterCourseAvailableCard{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #welcome{
+        flex-direction: column !important;
+        align-items: center;
+    }
+    #welcome img{
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+    }
+    .welcomeTextContainer{
+        width: 100% !important;
+        padding-left: 0px !important;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 680px){
+    #posterHearWeAre{
+        flex-direction: column;
+    }
+    .posterHearWeAre-left{
+        width: 100%;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+    .posterHearWeAre-right{
+        width: 100%;
+        padding-left: 0px;
+    }
+    #posterFinal-btn{
+        margin-left: 0px;
+    }
+    #posterFinal{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 380px){
+    .status-Box-row{
+        flex-wrap: wrap;
+    }
+    .divider{
+        display: none;
+    }
+    #posterFinal{
+        flex-direction: column;
+    }
+}
+#posterClimb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 600px;
+}
+.posterClimb-left{
+    margin: 80px;
+    width: 60%;
+    padding-right: 20px;
+}
+.posterClimb-right{
+    width: 40%;
+    padding-left: 20px;
+}
+.posterClimb-right img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+#welcome{
+    text-align: right;
+    padding: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.welcomeTextContainer{
+    width: 50%;
+    padding-left: 20px;
+}
+#welcome img{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    max-width: 400px;
+}
+.mainService{
+    color: white;
+    background-color: #95C1C3;
+}

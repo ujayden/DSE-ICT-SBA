@@ -1,0 +1,198 @@
+.themeAquaBlue{
+    background-color: #0cc0df;
+    color: white;
+}
+
+.introduction{
+    padding: 80px;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    background-image: url(/include/images/courses/course.png);
+    min-height: 60vh;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #2352AB;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.introduction h1, .introduction p{
+    filter: none !important;
+}
+.introduction-Title{
+    width: 100%;
+}
+.introduction-Image{
+    width: 40%;
+}
+.introduction-Image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    visibility: hidden;
+}
+@media screen and (max-width: 1400px){
+    .introduction{
+        background-image: none;
+    }
+}
+#information{
+    padding: 20px;
+}
+.information{
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0 2px rgba(0,0,0,.6);
+    color: black;
+    padding: 20px;
+}
+.ul-target{
+    list-style: "✓";
+    display: flex;
+    flex-direction: row;
+}
+.ul-target li{
+    margin-right: 20px;
+}
+.infoRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#description{
+    padding: 60px;
+    color: black;
+    background-color: #F5F5F5;
+}
+.descriptionRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#levels{
+    padding: 60px;
+    color: black;
+    background-color: white;
+}
+#enroll{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#enroll-btn{
+    padding: 12px 24px;
+    background-color: #fff000;
+    color: black;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 3px solid #FFFF00;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    font-weight: bold;
+}
+#enroll-btn:hover{
+    background-color: white;
+    color: black;
+}
+#featIncluded{
+    padding: 60px;
+    color: black;
+    background-color: #F5F5F5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid #ddd;
+
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+}
+th{
+    background-color: #0cc0df;
+    color: white;
+}
+.horizionScoll{
+    overflow-x: auto;
+
+}
+.mainService{
+    background-color: #ececec;
+    border-radius: 2px;
+}
+.featContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.composoryCourseItemContainer{
+    display: block;
+    padding: 60px;
+    background-color: #F5F5F5;
+    color: black;
+}
+.accordion-item{
+    background-color: white !important;
+
+}
+
+.ccicAccordion > .accordion-item > .accordion-header > .accordion-button{
+    background-color: #d6caf9 !important;
+}
+.ccicAccordion > .accordion-item{
+    border: 1px solid #cbbdf5 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+
+}
+.ccicAccordion > .accordion-item > .accordion-header > .accordion-button:focus{
+    box-shadow: none !important;
+}
+.introTextContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.introTextContainer p{
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.introTextContainer h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.courseItemContainer{
+    /** 1 row 3 column */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 1400px){
+    .courseItemContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 800px){
+    .courseItemContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
